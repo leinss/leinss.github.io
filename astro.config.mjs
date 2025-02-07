@@ -7,5 +7,5 @@ export default defineConfig({
   site: "https://leinss.github.io",
   // base: "/astro-sphere",
   // trailingSlash: "always",
-  integrations: [mdx(), sitemap(), tailwind()],
+  integrations: [mdx(), sitemap(), tailwind()]
 });
