@@ -4,6 +4,8 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
-  site: "https://astro-nano-demo.vercel.app",
+  site: "https://leinss.github.io",
+  // base: "/astro-sphere",
+  // trailingSlash: "always",
   integrations: [mdx(), sitemap(), tailwind()],
 });
