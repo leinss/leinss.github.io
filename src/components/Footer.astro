@@ -1,7 +1,15 @@
 ---
-import Container from "@components/Container.astro";
-import { SITE } from "@consts";
-import BackToTop from "@components/BackToTop.astro";
+import Container from "@components/Container.astro"
+import { SITE } from "@consts"
+import BackToTop from "@components/BackToTop.astro"
+import { getCollection } from "astro:content"
+
+const staticPages = (await getCollection("staticPages"))
+  .filter((page) => !page.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE)
+
+const imprint = staticPages.find((page) => page.slug === "/imprint")
 ---
 
 <footer class="animate">
@@ -13,8 +21,18 @@ import BackToTop from "@components/BackToTop.astro";
     </div>
     <div class="flex justify-between items-center">
       <div>
-        &copy; 2025 {`|`} {SITE.NAME}
+        &copy; 2025 {`|`}
+        {SITE.NAME}
       </div>
+      {
+        imprint && (
+          <div>
+            <a href={imprint?.slug} class="underline">
+              {imprint?.data.title}
+            </a>
+          </div>
+        )
+      }
       <div class="flex flex-wrap gap-1 items-center">
         <button
           id="light-theme-button"

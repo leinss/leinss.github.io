@@ -2,7 +2,7 @@
 import Container from "@components/Container.astro"
 import Link from "@components/Link.astro"
 import { SITE } from "@consts"
-import { type CollectionEntry, getCollection } from "astro:content"
+import { getCollection } from "astro:content"
 
 const staticPages = (await getCollection("staticPages"))
   .filter((page) => !page.data.draft)
@@ -20,11 +20,13 @@ const staticPages = (await getCollection("staticPages"))
       </Link>
       <nav class="flex gap-1">
         {
-          staticPages.map((page) => (
-            <Link href={page.slug} underline={false}>
-              {page.data.title.toLocaleLowerCase()}
-            </Link>
-          ))
+          staticPages
+            .filter((page) => page.slug !== "/imprint")
+            .map((page) => (
+              <Link href={page.slug} underline={false}>
+                {page.data.title.toLocaleLowerCase()}
+              </Link>
+            ))
         }
         <span>
           {`/`}
