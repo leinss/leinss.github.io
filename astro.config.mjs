@@ -7,7 +7,7 @@ import sentry from "@sentry/astro"
 import spotlightjs from "@spotlightjs/astro"
 
 export default defineConfig({
-  site: "https://leinss.github.io",
+  site: "https://leinss.xyz",
   // base: "/astro-sphere",
   // trailingSlash: "always",
   integrations: [
