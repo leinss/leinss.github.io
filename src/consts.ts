@@ -11,7 +11,7 @@ export const SITE: Site = {
 export const HOME: Metadata = {
   TITLE: "Home",
   DESCRIPTION:
-    "👷 Building innovative solutions in Web3 and AI 👨‍💻 Full-Stack Engineer specialized in UI, backend, smart contracts, devops and AI integration",
+    "👷 Building innovative solutions in Web3 and AI 👨‍💻 Fullstack engineer specialized in UI, backend, smart contracts, devops and AI integration",
 }
 
 export const BLOG: Metadata = {
