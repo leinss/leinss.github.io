@@ -42,7 +42,7 @@ const work = await Promise.all(
       <section>
         <article class="space-y-4">
           <p class="animate">
-            I’m a Full-Stack Software Engineer with a deep passion for Web3,
+            I’m a fullstack software engineer with a deep passion for Web3,
             Blockchain and AI technologies.
             <br />
             I thrive on building innovative, decentralized solutions and helping
@@ -171,9 +171,9 @@ const work = await Promise.all(
                 >
                   <i
                     data-feather={SOCIAL.NAME}
-                    class="w-4 h-4 mr-2 inline-block"
+                    class="w-4 h-4 mr-1 inline-block"
                   />
-                  {SOCIAL.NAME}
+                  <span class="underline">{SOCIAL.NAME}</span>
                 </Link>
                 {"/"}
               </li>
@@ -185,8 +185,8 @@ const work = await Promise.all(
               aria-label={`Email ${SITE.NAME}`}
               underline={false}
             >
-              <i data-feather={"mail"} class="w-4 h-4 mr-2 inline-block"></i>
-              {SITE.EMAIL}
+              <i data-feather={"mail"} class="w-4 h-4 mr-1 inline-block"></i>
+              <span class="underline">{SITE.EMAIL}</span>
             </Link>
           </li>
         </ul>

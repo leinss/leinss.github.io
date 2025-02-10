@@ -15,13 +15,15 @@ const staticPages = (await getCollection("staticPages"))
     <div class="flex flex-wrap gap-y-2 justify-between">
       <Link href="/" underline={false}>
         <div class="font-semibold">
-          {SITE.NAME}
+          &lt;{SITE.NAME} &sol;&gt;
         </div>
       </Link>
       <nav class="flex gap-1">
         {
           staticPages.map((page) => (
-            <Link href={page.slug}>{page.data.title.toLocaleLowerCase()}</Link>
+            <Link href={page.slug} underline={false}>
+              {page.data.title.toLocaleLowerCase()}
+            </Link>
           ))
         }
         <span>
@@ -32,11 +34,11 @@ const staticPages = (await getCollection("staticPages"))
         </Link>
         <span>
           {`/`} -->
-        <Link href="/work"> work </Link>
+        <Link href="/work" underline={false}> work </Link>
         <span>
           {`/`}
         </span>
-        <Link href="/projects"> projects </Link>
+        <Link href="/projects" underline={false}> projects </Link>
       </nav>
     </div>
   </Container>
