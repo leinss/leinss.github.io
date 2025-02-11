@@ -26,6 +26,6 @@ A Farcaster frame that, on the surface, is a game. Underneath, it's a dataDAO. T
 
 May 2024
 
-[![castlatte demo image](/images/projects/farcaster_hackathons/castlatte.png)](https://bit.ly/based_berlin_castlatte)
+[![demo image](/images/projects/farcaster_hackathons/castlatte.png)](https://bit.ly/based_berlin_castlatte)
 
 milk your feed
