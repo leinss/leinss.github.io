@@ -32,6 +32,21 @@ const work = await Promise.all(
     return { ...item, Content }
   })
 )
+
+const alleducation = (await getCollection("education"))
+  .sort(
+    (a, b) =>
+      new Date(b.data.dateStart).valueOf() -
+      new Date(a.data.dateStart).valueOf()
+  )
+  .slice(0, SITE.NUM_EDUCATION_ON_HOMEPAGE)
+
+const education = await Promise.all(
+  alleducation.map(async (item) => {
+    const { Content } = await item.render()
+    return { ...item, Content }
+  })
+)
 ---
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
@@ -64,7 +79,7 @@ const work = await Promise.all(
             excited to collaborate on groundbreaking projects.
           </p>
           <p class="animate">
-            My toolset:
+            💻 My toolset:
             <ul class="animate">
               <li>
                 <strong>Web</strong> Reactjs & Nodejs & Python through REST & GraphQL
@@ -122,7 +137,7 @@ const work = await Promise.all(
           <h5 class="font-semibold text-black dark:text-white">
             Work Experience
           </h5>
-          <Link href="/work"> See all work </Link>
+          <Link href="/work">🏢 See all work </Link>
         </div>
         <ul class="flex flex-col space-y-4">
           {
@@ -149,7 +164,7 @@ const work = await Promise.all(
           <h5 class="font-semibold text-black dark:text-white">
             Recent projects
           </h5>
-          <Link href="/projects"> See all projects </Link>
+          <Link href="/projects">⭐ See all projects </Link>
         </div>
         <ul class="flex flex-col gap-4">
           {
@@ -162,8 +177,32 @@ const work = await Promise.all(
         </ul>
       </section>
 
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap gap-y-2 items-center justify-between">
+          <h5 class="font-semibold text-black dark:text-white">Education</h5>
+          <Link href="/education">🎓 See all education </Link>
+        </div>
+        <ul class="flex flex-col space-y-4">
+          {
+            education.map((entry) => (
+              <li>
+                <div class="text-sm opacity-75">
+                  {dateRange(entry.data.dateStart, entry.data.dateEnd)}
+                </div>
+                <div class="font-semibold text-black dark:text-white">
+                  {entry.data.place}
+                </div>
+                <div class="text-sm opacity-75">{entry.data.role}</div>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
       <section class="animate space-y-4">
-        <h5 class="font-semibold text-black dark:text-white">Let's Connect</h5>
+        <h5 class="font-semibold text-black dark:text-white">
+          🤝 Let's Connect
+        </h5>
         <article>
           <p>
             If you want to get in touch with me about something or just to say
