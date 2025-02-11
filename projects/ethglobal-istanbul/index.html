@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: dark)"><link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: light)"><link rel="icon" type="image/x-icon" href="/favicon.ico"><meta name="generator" content="Astro v5.2.5"><!-- Sitemap --><link rel="sitemap" href="/sitemap-index.xml"><!-- Font preloads --><link rel="preload" href="/_astro/inter-latin-400-normal.BOOGhInR.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/inter-latin-600-normal.D273HNI0.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-400-normal.CvHVDnm4.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-600-normal.DUWh3m6k.woff2" as="font" type="font/woff2" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://leinss.xyz/projects/ethglobal-istanbul/"><!-- Primary Meta Tags --><title>EthGlobal Istanbul | Tobias Leinss</title><meta name="title" content="EthGlobal Istanbul | Tobias Leinss"><meta name="description" content="a solo staking protocol with sybil resistance and MEV smoothing"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://leinss.xyz/projects/ethglobal-istanbul/"><meta property="og:title" content="EthGlobal Istanbul | Tobias Leinss"><meta property="og:description" content="a solo staking protocol with sybil resistance and MEV smoothing"><meta property="og:image" content="https://leinss.xyz/nano.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://leinss.xyz/projects/ethglobal-istanbul/"><meta property="twitter:title" content="EthGlobal Istanbul | Tobias Leinss"><meta property="twitter:description" content="a solo staking protocol with sybil resistance and MEV smoothing"><meta property="twitter:image" content="https://leinss.xyz/nano.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.BScVxmeO.js"></script><script defer src="https://umami.funnel.leinss.xyz/script.js" data-website-id="590d9a9a-3284-45a1-8efc-bc151ed4284d"></script><script type="module">window.addEventListener("load",()=>{typeof feather<"u"&&feather.replace()});document.addEventListener("astro:before-swap",e=>[...e.newDocument.head.querySelectorAll('link[as="font"]')].forEach(n=>n.remove()));</script><script type="module" src="/_astro/Head.astro_astro_type_script_index_1_lang.ErkTv1Ox.js"></script><script>
+  function init() {
+    preloadTheme();
+    onScroll();
+    animate();
+
+    const backToTop = document.getElementById("back-to-top");
+    backToTop?.addEventListener("click", (event) => scrollToTop(event));
+
+    const backToPrev = document.getElementById("back-to-prev");
+    backToPrev?.addEventListener("click", () => window.history.back());
+
+    const lightThemeButton = document.getElementById("light-theme-button");
+    lightThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "light");
+      toggleTheme(false);
+    });
+
+    const darkThemeButton = document.getElementById("dark-theme-button");
+    darkThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "dark");
+      toggleTheme(true);
+    });
+
+    const systemThemeButton = document.getElementById("system-theme-button");
+    systemThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "system");
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    });
+
+    window.matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", event => {
+        if (localStorage.theme === "system") {
+          toggleTheme(event.matches);
+        }
+      }
+    );
+
+    document.addEventListener("scroll", onScroll);
+  }
+
+  function animate() {
+    const animateElements = document.querySelectorAll(".animate");
+
+    animateElements.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add("show");
+      }, index * 150);
+    });
+  }
+
+  function onScroll() {
+    if (window.scrollY > 0) {
+      document.documentElement.classList.add("scrolled");
+    } else {
+      document.documentElement.classList.remove("scrolled");
+    }
+  }
+
+  function scrollToTop(event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+function toggleTheme(dark) {
+    const css = document.createElement("style");
+
+    css.appendChild(
+      document.createTextNode(
+        `* {
+             -webkit-transition: none !important;
+             -moz-transition: none !important;
+             -o-transition: none !important;
+             -ms-transition: none !important;
+             transition: none !important;
+          }
+        `,
+      )
+    );
+
+    document.head.appendChild(css);
+
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+  window.getComputedStyle(css).opacity;
+    document.head.removeChild(css);
+  }
+
+  function preloadTheme() {
+    const userTheme = localStorage.theme;
+
+    if (userTheme === "light" || userTheme === "dark") {
+      toggleTheme(userTheme === "dark");
+    } else {
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => init());
+  document.addEventListener("astro:after-swap", () => init());
+  preloadTheme();
+</script><link rel="stylesheet" href="/_astro/_slug_.BPG20WTi.css"></head> <body> <header> <div class="mx-auto max-w-screen-sm px-5">  <div class="flex flex-wrap gap-y-2 justify-between"> <a href="/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out">  <div class="font-semibold">
+&lt;Tobias Leinss &sol;&gt;
+</div>  </a> <nav class="flex gap-1"> <a href="/now" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out"> now </a> <span> / </span> <!-- <Link href="/blog">
+          blog
+        </Link>
+        <span>
+          {`/`} --> <a href="/work" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out">  work  </a> <span> / </span> <a href="/projects" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out">  projects  </a> </nav> </div>  </div> </header> <main>  <div class="mx-auto max-w-screen-sm px-5">  <div class="animate"> <a href="/projects" class="relative group w-fit flex pl-7 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> <div class="text-sm"> 
+Back to projects
+ </div> </a> </div> <div class="space-y-1 my-10"> <div class="animate flex items-center gap-1.5"> <div class="font-base text-sm"> <time datetime="2023-11-01T00:00:00.000Z"> Nov 1, 2023 </time> </div>
+&bull;
+<div class="font-base text-sm"> 4 min read </div> </div> <div class="animate text-2xl font-semibold text-black dark:text-white"> EthGlobal Istanbul </div> <nav class="animate flex gap-1"> <a href="https://bit.ly/ethistanbul_grayskull_guardians" target="_blank" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2"> 
+demo
+ </a> <span>/</span> <a href="bit.ly/ethistanbul_grayskull_guardians" target="_blank" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2"> 
+repo
+ </a> </nav> </div> <article class="animate"> <h2 id="grayskull-guardians">Grayskull Guardians</h2>
+<video controls>
+  <source src="https://stream.mux.com/Q5SKFJUL00iG01x1ijwlqYVzRlF01ctno9QcqenV2S026EM/high.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<p>Grayskull Guardians is a solo staking protocol with sybil resistance via World Coin, anti-cheat contracts powered by EAS for secure, equitable solo staking and MEV smoothing on Arbitrum.</p>
+<h2 id="project-description">Project Description</h2>
+<p>Grayskull Guardians is a groundbreaking project in the Ethereum staking landscape, focusing on enhancing the solo staking experience with three core features and strengthening decentralization through it. Firstly, the MEV Smoothie Pool, an innovative approach, allows for optimized and incentivized staking. This pool not only increases rewards for stakers on average but also introduces a novel mechanism for maximizing staking efficiency. Secondly, the project emphasizes incentivized rewards through public good funding, where contributions boost the overall reward pool, benefiting all participants. Lastly, it features a unique system of compounded rewards through auto-swapping into rETH, significantly optimizing fees for solo stakers. This is achieved by batching transactions to Layer 2 networks, ensuring efficient and cost-effective distribution of rewards, a crucial aspect for individual stakers seeking to maximize their returns in the Ethereum ecosystem.</p>
+<h2 id="how-its-made">How it’s Made</h2>
+<p>Sybil-Resistant, Incentivized MEV Pool for Solo Stakers: The core of Grayskull Guardians is a unique MEV (Maximal Extractable Value) pool designed specifically for solo stakers. This pool is Sybil-resistant, meaning it’s designed to prevent malicious actors from creating multiple identities to exploit the system. To ensure each staker is unique and legitimate, the project utilizes Worldcoin’s proof of personhood technology. This allows for the on-chain validation of individual stakers, who can then establish unique withdrawal addresses for their Ethereum validators. This approach is vital for maintaining the integrity of the staking process and the anti-cheat system. (Note: We found out that verification through Goerli has a bug &#x26; is not functional and communicated with team through Discord, therefore we implemented a test case on OP Georli where the solution is running successful)</p>
+<p>Effective Anti-Cheat Mechanism: When stakers withdraw their accumulated rewards, they create an attestation via an Ethereum Attestation Service (EAS), which other stakers can challenge. If a staker is found to be cheating, such as by altering fee recipients for large MEV rewards, their 32 ETH stake is burned. This severe penalty acts as a strong deterrent against rule violations. Optimized Transaction Efficiency: Recognizing the gas fee challenges for solo stakers, the project batches MEV and priority fees at Layer 1 and then transfers them in a single transaction to Arbitrum’s Layer 2. This significantly reduces gas fees, making it more cost-effective for stakers to withdraw rewards.</p>
+<p>Public Good Incentivization for ‘Smoothie Pool’: The ‘Smoothie Pool’ is an innovative contract that encourages donations from individuals and organizations. These donations increase the Annual Percentage Rate (APR) for solo stakers, with donations made effectively on Layer 2 to allow for even small contributions.</p>
+<p>User-Friendly Interface: The project prioritizes an engaging user experience. It integrates Wallet Connect v3 for wallet connections and uses MEV-Boost of Cowswap as the standard RPC. A gamified interface makes the staking process more engaging and interactive for users.</p>
+<p>Future Enhancement with Auto-Swapping Feature: Looking forward, Grayskull Guardians plans to introduce an auto-swapping feature. This will automatically convert earned MEV and priority fees into a liquid staked asset on Arbitrum, allowing stakers’ rewards to generate additional APR, thereby amplifying overall returns.</p>
+<p>L1 Factory: <a href="https://goerli.etherscan.io/address/0x1230efc35e5f2e7eaa4f6385159393fa1675547c">https://goerli.etherscan.io/address/0x1230efc35e5f2e7eaa4f6385159393fa1675547c</a></p>
+<p>L2 Factory: <a href="https://goerli.arbiscan.io/address/0x3c3720bf2d8cdd74df999d80af9f479b4f138044">https://goerli.arbiscan.io/address/0x3c3720bf2d8cdd74df999d80af9f479b4f138044</a></p>
+<p>SmPool L1: <a href="https://goerli.etherscan.io/address/0x5eb090778c245594fc4d5cfbf92d2b1a26910048">https://goerli.etherscan.io/address/0x5eb090778c245594fc4d5cfbf92d2b1a26910048</a></p>
+<p>SmPool L2: <a href="https://goerli.arbiscan.io/address/0x0b852c2129cc8ef9e4581bcda1a8f2166cdb3bae">https://goerli.arbiscan.io/address/0x0b852c2129cc8ef9e4581bcda1a8f2166cdb3bae</a></p>
+<p>EAS: <a href="https://goerli.arbiscan.io/address/0x63b9f0dfa2a6a3604fb301b376dc3a5b133edd3a">https://goerli.arbiscan.io/address/0x63b9f0dfa2a6a3604fb301b376dc3a5b133edd3a</a></p>
+<p>Bridge transaction: L1 – 0xFCa2906C37141f8cD1CB5a01E3a3FC07cC4B1025 <a href="https://goerli.etherscan.io/address/0xFCa2906C37141f8cD1CB5a01E3a3FC07cC4B1025">https://goerli.etherscan.io/address/0xFCa2906C37141f8cD1CB5a01E3a3FC07cC4B1025</a> L2 – 0x3449e3bEEdCB9991b13f16dBf34D6691475c8f9D <a href="https://goerli.arbiscan.io/address/0x3449e3beedcb9991b13f16dbf34d6691475c8f9d">https://goerli.arbiscan.io/address/0x3449e3beedcb9991b13f16dbf34d6691475c8f9d</a></p>
+<p>L1 tx 0x376a9fda70e638a40ec04dce6bc1f3c27ee97671f4480bbfaf26dbc7631666af <a href="https://goerli.etherscan.io/tx/0x376a9fda70e638a40ec04dce6bc1f3c27ee97671f4480bbfaf26dbc7631666af">https://goerli.etherscan.io/tx/0x376a9fda70e638a40ec04dce6bc1f3c27ee97671f4480bbfaf26dbc7631666af</a> L2 tx 0x29f20a9f8a73a39257ce80d1effc95d8c3010ce5b2714c4cb6468aaba0c83a92 <a href="https://goerli.arbiscan.io/tx/0x29f20a9f8a73a39257ce80d1effc95d8c3010ce5b2714c4cb6468aaba0c83a92">https://goerli.arbiscan.io/tx/0x29f20a9f8a73a39257ce80d1effc95d8c3010ce5b2714c4cb6468aaba0c83a92</a></p>
+<p><img src="https://ethglobal.b-cdn.net/projects/ikgth/screenshots/n4z5q/default.jpg" alt="demo image"></p> </article>  </div>  </main> <footer class="animate"> <div class="mx-auto max-w-screen-sm px-5">  <div class="relative"> <div class="absolute right-0 -top-20"> <button id="back-to-top" class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current rotate-90"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> <div class="text-sm">
+Back to top
+</div> </button> </div> </div> <div class="flex justify-between items-center"> <div>
+&copy; 2025 | Tobias Leinss </div> <div> <a href="/imprint" class="underline"> Imprint </a> </div> <div class="flex flex-wrap gap-1 items-center"> <button id="light-theme-button" aria-label="Light theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> <button id="dark-theme-button" aria-label="Dark theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> <button id="system-theme-button" aria-label="System theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect> <line x1="8" y1="21" x2="16" y2="21"></line> <line x1="12" y1="17" x2="12" y2="21"></line> </svg> </button> </div> </div>  </div> </footer> </body></html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: dark)"><link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: light)"><link rel="icon" type="image/x-icon" href="/favicon.ico"><meta name="generator" content="Astro v5.2.5"><!-- Sitemap --><link rel="sitemap" href="/sitemap-index.xml"><!-- Font preloads --><link rel="preload" href="/_astro/inter-latin-400-normal.BOOGhInR.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/inter-latin-600-normal.D273HNI0.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-400-normal.CvHVDnm4.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-600-normal.DUWh3m6k.woff2" as="font" type="font/woff2" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://leinss.xyz/projects/ethrome/"><!-- Primary Meta Tags --><title>EthRome | Tobias Leinss</title><meta name="title" content="EthRome | Tobias Leinss"><meta name="description" content="a platform to take surveys anonymously via zk proofs"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://leinss.xyz/projects/ethrome/"><meta property="og:title" content="EthRome | Tobias Leinss"><meta property="og:description" content="a platform to take surveys anonymously via zk proofs"><meta property="og:image" content="https://leinss.xyz/nano.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://leinss.xyz/projects/ethrome/"><meta property="twitter:title" content="EthRome | Tobias Leinss"><meta property="twitter:description" content="a platform to take surveys anonymously via zk proofs"><meta property="twitter:image" content="https://leinss.xyz/nano.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.BScVxmeO.js"></script><script defer src="https://umami.funnel.leinss.xyz/script.js" data-website-id="590d9a9a-3284-45a1-8efc-bc151ed4284d"></script><script type="module">window.addEventListener("load",()=>{typeof feather<"u"&&feather.replace()});document.addEventListener("astro:before-swap",e=>[...e.newDocument.head.querySelectorAll('link[as="font"]')].forEach(n=>n.remove()));</script><script type="module" src="/_astro/Head.astro_astro_type_script_index_1_lang.ErkTv1Ox.js"></script><script>
+  function init() {
+    preloadTheme();
+    onScroll();
+    animate();
+
+    const backToTop = document.getElementById("back-to-top");
+    backToTop?.addEventListener("click", (event) => scrollToTop(event));
+
+    const backToPrev = document.getElementById("back-to-prev");
+    backToPrev?.addEventListener("click", () => window.history.back());
+
+    const lightThemeButton = document.getElementById("light-theme-button");
+    lightThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "light");
+      toggleTheme(false);
+    });
+
+    const darkThemeButton = document.getElementById("dark-theme-button");
+    darkThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "dark");
+      toggleTheme(true);
+    });
+
+    const systemThemeButton = document.getElementById("system-theme-button");
+    systemThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "system");
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    });
+
+    window.matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", event => {
+        if (localStorage.theme === "system") {
+          toggleTheme(event.matches);
+        }
+      }
+    );
+
+    document.addEventListener("scroll", onScroll);
+  }
+
+  function animate() {
+    const animateElements = document.querySelectorAll(".animate");
+
+    animateElements.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add("show");
+      }, index * 150);
+    });
+  }
+
+  function onScroll() {
+    if (window.scrollY > 0) {
+      document.documentElement.classList.add("scrolled");
+    } else {
+      document.documentElement.classList.remove("scrolled");
+    }
+  }
+
+  function scrollToTop(event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+function toggleTheme(dark) {
+    const css = document.createElement("style");
+
+    css.appendChild(
+      document.createTextNode(
+        `* {
+             -webkit-transition: none !important;
+             -moz-transition: none !important;
+             -o-transition: none !important;
+             -ms-transition: none !important;
+             transition: none !important;
+          }
+        `,
+      )
+    );
+
+    document.head.appendChild(css);
+
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+  window.getComputedStyle(css).opacity;
+    document.head.removeChild(css);
+  }
+
+  function preloadTheme() {
+    const userTheme = localStorage.theme;
+
+    if (userTheme === "light" || userTheme === "dark") {
+      toggleTheme(userTheme === "dark");
+    } else {
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => init());
+  document.addEventListener("astro:after-swap", () => init());
+  preloadTheme();
+</script><link rel="stylesheet" href="/_astro/_slug_.BPG20WTi.css"></head> <body> <header> <div class="mx-auto max-w-screen-sm px-5">  <div class="flex flex-wrap gap-y-2 justify-between"> <a href="/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out">  <div class="font-semibold">
+&lt;Tobias Leinss &sol;&gt;
+</div>  </a> <nav class="flex gap-1"> <a href="/now" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out"> now </a> <span> / </span> <!-- <Link href="/blog">
+          blog
+        </Link>
+        <span>
+          {`/`} --> <a href="/work" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out">  work  </a> <span> / </span> <a href="/projects" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out">  projects  </a> </nav> </div>  </div> </header> <main>  <div class="mx-auto max-w-screen-sm px-5">  <div class="animate"> <a href="/projects" class="relative group w-fit flex pl-7 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> <div class="text-sm"> 
+Back to projects
+ </div> </a> </div> <div class="space-y-1 my-10"> <div class="animate flex items-center gap-1.5"> <div class="font-base text-sm"> <time datetime="2023-10-01T00:00:00.000Z"> Oct 1, 2023 </time> </div>
+&bull;
+<div class="font-base text-sm"> 5 min read </div> </div> <div class="animate text-2xl font-semibold text-black dark:text-white"> EthRome </div> <nav class="animate flex gap-1"> <a href="https://bit.ly/ethrome_sharknado" target="_blank" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out underline underline-offset-2"> 
+demo
+ </a>   </nav> </div> <article class="animate"> <h2 id="sharknado">Sharknado</h2>
+<p><img src="/public/images/projects/ethrome/sharknado.png" alt="demo image">
+<img src="/public/images/projects/ethrome/sharknado_1.png" alt="demo image">
+<img src="/public/images/projects/ethrome/sharknado_2.png" alt="demo image">
+<img src="/public/images/projects/ethrome/sharknado_3.png" alt="demo image">
+<img src="/public/images/projects/ethrome/sharknado_4.png" alt="demo image">
+<img src="/public/images/projects/ethrome/sharknado_5.png" alt="demo image"></p>
+<p>Sharknado A platform where you can take surveys anonymously, authenticate your NFT ownership with zk proofs, and win cash prizes in a pseudo-annonomized &#x26; randomized bounty system.</p>
+<h2 id="repository-with-projects-code-should-be-open-and-public">REPOSITORY WITH PROJECT’S CODE (should be open and public)</h2>
+<p>GitHub Organization: <a href="https://github.com/Squalome">https://github.com/Squalome</a>
+Main repo: <a href="https://github.com/Squalome/sharknado">https://github.com/Squalome/sharknado</a>
+Semaphore repo: <a href="https://github.com/Squalome/Sharknado_Semaphore">https://github.com/Squalome/Sharknado_Semaphore</a>
+Figma prototype: <a href="https://www.figma.com/proto/Sharknado">https://www.figma.com/proto/Sharknado</a></p>
+<p>We faced an issue merging our repos toward the end where our deployed semaphore SCs on gnosis mainnet, therefore we are submitting all repos. Sorry.</p>
+<h2 id="video-demo-3-min-max---no-slides-only-project-demo-showcase">VIDEO DEMO (3 min max) - NO SLIDES ONLY PROJECT DEMO SHOWCASE</h2>
+<p><a href="https://www.loom.com/share/0899f73bf30c4db38de115dd9dd457f8">https://www.loom.com/share/0899f73bf30c4db38de115dd9dd457f8</a></p>
+<h2 id="the-contract-addresses-or-website-urls-of-your-deployed-application-either-on-a-testnet-of-your-choice-or-mainnet-of-a-platform-of-choice--not-mandatory">The contract address(es) or website URLs of your deployed application, either on a testnet of your choice or mainnet of a platform of choice. 📂📂 (NOT mandatory)</h2>
+<p>Sharknado.sol contract on gnosis mainnet: 0xeFB23e1a4573eBA1385D2730A4ddB9aeeb6ea20F
+Semaphore.sol contract on gnosis mainnet: 0xee5cF4Cc94bb97E2bA0d0a115b69c6075Ce42DD1
+Sharktoken.sol contract (sample NFT gating contract) on gnosis mainnet: 0xF649Cb1884dcf8bAc5ccFA669083c489288685bb</p>
+<p>App: <a href="https://sharknado.vercel.app/">https://sharknado.vercel.app/</a></p>
+<h2 id="bounties-provide-a-description-or-explanation-on-how-you-integrated-any-bounty-sponsors-technology">Bounties (provide a description or explanation on how you integrated any bounty sponsors technology)</h2>
+<p>PSE/Semaphore:</p>
+<p>Utilized Semaphore from PSE to authenticate NFT ownership through ZK proofs and signaling in groups to participate in the survey.</p>
+<p>We also take on the challenge to deploy semaphore on Gnosis mainnet: 0xee5cF4Cc94bb97E2bA0d0a115b69c6075Ce42DD1 and deployed subgraphs on gnosis mainnet: <a href="https://thegraph.com/studio/subgraph/sharknadosemaphoregraph">https://thegraph.com/studio/subgraph/sharknadosemaphoregraph</a></p>
+<p>Information leaks challenges &#x26; possible solutions going forward:</p>
+<ul>
+<li>
+<p>The voting signal includes a boolean (vote) + a sudo-annonymous fresh wallet address of the user to recieve bounty when won in the lottery. When a winner moves their funds and makes onchain traces to reveal their identity (RIP TornadoCash’s freedom), their vote will be public linked to their identity. SOLUTION: Creating a series circuit (2nd group) which only those who got the proof to send a signal in the first group can join and send their fresh new address as signal seperatly from their vote. Creating a series circuit to the first template circuit by Semaphore requires us to implement it from scratch with was out of the scope of time in this hackathon.</p>
+</li>
+<li>
+<p>The process of joining a group creates an onchain transaction which reveals who joined a group. Therefore one can know who is in the group, but can not know what each individual vote.</p>
+</li>
+</ul>
+<p>Gnosis:</p>
+<p>We intended to implement Survey with Swansky platform, however given we didn’t have any experience with Swansky, and lack of interoprobablity with other bounties &#x26; technology stacks that we decided for this hackathon, we went with a different approach.</p>
+<p>We tried on testnet, however subgraphs could not be deployed there, as well as other toolings, therefore we went and deployed on the mainnet. The reason we needed to implement subgraphs, was that for using Semaphore package, there was a dependency of using subgraphs in client.</p>
+<p>On the positive side, we are live on mainnet :) Enjoy playing, or implement client to publish surveys.</p>
+<p>The Graph:</p>
+<p>We deployed subgraphs for two contracts:</p>
+<ol>
+<li>
+<p>Semaphore.sol contract on gnosis mainnet: <a href="https://thegraph.com/studio/subgraph/sharknadosemaphoregraph">https://thegraph.com/studio/subgraph/sharknadosemaphoregraph</a>
+Build completed: QmcxFkVPtMBtiH6a8yWFQk9nt8h5cr4Um4eGcWG46ds8QB
+Queries (HTTP): <a href="https://api.studio.thegraph.com/query/54895/sharknadosemaphoregraph/v0.0.1">https://api.studio.thegraph.com/query/54895/sharknadosemaphoregraph/v0.0.1</a></p>
+</li>
+<li>
+<p>Sharknado.sol contract on gnosis mainnet:
+<a href="https://api.studio.thegraph.com/query/54895/sharknadograph3/v0.0.5">https://api.studio.thegraph.com/query/54895/sharknadograph3/v0.0.5</a></p>
+</li>
+<li>
+<p>SharkToken.sol contract on gnosis mainnet:
+<a href="https://api.studio.thegraph.com/query/54895/sharktokengraph/v0.0.1">https://api.studio.thegraph.com/query/54895/sharktokengraph/v0.0.1</a></p>
+</li>
+</ol>
+<p>BUIDLGUIDL:</p>
+<p>We used Scaffold-ETH2 it as a boiler plate to leverage the prebuilt components integrating with smart contracts via Hot Reload &#x26; integration with wallet providers.</p>
+<p>Thanks for making our life easier: <a href="https://sharknado.vercel.app/">https://sharknado.vercel.app/</a></p>
+<p>Interface:</p>
+<p>The entire design concept of Sharknado draws inspiration from the world of sharks and ocean waves.</p>
+<p>Brand Concept:
+In our brand vision, we have strived to infuse a contemporary energy with vibrant electric colors: “Navy Blue” and “Aquagreen”. “Otto Attack Wide” was the perfect matching font, because it is contrasting serif typeface featuring sharp angles reminiscent of shark teeth to create a visually captivating effect. This balanced design exudes an assertive and dynamic vibe, ideal for a such web3 projects.</p>
+<p>UX Mechanics:
+We have implemented an onboarding process to facilitate educational purposes, ensuring users can easily get acquainted with our product. Our gamification strategy on the success page aims to boost users’ engagement and involvement metrics, making the product experience a rewarding one. To enhance user Retention, we provide recommendations after users complete their flow. Progress bars are judiciously utilized whenever necessary to keep users informed and prevent any undue stress. We streamline and bundle transactions into cohesive steps to ensure users navigate the process without feeling overwhelmed or fatigued.</p>
+<p>We are not able to complete pixelperfect design with out Frontend part, so you can check the design flow in our team Figma
+You can check the clickable prototype Figma here
+And the Design itself in Figma here</p>
+<p>Business value of Interface for Sharknado:
+Interface provides onchain feed of happenings and Sharknado provides offchain opinions. We see this a match made in the ocean, given the value of such data COMBINED for web3 market research is many folds higher.</p>
+<h2 id="if-your-project-was-started-before-the-ethrome-hackathon-please-link-here-a-public-google-doc-describing-all-the-previous-iterations-in-details-make-sure-to-check-the-hackathon-rules-around-pre-existing-projects">If your project was started before the ETHRome hackathon, please link here a PUBLIC Google Doc describing all the previous iterations in details (make sure to check the hackathon rules around pre-existing projects)</h2>
+<p><a href="https://docs.google.com/document/d/1P82PdIE8cJaCSv3T3fJlwNCxeJ-FBTuPOeYXBvmK1UU/edit?usp=sharing">https://docs.google.com/document/d/1P82PdIE8cJaCSv3T3fJlwNCxeJ-FBTuPOeYXBvmK1UU/edit?usp=sharing</a></p> </article>  </div>  </main> <footer class="animate"> <div class="mx-auto max-w-screen-sm px-5">  <div class="relative"> <div class="absolute right-0 -top-20"> <button id="back-to-top" class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current rotate-90"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> <div class="text-sm">
+Back to top
+</div> </button> </div> </div> <div class="flex justify-between items-center"> <div>
+&copy; 2025 | Tobias Leinss </div> <div> <a href="/imprint" class="underline"> Imprint </a> </div> <div class="flex flex-wrap gap-1 items-center"> <button id="light-theme-button" aria-label="Light theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> <button id="dark-theme-button" aria-label="Dark theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> <button id="system-theme-button" aria-label="System theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect> <line x1="8" y1="21" x2="16" y2="21"></line> <line x1="12" y1="17" x2="12" y2="21"></line> </svg> </button> </div> </div>  </div> </footer> </body></html>
