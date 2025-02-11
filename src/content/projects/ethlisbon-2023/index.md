@@ -8,11 +8,11 @@ repoURL: "https://bit.ly/tallyrally-repo"
 
 ## Tally Rally
 
-![demo image](/public/images/projects/ethlisbon/tallyrally.png)
-![demo image](/public/images/projects/ethlisbon/tallyrally_1.png)
-![demo image](/public/images/projects/ethlisbon/tallyrally_2.png)
-![demo image](/public/images/projects/ethlisbon/tallyrally_3.png)
-![demo image](/public/images/projects/ethlisbon/tallyrally_4.png)
+![demo image](/images/projects/ethlisbon/tallyrally.png)
+![demo image](/images/projects/ethlisbon/tallyrally_1.png)
+![demo image](/images/projects/ethlisbon/tallyrally_2.png)
+![demo image](/images/projects/ethlisbon/tallyrally_3.png)
+![demo image](/images/projects/ethlisbon/tallyrally_4.png)
 
 TallyRally Get rewarded for your attention on TallyRally! Mint $MAYBE, race to win big—your private data earning.
 

@@ -13,11 +13,11 @@ repoURL: ""
   Your browser does not support the video tag.
 </video>
 
-![demo image](/public/images/projects/ethglobal-agentic-ethereum/etherguild.png)
-![demo image](/public/images/projects/ethglobal-agentic-ethereum/etherguild_1.png)
-![demo image](/public/images/projects/ethglobal-agentic-ethereum/etherguild_2.png)
-![demo image](/public/images/projects/ethglobal-agentic-ethereum/etherguild_3.png)
-![demo image](/public/images/projects/ethglobal-agentic-ethereum/etherguild_4.png)
+![demo image](/images/projects/ethglobal-agentic-ethereum/etherguild.png)
+![demo image](/images/projects/ethglobal-agentic-ethereum/etherguild_1.png)
+![demo image](/images/projects/ethglobal-agentic-ethereum/etherguild_2.png)
+![demo image](/images/projects/ethglobal-agentic-ethereum/etherguild_3.png)
+![demo image](/images/projects/ethglobal-agentic-ethereum/etherguild_4.png)
 
 ## Description
 
