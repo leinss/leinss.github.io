@@ -8,7 +8,7 @@ repoURL: "https://github.com/eth-berlin/DeadCaster"
 
 ## Deadcaster
 
-[![deadcaster demo image](/images/projects/ethberlin/deadcaster.png)](https://bit.ly/ethberlin_deadcaster)
+[![demo image](/images/projects/ethberlin/deadcaster.png)](https://bit.ly/ethberlin_deadcaster)
 
 ## The problem Deadcaster solves
 
