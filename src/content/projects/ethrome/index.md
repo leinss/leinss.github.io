@@ -8,12 +8,12 @@ repoURL: ""
 
 ## Sharknado
 
-![demo image](/public/images/projects/ethrome/sharknado.png)
-![demo image](/public/images/projects/ethrome/sharknado_1.png)
-![demo image](/public/images/projects/ethrome/sharknado_2.png)
-![demo image](/public/images/projects/ethrome/sharknado_3.png)
-![demo image](/public/images/projects/ethrome/sharknado_4.png)
-![demo image](/public/images/projects/ethrome/sharknado_5.png)
+![demo image](/images/projects/ethrome/sharknado.png)
+![demo image](/images/projects/ethrome/sharknado_1.png)
+![demo image](/images/projects/ethrome/sharknado_2.png)
+![demo image](/images/projects/ethrome/sharknado_3.png)
+![demo image](/images/projects/ethrome/sharknado_4.png)
+![demo image](/images/projects/ethrome/sharknado_5.png)
 
 Sharknado A platform where you can take surveys anonymously, authenticate your NFT ownership with zk proofs, and win cash prizes in a pseudo-annonomized & randomized bounty system.
 
