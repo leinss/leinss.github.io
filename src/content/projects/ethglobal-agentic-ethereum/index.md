@@ -1,6 +1,6 @@
 ---
 title: "EthGlobal Agentic Ethereum"
-description: "deadcaster A decentralized & secure Dead Human Switch for our secret's life insurance"
+description: "etherguild.xyz a community to fund ethereum based projects."
 date: "Feb 2025"
 demoURL: ""
 repoURL: ""
