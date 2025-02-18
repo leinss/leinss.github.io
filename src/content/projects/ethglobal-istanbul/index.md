@@ -1,5 +1,5 @@
 ---
-title: "EthGlobal Istanbul"
+title: "EthGlobal Istanbul Hackathon"
 description: "a solo staking protocol with sybil resistance and MEV smoothing"
 date: "Nov 2023"
 demoURL: "https://bit.ly/ethistanbul_grayskull_guardians"

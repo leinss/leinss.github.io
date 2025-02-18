@@ -1,5 +1,5 @@
 ---
-title: "EthLisbon"
+title: "EthLisbon Hackathon"
 description: "turn your attention into a gamified earning experience"
 date: "Nov 2023"
 demoURL: "https://bit.ly/ethlisbon_tallyrally"

@@ -31,6 +31,12 @@ export const PROJECTS: Metadata = {
     "A collection of my projects, with links to repositories and demos.",
 }
 
+export const PROJECTS_TO_FILTER: string[] = [
+  "EthLisbon Hackathon",
+  "Nearcon Lisbon Hackathon",
+  "EthMunich Hackathon",
+]
+
 export const EDUCATION: Metadata = {
   TITLE: "Education",
   DESCRIPTION: "Where I have studied.",

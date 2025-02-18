@@ -1,5 +1,5 @@
 ---
-title: "Nearcon Lisbon"
+title: "Nearcon Lisbon Hackathon"
 description: "ethereum attestation service empowering DAOs to standardize digital trust."
 date: "Nov 2023"
 demoURL: "https://bit.ly/nearcon_calimocho_attestation_service"

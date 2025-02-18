@@ -1,5 +1,5 @@
 ---
-title: "EthRome"
+title: "EthRome Hackathon"
 description: "a platform to take surveys anonymously via zk proofs"
 date: "Oct 2023"
 demoURL: "https://bit.ly/ethrome_sharknado"

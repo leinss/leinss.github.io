@@ -13,7 +13,7 @@ importers:
         version: 0.9.4(typescript@5.7.3)
       '@astrojs/mdx':
         specifier: ^4.0.8
-        version: 4.0.8(astro@5.2.5(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0))
+        version: 4.0.8(astro@5.3.0(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0))
       '@astrojs/rss':
         specifier: ^4.0.11
         version: 4.0.11
@@ -22,7 +22,7 @@ importers:
         version: 3.2.1
       '@astrojs/tailwind':
         specifier: ^6.0.0
-        version: 6.0.0(astro@5.2.5(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0))(tailwindcss@3.4.17)
+        version: 6.0.0(astro@5.3.0(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0))(tailwindcss@3.4.17)
       '@fontsource/inter':
         specifier: ^5.1.1
         version: 5.1.1
@@ -31,10 +31,10 @@ importers:
         version: 5.1.1
       '@sentry/astro':
         specifier: ^8.54.0
-        version: 8.54.0(astro@5.2.5(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0))
+        version: 8.54.0(astro@5.3.0(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0))
       '@spotlightjs/astro':
         specifier: ^2.4.3
-        version: 2.4.3(@sentry/astro@8.54.0(astro@5.2.5(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0)))(astro@5.2.5(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0))
+        version: 2.4.3(@sentry/astro@8.54.0(astro@5.3.0(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0)))(astro@5.3.0(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0))
       '@tailwindcss/typography':
         specifier: ^0.5.16
         version: 0.5.16(tailwindcss@3.4.17)
@@ -45,8 +45,8 @@ importers:
         specifier: ^7.18.0
         version: 7.18.0(eslint@8.57.1)(typescript@5.7.3)
       astro:
-        specifier: ^5.2.5
-        version: 5.2.5(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0)
+        specifier: ^5.3.0
+        version: 5.3.0(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -1299,8 +1299,8 @@ packages:
     resolution: {integrity: sha512-CGaBseNtunAV2DCpwBXqTKq8+9Tw65XZetMaC0FsMoZuLj0gxNIkbCf2QyKYScVrNOU7/ayfNdVw8ZCSHBiqCg==}
     engines: {node: ^14.18.0 || >=16.0.0}
 
-  astro@5.2.5:
-    resolution: {integrity: sha512-AYXyYkc+c5xbKTm48FyQA91y81nXyNPAaoyafR0LUugE4lAwuvIUcXDBfMzmbuP1lGRvsE33G2oypv6gbGaPFg==}
+  astro@5.3.0:
+    resolution: {integrity: sha512-e88l/Yk/6enR/ZDddLbqtM+oblBFk5mneNSmNesyVYGL/6Dj4UA67GPAZOk79VxT5dbLlclZSyyw/wlxN1aj3A==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -3749,12 +3749,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@4.0.8(astro@5.2.5(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0))':
+  '@astrojs/mdx@4.0.8(astro@5.3.0(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0))':
     dependencies:
       '@astrojs/markdown-remark': 6.1.0
       '@mdx-js/mdx': 3.1.0(acorn@8.14.0)
       acorn: 8.14.0
-      astro: 5.2.5(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0)
+      astro: 5.3.0(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0)
       es-module-lexer: 1.6.0
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.4
@@ -3783,9 +3783,9 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.24.1
 
-  '@astrojs/tailwind@6.0.0(astro@5.2.5(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0))(tailwindcss@3.4.17)':
+  '@astrojs/tailwind@6.0.0(astro@5.3.0(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0))(tailwindcss@3.4.17)':
     dependencies:
-      astro: 5.2.5(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0)
+      astro: 5.3.0(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0)
       autoprefixer: 10.4.20(postcss@8.5.1)
       postcss: 8.5.1
       postcss-load-config: 4.0.2(postcss@8.5.1)
@@ -4568,13 +4568,13 @@ snapshots:
       '@sentry-internal/browser-utils': 8.54.0
       '@sentry/core': 8.54.0
 
-  '@sentry/astro@8.54.0(astro@5.2.5(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0))':
+  '@sentry/astro@8.54.0(astro@5.3.0(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0))':
     dependencies:
       '@sentry/browser': 8.54.0
       '@sentry/core': 8.54.0
       '@sentry/node': 8.54.0
       '@sentry/vite-plugin': 2.23.0
-      astro: 5.2.5(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0)
+      astro: 5.3.0(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0)
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -4738,11 +4738,11 @@ snapshots:
 
   '@shikijs/vscode-textmate@10.0.1': {}
 
-  '@spotlightjs/astro@2.4.3(@sentry/astro@8.54.0(astro@5.2.5(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0)))(astro@5.2.5(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0))':
+  '@spotlightjs/astro@2.4.3(@sentry/astro@8.54.0(astro@5.3.0(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0)))(astro@5.3.0(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0))':
     dependencies:
-      '@sentry/astro': 8.54.0(astro@5.2.5(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0))
+      '@sentry/astro': 8.54.0(astro@5.3.0(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0))
       '@spotlightjs/spotlight': 2.10.3
-      astro: 5.2.5(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0)
+      astro: 5.3.0(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -5111,7 +5111,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro@5.2.5(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0):
+  astro@5.3.0(jiti@1.21.7)(rollup@4.34.6)(typescript@5.7.3)(yaml@2.7.0):
     dependencies:
       '@astrojs/compiler': 2.10.4
       '@astrojs/internal-helpers': 0.5.1

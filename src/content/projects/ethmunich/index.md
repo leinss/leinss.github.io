@@ -1,5 +1,5 @@
 ---
-title: "EthMunich"
+title: "EthMunich Hackathon"
 description: "ZKAI Ads Earn Privately! Your data, your way."
 date: "Aug 2023"
 demoURL: "https://bit.ly/ethmunich_zkai_ads"

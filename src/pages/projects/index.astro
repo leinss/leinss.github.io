@@ -1,12 +1,13 @@
 ---
-import { getCollection } from "astro:content"
-import PageLayout from "@layouts/PageLayout.astro"
-import Container from "@components/Container.astro"
 import ArrowCard from "@components/ArrowCard.astro"
-import { PROJECTS } from "@consts"
+import Container from "@components/Container.astro"
+import { PROJECTS, PROJECTS_TO_FILTER } from "@consts"
+import PageLayout from "@layouts/PageLayout.astro"
+import { getCollection } from "astro:content"
 
 const projects = (await getCollection("projects"))
   .filter((project) => !project.data.draft)
+  .filter((work) => !PROJECTS_TO_FILTER.includes(work.data.title))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "EthBerlin"
+title: "EthBerlin Hackathon"
 description: "deadcaster A decentralized & secure Dead Human Switch for our secret's life insurance"
 date: "May 2024"
 demoURL: "https://bit.ly/ethberlin_deadcaster"
