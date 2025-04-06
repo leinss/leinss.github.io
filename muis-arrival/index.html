@@ -1,0 +1,196 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: dark)"><link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: light)"><link rel="icon" type="image/x-icon" href="/favicon.ico"><meta name="generator" content="Astro v5.3.0"><!-- Sitemap --><link rel="sitemap" href="/sitemap-index.xml"><!-- Font preloads --><link rel="preload" href="/_astro/inter-latin-400-normal.BOOGhInR.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/inter-latin-600-normal.D273HNI0.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-400-normal.CvHVDnm4.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-600-normal.DUWh3m6k.woff2" as="font" type="font/woff2" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://leinss.xyz/muis-arrival/"><!-- Primary Meta Tags --><title>💝 Counting Down to Mui&#39;s Arrival 💝 | Tobias Leinss</title><meta name="title" content="💝 Counting Down to Mui's Arrival 💝 | Tobias Leinss"><meta name="description" content="Every second brings me closer to you..."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://leinss.xyz/muis-arrival/"><meta property="og:title" content="💝 Counting Down to Mui's Arrival 💝 | Tobias Leinss"><meta property="og:description" content="Every second brings me closer to you..."><meta property="og:image" content="https://leinss.xyz/nano.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://leinss.xyz/muis-arrival/"><meta property="twitter:title" content="💝 Counting Down to Mui's Arrival 💝 | Tobias Leinss"><meta property="twitter:description" content="Every second brings me closer to you..."><meta property="twitter:image" content="https://leinss.xyz/nano.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.BScVxmeO.js"></script><script defer src="https://umami.funnel.leinss.xyz/script.js" data-website-id="590d9a9a-3284-45a1-8efc-bc151ed4284d"></script><script type="module">window.addEventListener("load",()=>{typeof feather<"u"&&feather.replace()});document.addEventListener("astro:before-swap",e=>[...e.newDocument.head.querySelectorAll('link[as="font"]')].forEach(n=>n.remove()));</script><script type="module" src="/_astro/Head.astro_astro_type_script_index_1_lang.ErkTv1Ox.js"></script><script>
+  function init() {
+    preloadTheme();
+    onScroll();
+    animate();
+
+    const backToTop = document.getElementById("back-to-top");
+    backToTop?.addEventListener("click", (event) => scrollToTop(event));
+
+    const backToPrev = document.getElementById("back-to-prev");
+    backToPrev?.addEventListener("click", () => window.history.back());
+
+    const lightThemeButton = document.getElementById("light-theme-button");
+    lightThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "light");
+      toggleTheme(false);
+    });
+
+    const darkThemeButton = document.getElementById("dark-theme-button");
+    darkThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "dark");
+      toggleTheme(true);
+    });
+
+    const systemThemeButton = document.getElementById("system-theme-button");
+    systemThemeButton?.addEventListener("click", () => {
+      localStorage.setItem("theme", "system");
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    });
+
+    window.matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", event => {
+        if (localStorage.theme === "system") {
+          toggleTheme(event.matches);
+        }
+      }
+    );
+
+    document.addEventListener("scroll", onScroll);
+  }
+
+  function animate() {
+    const animateElements = document.querySelectorAll(".animate");
+
+    animateElements.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add("show");
+      }, index * 150);
+    });
+  }
+
+  function onScroll() {
+    if (window.scrollY > 0) {
+      document.documentElement.classList.add("scrolled");
+    } else {
+      document.documentElement.classList.remove("scrolled");
+    }
+  }
+
+  function scrollToTop(event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+function toggleTheme(dark) {
+    const css = document.createElement("style");
+
+    css.appendChild(
+      document.createTextNode(
+        `* {
+             -webkit-transition: none !important;
+             -moz-transition: none !important;
+             -o-transition: none !important;
+             -ms-transition: none !important;
+             transition: none !important;
+          }
+        `,
+      )
+    );
+
+    document.head.appendChild(css);
+
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+  window.getComputedStyle(css).opacity;
+    document.head.removeChild(css);
+  }
+
+  function preloadTheme() {
+    const userTheme = localStorage.theme;
+
+    if (userTheme === "light" || userTheme === "dark") {
+      toggleTheme(userTheme === "dark");
+    } else {
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => init());
+  document.addEventListener("astro:after-swap", () => init());
+  preloadTheme();
+</script><link rel="stylesheet" href="/_astro/_slug_.C2HDqwxh.css">
+<style>.countdown-box[data-astro-cid-zuggsm5l]{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));border-radius:.5rem;border-width:1px;--tw-border-opacity: 1;border-color:rgb(251 207 232 / var(--tw-border-opacity, 1));--tw-bg-opacity: 1;background-color:rgb(253 242 248 / var(--tw-bg-opacity, 1));padding:1rem;transition-property:transform;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.3s}.countdown-box[data-astro-cid-zuggsm5l]:hover{--tw-scale-x: 1.05;--tw-scale-y: 1.05;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.countdown-box[data-astro-cid-zuggsm5l]:is(.dark *){--tw-border-opacity: 1;border-color:rgb(157 23 77 / var(--tw-border-opacity, 1));background-color:#83184333}.hourglass[data-astro-cid-zuggsm5l]{width:50px;height:80px;position:relative;border:2px solid currentColor;border-radius:4px;animation:rotate 2s ease-in-out infinite}.top-sand[data-astro-cid-zuggsm5l],.bottom-sand[data-astro-cid-zuggsm5l]{position:absolute;left:50%;width:20px;height:20px;background:#f472b6;border-radius:50%;transform:translate(-50%)}.top-sand[data-astro-cid-zuggsm5l]{top:10px;animation:drip 2s linear infinite}.bottom-sand[data-astro-cid-zuggsm5l]{bottom:10px;animation:collect 2s linear infinite}@keyframes rotate{0%,90%{transform:rotate(0)}to{transform:rotate(180deg)}}@keyframes drip{0%{transform:translate(-50%) scale(1);opacity:1}to{transform:translate(-50%) translateY(30px) scale(0);opacity:0}}@keyframes collect{0%{transform:translate(-50%) scale(0);opacity:0}to{transform:translate(-50%) scale(1);opacity:1}}.love-note[data-astro-cid-zuggsm5l]{position:relative;overflow:hidden}.love-note[data-astro-cid-zuggsm5l]:before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent,transparent 40%,rgba(255,255,255,.1) 50%,transparent 60%,transparent);transform:rotate(45deg);animation:shine 3s infinite}@keyframes shine{0%{transform:translate(-100%) rotate(45deg)}to{transform:translate(100%) rotate(45deg)}}
+</style></head> <body> <header> <div class="mx-auto max-w-screen-sm px-5">  <div class="flex flex-wrap gap-y-2 justify-between"> <a href="/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out">  <div class="font-semibold">
+&lt;Tobias Leinss &sol;&gt;
+</div>  </a> <nav class="flex gap-1"> <a href="/now" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out"> now </a> <span> / </span> <!-- <Link href="/blog">
+          blog
+        </Link>
+        <span>
+          {`/`} --> <a href="/work" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out">  work  </a> <span> / </span> <a href="/projects" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out">  projects  </a> </nav> </div>  </div> </header> <main>  <div class="mx-auto max-w-screen-sm px-5">  <div class="space-y-16 py-10" data-astro-cid-zuggsm5l> <div class="animate text-center" data-astro-cid-zuggsm5l> <h1 class="text-3xl font-semibold text-black dark:text-white mb-4" data-astro-cid-zuggsm5l> 💝 Counting Down to Mui&#39;s Arrival 💝 </h1> <div class="flex justify-center mb-4" data-astro-cid-zuggsm5l> <img src="/images/muis-arrival.png" alt="Floating hearts" class="rounded-lg w-auto h-512 object-cover" data-astro-cid-zuggsm5l> </div> <p class="text-lg italic opacity-75" data-astro-cid-zuggsm5l>
+"In the arithmetic of love, one plus one equals everything, and two
+          minus one equals nothing."
+</p> </div> <div class="animate flex justify-center" data-astro-cid-zuggsm5l> <div class="grid grid-cols-4 gap-4 text-center" data-astro-cid-zuggsm5l> <div class="countdown-box" data-astro-cid-zuggsm5l> <div id="days" class="text-4xl font-bold text-pink-600 dark:text-pink-400" data-astro-cid-zuggsm5l>
+00
+</div> <div class="text-sm opacity-75" data-astro-cid-zuggsm5l>Days</div> </div> <div class="countdown-box" data-astro-cid-zuggsm5l> <div id="hours" class="text-4xl font-bold text-pink-600 dark:text-pink-400" data-astro-cid-zuggsm5l>
+00
+</div> <div class="text-sm opacity-75" data-astro-cid-zuggsm5l>Hours</div> </div> <div class="countdown-box" data-astro-cid-zuggsm5l> <div id="minutes" class="text-4xl font-bold text-pink-600 dark:text-pink-400" data-astro-cid-zuggsm5l>
+00
+</div> <div class="text-sm opacity-75" data-astro-cid-zuggsm5l>Minutes</div> </div> <div class="countdown-box" data-astro-cid-zuggsm5l> <div id="seconds" class="text-4xl font-bold text-pink-600 dark:text-pink-400" data-astro-cid-zuggsm5l>
+00
+</div> <div class="text-sm opacity-75" data-astro-cid-zuggsm5l>Seconds</div> </div> </div> </div> <div class="hourglass mx-auto" data-astro-cid-zuggsm5l> <div class="top-sand" data-astro-cid-zuggsm5l></div> <div class="bottom-sand" data-astro-cid-zuggsm5l></div> </div> <div class="animate space-y-8 max-w-2xl mx-auto text-center" data-astro-cid-zuggsm5l> <div class="space-y-4" data-astro-cid-zuggsm5l> <h2 class="text-2xl font-semibold text-black dark:text-white" data-astro-cid-zuggsm5l>
+Dear Mui
+</h2> <p class="italic text-lg" data-astro-cid-zuggsm5l>
+With every passing moment, my heart beats a little faster,<br data-astro-cid-zuggsm5l>
+Knowing soon I'll see your smile, feel your presence, share your laughter.<br data-astro-cid-zuggsm5l>
+Two weeks may seem so long, yet love makes time take flight,<br data-astro-cid-zuggsm5l>
+Until that precious moment when you're finally in my sight.
+</p> </div> <div class="flex justify-center my-8" data-astro-cid-zuggsm5l> <img src="https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif" alt="Love birds" class="rounded-lg shadow-lg w-64" data-astro-cid-zuggsm5l> </div> <div class="grid grid-cols-1 md:grid-cols-2 gap-6" data-astro-cid-zuggsm5l> <div class="love-note p-6 rounded-lg bg-pink-50 dark:bg-pink-900/20 transform hover:scale-105 transition-transform duration-300" data-astro-cid-zuggsm5l> <div class="flex justify-center mb-4" data-astro-cid-zuggsm5l> <img src="https://media.giphy.com/media/7y4Nc95399hsr24oYc/giphy.gif?cid=790b7611rrn6imb5ou0btq84mg16ed3k10n6l7copzp8q081&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Heart" class="w-12 h-12" data-astro-cid-zuggsm5l> </div> <h3 class="font-semibold mb-2" data-astro-cid-zuggsm5l>What I Love About You</h3> <p data-astro-cid-zuggsm5l>
+Your gentle soul, your radiant smile, the way you make everything
+              worthwhile...
+</p> </div> <div class="love-note p-6 rounded-lg bg-pink-50 dark:bg-pink-900/20 transform hover:scale-105 transition-transform duration-300" data-astro-cid-zuggsm5l> <div class="flex justify-center mb-4" data-astro-cid-zuggsm5l> <img src="https://media.giphy.com/media/c76IJLufpNwSULPk77/giphy.gif?cid=790b7611rrn6imb5ou0btq84mg16ed3k10n6l7copzp8q081&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Love" class="w-12 h-12" data-astro-cid-zuggsm5l> </div> <h3 class="font-semibold mb-2" data-astro-cid-zuggsm5l>Our Plans Together</h3> <p data-astro-cid-zuggsm5l>
+Adventures await, memories to create, stories to tell, moments to
+              celebrate...
+</p> </div> </div> <div class="mt-12 space-y-6" data-astro-cid-zuggsm5l> <h3 class="text-xl font-semibold text-pink-600 dark:text-pink-400" data-astro-cid-zuggsm5l>
+Moments We'll Share
+</h3> <div class="grid grid-cols-1 md:grid-cols-3 gap-4" data-astro-cid-zuggsm5l> <div class="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300" data-astro-cid-zuggsm5l> <img src="https://media.giphy.com/media/3o7TKoWXm3okO1kgHC/giphy.gif" alt="Sunset" class="w-full rounded-lg mb-2" data-astro-cid-zuggsm5l> <p class="text-sm" data-astro-cid-zuggsm5l>Watching sunsets together</p> </div> <div class="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300" data-astro-cid-zuggsm5l> <img src="https://media.giphy.com/media/Vn39qGcSPs3FKfVCCE/giphy.gif?cid=790b7611rxw3unp71ugp5s6kv753sbkmsj903on36e5qo3gx&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Adventure" class="w-full rounded-lg mb-2 h-[165px] w-auto mx-auto" data-astro-cid-zuggsm5l> <p class="text-sm" data-astro-cid-zuggsm5l>Going on adventures</p> </div> <div class="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300" data-astro-cid-zuggsm5l> <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnJuNmltYjVvdTBidHE4NG1nMTZlZDNrMTBuNmw3Y29wenA4cTA4MSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/l4Ki4biBSwhjyrS48/giphy.gif" alt="Love" class="w-full rounded-lg mb-2" data-astro-cid-zuggsm5l> <p class="text-sm" data-astro-cid-zuggsm5l>Creating memories</p> </div> </div> </div> <div class="mt-12 p-6 bg-gradient-to-r from-pink-100 to-purple-100 dark:from-pink-900/20 dark:to-purple-900/20 rounded-lg" data-astro-cid-zuggsm5l> <h3 class="text-xl font-semibold mb-4" data-astro-cid-zuggsm5l>
+Our Love Story Continues...
+</h3> <p class="text-lg" data-astro-cid-zuggsm5l>
+Every moment apart makes our reunion sweeter,<br data-astro-cid-zuggsm5l>
+Every second counted brings us closer together,<br data-astro-cid-zuggsm5l>
+Until finally, in two weeks time,<br data-astro-cid-zuggsm5l>
+Our hearts will beat as one again. ❤️
+</p> </div> </div> </div>  </div>  <script>(function(){const arrivalDate = 1744873200000;
+
+    function updateCountdown() {
+      const now = new Date().getTime()
+      const distance = arrivalDate - now
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24))
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      )
+      const minutes = Math.floor(
+        (distance % (1000 * 60 * 60)) / (1000 * 60 * 60)
+      )
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000)
+
+      document.getElementById("days").textContent = String(days).padStart(
+        2,
+        "0"
+      )
+      document.getElementById("hours").textContent = String(hours).padStart(
+        2,
+        "0"
+      )
+      document.getElementById("minutes").textContent = String(minutes).padStart(
+        2,
+        "0"
+      )
+      document.getElementById("seconds").textContent = String(seconds).padStart(
+        2,
+        "0"
+      )
+
+      if (distance < 0) {
+        clearInterval(countdownInterval)
+        document.getElementById("days").textContent = "00"
+        document.getElementById("hours").textContent = "00"
+        document.getElementById("minutes").textContent = "00"
+        document.getElementById("seconds").textContent = "00"
+      }
+    }
+
+    const countdownInterval = setInterval(updateCountdown, 1000)
+    updateCountdown()
+  })();</script>  </main> <footer class="animate"> <div class="mx-auto max-w-screen-sm px-5">  <div class="relative"> <div class="absolute right-0 -top-20"> <button id="back-to-top" class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current rotate-90"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> <div class="text-sm">
+Back to top
+</div> </button> </div> </div> <div class="flex justify-between items-center"> <div>
+&copy; 2025 | Tobias Leinss </div> <div> <a href="/imprint" class="underline"> Imprint </a> </div> <div class="flex flex-wrap gap-1 items-center"> <button id="light-theme-button" aria-label="Light theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> </button> <button id="dark-theme-button" aria-label="Dark theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> <button id="system-theme-button" aria-label="System theme" class="group size-8 flex items-center justify-center rounded-full"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"> <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect> <line x1="8" y1="21" x2="16" y2="21"></line> <line x1="12" y1="17" x2="12" y2="21"></line> </svg> </button> </div> </div>  </div> </footer> </body></html>
