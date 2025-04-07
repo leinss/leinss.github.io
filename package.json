@@ -14,18 +14,18 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/mdx": "^4.0.8",
+    "@astrojs/mdx": "^4.2.3",
     "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/tailwind": "^6.0.0",
-    "@fontsource/inter": "^5.1.1",
-    "@fontsource/lora": "^5.1.1",
-    "@sentry/astro": "^8.54.0",
+    "@astrojs/sitemap": "^3.3.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "@fontsource/inter": "^5.2.5",
+    "@fontsource/lora": "^5.2.5",
+    "@sentry/astro": "^8.55.0",
     "@spotlightjs/astro": "^2.4.3",
     "@tailwindcss/typography": "^0.5.16",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
-    "astro": "^5.3.0",
+    "astro": "^5.6.1",
     "clsx": "^2.1.1",
     "eslint": "^8.57.1",
     "eslint-plugin-astro": "^0.32.0",
@@ -33,6 +33,6 @@
     "sharp": "^0.33.5",
     "tailwind-merge": "^2.6.0",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.3"
+    "typescript": "^5.8.3"
   }
 }
