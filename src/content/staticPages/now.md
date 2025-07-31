@@ -11,6 +11,6 @@ I've also dedicated some time to get into AI Agent development (mostly with [lan
 I did this at [datalatte](https://datalatte.com) where we tried to help you find the right people to meet at any conference. The underlying tech is blockchain (ownership) and llms (data extraction / summarization / natural language interfaces for data queries).
 
 Ideally, now all my skills can be brought together. This is what I try to do with [Leinss Consulting](https://leinss-consulting.de), which I've recently launched. We're focusing on helping service companies leverage the power of generative AI.  
-We specialize in implementing AI chatbots and digital receptionists based on knowledge bases, along with custom AI solutions that help businesses automate and enhance their operations.
+<!-- We specialize in implementing AI chatbots and digital receptionists based on knowledge bases, along with custom AI solutions that help businesses automate and enhance their operations. -->
 
 I survived the winter in Thailand and am back now in Germany to drive my business forward.
