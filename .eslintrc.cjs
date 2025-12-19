@@ -20,6 +20,8 @@ module.exports = {
     "@typescript-eslint/no-unused-expressions": "off",
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/triple-slash-reference": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-empty-object-type": "off",
   },
   overrides: [
     {
