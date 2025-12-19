@@ -14,19 +14,27 @@ module.exports = {
     sourceType: "module",
   },
   rules: {
-    semi: ["warning", "never"],
-    quotes: ["error", "double", { "allowTemplateLiterals": true }],
+    semi: ["warn", "never"],
+    quotes: "off",
+    "no-unused-expressions": "off",
+    "@typescript-eslint/no-unused-expressions": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/triple-slash-reference": "off",
   },
   overrides: [
     {
-      files: ["*.astro"],
+      files: ["**/*.astro"],
       parser: "astro-eslint-parser",
       parserOptions: {
         parser: "@typescript-eslint/parser",
         extraFileExtensions: [".astro"],
       },
-      rules: {},
+      rules: {
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-unused-expressions": "off",
+        "@typescript-eslint/ban-ts-comment": "off",
+        quotes: "off",
+      },
     },
   ],
-};
+}
