@@ -9,6 +9,7 @@ import inter600 from "@fontsource/inter/files/inter-latin-600-normal.woff2";
 import lora400 from "@fontsource/lora/files/lora-latin-400-normal.woff2";
 import lora600 from "@fontsource/lora/files/lora-latin-600-normal.woff2";
 import { ClientRouter } from "astro:transitions";
+import { SITE } from "@consts";
 
 interface Props {
   title: string;
@@ -61,6 +62,9 @@ const { title, description, image = "/nano.png" } = Astro.props;
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
 <ClientRouter  />
+
+<!-- RSS Link -->
+<link rel="alternate" type="application/rss+xml" title={SITE.NAME} href={new URL("rss.xml", Astro.site)} />
 
 <script defer src="https://umami.funnel.leinss.xyz/script.js" data-website-id="bd21affd-05bc-4aeb-b312-c913f438ca90"></script>
 <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -116,7 +120,7 @@ const { title, description, image = "/nano.png" } = Astro.props;
 
     window.matchMedia("(prefers-color-scheme: dark)")
       .addEventListener("change", event => {
-        if (localStorage.theme === "system") {
+        if (localStorage.theme === "system" || !localStorage.theme) {
           toggleTheme(event.matches);
         }
       }
