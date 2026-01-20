@@ -1,0 +1,39 @@
+---
+import { SITE } from "@consts";
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  image?: string;
+  url: string;
+}
+
+const { title, description, date, image, url } = Astro.props;
+const authorUrl = Astro.site?.toString() || "";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description: description,
+  datePublished: date.toISOString(),
+  dateModified: date.toISOString(),
+  author: {
+    "@type": "Person",
+    name: SITE.NAME,
+    url: authorUrl,
+  },
+  publisher: {
+    "@type": "Person",
+    name: SITE.NAME,
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": url,
+  },
+  ...(image && { image: new URL(image, Astro.site).toString() }),
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

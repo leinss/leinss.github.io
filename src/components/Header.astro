@@ -5,37 +5,36 @@ import { SITE } from "@consts"
 import { getCollection } from "astro:content"
 
 const staticPages = (await getCollection("staticPages"))
-  .filter((page) => !page.data.draft)
+  .filter((page) => !page.data.draft && page.slug !== "/imprint")
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE)
 ---
 
 <header>
   <Container>
-    <div class="flex flex-wrap gap-y-2 justify-between">
+    <div class="flex flex-wrap gap-y-2 justify-between text-base">
       <Link href="/" underline={false}>
         <div class="font-semibold">
-          &lt;{SITE.NAME} &sol;&gt;
+          {SITE.NAME}
         </div>
       </Link>
-      <nav class="flex gap-1">
+      <nav class="flex gap-1 text-base">
         {
-          staticPages
-            .filter((page) => page.slug !== "/imprint")
-            .map((page) => (
-              <Link href={page.slug} underline={false}>
-                {page.data.title.toLocaleLowerCase()}
-              </Link>
-            ))
+          staticPages.map((page) => (
+            <Link href={page.slug} underline={false}>
+              {page.data.title.toLocaleLowerCase()}
+            </Link>
+          ))
         }
         <span>
           {`/`}
         </span>
-        <!-- <Link href="/blog">
+        <Link href="/blog" underline={false}>
           blog
         </Link>
         <span>
-          {`/`} -->
+          {`/`}
+        </span>
         <Link href="/work" underline={false}> work </Link>
         <span>
           {`/`}
