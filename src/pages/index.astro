@@ -8,11 +8,6 @@ import { dateRange } from "@lib/utils"
 import { Image } from "astro:assets"
 import { getCollection } from "astro:content"
 
-const blog = (await getCollection("blog"))
-  .filter((post) => !post.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE)
-
 const projects = (await getCollection("projects"))
   .filter((project) => !project.data.draft)
   .filter((project) => !PROJECTS_TO_FILTER.includes(project.data.title))
@@ -188,24 +183,6 @@ const education = await Promise.all(
             we can help transform your business for the digital age.
           </p>
         </article>
-      </section>
-
-      <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h2 class="font-semibold text-xl text-black dark:text-white">
-            Recent Posts
-          </h5>
-          <Link href="/blog">📝 See all posts </Link>
-        </div>
-        <ul class="animate-stagger flex flex-col gap-4">
-          {
-            blog.map((post) => (
-              <li>
-                <ArrowCard entry={post} />
-              </li>
-            ))
-          }
-        </ul>
       </section>
 
       <section class="animate space-y-6">
