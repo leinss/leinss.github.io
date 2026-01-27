@@ -78,12 +78,12 @@ Wissen, wann an Menschen übergeben wird:
 
 ## Echte Ergebnisse
 
-<!-- TODO: Metriken aus Implementierung hinzufügen -->
-
 Mit diesem Setup habe ich erreicht:
 - 60% der Anfragen automatisch gelöst
 - Durchschnittliche Antwortzeit unter 30 Sekunden
 - Kundenzufriedenheit über 4.5/5
+
+> **Fallstudie**: Sieh dir an, wie ich diese Architektur für einen E-Commerce-Händler mit 50.000 monatlichen Bestellungen implementiert habe: **[KI-Support-Triage Fallstudie](https://leinss-consulting.de/de/blog/fallstudie-support-triage/)** — enthält detaillierte Metriken, Kosten und Implementierungszeitplan.
 
 ## Erste Schritte
 

@@ -78,12 +78,12 @@ Know when to hand off to humans:
 
 ## Real Results
 
-<!-- TODO: Add metrics from implementation -->
-
 With this setup, I've seen:
 - 60% of inquiries resolved automatically
 - Average response time under 30 seconds
 - Customer satisfaction maintained above 4.5/5
+
+> **Case Study**: See how I implemented this exact architecture for an e-commerce retailer processing 50k monthly orders: **[AI Support Triage Case Study](https://leinss-consulting.de/en/blog/case-study-support-triage/)** — includes detailed metrics, costs, and implementation timeline.
 
 ## Getting Started
 
