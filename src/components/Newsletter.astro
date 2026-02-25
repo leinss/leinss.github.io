@@ -1,0 +1,70 @@
+---
+import Container from "@components/Container.astro"
+
+const LISTMONK_URL = "https://newsletter.funnel.leinss.xyz/api/public/subscription"
+const LIST_UUID = "3c2ca359-31c7-41b4-9ec3-e73e65f4e108"
+---
+
+<section class="animate py-8">
+  <Container>
+    <div class="rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6">
+      <h2 class="font-semibold text-black dark:text-white mb-1">Stay in the loop</h2>
+      <p class="text-sm mb-4">Get occasional updates on projects, tech insights, and new blog posts.</p>
+      <form id="newsletter-form" class="flex gap-2">
+        <label for="newsletter-email" class="sr-only">Email address</label>
+        <input
+          id="newsletter-email"
+          type="email"
+          placeholder="your@email.com"
+          required
+          class="flex-1 px-3 py-2 text-sm rounded-md border border-black/15 dark:border-white/15 bg-white dark:bg-slate-800 text-black dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40 focus:outline-none focus:ring-1 focus:ring-black/25 dark:focus:ring-white/25"
+        />
+        <button
+          id="newsletter-btn"
+          type="submit"
+          class="px-4 py-2 text-sm font-medium rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-black/80 dark:hover:bg-white/80 transition-colors whitespace-nowrap"
+        >
+          Subscribe
+        </button>
+      </form>
+      <p id="newsletter-status" class="text-sm mt-2 hidden" role="alert" aria-live="polite"></p>
+      <p class="text-xs mt-2 opacity-50">No spam. Unsubscribe anytime.</p>
+    </div>
+  </Container>
+</section>
+
+<script is:inline define:vars={{ LISTMONK_URL, LIST_UUID }}>
+  document.getElementById('newsletter-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('newsletter-email').value;
+    const btn = document.getElementById('newsletter-btn');
+    const status = document.getElementById('newsletter-status');
+
+    btn.disabled = true;
+    btn.textContent = 'Subscribing...';
+    status.classList.add('hidden');
+
+    try {
+      const res = await fetch(LISTMONK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, list_uuids: [LIST_UUID] })
+      });
+
+      if (res.ok || res.status === 409) {
+        status.textContent = 'Thanks! Check your email to confirm.';
+        status.className = 'text-sm mt-2 text-green-600 dark:text-green-400';
+        document.getElementById('newsletter-email').value = '';
+      } else {
+        throw new Error('Failed');
+      }
+    } catch (err) {
+      status.textContent = 'Something went wrong. Please try again.';
+      status.className = 'text-sm mt-2 text-red-600 dark:text-red-400';
+    }
+
+    status.classList.remove('hidden');
+    btn.disabled = false;
+    btn.textContent = 'Subscribe';
+  });
+</script>
