@@ -41,7 +41,19 @@ If you contact us via email, we store your email address and message content to 
 
 Legal basis: Art. 6 Abs. 1 lit. b DSGVO (pre-contractual measures) or Art. 6 Abs. 1 lit. f DSGVO (legitimate interest).
 
-### 2.4 Local Storage
+### 2.4 Newsletter
+
+If you subscribe to our newsletter, we store your **email address** on our self-hosted [Listmonk](https://listmonk.app) instance (hosted in Germany). We use double opt-in — you must confirm your subscription via email before receiving any newsletters.
+
+Data processed:
+- Email address
+- Subscription date and confirmation status
+
+Your email is used solely for sending occasional newsletter updates. We do not share it with third parties. You can unsubscribe at any time via the link in every email, or by contacting us at inquiry@leinss.xyz.
+
+Legal basis: Art. 6 Abs. 1 lit. a DSGVO (consent via double opt-in).
+
+### 2.5 Local Storage
 
 This website stores your theme preference (light/dark mode) in your browser's localStorage. This is purely functional, does not leave your device, and is not transmitted to any server.
 

@@ -2,6 +2,7 @@
 import Container from "@components/Container.astro"
 import { SITE } from "@consts"
 import BackToTop from "@components/BackToTop.astro"
+import Newsletter from "@components/Newsletter.astro"
 import { getCollection } from "astro:content"
 
 const staticPages = (await getCollection("staticPages"))
@@ -20,7 +21,8 @@ const privacy = staticPages.find((page) => page.slug === "/privacy")
         <BackToTop />
       </div>
     </div>
-    <div class="flex justify-between items-center">
+    <Newsletter />
+    <div class="flex justify-between items-center mt-6">
       <div>
         &copy; {new Date().getFullYear()}
         {`|`}
