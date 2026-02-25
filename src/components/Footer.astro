@@ -10,6 +10,7 @@ const staticPages = (await getCollection("staticPages"))
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE)
 
 const imprint = staticPages.find((page) => page.slug === "/imprint")
+const privacy = staticPages.find((page) => page.slug === "/privacy")
 ---
 
 <footer class="animate">
@@ -25,15 +26,22 @@ const imprint = staticPages.find((page) => page.slug === "/imprint")
         {`|`}
         {SITE.NAME}
       </div>
-      {
-        imprint && (
-          <div>
-            <a href={imprint?.slug} class="underline">
-              {imprint?.data.title}
+      <div class="flex gap-4">
+        {
+          privacy && (
+            <a href={privacy.slug} class="underline">
+              {privacy.data.title}
             </a>
-          </div>
-        )
-      }
+          )
+        }
+        {
+          imprint && (
+            <a href={imprint.slug} class="underline">
+              {imprint.data.title}
+            </a>
+          )
+        }
+      </div>
       <button
         id="theme-toggle"
         aria-label="Toggle theme"
