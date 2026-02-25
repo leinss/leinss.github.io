@@ -1,0 +1,148 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: dark)"><link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: light)"><link rel="icon" type="image/x-icon" href="/favicon.ico"><meta name="generator" content="Astro v5.16.11"><!-- Sitemap --><link rel="sitemap" href="/sitemap-index.xml"><!-- Font preloads --><link rel="preload" href="/_astro/ibm-plex-sans-latin-400-normal.CDDApCn2.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/ibm-plex-sans-latin-500-normal.6ng42L7E.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/ibm-plex-sans-latin-600-normal.CuJfVYMP.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-400-normal.DnxXpLNu.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-600-normal.B-3RcLOQ.woff2" as="font" type="font/woff2" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://leinss.xyz/privacy/"><!-- Primary Meta Tags --><title>Privacy Policy | Tobias Leinss</title><meta name="title" content="Privacy Policy | Tobias Leinss"><meta name="description" content="Privacy Policy for leinss.xyz"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://leinss.xyz/privacy/"><meta property="og:title" content="Privacy Policy | Tobias Leinss"><meta property="og:description" content="Privacy Policy for leinss.xyz"><meta property="og:image" content="https://leinss.xyz/nano.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://leinss.xyz/privacy/"><meta property="twitter:title" content="Privacy Policy | Tobias Leinss"><meta property="twitter:description" content="Privacy Policy for leinss.xyz"><meta property="twitter:image" content="https://leinss.xyz/nano.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"></script><!-- RSS Link --><link rel="alternate" type="application/rss+xml" title="Tobias Leinss" href="https://leinss.xyz/rss.xml"><!-- JSON-LD Structured Data --><script defer src="https://umami.funnel.leinss.xyz/script.js" data-website-id="bd21affd-05bc-4aeb-b312-c913f438ca90"></script><script type="module">window.addEventListener("load",()=>{typeof feather<"u"&&feather.replace()});document.addEventListener("astro:before-swap",e=>[...e.newDocument.head.querySelectorAll('link[as="font"]')].forEach(n=>n.remove()));</script><script type="module" src="/_astro/Head.astro_astro_type_script_index_1_lang.ErkTv1Ox.js"></script><script>
+  function init() {
+    preloadTheme();
+    onScroll();
+    animate();
+
+    // Initialize feather icons
+    if (typeof feather !== 'undefined') {
+      feather.replace();
+    }
+
+    const backToTop = document.getElementById("back-to-top");
+    backToTop?.addEventListener("click", (event) => scrollToTop(event));
+
+    const backToPrev = document.getElementById("back-to-prev");
+    backToPrev?.addEventListener("click", () => window.history.back());
+
+    // Single theme toggle button
+    const themeToggle = document.getElementById("theme-toggle");
+    themeToggle?.addEventListener("click", () => {
+      const isDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "light" : "dark");
+      toggleTheme(!isDark);
+    });
+
+    document.addEventListener("scroll", onScroll);
+  }
+
+  function animate() {
+    const animateElements = document.querySelectorAll(".animate");
+
+    animateElements.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add("show");
+      }, index * 150);
+    });
+  }
+
+  function onScroll() {
+    if (window.scrollY > 0) {
+      document.documentElement.classList.add("scrolled");
+    } else {
+      document.documentElement.classList.remove("scrolled");
+    }
+  }
+
+  function scrollToTop(event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+function toggleTheme(dark) {
+    const css = document.createElement("style");
+
+    css.appendChild(
+      document.createTextNode(
+        `* {
+             -webkit-transition: none !important;
+             -moz-transition: none !important;
+             -o-transition: none !important;
+             -ms-transition: none !important;
+             transition: none !important;
+          }
+        `,
+      )
+    );
+
+    document.head.appendChild(css);
+
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+  window.getComputedStyle(css).opacity;
+    document.head.removeChild(css);
+  }
+
+  function preloadTheme() {
+    const userTheme = localStorage.theme;
+
+    if (userTheme === "light" || userTheme === "dark") {
+      toggleTheme(userTheme === "dark");
+    } else {
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => init());
+  document.addEventListener("astro:after-swap", () => init());
+  preloadTheme();
+</script><link rel="stylesheet" href="/_astro/_slug_.EKGfKMXF.css"></head> <body> <header> <div class="mx-auto max-w-[840px] px-5">  <div class="flex flex-wrap gap-y-2 justify-between text-base"> <a href="/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out">  <div class="font-semibold"> Tobias Leinss </div>  </a> <nav class="flex gap-1 text-base"> <a href="/privacy" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out"> privacy policy </a><a href="/now" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out"> now </a> <span> / </span> <a href="/work" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out">  work  </a> <span> / </span> <a href="/projects" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 hover:dark:decoration-white/50 text-current hover:text-black hover:dark:text-white transition-colors duration-300 ease-in-out">  projects  </a> </nav> </div>  </div> </header> <main>  <div class="mx-auto max-w-[840px] px-5">  <div class="space-y-1 my-10"> <div class="animate flex items-center gap-1.5"> <div class="font-base text-sm"> <time datetime="2026-02-25T00:00:00.000Z"> Feb 25, 2026 </time> </div>
+&bull;
+<div class="font-base text-sm"> 3 min read </div> </div> <div class="animate text-2xl font-semibold text-black dark:text-white"> Privacy Policy </div> </div> <article class="animate"> <h2 id="1-controller">1. Controller</h2>
+<p>Tobias Leinss
+Blumenstr. 73
+73033 Göppingen
+Germany</p>
+<p>Email: <a href="mailto:inquiry@leinss.xyz">inquiry@leinss.xyz</a></p>
+<h2 id="2-data-processing-overview">2. Data Processing Overview</h2>
+<p>This website is a personal portfolio and blog. We process as little personal data as possible.</p>
+<h3 id="21-hosting">2.1 Hosting</h3>
+<p>This website is hosted on GitHub Pages. When you visit, GitHub may process your IP address and technical metadata as part of delivering the page. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub’s privacy statement</a> for details.</p>
+<p>Legal basis: Art. 6 Abs. 1 lit. f DSGVO (legitimate interest in providing the website).</p>
+<h3 id="22-analytics">2.2 Analytics</h3>
+<p>We use <strong>Umami Analytics</strong> (self-hosted) in cookieless mode. Umami does not use cookies, does not store your IP address, and does not collect personally identifiable information. It records:</p>
+<ul>
+<li>Page views (anonymized)</li>
+<li>Referrer URL</li>
+<li>Browser and device type</li>
+<li>Country (derived from IP, IP itself is not stored)</li>
+</ul>
+<p>Legal basis: Art. 6 Abs. 1 lit. f DSGVO (legitimate interest in understanding website usage).</p>
+<h3 id="23-contact-via-email">2.3 Contact via Email</h3>
+<p>If you contact us via email, we store your email address and message content to process your inquiry. This data is deleted once the inquiry is resolved, unless legal retention obligations apply.</p>
+<p>Legal basis: Art. 6 Abs. 1 lit. b DSGVO (pre-contractual measures) or Art. 6 Abs. 1 lit. f DSGVO (legitimate interest).</p>
+<h3 id="24-local-storage">2.4 Local Storage</h3>
+<p>This website stores your theme preference (light/dark mode) in your browser’s localStorage. This is purely functional, does not leave your device, and is not transmitted to any server.</p>
+<h2 id="3-cookies">3. Cookies</h2>
+<p>This website does <strong>not</strong> use cookies. No cookie consent banner is required (TDDDG / ePrivacy Directive).</p>
+<h2 id="4-no-data-sharing">4. No Data Sharing</h2>
+<p>We do not sell, trade, or share your personal data with third parties, except as required for hosting (GitHub Pages) and as described above.</p>
+<h2 id="5-your-rights-dsgvo">5. Your Rights (DSGVO)</h2>
+<p>You have the right to:</p>
+<ul>
+<li><strong>Access</strong> (Art. 15 DSGVO) — what data we store about you</li>
+<li><strong>Rectification</strong> (Art. 16 DSGVO) — correction of inaccurate data</li>
+<li><strong>Erasure</strong> (Art. 17 DSGVO) — deletion of your data</li>
+<li><strong>Restriction</strong> (Art. 18 DSGVO) — restriction of processing</li>
+<li><strong>Data portability</strong> (Art. 20 DSGVO) — export of your data</li>
+<li><strong>Objection</strong> (Art. 21 DSGVO) — object to processing based on legitimate interest</li>
+</ul>
+<p>Contact: <a href="mailto:inquiry@leinss.xyz">inquiry@leinss.xyz</a></p>
+<h2 id="6-right-to-complain">6. Right to Complain</h2>
+<p>You have the right to lodge a complaint with a data protection supervisory authority, e.g.:</p>
+<p><strong>Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg</strong>
+Lautenschlagerstraße 20
+70173 Stuttgart
+<a href="https://www.baden-wuerttemberg.datenschutz.de">https://www.baden-wuerttemberg.datenschutz.de</a></p>
+<h2 id="7-changes">7. Changes</h2>
+<p>We may update this privacy policy as needed. The current version is always available on this page.</p> </article>  </div>  </main> <footer class="animate"> <div class="mx-auto max-w-[840px] px-5">  <div class="relative"> <div class="absolute right-0 -top-20"> <button id="back-to-top" class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current rotate-90"> <line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line> <polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline> </svg> <div class="text-sm">
+Back to top
+</div> </button> </div> </div> <div class="flex justify-between items-center"> <div>
+&copy; 2026 | Tobias Leinss </div> <div class="flex gap-4"> <a href="/privacy" class="underline"> Privacy Policy </a> <a href="/imprint" class="underline"> Imprint </a> </div> <button id="theme-toggle" aria-label="Toggle theme" class="group size-9 flex items-center justify-center rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors"> <!-- Sun icon (shown in dark mode) --> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block"> <circle cx="12" cy="12" r="5"></circle> <line x1="12" y1="1" x2="12" y2="3"></line> <line x1="12" y1="21" x2="12" y2="23"></line> <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line> <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line> <line x1="1" y1="12" x2="3" y2="12"></line> <line x1="21" y1="12" x2="23" y2="12"></line> <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line> <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line> </svg> <!-- Moon icon (shown in light mode) --> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block dark:hidden"> <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path> </svg> </button> </div>  </div> </footer> </body></html>
