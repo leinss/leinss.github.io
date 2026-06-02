@@ -87,10 +87,14 @@
   }
 
   article {
-    @apply max-w-full prose prose-lg dark:prose-invert prose-img:mx-auto prose-img:my-auto;
+    @apply max-w-full prose prose-lg prose-img:mx-auto prose-img:my-auto;
     @apply prose-headings:font-semibold prose-p:font-serif;
-    @apply prose-headings:text-black dark:prose-headings:text-white;
+    @apply prose-headings:text-black;
   }
+}
+
+html.dark article {
+  @apply prose-invert;
 }
 
 @layer utilities {
