@@ -21,7 +21,7 @@ Both are **off by default** and only run when you add your own [OpenRouter](http
 ## Get it
 
 - **APK** — download from [GitHub Releases](https://github.com/leinss/TobiBoard/releases/latest).
-- **F-Droid (self-hosted repo)** — add `https://leinss.xyz/TobiBoard/repo` in F-Droid / Droid-ify / Neo Store for automatic updates *(activates with the next release)*.
+- **F-Droid** — a self-hosted F-Droid repository at `leinss.xyz/projects/TobiBoard/repo` is coming soon for automatic updates.
 - **IzzyOnDroid** — inclusion request submitted, in review.
 
 TobiBoard installs side-by-side with HeliBoard, so you can keep both.

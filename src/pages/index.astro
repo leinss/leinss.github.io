@@ -2,7 +2,7 @@
 import ArrowCard from "@components/ArrowCard.astro"
 import Container from "@components/Container.astro"
 import Link from "@components/Link.astro"
-import { HOME, PROJECTS_TO_FILTER, SITE, SOCIALS } from "@consts"
+import { HOME, HACKATHON_SLUGS, SITE, SOCIALS } from "@consts"
 import PageLayout from "@layouts/PageLayout.astro"
 import { dateRange } from "@lib/utils"
 import { Image } from "astro:assets"
@@ -10,7 +10,7 @@ import { getCollection } from "astro:content"
 
 const projects = (await getCollection("projects"))
   .filter((project) => !project.data.draft)
-  .filter((project) => !PROJECTS_TO_FILTER.includes(project.data.title))
+  .filter((project) => !HACKATHON_SLUGS.includes(project.slug))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE)
 

@@ -37,6 +37,28 @@ export const PROJECTS_TO_FILTER: string[] = [
   "EthMunich Hackathon",
 ]
 
+export const HACKATHONS: Metadata = {
+  TITLE: "Hackathons",
+  DESCRIPTION: "Hackathon projects and prototypes I have built.",
+}
+
+// Slugs in the `projects` collection that are hackathon entries — shown under
+// /hackathons and excluded from /projects and the homepage projects list.
+export const HACKATHON_SLUGS: string[] = [
+  "ethberlin",
+  "ethglobal-agentic-ethereum",
+  "ethglobal-fevm",
+  "ethglobal-istanbul",
+  "ethglobal-paris",
+  "ethlisbon-2023",
+  "ethmunich",
+  "ethprague",
+  "ethrome",
+  "ethzurich",
+  "farcaster-hackathons",
+  "nearcon",
+]
+
 export const EDUCATION: Metadata = {
   TITLE: "Education",
   DESCRIPTION: "Where I have studied.",
