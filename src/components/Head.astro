@@ -147,12 +147,12 @@ const isHomepage = Astro.url.pathname === "/" || Astro.url.pathname === "";
     const backToPrev = document.getElementById("back-to-prev");
     backToPrev?.addEventListener("click", () => window.history.back());
 
-    // Single theme toggle button
-    const themeToggle = document.getElementById("theme-toggle");
-    themeToggle?.addEventListener("click", () => {
-      const isDark = document.documentElement.classList.contains("dark");
-      localStorage.setItem("theme", isDark ? "light" : "dark");
-      toggleTheme(!isDark);
+    document.querySelectorAll("[data-theme-toggle]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.contains("dark");
+        localStorage.setItem("theme", isDark ? "light" : "dark");
+        toggleTheme(!isDark);
+      });
     });
 
     document.addEventListener("scroll", onScroll);
