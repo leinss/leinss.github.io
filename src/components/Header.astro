@@ -5,7 +5,7 @@ import { SITE } from "@consts"
 import { getCollection } from "astro:content"
 
 const staticPages = (await getCollection("staticPages"))
-  .filter((page) => !page.data.draft && page.slug !== "/imprint" && page.slug !== "/privacy")
+  .filter((page) => !page.data.draft && page.id !== "imprint" && page.id !== "privacy")
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE)
 ---
@@ -21,7 +21,7 @@ const staticPages = (await getCollection("staticPages"))
       <nav class="flex gap-1 text-base">
         {
           staticPages.map((page) => (
-            <Link href={page.slug} underline={false}>
+            <Link href={`/${page.id}`} underline={false}>
               {page.data.title.toLocaleLowerCase()}
             </Link>
           ))
@@ -34,6 +34,10 @@ const staticPages = (await getCollection("staticPages"))
           {`/`}
         </span>
         <Link href="/projects" underline={false}> projects </Link>
+        <span>
+          {`/`}
+        </span>
+        <Link href="/social" underline={false}> social </Link>
       </nav>
     </div>
   </Container>

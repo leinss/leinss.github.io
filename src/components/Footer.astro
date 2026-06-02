@@ -10,8 +10,8 @@ const staticPages = (await getCollection("staticPages"))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE)
 
-const imprint = staticPages.find((page) => page.slug === "/imprint")
-const privacy = staticPages.find((page) => page.slug === "/privacy")
+const imprint = staticPages.find((page) => page.id === "imprint")
+const privacy = staticPages.find((page) => page.id === "privacy")
 ---
 
 <footer class="animate">
@@ -31,14 +31,14 @@ const privacy = staticPages.find((page) => page.slug === "/privacy")
       <div class="flex gap-4">
         {
           privacy && (
-            <a href={privacy.slug} class="underline">
+            <a href={`/${privacy.id}`} class="underline">
               {privacy.data.title}
             </a>
           )
         }
         {
           imprint && (
-            <a href={imprint.slug} class="underline">
+            <a href={`/${imprint.id}`} class="underline">
               {imprint.data.title}
             </a>
           )

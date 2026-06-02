@@ -9,8 +9,8 @@ const all = (await getCollection("projects"))
   .filter((project) => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
 
-const projects = all.filter((project) => !HACKATHON_SLUGS.includes(project.slug))
-const hackathons = all.filter((project) => HACKATHON_SLUGS.includes(project.slug))
+const projects = all.filter((project) => !HACKATHON_SLUGS.includes(project.id))
+const hackathons = all.filter((project) => HACKATHON_SLUGS.includes(project.id))
 ---
 
 <PageLayout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>

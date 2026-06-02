@@ -13,29 +13,29 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.6",
-    "@astrojs/mdx": "^4.3.13",
-    "@astrojs/rss": "^4.0.15",
-    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/check": "^0.9.9",
+    "@astrojs/mdx": "^6.0.1",
+    "@astrojs/rss": "^4.0.18",
+    "@astrojs/sitemap": "^3.7.3",
     "@fontsource/ibm-plex-sans": "^5.2.8",
     "@fontsource/lora": "^5.2.8",
-    "@sentry/astro": "^10.35.0",
+    "@sentry/astro": "^10.55.0",
     "@spotlightjs/astro": "^3.2.6",
     "@tailwindcss/typography": "^0.5.19",
-    "@typescript-eslint/eslint-plugin": "^8.53.1",
-    "@typescript-eslint/parser": "^8.53.1",
-    "astro": "^5.16.11",
+    "@tailwindcss/vite": "^4.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.60.1",
+    "@typescript-eslint/parser": "^8.60.1",
+    "astro": "^6.4.2",
     "clsx": "^2.1.1",
-    "eslint": "^9.39.2",
-    "eslint-plugin-astro": "^1.5.0",
+    "eslint": "^10.4.1",
+    "eslint-plugin-astro": "^1.7.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "sharp": "^0.34.5",
-    "tailwind-merge": "^3.4.0",
-    "typescript": "^5.9.3"
+    "tailwind-merge": "^3.6.0",
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "@astrojs/tailwind": "^6.0.2",
-    "@eslint/eslintrc": "^3.3.3",
-    "tailwindcss": "^3.4.19"
+    "@eslint/eslintrc": "^3.3.5",
+    "tailwindcss": "^4.3.0"
   }
 }

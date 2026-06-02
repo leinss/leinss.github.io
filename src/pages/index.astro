@@ -6,7 +6,7 @@ import { HOME, PROJECTS_TO_FILTER, SITE, SOCIALS } from "@consts"
 import PageLayout from "@layouts/PageLayout.astro"
 import { dateRange } from "@lib/utils"
 import { Image } from "astro:assets"
-import { getCollection } from "astro:content"
+import { getCollection, render } from "astro:content"
 
 const projects = (await getCollection("projects"))
   .filter((project) => !project.data.draft)
@@ -24,7 +24,7 @@ const allwork = (await getCollection("work"))
 
 const work = await Promise.all(
   allwork.map(async (item) => {
-    const { Content } = await item.render()
+    const { Content } = await render(item)
     return { ...item, Content }
   })
 )
@@ -39,7 +39,7 @@ const alleducation = (await getCollection("education"))
 
 const education = await Promise.all(
   alleducation.map(async (item) => {
-    const { Content } = await item.render()
+    const { Content } = await render(item)
     return { ...item, Content }
   })
 )

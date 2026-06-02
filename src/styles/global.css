@@ -1,48 +1,96 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-html {
-  overflow-y: scroll;
-  color-scheme: light;
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans:
+    IBM Plex Sans, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif:
+    Lora, ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+
+  --text-xs: 0.875rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 1rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.125rem;
+  --text-base--line-height: 1.8;
+  --text-base--letter-spacing: 0.015em;
+  --text-lg: 1.25rem;
+  --text-lg--line-height: 1.6;
+  --text-xl: 1.5rem;
+  --text-xl--line-height: 1.5;
+  --text-2xl: 1.875rem;
+  --text-2xl--line-height: 1.4;
+  --text-3xl: 2.25rem;
+  --text-3xl--line-height: 1.35;
+  --text-4xl: 2.75rem;
+  --text-4xl--line-height: 1.25;
 }
 
-html.dark {
-  color-scheme: dark;
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
-html,
-body {
-  @apply size-full;
-}
+@layer utilities {
+  html {
+    overflow-y: scroll;
+    color-scheme: light;
+  }
 
-body {
-  @apply font-sans antialiased;
-  @apply flex flex-col;
-  @apply bg-stone-100 dark:bg-slate-900;
-  @apply text-black/75 dark:text-white/90;
-  @apply text-base;
-}
+  html.dark {
+    color-scheme: dark;
+  }
 
-header {
-  @apply fixed top-0 left-0 right-0 z-50 py-5;
-  @apply bg-stone-100/75 dark:bg-slate-900/75;
-  @apply backdrop-blur-sm saturate-200;
-  @apply text-base;
-}
+  html,
+  body {
+    @apply size-full;
+  }
 
-main {
-  @apply flex-1 py-32;
-}
+  body {
+    @apply font-sans antialiased;
+    @apply flex flex-col;
+    @apply bg-stone-100 dark:bg-slate-900;
+    @apply text-black/75 dark:text-white/90;
+    @apply text-base;
+  }
 
-footer {
-  @apply py-5 text-xs;
-}
+  header {
+    @apply fixed top-0 left-0 right-0 z-50 py-5;
+    @apply bg-stone-100/75 dark:bg-slate-900/75;
+    @apply backdrop-blur-xs saturate-200;
+    @apply text-base;
+  }
 
-article {
-  @apply max-w-full prose prose-lg dark:prose-invert prose-img:mx-auto prose-img:my-auto;
-  @apply prose-headings:font-semibold prose-p:font-serif;
-  @apply prose-headings:text-black prose-headings:dark:text-white;
+  main {
+    @apply flex-1 py-32;
+  }
+
+  footer {
+    @apply py-5 text-xs;
+  }
+
+  article {
+    @apply max-w-full prose prose-lg dark:prose-invert prose-img:mx-auto prose-img:my-auto;
+    @apply prose-headings:font-semibold prose-p:font-serif;
+    @apply prose-headings:text-black dark:prose-headings:text-white;
+  }
 }
 
 @layer utilities {
@@ -114,7 +162,7 @@ html.dark .card-hover:hover {
 
 /* Subtle gradient text for CTAs */
 .gradient-text {
-  @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+  @apply bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
 }
 
 html.dark .gradient-text {
@@ -128,7 +176,7 @@ html.dark .gradient-text {
 
 .link-hover::after {
   content: '';
-  @apply absolute bottom-0 left-0 w-0 h-[1px] bg-current;
+  @apply absolute bottom-0 left-0 w-0 h-px bg-current;
   @apply transition-all duration-300 ease-out;
 }
 

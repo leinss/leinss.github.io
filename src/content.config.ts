@@ -1,7 +1,15 @@
-import { defineCollection, z } from "astro:content"
+import { defineCollection } from "astro:content"
+import { glob } from "astro/loaders"
+import { z } from "astro/zod"
+
+// Strip trailing /index so directory-style entries (my-post/index.md) keep
+// the same URL-friendly id they had in legacy content collections.
+function stripIndex({ entry }: { entry: string }) {
+  return entry.replace(/\/index\.(md|mdx)$/, "").replace(/\.(md|mdx)$/, "")
+}
 
 const blog = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog", generateId: stripIndex }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -14,7 +22,7 @@ const blog = defineCollection({
 })
 
 const work = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/work", generateId: stripIndex }),
   schema: z.object({
     company: z.string(),
     role: z.string(),
@@ -24,7 +32,7 @@ const work = defineCollection({
 })
 
 const projects = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/projects", generateId: stripIndex }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -36,7 +44,7 @@ const projects = defineCollection({
 })
 
 const education = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/education", generateId: stripIndex }),
   schema: z.object({
     place: z.string(),
     role: z.string(),
@@ -46,7 +54,7 @@ const education = defineCollection({
 })
 
 const staticPages = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/staticPages", generateId: stripIndex }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
