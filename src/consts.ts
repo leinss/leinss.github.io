@@ -66,8 +66,8 @@ export const EDUCATION: Metadata = {
 
 export const SOCIALS: Socials = [
   {
-    NAME: "twitter",
-    HREF: "https://twitter.com/t_leinss",
+    NAME: "bluesky",
+    HREF: "https://bsky.app/profile/leinss.bsky.social",
   },
   {
     NAME: "github",
