@@ -37,8 +37,5 @@
     "@astrojs/tailwind": "^6.0.2",
     "@eslint/eslintrc": "^3.3.3",
     "tailwindcss": "^3.4.19"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": ["@sentry/cli", "esbuild", "sharp"]
   }
 }
