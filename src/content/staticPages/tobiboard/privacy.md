@@ -14,9 +14,9 @@ TobiBoard Android app.
 
 ## Controller
 
-Tobias Leinss
-Blumenstr. 73
-73033 Göppingen
+Tobias Leinss<br />
+Blumenstr. 73<br />
+73033 Göppingen<br />
 Germany
 
 Email: inquiry@leinss.xyz
