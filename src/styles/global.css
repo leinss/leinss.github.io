@@ -94,7 +94,7 @@
 }
 
 html.dark article {
-  @apply prose-invert;
+  @apply prose-invert prose-headings:text-white;
 }
 
 @layer utilities {
