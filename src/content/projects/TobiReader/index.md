@@ -5,7 +5,7 @@ description: "A private, local-first RSS/Atom reader with on-device read-aloud, 
 date: "Jun 2026"
 ---
 
-![TobiReader](/images/projects/TobiReader/icon.png)
+<img src="/images/projects/TobiReader/icon.png" alt="TobiReader app icon" width="160" height="160" style="border-radius: 32px; display: block; margin: 0.5rem auto 1.5rem;" />
 
 **TobiReader** is a fast, private feed reader that keeps your reading **on your device**. Feeds, articles, read state, stars and settings live locally — there's no account, no TobiReader server, no tracking, and no ads. It's built for people who want a calm, modern RSS/Atom reader that doesn't phone home.
 
