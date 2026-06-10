@@ -5,7 +5,9 @@ import { SITE } from "@consts"
 import { getCollection } from "astro:content"
 
 const staticPages = (await getCollection("staticPages"))
-  .filter((page) => !page.data.draft && page.id !== "imprint" && page.id !== "privacy")
+  // Nav shows only top-level curated pages. Nested pages (e.g. tobireader/privacy)
+  // are app docs linked from their project pages, not site navigation.
+  .filter((page) => !page.data.draft && !page.id.includes("/") && page.id !== "imprint" && page.id !== "privacy")
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE)
 ---
