@@ -13,15 +13,21 @@ import lora600 from "@fontsource/lora/files/lora-latin-600-normal.woff2";
 import { ClientRouter } from "astro:transitions";
 import { SITE, SOCIALS } from "@consts";
 
+interface Alternate {
+  hreflang: string;
+  href: string;
+}
+
 interface Props {
   title: string;
   description: string;
   image?: string;
+  alternates?: Alternate[];
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/nano.png" } = Astro.props;
+const { title, description, image = "/og.png", alternates } = Astro.props;
 
 // Find social links for schema
 const twitterSocial = SOCIALS.find(s => s.NAME === "twitter");
@@ -75,6 +81,11 @@ const isHomepage = Astro.url.pathname === "/" || Astro.url.pathname === "";
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
+
+<!-- hreflang alternates (translated content) -->
+{alternates?.map((alt) => (
+  <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+))}
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>

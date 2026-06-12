@@ -1,6 +1,7 @@
 import { defineCollection } from "astro:content"
 import { glob } from "astro/loaders"
 import { z } from "astro/zod"
+import { LANGS } from "@lib/blog"
 
 // Strip trailing /index so directory-style entries (my-post/index.md) keep
 // the same URL-friendly id they had in legacy content collections.
@@ -16,7 +17,7 @@ const blog = defineCollection({
     date: z.coerce.date(),
     draft: z.boolean().optional(),
     tags: z.array(z.string()).optional().default([]),
-    lang: z.enum(["en", "de"]).optional().default("en"),
+    lang: z.enum(LANGS).optional().default("en"),
     image: z.string().optional(),
   }),
 })

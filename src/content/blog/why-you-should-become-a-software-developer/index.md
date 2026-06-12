@@ -1,9 +1,9 @@
 ---
-title: "Getting started"
-description: ""
+title: "Why You Should Become a Software Engineer"
+description: "How learning to code became one of the highest-leverage decisions of my life — and how to go about it."
 date: "Mar 22 2024"
+lang: "en"
 ---
-# Why you should be a Software Engineer
 
 And how to go about it.
 

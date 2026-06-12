@@ -4,53 +4,122 @@ import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { BLOG } from "@consts";
+import { LANGS, type Lang, postsForLang } from "@lib/blog";
 
-const data = (await getCollection("blog"))
-  .filter(post => !post.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-  
+const all = (await getCollection("blog")).filter((post) => !post.data.draft);
+
+const LANG_LABELS: Record<Lang, string> = { en: "English", de: "Deutsch" };
+
 type Acc = {
   [year: string]: CollectionEntry<"blog">[];
-}
+};
 
-const posts = data.reduce((acc: Acc, post) => {
+// Group posts by year for a single language.
+function byYear(posts: CollectionEntry<"blog">[]) {
+  const grouped = posts.reduce((acc: Acc, post) => {
     const year = post.data.date.getFullYear().toString();
-    if (!acc[year]) {
-      acc[year] = [];
-    }
-    acc[year].push(post);
+    (acc[year] ??= []).push(post);
     return acc;
   }, {});
+  const years = Object.keys(grouped).sort((a, b) => parseInt(b) - parseInt(a));
+  return { grouped, years };
+}
 
-const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a)); 
+// Only render a language toggle for languages that actually have posts.
+const langsWithPosts = LANGS.filter(
+  (lang) => postsForLang(all, lang).length > 0
+);
+const defaultLang: Lang = langsWithPosts.includes("en")
+  ? "en"
+  : (langsWithPosts[0] ?? "en");
+
+const sections = langsWithPosts.map((lang) => ({
+  lang,
+  ...byYear(postsForLang(all, lang)),
+}));
 ---
 
 <PageLayout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
   <Container>
     <div class="space-y-10">
-      <div class="animate font-semibold text-black dark:text-white">
-        Blog
-      </div>
-      <div class="space-y-4">
-        {years.map(year => (
-          <section class="animate space-y-4">
-            <div class="font-semibold text-black dark:text-white">
-              {year}
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <div class="animate font-semibold text-black dark:text-white">Blog</div>
+        {
+          langsWithPosts.length > 1 && (
+            <div class="animate flex gap-1" role="group" aria-label="Language">
+              {langsWithPosts.map((lang) => (
+                <button
+                  type="button"
+                  data-lang-toggle={lang}
+                  aria-pressed={lang === defaultLang ? "true" : "false"}
+                  class="text-xs px-2 py-1 rounded-sm border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 aria-pressed:bg-black/10 dark:aria-pressed:bg-white/15 aria-pressed:font-semibold"
+                >
+                  {LANG_LABELS[lang]}
+                </button>
+              ))}
             </div>
-            <div>
-              <ul class="flex flex-col gap-4">
-                {
-                  posts[year].map((post) => (
-                    <li>
-                      <ArrowCard entry={post}/>
-                    </li>
-                  ))
-                }
-              </ul>
-            </div>
-          </section>
-        ))}
+          )
+        }
       </div>
+
+      {
+        sections.map(({ lang, grouped, years }) => (
+          <div
+            data-lang-panel={lang}
+            class="space-y-4"
+            hidden={lang !== defaultLang}
+          >
+            {years.map((year) => (
+              <section class="animate space-y-4">
+                <div class="font-semibold text-black dark:text-white">
+                  {year}
+                </div>
+                <div>
+                  <ul class="flex flex-col gap-4">
+                    {grouped[year].map((post) => (
+                      <li>
+                        <ArrowCard entry={post} />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </section>
+            ))}
+          </div>
+        ))
+      }
     </div>
   </Container>
 </PageLayout>
+
+<script>
+  function initBlogLang() {
+    const toggles = Array.from(
+      document.querySelectorAll<HTMLButtonElement>("[data-lang-toggle]")
+    );
+    if (!toggles.length) return;
+
+    const panels = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-lang-panel]")
+    );
+
+    const show = (lang: string) => {
+      panels.forEach((panel) => {
+        panel.hidden = panel.dataset.langPanel !== lang;
+      });
+      toggles.forEach((btn) => {
+        btn.setAttribute(
+          "aria-pressed",
+          btn.dataset.langToggle === lang ? "true" : "false"
+        );
+      });
+    };
+
+    toggles.forEach((btn) => {
+      btn.addEventListener("click", () => show(btn.dataset.langToggle!));
+    });
+  }
+
+  initBlogLang();
+  document.addEventListener("astro:after-swap", initBlogLang);
+</script>

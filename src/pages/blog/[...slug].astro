@@ -7,24 +7,34 @@ import { readingTime } from "@lib/utils";
 import BackToPrev from "@components/BackToPrev.astro";
 import SocialShare from "@components/SocialShare.astro";
 import BlogPostSchema from "@components/BlogPostSchema.astro";
+import { buildTranslationIndex, type Lang, pairKey, postLang } from "@lib/blog";
 
 export async function getStaticPaths() {
-  const posts = (await getCollection("blog"))
-    .filter(post => !post.data.draft)
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  const all = (await getCollection("blog")).filter(post => !post.data.draft);
+  const posts = all.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  const index = buildTranslationIndex(all);
   return posts.map((post) => ({
     params: { slug: post.id },
-    props: post,
+    props: { ...post, translations: index.get(pairKey(post)) ?? {} },
   }));
 }
-type Props = CollectionEntry<"blog">;
+type Props = CollectionEntry<"blog"> & {
+  translations: Partial<Record<Lang, CollectionEntry<"blog">>>;
+};
 
 const post = Astro.props;
 const { Content } = await render(post);
 const postUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const lang = postLang(post);
+
+// hreflang alternates: this post plus any translation in the other language.
+const alternates = Object.entries(post.translations).map(([hreflang, entry]) => ({
+  hreflang,
+  href: new URL(`/blog/${entry.id}/`, Astro.site).toString(),
+}));
 ---
 
-<PageLayout title={post.data.title} description={post.data.description} image={post.data.image}>
+<PageLayout title={post.data.title} description={post.data.description} image={post.data.image} lang={lang} alternates={alternates}>
   <BlogPostSchema
     title={post.data.title}
     description={post.data.description}
