@@ -10,7 +10,6 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap(),
-    // sentry(), spotlightjs()
   ],
   vite: {
     plugins: [tailwindcss()],

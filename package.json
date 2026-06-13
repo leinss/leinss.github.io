@@ -19,8 +19,6 @@
     "@astrojs/sitemap": "^3.7.3",
     "@fontsource/ibm-plex-sans": "^5.2.8",
     "@fontsource/lora": "^5.2.8",
-    "@sentry/astro": "^10.55.0",
-    "@spotlightjs/astro": "^3.2.6",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.3.0",
     "@typescript-eslint/eslint-plugin": "^8.60.1",

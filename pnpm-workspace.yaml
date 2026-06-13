@@ -3,6 +3,5 @@
 # The deploy workflow pins pnpm to 10.x, so this pnpm-10 setting name applies
 # (pnpm 11 renamed it to "allowBuilds").
 onlyBuiltDependencies:
-  - "@sentry/cli"
   - esbuild
   - sharp
