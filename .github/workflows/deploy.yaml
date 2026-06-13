@@ -11,17 +11,12 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    # Run the bundled JS actions (checkout/setup-node) on Node 24. This becomes
-    # the runner default on 2026-06-16; the opt-in silences the deprecation
-    # warning until then and can be removed afterwards.
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           # Build Node version — single-sourced from .node-version (also read by fnm).
           node-version-file: .node-version
