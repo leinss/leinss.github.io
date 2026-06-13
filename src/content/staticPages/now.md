@@ -1,17 +1,16 @@
 ---
 title: "Now"
 slug: "/now"
-description: "What am I up to?"
-date: "02/10/2025"
+description: "What I'm working on right now."
+date: "2026-06-13"
 ---
 
-For the past 1.5 years, I was getting into web3 by working mostly as devops and blockchain automation tooling engineer for [blockscape.network](https://blockscape.network) and diving there into Kubernetes, Go & Rust and doing a lot of hackathons in my spare time.
+I build **privacy-first apps** — tools that run on your own device, work without accounts or a backend, and only reach the cloud when *you* bring your own AI key. No telemetry, no data collection, no lock-in.
 
-I've also dedicated some time to get into AI Agent development (mostly with [langchain](https://www.langchain.com/) and libraries built on top of it) and learn about the basics of ZK (through [0xparc](https://learn.0xparc.org)) both of which will have massive impact in the following years imo.  
-I did this at [datalatte](https://datalatte.com) where we tried to help you find the right people to meet at any conference. The underlying tech is blockchain (ownership) and llms (data extraction / summarization / natural language interfaces for data queries).
+Most of my time right now goes into [TobiBoard](/projects/TobiBoard), an on-device Android keyboard with optional bring-your-own-key AI voice-to-text and text fixing, and [TobiReader](/projects/TobiReader), a local-first RSS reader with on-device read-aloud and optional AI summaries. Around those I keep a small portfolio of shipped apps — a cross-platform screen recorder, macOS voice-to-text and menu-bar utilities, and a few AI-assisted side projects. The full list is on the [projects page](/projects).
 
-Ideally, now all my skills can be brought together. This is what I try to do with [Leinss Consulting](https://leinss-consulting.de), which I've recently launched. We're focusing on helping service companies leverage the power of generative AI to automate and enhance their operations.
+The thread through all of it: see how far useful, AI-flavoured software can go while keeping user data on the user's own hardware. In practice that's two patterns — run models locally where it's feasible (on-device speech and text-to-speech, local LLMs via Ollama on the desktop), and bring-your-own-key for the rest, so anything cloud-bound uses *your* API key and endpoint, never mine.
 
-<!-- We specialize in implementing AI chatbots and digital receptionists based on knowledge bases, along with custom AI solutions that help businesses automate and enhance their operations. -->
+I also do some consulting through [Leinss Consulting](https://leinss-consulting.de), helping service companies put generative AI to work — but building my own apps is the main focus these days.
 
-I survived the winter in Thailand and am back now in Germany to drive my business forward.
+Based in Germany. This is a [now page](https://nownownow.com/about); last updated June 2026.
