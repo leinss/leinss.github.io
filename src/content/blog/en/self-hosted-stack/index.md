@@ -40,6 +40,15 @@ No, and I'd distrust anyone who said yes. If you're small and moving fast, rente
 
 The honest sequence is: start on rented tools, then own the load-bearing pieces as they start to matter. The catch, and it's the part that decides everything, is that owning them *well* isn't a weekend of following a tutorial. It's Docker, a reverse proxy, backups, auth, monitoring, updates. Done right, "self-hosted" means resilient and private. Done badly, it means a liability with your customers' data sitting on it. That gap is engineering, and it's exactly the part a low-code guide leaves out.
 
+## Each pick, compared in detail
+
+For the load-bearing tools I've written up the head-to-head against the SaaS they replace, each from running it in production:
+
+- [Umami vs Google Analytics](/blog/en/umami-vs-google-analytics/) — analytics with no cookie banner and no sampling
+- [Listmonk vs Mailchimp](/blog/en/listmonk-vs-mailchimp/) — owning the list instead of paying per contact
+- [Self-hosted Supabase vs Firebase](/blog/en/self-hosted-supabase-vs-firebase/) — Postgres you own vs proprietary NoSQL
+- [Postiz vs Buffer](/blog/en/postiz-vs-buffer/) — social scheduling without per-channel billing
+
 ## Want a setup like this for your business?
 
 Owned automation — built on your infrastructure, documented, handed to your team — is what I do for companies at [Leinss Consulting](https://leinss-consulting.de/en/). Start fast on proven tools; own the parts that matter. No lock-in, no rented black boxes.

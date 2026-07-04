@@ -40,6 +40,15 @@ Nein, und ich würde jedem misstrauen, der Ja sagt. Wenn Sie klein sind und schn
 
 Die ehrliche Reihenfolge lautet: mit gemieteten Tools starten, dann die tragenden Teile besitzen, sobald sie wichtig werden. Der Haken, und das ist der Teil, der über alles entscheidet, ist, dass sie *gut* zu besitzen kein Wochenende nach Anleitung ist. Es sind Docker, ein Reverse Proxy, Backups, Auth, Monitoring, Updates. Richtig gemacht heißt „selbst gehostet" belastbar und privat. Schlecht gemacht heißt es ein Risiko mit den Daten Ihrer Kunden darauf. Diese Lücke ist Engineering, und genau der Teil, den eine Low-Code-Anleitung weglässt.
 
+## Jede Wahl, im Detail verglichen
+
+Für die tragenden Tools habe ich das direkte Duell gegen die SaaS aufgeschrieben, die sie ersetzen, jeweils aus dem produktiven Betrieb:
+
+- [Umami vs Google Analytics](/blog/de/umami-vs-google-analytics/) — Analyse ohne Cookie-Banner und ohne Sampling
+- [Listmonk vs Mailchimp](/blog/de/listmonk-vs-mailchimp/) — die Liste besitzen, statt pro Kontakt zu zahlen
+- [Selbst gehostetes Supabase vs Firebase](/blog/de/self-hosted-supabase-vs-firebase/) — eigenes Postgres statt proprietärem NoSQL
+- [Postiz vs Buffer](/blog/de/postiz-vs-buffer/) — Social-Planung ohne Abrechnung pro Kanal
+
 ## So einen Aufbau für Ihr Unternehmen?
 
 Automatisierung, die Ihnen gehört — auf Ihrer Infrastruktur gebaut, dokumentiert, an Ihr Team übergeben — mache ich für Unternehmen bei [Leinss Consulting](https://leinss-consulting.de/de/). Schnell mit bewährten Tools starten; die Teile besitzen, die zählen. Kein Lock-in, keine gemieteten Blackboxes.
