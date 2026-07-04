@@ -1,14 +1,14 @@
 ---
 title: "Building Customer Service Bots with n8n"
 description: "A practical guide to creating intelligent support automation without writing code"
-date: "Jan 10 2025"
-tags: ["n8n", "chatbot", "automation", "customer-service"]
+date: "Jul 4 2026"
+tags: ["n8n", "chatbot", "customer-service", "own-your-stack"]
 lang: "en"
 ---
 
-> **Short answer:** Build a support bot in n8n by chaining five steps: a webhook receives the message, an LLM node classifies intent, a switch routes it, a database lookup adds customer context, and an LLM generates a sourced reply — escalating to a human on low confidence or negative sentiment. Visual workflow, no dedicated engineering team.
+> **Short answer:** Build a support bot in n8n by chaining five steps: a webhook receives the message, an LLM node classifies intent, a switch routes it, a database lookup adds customer context, and an LLM generates a sourced reply — escalating to a human on low confidence or negative sentiment. Visual workflow, no dedicated engineering team, running on infrastructure you own.
 
-Customer-service automation doesn't have to mean frustrating chatbots. Here's how I build support systems with n8n that actually help.
+Customer-service automation doesn't have to mean frustrating chatbots. Here's how I build support systems with n8n that actually help — and, because it runs on a [self-hosted n8n stack](/blog/en/self-hosted-stack/), your customer conversations never leave infrastructure you control.
 
 ## Why n8n for customer service?
 
@@ -76,4 +76,4 @@ Start small:
 
 ---
 
-*Want to see the full workflow? Drop me a message and I'll share the template.*
+Want the real thing rather than a description? The [support-triage case study](https://leinss-consulting.de/en/blog/case-study-support-triage/) ships the actual n8n workflow as a downloadable JSON — import it and read every node. If you'd rather have it built and handed over, that's what I do at [Leinss Consulting](https://leinss-consulting.de/en/).

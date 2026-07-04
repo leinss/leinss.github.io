@@ -1,80 +1,81 @@
 ---
-title: "My n8n Workflow Automation Stack"
-description: "The tools, patterns, and integrations I use for production automation workflows"
-date: "Dec 28 2024"
-tags: ["n8n", "tools", "automation", "workflow"]
+title: "My n8n automation stack"
+description: "The tools, patterns, and integrations I use to run production automation on infrastructure I own."
+date: "Jul 4 2026"
+tags: ["n8n", "self-hosting", "own-your-stack", "automation"]
 lang: "en"
 ---
 
-After building dozens of automation workflows, I've settled on a reliable stack. Here's what works.
+> **Short answer:** I run production automation on a self-hosted n8n instance backed by PostgreSQL and Redis, behind a reverse proxy with automatic HTTPS. A frontier cloud model (Claude) handles heavy analysis; a local model server (LM Studio) handles anything sensitive. Workflows are exported to Git as JSON, so the whole thing is versioned and portable — nothing is locked in a vendor.
 
-## Core Stack
+After building dozens of automation workflows, I've settled on a stack I trust. The through-line: I own the parts that matter. Here's what runs it, and why. (For the wider "why own instead of rent" argument, see [the self-hosted stack I run instead of paying for SaaS](/blog/en/self-hosted-stack/).)
 
-### n8n (Self-Hosted)
-The heart of everything. Self-hosted for:
-- Data privacy
-- No execution limits
-- Custom nodes
-- Full control
+## Core stack
+
+### n8n (self-hosted)
+The heart of everything. Self-hosted, on purpose:
+- Data stays on infrastructure I control
+- No execution limits or per-task billing
+- Custom nodes when I need them
+- Full control over versions and updates
 
 ### PostgreSQL
-For n8n's internal database and workflow data storage. Reliable and well-understood.
+n8n's internal database and workflow data storage. Reliable and well understood.
 
 ### Redis
 Queue management and caching for high-volume workflows.
 
-### Caddy
-Reverse proxy with automatic HTTPS. Simple config, just works.
+### Reverse proxy (automatic HTTPS)
+Terminates TLS in front of n8n. Certificates renew themselves; the config is small and boring, which is exactly what you want at this layer.
 
-## Essential Integrations
+## Integrations I reach for
 
 ### Communication
-- **Slack**: Team notifications, approvals
-- **Email (SMTP)**: Customer communication
-- **Telegram**: Personal alerts
+- **Slack** — team notifications, approvals
+- **Email (SMTP)** — customer communication
+- **Telegram** — personal alerts
 
-### Data Sources
-- **Airtable**: Quick databases and forms
-- **Google Sheets**: Collaborative data entry
-- **PostgreSQL**: Production data
+### Data sources
+- **Airtable** — quick databases and forms
+- **Google Sheets** — collaborative data entry
+- **PostgreSQL** — production data
 
-### AI/ML
-- **OpenAI**: GPT for text processing
-- **Anthropic**: Claude for analysis tasks
-- **Local LLMs**: Sensitive data processing
+### AI
+- **Anthropic (Claude)** — analysis and generation where a frontier model is worth the call
+- **LM Studio (local models)** — anything sensitive stays on my own hardware, with no data leaving the box
 
-### Business Tools
-- **Notion**: Documentation triggers
-- **Linear**: Issue management
-- **Stripe**: Payment webhooks
+### Business tools
+- **Notion** — documentation triggers
+- **Linear** — issue management
+- **Stripe** — payment webhooks
 
-## Workflow Patterns I Use
+## Workflow patterns I use
 
-### 1. Event-Driven Processing
+### 1. Event-driven processing
 ```
 Webhook → Validate → Process → Notify → Log
 ```
 
-### 2. Scheduled Batch Jobs
+### 2. Scheduled batch jobs
 ```
 Cron → Fetch Data → Transform → Sync → Report
 ```
 
-### 3. Human-in-the-Loop
+### 3. Human-in-the-loop
 ```
 Trigger → AI Draft → Human Review → Execute
 ```
 
-### 4. Error Recovery
+### 4. Error recovery
 ```
 Main Flow → Try/Catch → Retry Logic → Alert on Failure
 ```
 
-## Production Best Practices
+## Production practices
 
-### Version Control
+### Version control
 - Export workflows as JSON
-- Store in Git repository
+- Store in a Git repository
 - Tag releases
 
 ### Monitoring
@@ -87,26 +88,27 @@ Main Flow → Try/Catch → Retry Logic → Alert on Failure
 - Webhook authentication
 - Network isolation
 
-## Sample Architecture
-
+## Illustrative architecture
 
 ```
 Internet
     ↓
-Caddy (SSL)
+Reverse proxy (HTTPS)
     ↓
 n8n (Docker)
     ↓
 PostgreSQL + Redis
 ```
 
-## Lessons Learned
+How I actually expose and harden this is deliberately not on a public page, but the shape is this simple.
 
-1. **Start simple**: Add complexity only when needed
-2. **Log everything**: You'll thank yourself later
-3. **Test in staging**: Production bugs are expensive
-4. **Document workflows**: Future you needs context
+## Lessons learned
 
----
+1. **Start simple** — add complexity only when it earns its place
+2. **Log everything** — you'll thank yourself later
+3. **Test in staging** — production bugs are expensive
+4. **Document workflows** — future you needs the context
 
-*Running a similar stack? I'd love to compare notes on what's working for you.*
+## Want this, but owned?
+
+Standing up a stack like this — self-hosted, documented, and handed over so it isn't locked in one person's head — is the work I do at [Leinss Consulting](https://leinss-consulting.de/en/). If you run a similar setup, I'm always happy to compare notes.

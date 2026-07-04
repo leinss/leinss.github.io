@@ -1,54 +1,55 @@
 ---
-title: "Mein n8n Workflow-Automatisierungs-Stack"
-description: "Die Tools, Patterns und Integrationen die ich für Produktions-Automatisierungs-Workflows nutze"
-date: "Dec 28 2024"
-tags: ["n8n", "tools", "automatisierung", "workflow"]
+title: "Mein n8n-Automatisierungs-Stack"
+description: "Die Tools, Patterns und Integrationen, mit denen ich Produktions-Automatisierung auf Infrastruktur betreibe, die mir gehört."
+date: "Jul 4 2026"
+tags: ["n8n", "self-hosting", "own-your-stack", "automatisierung"]
 lang: "de"
 ---
 
-Nach dem Bau dutzender Automatisierungs-Workflows habe ich mich auf einen zuverlässigen Stack festgelegt. Das funktioniert.
+> **Kurz gesagt:** Ich betreibe Produktions-Automatisierung auf einer selbst gehosteten n8n-Instanz mit PostgreSQL und Redis, hinter einem Reverse Proxy mit automatischem HTTPS. Ein Frontier-Cloud-Modell (Claude) übernimmt die schwere Analyse; ein lokaler Modell-Server (LM Studio) alles Sensible. Workflows werden als JSON nach Git exportiert — das Ganze ist versioniert und portabel, nichts ist bei einem Anbieter eingeschlossen.
+
+Nach dem Bau dutzender Automatisierungs-Workflows habe ich mich auf einen Stack festgelegt, dem ich vertraue. Der rote Faden: Mir gehören die Teile, auf die es ankommt. Hier steht, was ihn betreibt, und warum. (Zum größeren Argument „besitzen statt mieten" siehe [der selbst gehostete Stack, den ich statt SaaS betreibe](/blog/de/self-hosted-stack/).)
 
 ## Kern-Stack
 
-### n8n (Self-Hosted)
-Das Herzstück von allem. Self-hosted für:
-- Datenschutz
-- Keine Ausführungslimits
-- Custom Nodes
-- Volle Kontrolle
+### n8n (selbst gehostet)
+Das Herzstück von allem. Selbst gehostet, mit Absicht:
+- Daten bleiben auf Infrastruktur, die ich kontrolliere
+- Keine Ausführungslimits, keine Abrechnung pro Aufgabe
+- Custom Nodes, wenn ich sie brauche
+- Volle Kontrolle über Versionen und Updates
 
 ### PostgreSQL
-Für n8ns interne Datenbank und Workflow-Datenspeicherung. Zuverlässig und gut verstanden.
+n8ns interne Datenbank und Workflow-Datenspeicherung. Zuverlässig und gut verstanden.
 
 ### Redis
-Queue-Management und Caching für High-Volume Workflows.
+Queue-Management und Caching für Workflows mit hohem Volumen.
 
-### Caddy
-Reverse Proxy mit automatischem HTTPS. Einfache Config, funktioniert einfach.
+### Reverse Proxy (automatisches HTTPS)
+Terminiert TLS vor n8n. Zertifikate erneuern sich selbst; die Config ist klein und langweilig — genau das, was man auf dieser Ebene will.
 
-## Essentielle Integrationen
+## Integrationen, zu denen ich greife
 
 ### Kommunikation
-- **Slack**: Team-Benachrichtigungen, Freigaben
-- **Email (SMTP)**: Kundenkommunikation
-- **Telegram**: Persönliche Alerts
+- **Slack** — Team-Benachrichtigungen, Freigaben
+- **E-Mail (SMTP)** — Kundenkommunikation
+- **Telegram** — persönliche Alerts
 
 ### Datenquellen
-- **Airtable**: Schnelle Datenbanken und Formulare
-- **Google Sheets**: Kollaborative Dateneingabe
-- **PostgreSQL**: Produktionsdaten
+- **Airtable** — schnelle Datenbanken und Formulare
+- **Google Sheets** — kollaborative Dateneingabe
+- **PostgreSQL** — Produktionsdaten
 
-### AI/ML
-- **OpenAI**: GPT für Textverarbeitung
-- **Anthropic**: Claude für Analyseaufgaben
-- **Lokale LLMs**: Verarbeitung sensibler Daten
+### KI
+- **Anthropic (Claude)** — Analyse und Generierung, wo sich ein Frontier-Modell lohnt
+- **LM Studio (lokale Modelle)** — alles Sensible bleibt auf meiner eigenen Hardware, keine Daten verlassen die Maschine
 
 ### Business-Tools
-- **Notion**: Dokumentations-Trigger
-- **Linear**: Issue-Management
-- **Stripe**: Payment-Webhooks
+- **Notion** — Dokumentations-Trigger
+- **Linear** — Issue-Management
+- **Stripe** — Payment-Webhooks
 
-## Workflow-Patterns die ich nutze
+## Workflow-Patterns, die ich nutze
 
 ### 1. Event-Driven Processing
 ```
@@ -70,11 +71,11 @@ Trigger → AI-Entwurf → Menschliche Prüfung → Ausführen
 Hauptfluss → Try/Catch → Retry-Logik → Alert bei Fehler
 ```
 
-## Best Practices für Produktion
+## Praktiken für den Produktivbetrieb
 
 ### Versionskontrolle
 - Workflows als JSON exportieren
-- In Git-Repository speichern
+- In einem Git-Repository speichern
 - Releases taggen
 
 ### Monitoring
@@ -87,26 +88,27 @@ Hauptfluss → Try/Catch → Retry-Logik → Alert bei Fehler
 - Webhook-Authentifizierung
 - Netzwerk-Isolation
 
-## Beispiel-Architektur
-
+## Illustrative Architektur
 
 ```
 Internet
     ↓
-Caddy (SSL)
+Reverse Proxy (HTTPS)
     ↓
 n8n (Docker)
     ↓
 PostgreSQL + Redis
 ```
 
+Wie ich das tatsächlich exponiere und härte, steht bewusst nicht auf einer öffentlichen Seite, aber die Form ist so einfach.
+
 ## Gelernte Lektionen
 
-1. **Einfach starten**: Komplexität nur bei Bedarf hinzufügen
-2. **Alles loggen**: Du wirst es dir später danken
-3. **In Staging testen**: Produktions-Bugs sind teuer
-4. **Workflows dokumentieren**: Dein zukünftiges Ich braucht Kontext
+1. **Einfach starten** — Komplexität nur dann, wenn sie sich verdient
+2. **Alles loggen** — Sie werden es sich später danken
+3. **In Staging testen** — Produktions-Bugs sind teuer
+4. **Workflows dokumentieren** — Ihr zukünftiges Ich braucht den Kontext
 
----
+## Sie wollen das, aber besessen?
 
-*Nutzt du einen ähnlichen Stack? Ich würde gerne vergleichen, was bei dir funktioniert.*
+Einen solchen Stack aufzusetzen — selbst gehostet, dokumentiert und übergeben, damit er nicht im Kopf einer Person eingeschlossen ist — ist die Arbeit, die ich bei [Leinss Consulting](https://leinss-consulting.de/de/) mache. Wenn Sie ein ähnliches Setup betreiben, tausche ich mich gerne aus.
