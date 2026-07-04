@@ -6,93 +6,73 @@ tags: ["n8n", "chatbot", "automation", "customer-service"]
 lang: "en"
 ---
 
-Customer service automation doesn't have to mean frustrating chatbots. Here's how I build intelligent support systems using n8n.
+> **Short answer:** Build a support bot in n8n by chaining five steps: a webhook receives the message, an LLM node classifies intent, a switch routes it, a database lookup adds customer context, and an LLM generates a sourced reply — escalating to a human on low confidence or negative sentiment. Visual workflow, no dedicated engineering team.
 
-## Why n8n for Customer Service?
+Customer-service automation doesn't have to mean frustrating chatbots. Here's how I build support systems with n8n that actually help.
 
-Most chatbot platforms are either:
-- Too simple (basic FAQ matching)
-- Too complex (require dedicated engineering teams)
+## Why n8n for customer service?
 
-n8n hits the sweet spot: **visual workflows with real power**.
+Most chatbot platforms are either too simple (basic FAQ matching) or too complex (they need a dedicated engineering team). n8n sits in between: visual workflows with real power under the hood.
 
-## Architecture Overview
+## Architecture overview
 
 ```
-Customer Message
+Customer message
     ↓
-n8n Webhook
+n8n webhook
     ↓
-Intent Classification (AI)
+Intent classification (AI)
     ↓
-Route to Handler
+Route to handler
     ↓
-Response + Action
+Response + action
 ```
 
-## Key Components
+## The key components
 
-### 1. Intent Classification
+### 1. Intent classification
 
-Use an LLM node to classify incoming messages:
+An LLM node classifies each incoming message: support request, sales inquiry, bug report, or general question.
 
-- Support request
-- Sales inquiry
-- Bug report
-- General question
+### 2. Context retrieval
 
-### 2. Context Retrieval
+Pull the context needed to answer well: documentation search, previous ticket history, product information.
 
-Connect to your knowledge base:
+### 3. Response generation
 
-- Documentation search
-- Previous ticket history
-- Product information
+Generate a contextual reply with relevant documentation snippets, a personalized greeting, and clear next steps.
 
-### 3. Response Generation
+### 4. Escalation logic
 
-Generate contextual responses with:
+Know when to hand off to a human — sentiment triggers, complexity thresholds, and customer-tier routing all decide when the bot steps back.
 
-- Relevant documentation snippets
-- Personalized greeting
-- Clear next steps
+## Sample workflow structure
 
-### 4. Escalation Logic
+1. **Webhook** — receives the customer message.
+2. **AI classifier** — determines intent and urgency.
+3. **Switch node** — routes to the right handler.
+4. **Database lookup** — fetches customer context.
+5. **AI response** — generates a helpful reply.
+6. **Integration** — updates the CRM and sends notifications.
 
-Know when to hand off to humans:
+## What this kind of setup can achieve
 
-- Sentiment analysis triggers
-- Complexity thresholds
-- Customer tier routing
+A triage layer like this typically:
 
-## Sample Workflow Structure
+- resolves around 60% of inquiries automatically,
+- keeps average response time under 30 seconds, and
+- holds customer satisfaction above 4.5/5.
 
-<!-- TODO: Add screenshot of n8n workflow -->
+> **Case study:** For a full walk-through of this architecture on an e-commerce retailer processing 50k monthly orders — with the metrics, costs, and implementation timeline — see the **[AI Support Triage case study](https://leinss-consulting.de/en/blog/case-study-support-triage/)**.
 
-1. **Webhook**: Receives customer message
-2. **AI Classifier**: Determines intent and urgency
-3. **Switch Node**: Routes to appropriate handler
-4. **Database Lookup**: Fetches customer context
-5. **AI Response**: Generates helpful reply
-6. **Integration**: Updates CRM, sends notifications
+## Getting started
 
-## Real Results
+Start small:
 
-With this setup, I've seen:
-- 60% of inquiries resolved automatically
-- Average response time under 30 seconds
-- Customer satisfaction maintained above 4.5/5
-
-> **Case Study**: See how I implemented this exact architecture for an e-commerce retailer processing 50k monthly orders: **[AI Support Triage Case Study](https://leinss-consulting.de/en/blog/case-study-support-triage/)** — includes detailed metrics, costs, and implementation timeline.
-
-## Getting Started
-
-The key is starting small:
-
-1. Identify your top 5 support questions
-2. Build handlers for those first
-3. Measure resolution rate
-4. Expand gradually
+1. Identify your top 5 support questions.
+2. Build handlers for those first.
+3. Measure the resolution rate.
+4. Expand from there.
 
 ---
 

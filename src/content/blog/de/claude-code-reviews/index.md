@@ -1,67 +1,61 @@
 ---
 title: "Code Reviews mit Claude AI automatisieren"
-description: "Wie ich Claude nutze, um Code-Review-Workflows zu optimieren und Probleme schneller zu finden"
+description: "Wie ich Claude nutze, um Code-Review-Workflows zu beschleunigen und Probleme schneller zu finden"
 date: "Jan 15 2025"
 tags: ["claude", "ai-automation", "code-review"]
 lang: "de"
 ---
 
-Code Reviews sind unverzichtbar, aber zeitaufwendig. So habe ich Claude AI in meinen Workflow integriert, um sie schneller und gründlicher zu machen.
+> **Kurz gesagt:** Ich lasse Claude als automatischen ersten Durchgang über jeden Pull Request laufen — er markiert Logikfehler, Sicherheitslücken, Performance-Anti-Patterns und fehlende Fehlerbehandlung, bevor ein Mensch draufschaut. Die Reviewer verbringen ihre Zeit dann mit Architektur und Business-Logik statt mit Kleinkram. Die KI macht den ersten Durchgang, die Urteile bleiben beim Menschen.
 
-## Das Problem mit traditionellen Code Reviews
+Code Reviews sind wichtig, kosten aber Zeit. So binde ich Claude in den Workflow ein, um sie schneller und gründlicher zu machen.
 
-Manuelle Code Reviews haben Grenzen:
+## Das Problem mit rein manuellen Code Reviews
 
-- **Zeitdruck** führt zu oberflächlichen Reviews
-- **Kognitive Ermüdung** lässt Fehler durchrutschen
-- **Inkonsistente Standards** im Team
-- **Context Switching** zwischen PRs ist teuer
+- **Zeitdruck** führt zu oberflächlichen Reviews.
+- **Kognitive Ermüdung** lässt Fehler durchrutschen.
+- **Inkonsistente Standards** schleichen sich zwischen Reviewern ein.
+- **Context Switching** zwischen PRs ist teuer.
 
-## Mein Claude-gestütztes Review-Setup
+## Was die KI übernimmt vs. was Menschen besser können
 
-Ich habe einen Workflow gebaut, der Claude zur Vorprüfung von PRs vor dem menschlichen Review nutzt.
-
-### Was Claude findet
-
-- Logikfehler und Edge Cases
-- Sicherheitslücken (Injection, XSS, etc.)
-- Performance-Anti-Patterns
-- Inkonsistente Namenskonventionen
-- Fehlende Fehlerbehandlung
-
-### Was Menschen besser können
-
-- Architekturentscheidungen
-- Validierung der Business-Logik
-- UX-Auswirkungen
-- Wissenstransfer im Team
+| Claude macht den ersten Durchgang | Mensch behält |
+|---|---|
+| Logikfehler und Edge Cases | Architekturentscheidungen |
+| Sicherheitslücken (Injection, XSS, …) | Validierung der Business-Logik |
+| Performance-Anti-Patterns | UX-Auswirkungen |
+| Inkonsistente Namensgebung | Wissenstransfer im Team |
+| Fehlende Fehlerbehandlung | Kontextabhängige Abwägungen |
 
 ## Der Workflow
 
 ```
-PR erstellt → Claude Analyse → Human Review → Merge
+PR erstellt → Claude-Analyse → Human Review → Merge
 ```
 
-1. **Automatischer Trigger**: PR-Erstellung startet Claude-Analyse
-2. **Strukturiertes Feedback**: Claude liefert kategorisierte Erkenntnisse
-3. **Human Focus**: Reviewer konzentrieren sich auf wichtige Entscheidungen
-4. **Schnellere Iteration**: Autoren beheben offensichtliche Probleme vor dem Review
+1. **Automatischer Trigger** — das Öffnen eines PR startet die Analyse.
+2. **Strukturiertes Feedback** — Claude liefert kategorisierte Erkenntnisse nach Schweregrad.
+3. **Human Focus** — Reviewer richten ihre Aufmerksamkeit auf die wichtigen Entscheidungen.
+4. **Schnellere Iteration** — Autoren beheben das Offensichtliche, bevor ein Mensch draufschaut.
 
-## Ergebnisse nach 3 Monaten
+## Was sich nach einigen Monaten geändert hat
 
-<!-- TODO: Füge spezifische Metriken aus deiner Erfahrung hinzu -->
-
-- Review-Zeit um ~40% reduziert
-- Weniger "Nitpick"-Kommentare in Reviews
-- Mehr Zeit für Architektur-Diskussionen
-- Bessere Konsistenz im Team
+- Deutlich weniger Review-Zeit — weniger Runden pro PR.
+- Viel weniger "Nitpick"-Kommentare im Thread.
+- Mehr Raum für echte Architektur-Diskussionen.
+- Konsistentere Standards im Team.
 
 ## Erste Schritte
 
-<!-- TODO: Setup-Anleitung oder Link zu deinem Tooling hinzufügen -->
+Viel braucht es nicht:
 
-Der Schlüssel ist, AI als **ersten Durchgang** zu behandeln, nicht als Ersatz. Menschliches Urteilsvermögen bleibt für kontextabhängige Entscheidungen essenziell.
+1. **Wo es läuft** — ein CI-Schritt bei `pull_request` (z. B. eine GitHub Action) oder ein lokaler Durchgang mit Claude Code, bevor du das Review anforderst.
+2. **Den Diff übergeben** — den PR-Diff plus eine kurze Checkliste: Sicherheit, Fehlerbehandlung, Namensgebung, Edge Cases.
+3. **Strukturierte Ausgabe verlangen** — kategorisierte Erkenntnisse mit Schweregrad, damit Autoren in Sekunden triagieren können.
+4. **Als Kommentar posten** — ein Bot-Kommentar am PR, klar als automatischer erster Durchgang gekennzeichnet.
+
+Der Schlüssel ist, KI als **ersten Durchgang** zu behandeln, nicht als Ersatz. Menschliches Urteilsvermögen bleibt für alles Kontextabhängige essenziell.
 
 ---
 
-*Welche Erfahrungen hast du mit AI-gestützten Code Reviews gemacht? Ich würde gerne hören, wie andere das angehen.*
+*Welche Erfahrungen hast du mit KI-gestützten Code Reviews gemacht? Ich würde gerne hören, wie andere das angehen.*

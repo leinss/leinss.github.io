@@ -89,7 +89,6 @@ Hauptfluss → Try/Catch → Retry-Logik → Alert bei Fehler
 
 ## Beispiel-Architektur
 
-<!-- TODO: Architektur-Diagramm hinzufügen -->
 
 ```
 Internet

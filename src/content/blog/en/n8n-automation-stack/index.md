@@ -89,7 +89,6 @@ Main Flow → Try/Catch → Retry Logic → Alert on Failure
 
 ## Sample Architecture
 
-<!-- TODO: Add architecture diagram -->
 
 ```
 Internet

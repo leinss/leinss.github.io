@@ -6,15 +6,13 @@ tags: ["n8n", "chatbot", "automation", "kundenservice"]
 lang: "de"
 ---
 
-Kundenservice-Automatisierung muss nicht frustrierende Chatbots bedeuten. So baue ich intelligente Support-Systeme mit n8n.
+> **Kurz gesagt:** Einen Support-Bot baust du in n8n in fünf Schritten: Ein Webhook empfängt die Nachricht, ein LLM-Node klassifiziert den Intent, ein Switch routet sie, eine Datenbankabfrage ergänzt den Kundenkontext, und ein LLM erzeugt eine belegte Antwort — mit Eskalation an einen Menschen bei geringer Konfidenz oder negativer Stimmung. Visueller Workflow, ohne eigenes Engineering-Team.
+
+Kundenservice-Automatisierung muss nicht frustrierende Chatbots bedeuten. So baue ich mit n8n Support-Systeme, die wirklich helfen.
 
 ## Warum n8n für Kundenservice?
 
-Die meisten Chatbot-Plattformen sind entweder:
-- Zu simpel (einfaches FAQ-Matching)
-- Zu komplex (erfordern dedizierte Engineering-Teams)
-
-n8n trifft den Sweet Spot: **visuelle Workflows mit echter Power**.
+Die meisten Chatbot-Plattformen sind entweder zu simpel (einfaches FAQ-Matching) oder zu komplex (sie brauchen ein eigenes Engineering-Team). n8n liegt dazwischen: visuelle Workflows mit echter Power darunter.
 
 ## Architektur-Überblick
 
@@ -30,69 +28,51 @@ Routing zum Handler
 Antwort + Aktion
 ```
 
-## Schlüsselkomponenten
+## Die Schlüsselkomponenten
 
 ### 1. Intent-Klassifizierung
 
-Nutze einen LLM-Node zur Klassifizierung eingehender Nachrichten:
-
-- Supportanfrage
-- Verkaufsanfrage
-- Bug-Report
-- Allgemeine Frage
+Ein LLM-Node klassifiziert jede eingehende Nachricht: Supportanfrage, Verkaufsanfrage, Bug-Report oder allgemeine Frage.
 
 ### 2. Kontext-Abruf
 
-Verbindung zur Wissensdatenbank:
-
-- Dokumentationssuche
-- Bisherige Ticket-Historie
-- Produktinformationen
+Hol den Kontext, um gut zu antworten: Dokumentationssuche, bisherige Ticket-Historie, Produktinformationen.
 
 ### 3. Antwortgenerierung
 
-Kontextbezogene Antworten mit:
-
-- Relevanten Dokumentations-Snippets
-- Personalisierter Begrüßung
-- Klaren nächsten Schritten
+Erzeuge eine kontextbezogene Antwort mit relevanten Dokumentations-Snippets, persönlicher Begrüßung und klaren nächsten Schritten.
 
 ### 4. Eskalationslogik
 
-Wissen, wann an Menschen übergeben wird:
-
-- Sentiment-Analyse-Trigger
-- Komplexitätsschwellen
-- Kundenpriorität-Routing
+Wissen, wann an einen Menschen übergeben wird — Sentiment-Trigger, Komplexitätsschwellen und Kundenpriorität entscheiden, wann der Bot zurücktritt.
 
 ## Beispiel-Workflow-Struktur
 
-<!-- TODO: Screenshot des n8n Workflows hinzufügen -->
+1. **Webhook** — empfängt die Kundennachricht.
+2. **AI-Classifier** — bestimmt Intent und Dringlichkeit.
+3. **Switch-Node** — routet zum passenden Handler.
+4. **Datenbankabfrage** — holt den Kundenkontext.
+5. **AI-Response** — generiert eine hilfreiche Antwort.
+6. **Integration** — aktualisiert das CRM und sendet Benachrichtigungen.
 
-1. **Webhook**: Empfängt Kundennachricht
-2. **AI Classifier**: Bestimmt Intent und Dringlichkeit
-3. **Switch Node**: Routet zum passenden Handler
-4. **Datenbankabfrage**: Holt Kundenkontext
-5. **AI Response**: Generiert hilfreiche Antwort
-6. **Integration**: Aktualisiert CRM, sendet Benachrichtigungen
+## Was ein solches Setup erreichen kann
 
-## Echte Ergebnisse
+Eine Triage-Schicht wie diese:
 
-Mit diesem Setup habe ich erreicht:
-- 60% der Anfragen automatisch gelöst
-- Durchschnittliche Antwortzeit unter 30 Sekunden
-- Kundenzufriedenheit über 4.5/5
+- löst rund 60% der Anfragen automatisch,
+- hält die durchschnittliche Antwortzeit unter 30 Sekunden und
+- die Kundenzufriedenheit über 4,5/5.
 
-> **Fallstudie**: Sieh dir an, wie ich diese Architektur für einen E-Commerce-Händler mit 50.000 monatlichen Bestellungen implementiert habe: **[KI-Support-Triage Fallstudie](https://leinss-consulting.de/de/blog/fallstudie-support-triage/)** — enthält detaillierte Metriken, Kosten und Implementierungszeitplan.
+> **Fallstudie:** Ein vollständiger Durchgang dieser Architektur bei einem E-Commerce-Händler mit 50.000 monatlichen Bestellungen — mit Metriken, Kosten und Zeitplan — findest du in der **[KI-Support-Triage Fallstudie](https://leinss-consulting.de/de/blog/fallstudie-support-triage/)**.
 
 ## Erste Schritte
 
-Der Schlüssel ist klein anfangen:
+Klein anfangen:
 
-1. Identifiziere deine Top-5-Support-Fragen
-2. Baue zuerst Handler dafür
-3. Miss die Lösungsrate
-4. Erweitere schrittweise
+1. Identifiziere deine Top-5-Support-Fragen.
+2. Baue zuerst Handler dafür.
+3. Miss die Lösungsrate.
+4. Erweitere von dort aus.
 
 ---
 
