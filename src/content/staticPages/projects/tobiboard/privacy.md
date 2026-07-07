@@ -1,6 +1,6 @@
 ---
 title: "TobiBoard — Privacy Policy"
-slug: "/tobiboard/privacy"
+slug: "/projects/tobiboard/privacy"
 description: "Privacy Policy for the TobiBoard Android keyboard"
 date: "06/10/2026"
 ---

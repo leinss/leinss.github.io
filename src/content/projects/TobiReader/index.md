@@ -22,7 +22,7 @@ date: "Jun 2026"
 
 Everything that matters happens locally. The only time data leaves your phone is through features **you** turn on and point at endpoints **you** control: fetching the feeds you subscribe to, syncing to your own FreshRSS server, or summarizing/translating with your own AI key. There is no backend, no telemetry, and no profiling.
 
-→ [Privacy policy](/tobireader/privacy)
+→ [Privacy policy](/projects/tobireader/privacy)
 
 ## Get it
 

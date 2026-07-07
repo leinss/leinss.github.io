@@ -1,6 +1,6 @@
 ---
 title: "kAIros — Privacy Policy"
-slug: "/kairos/privacy"
+slug: "/projects/kairos/privacy"
 description: "Privacy Policy for the kAIros goal-coaching app (iOS & Android)"
 date: "07/07/2026"
 ---

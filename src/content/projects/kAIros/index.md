@@ -14,4 +14,4 @@ date: "Feb 2026"
 - **Motivational messages** tailored to your goals and current progress.
 - **Your AI, your choice** — run the coach fully **on-device** (offline and private, no data leaves your phone), on your **own LAN server**, or in the cloud.
 
-Built with React Native and Expo. Your account and goals live on a self-hosted EU server; the on-device model runs locally via llama.cpp. → [Privacy policy](/kairos/privacy)
+Built with React Native and Expo. Your account and goals live on a self-hosted EU server; the on-device model runs locally via llama.cpp. → [Privacy policy](/projects/kairos/privacy)

@@ -1,6 +1,6 @@
 ---
 title: "TobiReader — Privacy Policy"
-slug: "/tobireader/privacy"
+slug: "/projects/tobireader/privacy"
 description: "Privacy Policy for the TobiReader Android app"
 date: "06/10/2026"
 ---
