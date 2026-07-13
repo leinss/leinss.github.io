@@ -8,7 +8,7 @@ date: "07/07/2026"
 _Last updated: 7 July 2026_
 
 This page explains how to delete your **kAIros** account and the data associated with it.
-kAIros is an AI goal-coaching app for Android, operated by the controller below.
+kAIros is an AI goal-coaching app for Android and the web, operated by the controller below.
 
 ## Controller
 

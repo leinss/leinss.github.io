@@ -1,13 +1,13 @@
 ---
 title: "kAIros — Privacy Policy"
 slug: "/projects/kairos/privacy"
-description: "Privacy Policy for the kAIros goal-coaching app (Android)"
+description: "Privacy Policy for the kAIros goal-coaching app (Android & Web)"
 date: "07/07/2026"
 ---
 
 _Last updated: 7 July 2026_
 
-kAIros is an AI goal-coaching app for Android. It helps you set goals, break them
+kAIros is an AI goal-coaching app for Android and the web. It helps you set goals, break them
 into steps, and stay on track with reminders and an AI coach. This policy explains exactly
 what data kAIros processes, where it goes, and the choices you have. It applies to the kAIros
 mobile app and the kAIros web app.
