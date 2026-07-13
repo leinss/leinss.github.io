@@ -64,7 +64,7 @@ export const APPS: App[] = [
     name: "kAIros",
     tagline:
       "AI-guided goal tracking — conversational goal setup, reminders and progress with local-LLM integration.",
-    platform: "iOS · Android",
+    platform: "Android",
     slug: "kAIros",
   },
   {
