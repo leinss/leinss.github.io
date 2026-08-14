@@ -4,25 +4,59 @@ on:
   push:
     branches:
       - release
+  pull_request:
+    branches:
+      - release
 
 permissions:
   contents: write
 
 jobs:
-  deploy:
+  # Runs on pull requests as well as pushes, so a broken build is caught in
+  # review rather than at deploy time. `pnpm build` is `astro check && astro
+  # build`, so type errors fail here too.
+  build:
+    name: Build & Check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
+
+      - name: Setup pnpm
+        # No version here: the action reads `packageManager` from package.json,
+        # so the pin lives in one place instead of two.
+        uses: pnpm/action-setup@v6
 
       - name: Install Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           # Build Node version — single-sourced from .node-version (also read by fnm).
           node-version-file: .node-version
+          cache: pnpm
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Astro
+        run: pnpm run build
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7
 
       - name: Setup pnpm
-        run: npm install -g pnpm@10.33.3
+        uses: pnpm/action-setup@v6
+
+      - name: Install Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          cache: pnpm
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
