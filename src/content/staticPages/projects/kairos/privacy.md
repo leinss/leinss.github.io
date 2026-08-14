@@ -1,5 +1,5 @@
 ---
-title: "kAIros — Privacy Policy"
+title: "kAIros, Privacy Policy"
 slug: "/projects/kairos/privacy"
 description: "Privacy Policy for the kAIros goal-coaching app (Android & Web)"
 date: "07/07/2026"
@@ -24,7 +24,7 @@ Email: inquiry@leinss.xyz
 ## The short version
 
 - kAIros is **self-hosted**. Your account and goal data live on a private server operated by
-  the controller in **Germany (EU)** — not on a third-party cloud, and never sold to anyone.
+  the controller in **Germany (EU)**: not on a third-party cloud, and never sold to anyone.
 - The **AI coach can run three ways, your choice**: fully **on-device** (nothing leaves your
   phone), on your **own LAN server**, or in the **cloud**. You pick this in Settings → AI Model.
 - Analytics are **anonymous** and self-hosted; there are **no advertising trackers** and we do
@@ -44,16 +44,16 @@ A copy is cached **locally on your device** so the app works offline.
 relevant text (e.g. a goal title and your progress) is sent to the AI backend **you have
 selected**:
 
-- **On-device** — the model runs locally on your phone via `llama.rn`. Your text is processed
+- **On-device**, the model runs locally on your phone via `llama.rn`. Your text is processed
   entirely on the device and **is not transmitted anywhere**.
-- **LAN server** — your text is sent to a server **you** run on your own network (e.g. LM Studio
+- **LAN server**. Your text is sent to a server **you** run on your own network (e.g. LM Studio
   or Ollama). It stays within your own infrastructure.
-- **Cloud** — your text is sent to the cloud model provider you configured (by default
+- **Cloud**. Your text is sent to the cloud model provider you configured (by default
   [Anthropic](https://www.anthropic.com/legal/privacy)) to produce the response. Once your text
   reaches that provider, **their** privacy policy applies.
 
 **Voice input (optional).** If you use voice features, the audio you record is transcribed by the
-speech provider you selected — this can be **on-device/offline** or a cloud transcription service.
+speech provider you selected. This can be **on-device/offline** or a cloud transcription service.
 Cloud transcription sends that specific audio clip to the provider; the local recording is removed
 after transcription.
 
@@ -98,7 +98,7 @@ required by your local law.
 ## Your rights (GDPR)
 
 You have the right to access, rectify, erase, restrict and port your personal data, and to object
-to processing (Arts. 15–21 GDPR). To exercise these rights, or to delete your account, contact
+to processing (Arts. 15-21 GDPR). To exercise these rights, or to delete your account, contact
 **inquiry@leinss.xyz**. The general [leinss.xyz privacy policy](/privacy) additionally describes
 your GDPR rights and the supervisory authority you may contact.
 

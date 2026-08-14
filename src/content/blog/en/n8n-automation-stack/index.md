@@ -6,7 +6,7 @@ tags: ["n8n", "self-hosting", "own-your-stack", "automation"]
 lang: "en"
 ---
 
-> **Short answer:** I run production automation on a self-hosted n8n instance backed by PostgreSQL and Redis, behind a reverse proxy with automatic HTTPS. A frontier cloud model (Claude) handles heavy analysis; a local model server (LM Studio) handles anything sensitive. Workflows are exported to Git as JSON, so the whole thing is versioned and portable — nothing is locked in a vendor.
+> **Short answer:** I run production automation on a self-hosted n8n instance backed by PostgreSQL and Redis, behind a reverse proxy with automatic HTTPS. A frontier cloud model (Claude) handles heavy analysis; a local model server (LM Studio) handles anything sensitive. Workflows are exported to Git as JSON, so the whole thing is versioned and portable. Nothing is locked in a vendor.
 
 After building dozens of automation workflows, I've settled on a stack I trust. The through-line: I own the parts that matter. Here's what runs it, and why. (For the wider "why own instead of rent" argument, see [the self-hosted stack I run instead of paying for SaaS](/blog/en/self-hosted-stack/).)
 
@@ -31,23 +31,23 @@ Terminates TLS in front of n8n. Certificates renew themselves; the config is sma
 ## Integrations I reach for
 
 ### Communication
-- **Slack** — team notifications, approvals
-- **Email (SMTP)** — customer communication
-- **Telegram** — personal alerts
+- **Slack**: team notifications, approvals
+- **Email (SMTP)**, customer communication
+- **Telegram**, personal alerts
 
 ### Data sources
-- **Airtable** — quick databases and forms
-- **Google Sheets** — collaborative data entry
-- **PostgreSQL** — production data
+- **Airtable**, quick databases and forms
+- **Google Sheets**, collaborative data entry
+- **PostgreSQL**, production data
 
 ### AI
-- **Anthropic (Claude)** — analysis and generation where a frontier model is worth the call
-- **LM Studio (local models)** — anything sensitive stays on my own hardware, with no data leaving the box
+- **Anthropic (Claude)**, analysis and generation where a frontier model is worth the call
+- **LM Studio (local models)**: anything sensitive stays on my own hardware, with no data leaving the box
 
 ### Business tools
-- **Notion** — documentation triggers
-- **Linear** — issue management
-- **Stripe** — payment webhooks
+- **Notion**, documentation triggers
+- **Linear**, issue management
+- **Stripe**, payment webhooks
 
 ## Workflow patterns I use
 
@@ -104,11 +104,11 @@ How I actually expose and harden this is deliberately not on a public page, but 
 
 ## Lessons learned
 
-1. **Start simple** — add complexity only when it earns its place
-2. **Log everything** — you'll thank yourself later
-3. **Test in staging** — production bugs are expensive
-4. **Document workflows** — future you needs the context
+1. **Start simple**, add complexity only when it earns its place
+2. **Log everything**, you'll thank yourself later
+3. **Test in staging**, production bugs are expensive
+4. **Document workflows**, future you needs the context
 
 ## Want this, but owned?
 
-Standing up a stack like this — self-hosted, documented, and handed over so it isn't locked in one person's head — is the work I do at [Leinss Consulting](https://leinss-consulting.de/en/). If you run a similar setup, I'm always happy to compare notes.
+Standing up a stack like this (self-hosted, documented, and handed over so it isn't locked in one person's head) is the work I do at [Leinss Consulting](https://leinss-consulting.de/en/). If you run a similar setup, I'm always happy to compare notes.

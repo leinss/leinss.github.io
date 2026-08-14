@@ -1,12 +1,12 @@
 ---
 title: "Listmonk vs Mailchimp: Der Newsletter, den ich stattdessen selbst hoste"
-description: "Wie sich Listmonk, ein selbst gehostetes Open-Source-Newsletter-Tool, gegen Mailchimp schlägt — bei Listenbesitz, Preis pro Kontakt, Zustellbarkeit und Kontrolle. Von jemandem, der es betreibt."
+description: "Wie sich Listmonk, ein selbst gehostetes Open-Source-Newsletter-Tool, gegen Mailchimp schlägt: bei Listenbesitz, Preis pro Kontakt, Zustellbarkeit und Kontrolle. Von jemandem, der es betreibt."
 date: "Jul 4 2026"
 tags: ["listmonk", "mailchimp", "self-hosting", "newsletter", "saas-alternatives", "own-your-stack"]
 lang: "de"
 ---
 
-> **Kurz gesagt:** Listmonk ist ein selbst gehosteter Newsletter-Manager; Mailchimp ist eine gehostete Plattform, die pro Kontakt abrechnet. Bei Listmonk liegt die Abonnentenliste in meiner eigenen Datenbank, der Versand kostet, was reine E-Mail-Zustellung kostet, und die Rechnung steigt nicht mit der Liste. Mailchimp ist schneller im Start und nimmt Ihnen die Zustellbarkeit ab. Mein Newsletter läuft auf Listmonk — hier ist der Handel, den ich eingegangen bin.
+> **Kurz gesagt:** Listmonk ist ein selbst gehosteter Newsletter-Manager; Mailchimp ist eine gehostete Plattform, die pro Kontakt abrechnet. Bei Listmonk liegt die Abonnentenliste in meiner eigenen Datenbank, der Versand kostet, was reine E-Mail-Zustellung kostet, und die Rechnung steigt nicht mit der Liste. Mailchimp ist schneller im Start und nimmt Ihnen die Zustellbarkeit ab. Mein Newsletter läuft auf Listmonk: hier ist der Handel, den ich eingegangen bin.
 
 Das Anmeldeformular unten auf dieser Seite schickt an Listmonk, auf Infrastruktur, die mir gehört. Ich miete meine Verteilerliste nicht. So schlägt es sich gegen die Standardwahl.
 
@@ -16,7 +16,7 @@ Das Anmeldeformular unten auf dieser Seite schickt an Listmonk, auf Infrastruktu
 | --- | --- | --- |
 | Quelle | Offen (AGPL-3.0) | Geschlossen (Intuit) |
 | Wem die Liste gehört | Mir, in eigener Datenbank | Mailchimps Plattform |
-| Preismodell | Pauschal — Sie zahlen den Server | Pro Kontakt, steigt mit der Liste |
+| Preismodell | Pauschal: Sie zahlen den Server | Pro Kontakt, steigt mit der Liste |
 | Versand | Eigener SMTP- / SES-Anbieter | Gebündelt, für Sie erledigt |
 | Zustellbarkeit | Selbst einzurichten (SPF, DKIM) | Für Sie übernommen |
 | Datenstandort | Mein Server, in der EU | Mailchimps Cloud (USA) |

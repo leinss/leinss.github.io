@@ -14,7 +14,7 @@ repoURL: "https://github.com/mpallares/tally-rally"
 ![demo image](/images/projects/ethlisbon/tallyrally_3.png)
 ![demo image](/images/projects/ethlisbon/tallyrally_4.png)
 
-TallyRally Get rewarded for your attention on TallyRally! Mint $MAYBE, race to win big—your private data earning.
+TallyRally Get rewarded for your attention on TallyRally! Mint $MAYBE, race to win big, your private data earning.
 
 ## VIDEO DEMO (5 min max) OR PRESENTATION (10 slides max)
 

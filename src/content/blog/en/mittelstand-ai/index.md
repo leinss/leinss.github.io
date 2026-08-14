@@ -1,12 +1,12 @@
 ---
 title: "Why the Mittelstand should own its AI, not rent it"
-description: "A builder's take: mid-sized German firms have the one thing that makes AI worth owning — proprietary domain knowledge. Here's why I'd self-host it, not rent it."
+description: "A builder's take: mid-sized German firms have the one thing that makes AI worth owning, proprietary domain knowledge. Here's why I'd self-host it, not rent it."
 date: "Jul 4 2026"
 tags: ["ai", "mittelstand", "own-your-stack", "self-hosting"]
 lang: "en"
 ---
 
-> **Short answer:** The German Mittelstand's edge is decades of proprietary domain knowledge. Generic AI is a commodity; AI wired into *your* knowledge is a moat — but only if you own the system that holds it. Rent it as per-seat SaaS and you hand a vendor both your data and your independence. My advice: start on rented tools to learn fast, then move the parts that matter onto infrastructure you control.
+> **Short answer:** The German Mittelstand's edge is decades of proprietary domain knowledge. Generic AI is a commodity; AI wired into *your* knowledge is a moat, but only if you own the system that holds it. Rent it as per-seat SaaS and you hand a vendor both your data and your independence. My advice: start on rented tools to learn fast, then move the parts that matter onto infrastructure you control.
 
 I build automation for a living, and most of it runs on hardware and software I own. So when people ask how a mid-sized German company should approach AI, my answer isn't "buy this tool." It's "decide early what you're willing to rent and what you need to own."
 
@@ -19,15 +19,15 @@ Everyone can reach the same models now. What most companies don't have is decade
 - **People** who understand the work well enough to check the machine
 - **The stability** to invest past the next quarter
 
-Generic AI is a commodity — everyone rents the same thing. AI trained and wired into your specific knowledge is the part competitors can't copy. That is the asset, and you don't rent an asset like that. You own it.
+Generic AI is a commodity, everyone rents the same thing. AI trained and wired into your specific knowledge is the part competitors can't copy. That is the asset, and you don't rent an asset like that. You own it.
 
 ## Where I'd actually start
 
 Not with a "transformation programme." With one painful, repetitive process:
 
-- **Document work** — invoices, contracts, quality docs
-- **Customer replies** — technical questions, order status, multilingual support
-- **Internal knowledge** — search over the documents your experts already wrote
+- **Document work**: invoices, contracts, quality docs
+- **Customer replies**: technical questions, order status, multilingual support
+- **Internal knowledge**, search over the documents your experts already wrote
 
 Automate one of these end to end, measure it, and you have learned more than any strategy deck will teach you.
 
@@ -42,7 +42,7 @@ Here is the part most AI advice skips. Every tool you add is either rented or ow
 | Lock-in | Leaving means rebuilding | The workflow is a file you keep |
 | The knowledge | Encoded in someone else's product | Encoded in a system you own |
 
-For the knowledge that sets you apart, renting it back as a subscription is the wrong trade. A self-hosted automation engine like n8n runs the same workflows on a server you control, at fixed cost, with your data staying yours. I run my own stack this way — [here is the exact setup](/blog/en/self-hosted-stack/).
+For the knowledge that sets you apart, renting it back as a subscription is the wrong trade. A self-hosted automation engine like n8n runs the same workflows on a server you control, at fixed cost, with your data staying yours. I run my own stack this way, [here is the exact setup](/blog/en/self-hosted-stack/).
 
 ## I'm not saying self-host everything
 

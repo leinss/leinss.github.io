@@ -20,7 +20,7 @@ Email: inquiry@leinss.xyz
 
 **Tax Information**
 Steuernummer: [redacted]
-Kleinunternehmer gem. § 19 UStG (Small business exemption — no VAT charged)
+Kleinunternehmer gem. § 19 UStG (Small business exemption, no VAT charged)
 
 ## Responsible for Content
 

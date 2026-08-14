@@ -1,7 +1,7 @@
 ---
-title: "TobiSound — Delete Your Data"
+title: "TobiSound, Delete Your Data"
 slug: "/projects/tobisound/delete"
-description: "How to delete your TobiSound data — everything is stored on your own device"
+description: "How to delete your TobiSound data. Everything is stored on your own device"
 date: "07/16/2026"
 ---
 
@@ -23,7 +23,7 @@ Email: inquiry@leinss.xyz
 ## There is no account to delete
 
 TobiSound has **no account and no backend of ours**. We operate no servers and
-store none of your data — everything the app keeps (your server connections and
+store none of your data, everything the app keeps (your server connections and
 credentials, library cache, downloads, artwork, and settings) lives **only on
 your own device**.
 
@@ -43,8 +43,8 @@ receive or store any of it.
 
 ## Data held by third-party services
 
-If you enabled optional features that talk to services **you** configured — such
-as scrobbling to **ListenBrainz** or **Last.fm** — any history there is held by
+If you enabled optional features that talk to services **you** configured, such
+as scrobbling to **ListenBrainz** or **Last.fm**, any history there is held by
 those services under their own policies. Request deletion of that data with the
 relevant service directly.
 

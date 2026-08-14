@@ -41,7 +41,7 @@ SmPool L2: https://goerli.arbiscan.io/address/0x0b852c2129cc8ef9e4581bcda1a8f216
 
 EAS: https://goerli.arbiscan.io/address/0x63b9f0dfa2a6a3604fb301b376dc3a5b133edd3a
 
-Bridge transaction: L1 – 0xFCa2906C37141f8cD1CB5a01E3a3FC07cC4B1025 https://goerli.etherscan.io/address/0xFCa2906C37141f8cD1CB5a01E3a3FC07cC4B1025 L2 – 0x3449e3bEEdCB9991b13f16dBf34D6691475c8f9D https://goerli.arbiscan.io/address/0x3449e3beedcb9991b13f16dbf34d6691475c8f9d
+Bridge transaction: L1-0xFCa2906C37141f8cD1CB5a01E3a3FC07cC4B1025 https://goerli.etherscan.io/address/0xFCa2906C37141f8cD1CB5a01E3a3FC07cC4B1025 L2-0x3449e3bEEdCB9991b13f16dBf34D6691475c8f9D https://goerli.arbiscan.io/address/0x3449e3beedcb9991b13f16dbf34d6691475c8f9d
 
 L1 tx 0x376a9fda70e638a40ec04dce6bc1f3c27ee97671f4480bbfaf26dbc7631666af https://goerli.etherscan.io/tx/0x376a9fda70e638a40ec04dce6bc1f3c27ee97671f4480bbfaf26dbc7631666af L2 tx 0x29f20a9f8a73a39257ce80d1effc95d8c3010ce5b2714c4cb6468aaba0c83a92 https://goerli.arbiscan.io/tx/0x29f20a9f8a73a39257ce80d1effc95d8c3010ce5b2714c4cb6468aaba0c83a92
 

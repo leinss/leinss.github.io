@@ -1,6 +1,6 @@
 ---
 title: "The self-hosted stack I run instead of paying for SaaS"
-description: "The analytics, newsletter, automation, backend, and local-AI tools I self-host on my own EU infrastructure — and the rented SaaS each one replaces."
+description: "The analytics, newsletter, automation, backend, and local-AI tools I self-host on my own EU infrastructure, and the rented SaaS each one replaces."
 date: "Jul 4 2026"
 tags: ["self-hosting", "privacy", "saas-alternatives", "own-your-stack"]
 lang: "en"
@@ -20,13 +20,13 @@ Most businesses run on rented SaaS. It's the fast way to start, and for a while 
 | **Supabase** | Firebase | Plain Postgres I control, not a proprietary datastore I rent |
 | **LM Studio** | Cloud LLM APIs | Prompts and documents never get shipped to a third party |
 
-None of these is a wishlist item. The analytics counting this visit and the newsletter form at the bottom of this page both run on that self-hosted setup — Umami and Listmonk, on my own hardware.
+None of these is a wishlist item. The analytics counting this visit and the newsletter form at the bottom of this page both run on that self-hosted setup: Umami and Listmonk, on my own hardware.
 
 ## Why owning beats renting
 
 **Cost stops being a meter.** Rented SaaS bills per seat, per contact, per task, per run, so your bill grows with your success. Self-hosted, one more workflow or ten thousand more subscribers cost roughly nothing extra. You pay for the box, not for using it.
 
-**Your data stays put.** Analytics, email lists, customer records, the documents an automation reads — all of it stays on infrastructure I control, in the EU. Under the GDPR that isn't a nice-to-have; for anyone handling client data it's the whole point.
+**Your data stays put.** Analytics, email lists, customer records, the documents an automation reads: all of it stays on infrastructure I control, in the EU. Under the GDPR that isn't a nice-to-have; for anyone handling client data it's the whole point.
 
 **Nothing is a black box.** When a rented tool won't do the thing you need, you file a feature request and wait. When I need n8n to do something its GUI can't, I drop into code. Owning the layer means the ceiling is my own skill, not a vendor's roadmap.
 
@@ -44,11 +44,11 @@ The honest sequence is: start on rented tools, then own the load-bearing pieces 
 
 For the load-bearing tools I've written up the head-to-head against the SaaS they replace, each from running it in production:
 
-- [Umami vs Google Analytics](/blog/en/umami-vs-google-analytics/) — analytics with no cookie banner and no sampling
-- [Listmonk vs Mailchimp](/blog/en/listmonk-vs-mailchimp/) — owning the list instead of paying per contact
-- [Self-hosted Supabase vs Firebase](/blog/en/self-hosted-supabase-vs-firebase/) — Postgres you own vs proprietary NoSQL
-- [Postiz vs Buffer](/blog/en/postiz-vs-buffer/) — social scheduling without per-channel billing
+- [Umami vs Google Analytics](/blog/en/umami-vs-google-analytics/), analytics with no cookie banner and no sampling
+- [Listmonk vs Mailchimp](/blog/en/listmonk-vs-mailchimp/), owning the list instead of paying per contact
+- [Self-hosted Supabase vs Firebase](/blog/en/self-hosted-supabase-vs-firebase/), Postgres you own vs proprietary NoSQL
+- [Postiz vs Buffer](/blog/en/postiz-vs-buffer/), social scheduling without per-channel billing
 
 ## Want a setup like this for your business?
 
-Owned automation — built on your infrastructure, documented, handed to your team — is what I do for companies at [Leinss Consulting](https://leinss-consulting.de/en/). Start fast on proven tools; own the parts that matter. No lock-in, no rented black boxes.
+Owned automation (built on your infrastructure, documented, handed to your team) is what I do for companies at [Leinss Consulting](https://leinss-consulting.de/en/). Start fast on proven tools; own the parts that matter. No lock-in, no rented black boxes.

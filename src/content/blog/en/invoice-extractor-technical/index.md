@@ -6,7 +6,7 @@ tags: ["n8n", "claude", "ai", "automation", "teardown", "own-your-stack"]
 lang: "en"
 ---
 
-> **Short answer:** The invoice reader is three n8n nodes: a form that takes the upload, one HTTP call to Claude Sonnet 4's vision API with the invoice image, and a code node that parses the model's reply into clean JSON. Vision does the reading; the code node does the part a no-code tool can't — stripping the model's markdown fences and safely parsing the result. This is the teardown of the [live invoice demo](https://leinss-consulting.de/en/blog/automating-invoice-processing/).
+> **Short answer:** The invoice reader is three n8n nodes: a form that takes the upload, one HTTP call to Claude Sonnet 4's vision API with the invoice image, and a code node that parses the model's reply into clean JSON. Vision does the reading; the code node does the part a no-code tool can't, stripping the model's markdown fences and safely parsing the result. This is the teardown of the [live invoice demo](https://leinss-consulting.de/en/blog/automating-invoice-processing/).
 
 The [invoice-processing demo on my consulting site](https://leinss-consulting.de/en/blog/automating-invoice-processing/) reads a real invoice and returns structured fields. People assume there's a mountain of OCR rules behind it. There isn't. Here's the whole thing, and you can [download the exact workflow JSON](https://leinss-consulting.de/workflows/n8n-invoice-cloud.json) and run it yourself.
 
@@ -22,7 +22,7 @@ That's it. No OCR engine, no template per vendor, no regex zoo. A vision model r
 
 ## The vision call
 
-The one real step is an HTTP request to Claude's messages API with the model set to Sonnet 4 and the invoice passed inline as a base64 image. The prompt asks for the fields I care about — number, date, line items, totals, tax — as JSON. Because the model reads pixels, it doesn't care whether the layout is a clean PDF export or a phone photo of a crumpled paper invoice.
+The one real step is an HTTP request to Claude's messages API with the model set to Sonnet 4 and the invoice passed inline as a base64 image. The prompt asks for the fields I care about (number, date, line items, totals, tax) as JSON. Because the model reads pixels, it doesn't care whether the layout is a clean PDF export or a phone photo of a crumpled paper invoice.
 
 ## Where n8n stops and code starts
 
@@ -36,6 +36,6 @@ None of that is hard, but all of it is the difference between a demo and somethi
 
 ## Why it's built this way
 
-Three nodes means almost nothing to maintain. When a new invoice layout shows up, there's no template to add — the vision model already handles it. The only code is the parse step, and it's stable because the model's output shape is stable. Simple, in this case, is also hard to break.
+Three nodes means almost nothing to maintain. When a new invoice layout shows up, there's no template to add, the vision model already handles it. The only code is the parse step, and it's stable because the model's output shape is stable. Simple, in this case, is also hard to break.
 
 This runs on my own n8n, part of [the self-hosted stack I run instead of paying for SaaS](/blog/en/self-hosted-stack/). If you want a reader like this built for your document types and handed to your team, that's what I do at [Leinss Consulting](https://leinss-consulting.de/en/).

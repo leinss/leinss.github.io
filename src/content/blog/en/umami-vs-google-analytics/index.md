@@ -1,6 +1,6 @@
 ---
 title: "Umami vs Google Analytics: the analytics I self-host instead"
-description: "How Umami, a self-hosted privacy-first analytics tool, compares to Google Analytics on data ownership, GDPR, cookies, and sampling — from someone who runs it in production."
+description: "How Umami, a self-hosted privacy-first analytics tool, compares to Google Analytics on data ownership, GDPR, cookies, and sampling, from someone who runs it in production."
 date: "Jul 4 2026"
 tags: ["umami", "google-analytics", "self-hosting", "privacy", "saas-alternatives", "own-your-stack"]
 lang: "en"
@@ -17,7 +17,7 @@ The analytics counting your visit right now is Umami, running on infrastructure 
 | Source | Open (MIT) | Closed (Google) |
 | Where the data lives | My server, in the EU | Google's cloud |
 | Cookie / consent banner | Not needed | Required in the EU |
-| Sampling | None — every hit counts | Sampled above thresholds |
+| Sampling | None, every hit counts | Sampled above thresholds |
 | Price | The box it runs on | Free (you pay in data) |
 | Setup | Docker + Postgres, you run it | Paste a tag, done |
 | Learning curve | One dashboard | GA4 is its own skill |

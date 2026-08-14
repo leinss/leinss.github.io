@@ -1,12 +1,12 @@
 ---
 title: "Wie ich einen RAG-FAQ-Assistenten mit n8n und Kimi gebaut habe"
-description: "Ein technischer Teardown des FAQ-Assistenten: Embeddings, Vektorsuche über eine Postgres-Wissensbasis und eine belegte Antwort — das RAG-Muster in n8n."
+description: "Ein technischer Teardown des FAQ-Assistenten: Embeddings, Vektorsuche über eine Postgres-Wissensbasis und eine belegte Antwort, das RAG-Muster in n8n."
 date: "Jul 4 2026"
 tags: ["n8n", "rag", "kimi", "ai", "teardown", "own-your-stack"]
 lang: "de"
 ---
 
-> **Kurz gesagt:** Der FAQ-Assistent ist Retrieval-Augmented Generation in zehn n8n-Nodes: die Frage einbetten, in einer Postgres-Wissensbasis die nächstliegenden Passagen suchen, diese Kimi K2 als Kontext geben und eine belegte Antwort zurückgeben. Der Retrieval-Schritt hält das Modell davon ab, etwas zu erfinden — es kann nur aus dem antworten, was die Suche liefert. Das ist der Teardown der [Live-FAQ-Demo](https://leinss-consulting.de/de/blog/faq-assistent-ki-support/).
+> **Kurz gesagt:** Der FAQ-Assistent ist Retrieval-Augmented Generation in zehn n8n-Nodes: die Frage einbetten, in einer Postgres-Wissensbasis die nächstliegenden Passagen suchen, diese Kimi K2 als Kontext geben und eine belegte Antwort zurückgeben. Der Retrieval-Schritt hält das Modell davon ab, etwas zu erfinden. Es kann nur aus dem antworten, was die Suche liefert. Das ist der Teardown der [Live-FAQ-Demo](https://leinss-consulting.de/de/blog/faq-assistent-ki-support/).
 
 Ein Chatbot, der Antworten erfindet, ist schlimmer als kein Chatbot. Der [FAQ-Assistent auf meiner Beratungsseite](https://leinss-consulting.de/de/blog/faq-assistent-ki-support/) antwortet nur aus einer Wissensbasis, die ich kontrolliere, und verweigert, wenn die Antwort nicht drinsteht. Dieses Verhalten ist Retrieval-Augmented Generation (RAG), und so ist es verdrahtet. Sie können [das Workflow-JSON herunterladen](https://leinss-consulting.de/workflows/faq-assistent.json) und jeden Node prüfen.
 
@@ -23,7 +23,7 @@ Ein Chatbot, der Antworten erfindet, ist schlimmer als kein Chatbot. Der [FAQ-As
 
 ## Retrieval ist der ganze Trick
 
-Der Erzeugungsschritt ist gewöhnlich. Der Teil, der ihn vertrauenswürdig macht, ist das Retrieval. Die Frage wird in einen Vektor eingebettet, und dieser Vektor wird per Ähnlichkeitssuche mit der eingebetteten Wissensbasis verglichen — ich frage die Top 5 Treffer über einem Schwellwert von 0,5 ab. Nur diese Passagen gehen in den Prompt. Klärt nichts den Schwellwert, hat das Modell nichts, woraus es antworten könnte, und sagt das, statt zu raten.
+Der Erzeugungsschritt ist gewöhnlich. Der Teil, der ihn vertrauenswürdig macht, ist das Retrieval. Die Frage wird in einen Vektor eingebettet, und dieser Vektor wird per Ähnlichkeitssuche mit der eingebetteten Wissensbasis verglichen: ich frage die Top 5 Treffer über einem Schwellwert von 0,5 ab. Nur diese Passagen gehen in den Prompt. Klärt nichts den Schwellwert, hat das Modell nichts, woraus es antworten könnte, und sagt das, statt zu raten.
 
 Die Wissensbasis selbst wird von einem separaten Ingestion-Workflow gefüllt, der die Quelldokumente in Stücke teilt, jedes Stück einbettet und speichert. Ingestion getrennt zu halten heißt, ich kann Inhalte neu indizieren, ohne den Live-Antwortpfad anzufassen.
 
@@ -35,7 +35,7 @@ n8n übernimmt Webhook, HTTP-Aufrufe und Verzweigung. Das Urteilsvermögen steck
 - **Anfrage aufbauen** ist der wichtige: Er nimmt die rohen Suchergebnisse, kürzt sie auf das, was passt, und konstruiert den kontextbelegten Prompt mit klarer Anweisung, nur aus den gelieferten Passagen zu antworten.
 - **Formatieren** parst die Antwort des Modells, behandelt den Fall der leeren Antwort und formt das JSON, das der Webhook zurückgibt.
 
-Dieser mittlere Node ist der Ort, an dem Retrieval zur *Antwort* wird. „Setze diese fünf Passagen zu einem belegten Prompt zusammen und nichts weiter" lässt sich nicht in einem Dropdown ausdrücken — das sind ein paar Zeilen echter Code, genau [wo n8n aufhört und Code übernimmt](/blog/de/n8n-automation-stack/).
+Dieser mittlere Node ist der Ort, an dem Retrieval zur *Antwort* wird. „Setze diese fünf Passagen zu einem belegten Prompt zusammen und nichts weiter" lässt sich nicht in einem Dropdown ausdrücken. Das sind ein paar Zeilen echter Code, genau [wo n8n aufhört und Code übernimmt](/blog/de/n8n-automation-stack/).
 
 ## Warum Selbst-Hosting hier zählt
 

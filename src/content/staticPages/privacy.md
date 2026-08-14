@@ -43,7 +43,7 @@ Legal basis: Art. 6 Abs. 1 lit. b DSGVO (pre-contractual measures) or Art. 6 Abs
 
 ### 2.4 Newsletter
 
-If you subscribe to our newsletter, we store your **email address** on our self-hosted [Listmonk](https://listmonk.app) instance (hosted in Germany). We use double opt-in — you must confirm your subscription via email before receiving any newsletters.
+If you subscribe to our newsletter, we store your **email address** on our self-hosted [Listmonk](https://listmonk.app) instance (hosted in Germany). We use double opt-in, you must confirm your subscription via email before receiving any newsletters.
 
 Data processed:
 - Email address
@@ -69,12 +69,12 @@ We do not sell, trade, or share your personal data with third parties, except as
 
 You have the right to:
 
-- **Access** (Art. 15 DSGVO) — what data we store about you
-- **Rectification** (Art. 16 DSGVO) — correction of inaccurate data
-- **Erasure** (Art. 17 DSGVO) — deletion of your data
-- **Restriction** (Art. 18 DSGVO) — restriction of processing
-- **Data portability** (Art. 20 DSGVO) — export of your data
-- **Objection** (Art. 21 DSGVO) — object to processing based on legitimate interest
+- **Access** (Art. 15 DSGVO), what data we store about you
+- **Rectification** (Art. 16 DSGVO), correction of inaccurate data
+- **Erasure** (Art. 17 DSGVO), deletion of your data
+- **Restriction** (Art. 18 DSGVO), restriction of processing
+- **Data portability** (Art. 20 DSGVO), export of your data
+- **Objection** (Art. 21 DSGVO), object to processing based on legitimate interest
 
 Contact: inquiry@leinss.xyz
 

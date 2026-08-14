@@ -1,12 +1,12 @@
 ---
 title: "Selbst gehostetes Supabase vs Firebase: Das Backend, das mir gehört"
-description: "Wie sich selbst gehostetes Supabase gegen Firebase schlägt — bei Datenhoheit, Postgres statt proprietärem NoSQL, Preis und Lock-in. Von jemandem, der Supabase auf eigener Infrastruktur betreibt."
+description: "Wie sich selbst gehostetes Supabase gegen Firebase schlägt: bei Datenhoheit, Postgres statt proprietärem NoSQL, Preis und Lock-in. Von jemandem, der Supabase auf eigener Infrastruktur betreibt."
 date: "Jul 4 2026"
 tags: ["supabase", "firebase", "self-hosting", "postgres", "saas-alternatives", "own-your-stack"]
 lang: "de"
 ---
 
-> **Kurz gesagt:** Firebase ist Googles proprietäres Backend-as-a-Service; Supabase ist eine quelloffene Alternative auf reinem Postgres, die man selbst hosten kann. Firebase ist der schnellste Weg, eine App auszuliefern, und der schwerste, den man wieder verlässt: Ihre Daten liegen in einem Datenspeicher, den nur Google betreibt. Selbst gehostetes Supabase gibt Ihnen dieselben Bausteine — Auth, Datenbank, Storage, Realtime — auf einer Postgres-Instanz, die Ihnen gehört. Ich betreibe Supabase auf eigener Infrastruktur, und hier ist der Handel.
+> **Kurz gesagt:** Firebase ist Googles proprietäres Backend-as-a-Service; Supabase ist eine quelloffene Alternative auf reinem Postgres, die man selbst hosten kann. Firebase ist der schnellste Weg, eine App auszuliefern, und der schwerste, den man wieder verlässt: Ihre Daten liegen in einem Datenspeicher, den nur Google betreibt. Selbst gehostetes Supabase gibt Ihnen dieselben Bausteine (Auth, Datenbank, Storage, Realtime) auf einer Postgres-Instanz, die Ihnen gehört. Ich betreibe Supabase auf eigener Infrastruktur, und hier ist der Handel.
 
 Firebase bringt Sie am schnellsten zur laufenden App. Dieses Tempo ist echt, und ebenso die Rechnung und das Lock-in, die damit kommen. So schlägt sich die eigene Alternative.
 
@@ -17,9 +17,9 @@ Firebase bringt Sie am schnellsten zur laufenden App. Dieses Tempo ist echt, und
 | Quelle | Offen (Apache-2.0) | Geschlossen (Google) |
 | Datenbank | Standard-Postgres (SQL) | Firestore (proprietäres NoSQL) |
 | Wo die Daten liegen | Mein Server, in der EU | Googles Cloud |
-| Preismodell | Pauschal — der Server, der es trägt | Nach Verbrauch pro Lesen/Schreiben/Storage |
-| Portabilität | Nur Postgres — Dump und umziehen | Export ist ein Projekt für sich |
-| Lock-in | Gering — offener Stack, Standard-SQL | Hoch — proprietäre APIs |
+| Preismodell | Pauschal: der Server, der es trägt | Nach Verbrauch pro Lesen/Schreiben/Storage |
+| Portabilität | Nur Postgres, Dump und umziehen | Export ist ein Projekt für sich |
+| Lock-in | Gering (offener Stack, Standard-SQL | Hoch) proprietäre APIs |
 | Einrichtung | Docker-Stack, echte Ops-Arbeit | Konsole, Minuten |
 | Am besten für | Besitz, SQL, kein Lock-in | Ein MVP schnell ausliefern |
 
@@ -37,13 +37,13 @@ Beide geben einer App dieselben Kern-Dienste ab Werk: eine Datenbank, Authentifi
 
 **Wo die Daten liegen.** Firebase läuft in Googles Cloud. Selbst gehostetes Supabase hält Nutzerdaten auf Infrastruktur, die ich in der EU kontrolliere, was in dem Moment zählt, in dem diese Daten personenbezogen nach DSGVO sind.
 
-**Der ehrliche Aufwand.** Firebase gewinnt beim Tempo zur ersten laufenden App, deutlich. Supabase selbst zu hosten ist die schwerste Aufgabe in meinem Stack: es sind mehrere Dienste — Datenbank, Auth, Storage, ein API-Gateway — die zusammen laufen, plus Backups und Updates. Das ist echte Betriebsarbeit, kein Wochenend-Tutorial.
+**Der ehrliche Aufwand.** Firebase gewinnt beim Tempo zur ersten laufenden App, deutlich. Supabase selbst zu hosten ist die schwerste Aufgabe in meinem Stack: es sind mehrere Dienste (Datenbank, Auth, Storage, ein API-Gateway) die zusammen laufen, plus Backups und Updates. Das ist echte Betriebsarbeit, kein Wochenend-Tutorial.
 
 ## Was sollten Sie nehmen?
 
 - **Nehmen Sie Firebase**, um ein MVP schnell auszuliefern, wenn Sie keine Infrastruktur betreiben wollen und bereit sind, das Lock-in und die verbrauchsbasierte Rechnung zu akzeptieren, die damit kommen.
-- **Hosten Sie Supabase selbst**, wenn Sie Ihre Daten in Standard-Postgres wollen, das Ihnen gehört, pauschale und planbare Kosten, kein proprietäres Lock-in und Nutzerdaten in der EU — und Sie das Betriebsgewicht tragen können.
+- **Hosten Sie Supabase selbst**, wenn Sie Ihre Daten in Standard-Postgres wollen, das Ihnen gehört, pauschale und planbare Kosten, kein proprietäres Lock-in und Nutzerdaten in der EU, und Sie das Betriebsgewicht tragen können.
 
-Ein Mittelweg, den ich tatsächlich empfehle: auf Supabases gehostetem Tarif starten (derselbe offene Stack, kein Ops) und auf selbst gehostet umziehen, wenn sich der Besitz lohnt. So oder so sind Sie auf Postgres, der Umzug ist also eine Datenbank-Migration, kein Neuschrieb. Diese Reihenfolge — „die tragenden Teile besitzen, sobald sie wichtig werden" — ist die ganze Idee hinter [dem selbst gehosteten Stack, den ich statt SaaS betreibe](/blog/de/self-hosted-stack/).
+Ein Mittelweg, den ich tatsächlich empfehle: auf Supabases gehostetem Tarif starten (derselbe offene Stack, kein Ops) und auf selbst gehostet umziehen, wenn sich der Besitz lohnt. So oder so sind Sie auf Postgres, der Umzug ist also eine Datenbank-Migration, kein Neuschrieb. Diese Reihenfolge („die tragenden Teile besitzen, sobald sie wichtig werden") ist die ganze Idee hinter [dem selbst gehosteten Stack, den ich statt SaaS betreibe](/blog/de/self-hosted-stack/).
 
 Wenn Sie ein eigenes Backend gebaut, betrieben und an Ihr Team übergeben haben wollen, ist das genau die Art Arbeit, die ich bei [Leinss Consulting](https://leinss-consulting.de/de/) mache.

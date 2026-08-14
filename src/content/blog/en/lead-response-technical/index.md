@@ -23,19 +23,19 @@ A generic auto-reply is worse than a slow human one. The [lead-response demo on 
 
 ## Why classify before writing
 
-You could ask one prompt to "read this and reply." It works, badly — the model has to guess tone and intent while it writes. Splitting the job is more reliable:
+You could ask one prompt to "read this and reply." It works, badly, the model has to guess tone and intent while it writes. Splitting the job is more reliable:
 
 1. **Classify** runs first with a system prompt that turns it into a lead-qualification assistant. It returns structured fields: what the lead wants, how good a fit it is, and which language they wrote in.
 2. **Draft** runs second. It gets the original message *and* the classification, with a persona system prompt, so it writes in a consistent voice aimed at that specific lead and answers in their language.
 
-The classification also gives me something to route on later — a hot lead and a tyre-kicker can get different handling — without re-reading the message.
+The classification also gives me something to route on later, a hot lead and a tyre-kicker can get different handling, without re-reading the message.
 
 ## Where n8n stops and code starts
 
 n8n owns the webhook, the two HTTP calls, and the response. The two code nodes are the seams:
 
 - **Validate** checks name, email, and message are present before spending a single token.
-- **Parse classification** does the unglamorous but essential work: strip the model's ```` ```json ```` fences, `JSON.parse`, and fail safely if the shape is off — so the draft step always gets clean structured input.
+- **Parse classification** does the unglamorous but essential work: strip the model's ```` ```json ```` fences, `JSON.parse`, and fail safely if the shape is off, so the draft step always gets clean structured input.
 - **Assemble email** reads the language flag from the classification and builds the subject and body accordingly.
 
 That parse-between-passes node is pure "where code starts": you can't reliably chain two model calls in a GUI without a bit of real code cleaning the handoff. It's the boundary I keep hitting, described in [my n8n automation stack](/blog/en/n8n-automation-stack/).

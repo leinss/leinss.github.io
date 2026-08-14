@@ -6,7 +6,7 @@ tags: ["claude", "ai-automation", "code-review"]
 lang: "en"
 ---
 
-> **Short answer:** I run Claude as an automated first pass on every pull request — it flags logic errors, security issues, performance anti-patterns, and missing error handling before a human looks. Reviewers then spend their time on architecture and business logic instead of nitpicks. AI does the first pass; humans keep the judgment calls.
+> **Short answer:** I run Claude as an automated first pass on every pull request: it flags logic errors, security issues, performance anti-patterns, and missing error handling before a human looks. Reviewers then spend their time on architecture and business logic instead of nitpicks. AI does the first pass; humans keep the judgment calls.
 
 Code reviews matter, but they eat time. Here's how I wire Claude into the workflow to make them faster and more thorough.
 
@@ -33,14 +33,14 @@ Code reviews matter, but they eat time. Here's how I wire Claude into the workfl
 PR opened → Claude analysis → human review → merge
 ```
 
-1. **Automated trigger** — opening a PR kicks off the analysis.
-2. **Structured feedback** — Claude returns categorized findings by severity.
-3. **Human focus** — reviewers spend their attention on the high-value decisions.
-4. **Faster iteration** — authors fix the obvious things before a human ever looks.
+1. **Automated trigger**, opening a PR kicks off the analysis.
+2. **Structured feedback**, Claude returns categorized findings by severity.
+3. **Human focus**, reviewers spend their attention on the high-value decisions.
+4. **Faster iteration**, authors fix the obvious things before a human ever looks.
 
 ## What changed after a few months
 
-- Review time down noticeably — fewer rounds per PR.
+- Review time down noticeably, fewer rounds per PR.
 - Far fewer "nitpick" comments cluttering the thread.
 - More room for real architecture discussion.
 - More consistent standards across the team.
@@ -49,10 +49,10 @@ PR opened → Claude analysis → human review → merge
 
 You don't need much to start:
 
-1. **Pick where it runs** — a CI step on `pull_request` (e.g. a GitHub Action), or a local pass with Claude Code before you request review.
-2. **Feed it the diff** — pass the PR diff plus a short rubric: security, error handling, naming, edge cases.
-3. **Ask for structured output** — categorized findings with a severity level, so authors can triage in seconds.
-4. **Post it as a comment** — a bot comment on the PR, clearly labelled as an automated first pass.
+1. **Pick where it runs**, a CI step on `pull_request` (e.g. a GitHub Action), or a local pass with Claude Code before you request review.
+2. **Feed it the diff**: pass the PR diff plus a short rubric: security, error handling, naming, edge cases.
+3. **Ask for structured output**: categorized findings with a severity level, so authors can triage in seconds.
+4. **Post it as a comment**: a bot comment on the PR, clearly labelled as an automated first pass.
 
 The key is treating AI as a **first pass**, not a replacement. Human judgment stays essential for anything context-dependent.
 

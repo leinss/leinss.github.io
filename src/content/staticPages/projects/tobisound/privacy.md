@@ -1,5 +1,5 @@
 ---
-title: "TobiSound — Privacy Policy"
+title: "TobiSound, Privacy Policy"
 slug: "/projects/tobisound/privacy"
 description: "Privacy Policy for the TobiSound Android music player"
 date: "07/16/2026"
@@ -40,7 +40,7 @@ Email: inquiry@leinss.xyz
   **only** to the server it belongs to, to authenticate your own requests.
 - **Your library and playback data.** Browsing cache, playlists, play state,
   downloaded tracks, cached artwork, and app settings are all kept locally. None
-  of it is sent to us — we have no server to send it to.
+  of it is sent to us. We have no server to send it to.
 
 ## Network connections (all under your control)
 
@@ -65,18 +65,18 @@ set up:
   is reachable only on your network and only while you are actively casting, and
   it shuts down when the session ends.
 
-Once your data reaches a service **you** chose — your own server, ListenBrainz,
-Last.fm, LRCLIB, or Google's Cast platform — **their** privacy policy applies to
+Once your data reaches a service **you** chose: your own server, ListenBrainz,
+Last.fm, LRCLIB, or Google's Cast platform, **their** privacy policy applies to
 what they do with it.
 
 ## Permissions
 
-- **Internet / network state** — to reach the servers and optional services you
+- **Internet / network state**, to reach the servers and optional services you
   configured, and to cast on your local network.
-- **Foreground service & notifications** — to keep music playing in the
+- **Foreground service & notifications**, to keep music playing in the
   background and show the playback controls you interact with. This does not
   involve collecting your data.
-- **Media / audio access** — only to find and play the music files on your own
+- **Media / audio access**, only to find and play the music files on your own
   device, when you choose local playback.
 
 TobiSound requests no permissions beyond what the features you use require, and

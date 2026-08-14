@@ -1,6 +1,6 @@
 ---
 title: "Der selbst gehostete Stack, den ich statt SaaS betreibe"
-description: "Die Analyse-, Newsletter-, Automatisierungs-, Backend- und lokalen KI-Tools, die ich auf eigener EU-Infrastruktur selbst hoste — und welche gemietete SaaS sie ersetzen."
+description: "Die Analyse-, Newsletter-, Automatisierungs-, Backend- und lokalen KI-Tools, die ich auf eigener EU-Infrastruktur selbst hoste, und welche gemietete SaaS sie ersetzen."
 date: "Jul 4 2026"
 tags: ["self-hosting", "privacy", "saas-alternatives", "own-your-stack"]
 lang: "de"
@@ -20,13 +20,13 @@ Die meisten Unternehmen laufen auf gemieteter SaaS. Das ist der schnelle Einstie
 | **Supabase** | Firebase | Reines Postgres, das ich kontrolliere, kein gemieteter proprietärer Datenspeicher |
 | **LM Studio** | Cloud-LLM-APIs | Prompts und Dokumente gehen nie an Dritte |
 
-Nichts davon ist Wunschdenken. Die Analyse, die diesen Besuch zählt, und das Newsletter-Formular am Ende dieser Seite laufen beide auf genau diesem selbst gehosteten Setup — Umami und Listmonk, auf eigener Hardware.
+Nichts davon ist Wunschdenken. Die Analyse, die diesen Besuch zählt, und das Newsletter-Formular am Ende dieser Seite laufen beide auf genau diesem selbst gehosteten Setup: Umami und Listmonk, auf eigener Hardware.
 
 ## Warum Besitzen das Mieten schlägt
 
 **Kosten sind keine laufende Uhr mehr.** Gemietete SaaS rechnet pro Platz, pro Kontakt, pro Aufgabe, pro Durchlauf ab, Ihre Rechnung wächst also mit Ihrem Erfolg. Selbst gehostet kostet ein weiterer Workflow oder zehntausend weitere Abonnenten praktisch nichts extra. Sie zahlen für den Server, nicht für seine Nutzung.
 
-**Ihre Daten bleiben, wo sie sind.** Analyse, E-Mail-Listen, Kundendaten, die Dokumente, die eine Automatisierung liest — alles bleibt auf Infrastruktur, die ich kontrolliere, in der EU. Unter der DSGVO ist das kein nettes Extra; für jeden, der mit Mandanten- oder Kundendaten arbeitet, ist es der entscheidende Punkt.
+**Ihre Daten bleiben, wo sie sind.** Analyse, E-Mail-Listen, Kundendaten, die Dokumente, die eine Automatisierung liest: alles bleibt auf Infrastruktur, die ich kontrolliere, in der EU. Unter der DSGVO ist das kein nettes Extra; für jeden, der mit Mandanten- oder Kundendaten arbeitet, ist es der entscheidende Punkt.
 
 **Nichts ist eine Blackbox.** Wenn ein gemietetes Tool nicht kann, was Sie brauchen, stellen Sie einen Feature-Wunsch und warten. Wenn ich brauche, dass n8n etwas tut, das seine Oberfläche nicht hergibt, gehe ich in den Code. Die Schicht zu besitzen heißt: die Grenze ist mein eigenes Können, nicht die Roadmap eines Anbieters.
 
@@ -44,11 +44,11 @@ Die ehrliche Reihenfolge lautet: mit gemieteten Tools starten, dann die tragende
 
 Für die tragenden Tools habe ich das direkte Duell gegen die SaaS aufgeschrieben, die sie ersetzen, jeweils aus dem produktiven Betrieb:
 
-- [Umami vs Google Analytics](/blog/de/umami-vs-google-analytics/) — Analyse ohne Cookie-Banner und ohne Sampling
-- [Listmonk vs Mailchimp](/blog/de/listmonk-vs-mailchimp/) — die Liste besitzen, statt pro Kontakt zu zahlen
-- [Selbst gehostetes Supabase vs Firebase](/blog/de/self-hosted-supabase-vs-firebase/) — eigenes Postgres statt proprietärem NoSQL
-- [Postiz vs Buffer](/blog/de/postiz-vs-buffer/) — Social-Planung ohne Abrechnung pro Kanal
+- [Umami vs Google Analytics](/blog/de/umami-vs-google-analytics/), Analyse ohne Cookie-Banner und ohne Sampling
+- [Listmonk vs Mailchimp](/blog/de/listmonk-vs-mailchimp/): die Liste besitzen, statt pro Kontakt zu zahlen
+- [Selbst gehostetes Supabase vs Firebase](/blog/de/self-hosted-supabase-vs-firebase/), eigenes Postgres statt proprietärem NoSQL
+- [Postiz vs Buffer](/blog/de/postiz-vs-buffer/), Social-Planung ohne Abrechnung pro Kanal
 
 ## So einen Aufbau für Ihr Unternehmen?
 
-Automatisierung, die Ihnen gehört — auf Ihrer Infrastruktur gebaut, dokumentiert, an Ihr Team übergeben — mache ich für Unternehmen bei [Leinss Consulting](https://leinss-consulting.de/de/). Schnell mit bewährten Tools starten; die Teile besitzen, die zählen. Kein Lock-in, keine gemieteten Blackboxes.
+Automatisierung, die Ihnen gehört (auf Ihrer Infrastruktur gebaut, dokumentiert, an Ihr Team übergeben) mache ich für Unternehmen bei [Leinss Consulting](https://leinss-consulting.de/de/). Schnell mit bewährten Tools starten; die Teile besitzen, die zählen. Kein Lock-in, keine gemieteten Blackboxes.

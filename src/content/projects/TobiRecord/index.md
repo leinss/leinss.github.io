@@ -1,6 +1,6 @@
 ---
 title: "TobiRecord"
-description: "An open-source screen recorder and editor that turns raw captures into polished demos — auto-zoom, cursor polish, webcam overlays and styled frames, all on your own machine."
+description: "An open-source screen recorder and editor that turns raw captures into polished demos: auto-zoom, cursor polish, webcam overlays and styled frames, all on your own machine."
 date: "May 2026"
 ---
 
@@ -8,9 +8,9 @@ date: "May 2026"
 
 ## What it does
 
-- **Auto-zoom, cursor polish and styled frames** — TobiRecord can emphasize activity with zoom suggestions, smooth out cursor movement, add motion effects, and drop the result into a framed composition with wallpapers, gradients, padding and shadows.
-- **Webcam bubble overlays** — add a webcam overlay, position and mirror it, and optionally have it react to zoom so it stays balanced during motion.
-- **Timeline editing built for demos** — drag-and-drop zooms, trims, speed regions, annotations and crop-aware edits; save and reopen work as project files.
+- **Auto-zoom, cursor polish and styled frames**: TobiRecord can emphasize activity with zoom suggestions, smooth out cursor movement, add motion effects, and drop the result into a framed composition with wallpapers, gradients, padding and shadows.
+- **Webcam bubble overlays**: add a webcam overlay, position and mirror it, and optionally have it react to zoom so it stays balanced during motion.
+- **Timeline editing built for demos**: drag-and-drop zooms, trims, speed regions, annotations and crop-aware edits; save and reopen work as project files.
 - **Export to MP4 or GIF** with a community-driven extension system for cursor sounds, device frames, browser mockups and more.
 
-Everything runs locally — recording, editing and rendering happen on your own machine.
+Everything runs locally: recording, editing and rendering happen on your own machine.

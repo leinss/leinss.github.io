@@ -6,7 +6,7 @@ tags: ["n8n", "claude", "ai", "automation", "teardown", "own-your-stack"]
 lang: "de"
 ---
 
-> **Kurz gesagt:** Der Rechnungsleser sind drei n8n-Nodes: ein Formular für den Upload, ein HTTP-Aufruf an die Vision-API von Claude Sonnet 4 mit dem Rechnungsbild und ein Code-Node, der die Antwort des Modells in sauberes JSON parst. Vision übernimmt das Lesen; der Code-Node den Teil, den ein No-Code-Tool nicht kann — die Markdown-Zäune des Modells entfernen und das Ergebnis sicher parsen. Das ist der Teardown der [Live-Rechnungs-Demo](https://leinss-consulting.de/de/blog/rechnungsverarbeitung-automatisieren/).
+> **Kurz gesagt:** Der Rechnungsleser sind drei n8n-Nodes: ein Formular für den Upload, ein HTTP-Aufruf an die Vision-API von Claude Sonnet 4 mit dem Rechnungsbild und ein Code-Node, der die Antwort des Modells in sauberes JSON parst. Vision übernimmt das Lesen; der Code-Node den Teil, den ein No-Code-Tool nicht kann, die Markdown-Zäune des Modells entfernen und das Ergebnis sicher parsen. Das ist der Teardown der [Live-Rechnungs-Demo](https://leinss-consulting.de/de/blog/rechnungsverarbeitung-automatisieren/).
 
 Die [Rechnungs-Demo auf meiner Beratungsseite](https://leinss-consulting.de/de/blog/rechnungsverarbeitung-automatisieren/) liest eine echte Rechnung und gibt strukturierte Felder zurück. Man vermutet einen Berg OCR-Regeln dahinter. Den gibt es nicht. Hier ist das Ganze, und Sie können [das genaue Workflow-JSON herunterladen](https://leinss-consulting.de/workflows/n8n-invoice-cloud.json) und selbst laufen lassen.
 
@@ -22,7 +22,7 @@ Das ist alles. Keine OCR-Engine, kein Template pro Lieferant, kein Regex-Zoo. Ei
 
 ## Der Vision-Aufruf
 
-Der eine echte Schritt ist ein HTTP-Request an die Messages-API von Claude, Modell auf Sonnet 4 gesetzt, die Rechnung inline als Base64-Bild übergeben. Der Prompt fragt die Felder ab, die mich interessieren — Nummer, Datum, Positionen, Summen, Steuer — als JSON. Weil das Modell Pixel liest, ist es ihm egal, ob das Layout ein sauberer PDF-Export oder ein Handyfoto einer zerknitterten Papierrechnung ist.
+Der eine echte Schritt ist ein HTTP-Request an die Messages-API von Claude, Modell auf Sonnet 4 gesetzt, die Rechnung inline als Base64-Bild übergeben. Der Prompt fragt die Felder ab, die mich interessieren (Nummer, Datum, Positionen, Summen, Steuer) als JSON. Weil das Modell Pixel liest, ist es ihm egal, ob das Layout ein sauberer PDF-Export oder ein Handyfoto einer zerknitterten Papierrechnung ist.
 
 ## Wo n8n aufhört und Code anfängt
 
@@ -36,6 +36,6 @@ Nichts davon ist schwer, aber alles zusammen ist der Unterschied zwischen einer 
 
 ## Warum es so gebaut ist
 
-Drei Nodes heißt fast nichts zu warten. Taucht ein neues Rechnungslayout auf, gibt es kein Template hinzuzufügen — das Vision-Modell kann es bereits. Der einzige Code ist der Parse-Schritt, und er ist stabil, weil die Ausgabeform des Modells stabil ist. Einfach ist hier auch belastbar.
+Drei Nodes heißt fast nichts zu warten. Taucht ein neues Rechnungslayout auf, gibt es kein Template hinzuzufügen. Das Vision-Modell kann es bereits. Der einzige Code ist der Parse-Schritt, und er ist stabil, weil die Ausgabeform des Modells stabil ist. Einfach ist hier auch belastbar.
 
 Das läuft auf meinem eigenen n8n, Teil [des selbst gehosteten Stacks, den ich statt SaaS betreibe](/blog/de/self-hosted-stack/). Wenn Sie einen solchen Leser für Ihre Dokumenttypen gebaut und an Ihr Team übergeben haben wollen, mache ich das bei [Leinss Consulting](https://leinss-consulting.de/de/).
