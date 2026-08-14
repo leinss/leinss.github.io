@@ -12,7 +12,7 @@ export const SITE: Site = {
 export const HOME: Metadata = {
   TITLE: "Privacy-first apps you can install today",
   DESCRIPTION:
-    "I build privacy-first, on-device apps with optional bring-your-own-key AI — keyboards, voice-to-text, RSS readers and more. No accounts, no telemetry, no backend.",
+    "I build privacy-first, on-device apps with optional bring-your-own-key AI: keyboards, voice-to-text, RSS readers and more. No accounts, no telemetry, no backend.",
 }
 
 // Shipped apps shown in the homepage portfolio grid. `slug` must match the
@@ -49,35 +49,35 @@ export const APPS: App[] = [
   {
     name: "TobiVoice",
     tagline:
-      "Native macOS voice-to-text that transcribes locally — offline processing, your data never leaves the device.",
+      "Native macOS voice-to-text that transcribes locally: offline processing, your data never leaves the device.",
     platform: "macOS",
     slug: "TobiVoice",
   },
   {
     name: "TobiBar",
     tagline:
-      "macOS menu-bar manager — hide, show and organise menu-bar items, with a growing toolbox of extras.",
+      "macOS menu-bar manager: hide, show and organise menu-bar items, with a growing toolbox of extras.",
     platform: "macOS",
     slug: "TobiBar",
   },
   {
     name: "kAIros",
     tagline:
-      "AI-guided goal tracking — conversational goal setup, reminders and progress with local-LLM integration.",
+      "AI-guided goal tracking: conversational goal setup, reminders and progress with local-LLM integration.",
     platform: "Android",
     slug: "kAIros",
   },
   {
     name: "finanzplanr",
     tagline:
-      "Financial planning platform for the DACH region — household budgeting, statement parsing and AI insights.",
+      "Financial planning platform for the DACH region: household budgeting, statement parsing and AI insights.",
     platform: "Web · Mobile",
     slug: "finanzplanr",
   },
   {
     name: "taggr",
     tagline:
-      "Self-hosted, AI-powered image tagging — bulk auto-tagging with a local LLM, all data stays on your machine.",
+      "Self-hosted, AI-powered image tagging: bulk auto-tagging with a local LLM, all data stays on your machine.",
     platform: "Web (self-hosted)",
     slug: "taggr",
   },
@@ -104,7 +104,7 @@ export const HACKATHONS: Metadata = {
   DESCRIPTION: "Hackathon projects and prototypes I have built.",
 }
 
-// Slugs in the `projects` collection that are hackathon entries — shown under
+// Slugs in the `projects` collection that are hackathon entries, shown under
 // /hackathons and excluded from /projects and the homepage projects list.
 export const HACKATHON_SLUGS: string[] = [
   "ethberlin",

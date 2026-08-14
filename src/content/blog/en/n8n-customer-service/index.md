@@ -6,9 +6,9 @@ tags: ["n8n", "chatbot", "customer-service", "own-your-stack"]
 lang: "en"
 ---
 
-> **Short answer:** Build a support bot in n8n by chaining five steps: a webhook receives the message, an LLM node classifies intent, a switch routes it, a database lookup adds customer context, and an LLM generates a sourced reply — escalating to a human on low confidence or negative sentiment. Visual workflow, no dedicated engineering team, running on infrastructure you own.
+> **Short answer:** Build a support bot in n8n by chaining five steps: a webhook receives the message, an LLM node classifies intent, a switch routes it, a database lookup adds customer context, and an LLM generates a sourced reply, escalating to a human on low confidence or negative sentiment. Visual workflow, no dedicated engineering team, running on infrastructure you own.
 
-Customer-service automation doesn't have to mean frustrating chatbots. Here's how I build support systems with n8n that actually help — and, because it runs on a [self-hosted n8n stack](/blog/en/self-hosted-stack/), your customer conversations never leave infrastructure you control.
+Customer-service automation doesn't have to mean frustrating chatbots. Here's how I build support systems with n8n that actually help: and, because it runs on a [self-hosted n8n stack](/blog/en/self-hosted-stack/), your customer conversations never leave infrastructure you control.
 
 ## Why n8n for customer service?
 
@@ -44,16 +44,16 @@ Generate a contextual reply with relevant documentation snippets, a personalized
 
 ### 4. Escalation logic
 
-Know when to hand off to a human — sentiment triggers, complexity thresholds, and customer-tier routing all decide when the bot steps back.
+Know when to hand off to a human: sentiment triggers, complexity thresholds, and customer-tier routing all decide when the bot steps back.
 
 ## Sample workflow structure
 
-1. **Webhook** — receives the customer message.
-2. **AI classifier** — determines intent and urgency.
-3. **Switch node** — routes to the right handler.
-4. **Database lookup** — fetches customer context.
-5. **AI response** — generates a helpful reply.
-6. **Integration** — updates the CRM and sends notifications.
+1. **Webhook**, receives the customer message.
+2. **AI classifier**, determines intent and urgency.
+3. **Switch node**, routes to the right handler.
+4. **Database lookup**, fetches customer context.
+5. **AI response**, generates a helpful reply.
+6. **Integration**, updates the CRM and sends notifications.
 
 ## What this kind of setup can achieve
 
@@ -63,7 +63,7 @@ A triage layer like this typically:
 - keeps average response time under 30 seconds, and
 - holds customer satisfaction above 4.5/5.
 
-> **Case study:** For a full walk-through of this architecture on an e-commerce retailer processing 50k monthly orders — with the metrics, costs, and implementation timeline — see the **[AI Support Triage case study](https://leinss-consulting.de/en/blog/case-study-support-triage/)**.
+> **Case study:** For a full walk-through of this architecture on an e-commerce retailer processing 50k monthly orders (with the metrics, costs, and implementation timeline) see the **[AI Support Triage case study](https://leinss-consulting.de/en/blog/case-study-support-triage/)**.
 
 ## Getting started
 
@@ -76,4 +76,4 @@ Start small:
 
 ---
 
-Want the real thing rather than a description? The [support-triage case study](https://leinss-consulting.de/en/blog/case-study-support-triage/) ships the actual n8n workflow as a downloadable JSON — import it and read every node. If you'd rather have it built and handed over, that's what I do at [Leinss Consulting](https://leinss-consulting.de/en/).
+Want the real thing rather than a description? The [support-triage case study](https://leinss-consulting.de/en/blog/case-study-support-triage/) ships the actual n8n workflow as a downloadable JSON, import it and read every node. If you'd rather have it built and handed over, that's what I do at [Leinss Consulting](https://leinss-consulting.de/en/).

@@ -4,7 +4,7 @@ const robotsTxt = `
 User-agent: *
 Allow: /
 
-# AI search/answer crawlers explicitly allowed — the apps and blog should be
+# AI search/answer crawlers explicitly allowed, the apps and blog should be
 # citable in AI Overviews, ChatGPT, Perplexity, Claude and Copilot answers.
 User-agent: GPTBot
 Allow: /

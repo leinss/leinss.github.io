@@ -21,7 +21,7 @@ interface ProjectLike {
 /**
  * Build a SoftwareApplication schema for a project that is one of the shipped
  * apps (listed in APPS). Returns null for non-app projects (e.g. hackathons),
- * so the caller can skip emitting anything. No price/rating is claimed — the
+ * so the caller can skip emitting anything. No price/rating is claimed, the
  * apps' pricing/status varies, so only verifiable fields are included.
  */
 export function softwareApplicationSchema(

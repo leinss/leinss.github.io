@@ -1,5 +1,5 @@
 ---
-title: "TobiReader — Privacy Policy"
+title: "TobiReader, Privacy Policy"
 slug: "/projects/tobireader/privacy"
 description: "Privacy Policy for the TobiReader Android app"
 date: "06/10/2026"
@@ -32,7 +32,7 @@ Email: inquiry@leinss.xyz
 - The feeds you subscribe to and their categories.
 - Downloaded/cached articles and your reading state (read, saved, starred, last-read).
 - Your app settings (appearance, language, reading preferences).
-- API keys you optionally enter for AI or translation providers — stored only in your
+- API keys you optionally enter for AI or translation providers, stored only in your
   device's secure storage, never transmitted to us.
 
 This information never leaves your device except through the optional, user-configured
@@ -41,7 +41,7 @@ features below.
 ## Optional features that contact third parties **you** choose
 
 These are off by default and only ever talk to endpoints **you** configure. When you use
-them, your data is handled under that third party's own privacy policy — not ours:
+them, your data is handled under that third party's own privacy policy, not ours:
 
 - **Feed fetching:** TobiReader downloads content directly from the feed/website URLs you
   add, over the internet.
@@ -54,8 +54,8 @@ them, your data is handled under that third party's own privacy policy — not o
 
 ## Permissions
 
-- **Internet** — to download the feeds and articles you subscribe to.
-- **Audio (record/modify/foreground playback)** — used solely to play read-aloud
+- **Internet**, to download the feeds and articles you subscribe to.
+- **Audio (record/modify/foreground playback)**, used solely to play read-aloud
   (text-to-speech) audio, including while the app is in the background. It is **not** used to
   record or capture audio.
 

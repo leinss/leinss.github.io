@@ -1,6 +1,6 @@
 ---
 title: "Where n8n stops and code starts"
-description: "Three times a no-code workflow got painful enough that I moved it into real code — invoice batches, a lead router, a meeting bot — and the rule I now use to draw the line."
+description: "Three times a no-code workflow got painful enough that I moved it into real code (invoice batches, a lead router, a meeting bot) and the rule I now use to draw the line."
 date: "Jul 4 2026"
 tags: ["n8n", "automation", "engineering", "own-your-stack", "code"]
 lang: "en"
@@ -24,25 +24,25 @@ The [lead-response workflow](/blog/en/lead-response-technical/) started clean: c
 
 Each new rule was another IF node, and within a month the canvas was an unreadable thicket where changing one branch risked breaking two others. The logic was fine; expressing it as a visual tree was the problem.
 
-**What moved to code:** the routing lives in one code step now (later a tiny service) with a clean rules table — readable, testable, changeable without tracing wires. n8n still owns the webhook, the sends, and the CRM writes. The lesson: branching business logic belongs in code, not in a forest of IF nodes.
+**What moved to code:** the routing lives in one code step now (later a tiny service) with a clean rules table: readable, testable, changeable without tracing wires. n8n still owns the webhook, the sends, and the CRM writes. The lesson: branching business logic belongs in code, not in a forest of IF nodes.
 
 ## 3. The meeting bot that timed out on long calls
 
 The [meeting assistant](/blog/en/meeting-assistant-technical/) was fine for a twenty-minute standup. Then someone fed it a ninety-minute workshop recording.
 
-That blew past the transcription limits and n8n's own execution timeout, and worst of all, a failure partway through meant re-transcribing the whole file — paying for it twice. A single long-running node with no checkpoints is a bad place to keep expensive, fragile work.
+That blew past the transcription limits and n8n's own execution timeout, and worst of all, a failure partway through meant re-transcribing the whole file, paying for it twice. A single long-running node with no checkpoints is a bad place to keep expensive, fragile work.
 
-**What moved to code:** a chunked, checkpointed pipeline — split the audio, transcribe each piece with its own retry, save progress so a failure resumes mid-file instead of restarting. n8n triggers it and emails the finished minutes. The lesson: long-running, resumable work needs state that n8n's execution model doesn't give you.
+**What moved to code:** a chunked, checkpointed pipeline: split the audio, transcribe each piece with its own retry, save progress so a failure resumes mid-file instead of restarting. n8n triggers it and emails the finished minutes. The lesson: long-running, resumable work needs state that n8n's execution model doesn't give you.
 
 ## The rule I use now
 
-Notice the pattern across all three: the same three needs kept showing up — **idempotency, retries with real backoff, and state you can observe and resume** — and n8n gives you no clean place to put any of them. That's not a knock on n8n. It's just not what a workflow canvas is for.
+Notice the pattern across all three: the same three needs kept showing up (**idempotency, retries with real backoff, and state you can observe and resume**) and n8n gives you no clean place to put any of them. That's not a knock on n8n. It's just not what a workflow canvas is for.
 
 So the line isn't "n8n versus code." It's this:
 
-- **n8n owns** the triggers, the I/O, the integrations, and the human-facing steps — the plumbing it's genuinely great at.
+- **n8n owns** the triggers, the I/O, the integrations, and the human-facing steps, the plumbing it's genuinely great at.
 - **Code owns** anything that has to be *correct under failure*: queues, retries, idempotency, chunking, real branching logic.
 
-Every one of my [workflow teardowns](/blog/en/n8n-automation-stack/) has a small code node doing exactly this, at exactly this seam. Knowing where the seam is — and being able to cross it — is the difference between an automation that demos well and one you can hand to a business and trust.
+Every one of my [workflow teardowns](/blog/en/n8n-automation-stack/) has a small code node doing exactly this, at exactly this seam. Knowing where the seam is, and being able to cross it, is the difference between an automation that demos well and one you can hand to a business and trust.
 
 That's also why I run all of it on my own stack: crossing that line means writing and owning real code, not filing a feature request. It's the whole argument in [the self-hosted stack I run instead of paying for SaaS](/blog/en/self-hosted-stack/). If you've got a workflow that's started to hurt in one of these three ways, that's exactly the kind of thing I fix at [Leinss Consulting](https://leinss-consulting.de/en/).

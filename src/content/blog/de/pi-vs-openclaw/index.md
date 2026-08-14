@@ -1,12 +1,12 @@
 ---
 title: "Pi vs OpenClaw: der minimale Agent und der Assistent drumherum"
-description: "Wie Pi und OpenClaw zusammenhängen — Pi ist der minimale, umformbare Agenten-Harness; OpenClaw ist das selbst gehostete Assistenz-Gateway, das darauf aufbaut — und wann man zu welchem greift."
+description: "Wie Pi und OpenClaw zusammenhängen: Pi ist der minimale, umformbare Agenten-Harness; OpenClaw ist das selbst gehostete Assistenz-Gateway, das darauf aufbaut, und wann man zu welchem greift."
 date: "Jul 4 2026"
 tags: ["pi", "openclaw", "ai-agents", "self-hosting", "own-your-stack"]
 lang: "de"
 ---
 
-> **Kurz gesagt:** Pi und OpenClaw sind keine Konkurrenten — Pi ist der Motor, OpenClaw das Auto. Pi ist ein minimaler, erweiterbarer Agenten-Harness, den Sie im Terminal betreiben und um Ihren eigenen Arbeitsablauf formen. OpenClaw ist ein selbst gehosteter persönlicher Assistent, der einen Agenten auf die Chat-Kanäle setzt, die Sie ohnehin nutzen, und er betreibt Pi unter der Haube. Greifen Sie zu Pi, wenn Sie einen Coding- oder Automatisierungs-Agenten wollen, den Sie durchgängig kontrollieren; zu OpenClaw, wenn Sie einen selbst gehosteten Assistenten auf WhatsApp oder Telegram wollen.
+> **Kurz gesagt:** Pi und OpenClaw sind keine Konkurrenten: Pi ist der Motor, OpenClaw das Auto. Pi ist ein minimaler, erweiterbarer Agenten-Harness, den Sie im Terminal betreiben und um Ihren eigenen Arbeitsablauf formen. OpenClaw ist ein selbst gehosteter persönlicher Assistent, der einen Agenten auf die Chat-Kanäle setzt, die Sie ohnehin nutzen, und er betreibt Pi unter der Haube. Greifen Sie zu Pi, wenn Sie einen Coding- oder Automatisierungs-Agenten wollen, den Sie durchgängig kontrollieren; zu OpenClaw, wenn Sie einen selbst gehosteten Assistenten auf WhatsApp oder Telegram wollen.
 
 Man fragt, ob man Pi *oder* OpenClaw nutzen soll, als wäre es eine Wahl zwischen Rivalen. Ist es nicht. Der eine baut auf dem anderen. So hängen sie wirklich zusammen, aus dem Betrieb beider.
 
@@ -24,11 +24,11 @@ Man fragt, ob man Pi *oder* OpenClaw nutzen soll, als wäre es eine Wahl zwische
 
 ## Was Pi ist
 
-[Pi](https://github.com/earendil-works/pi) ist ein minimaler Agenten-Harness — ein kleines Programm, das die Agenten-Schleife lokal fährt: Anfrage lesen, Werkzeug aufrufen, Ergebnis zurückspeisen, wiederholen. Seine Hauptoberfläche ist ein Terminal, und der ganze Sinn ist, dass es *umformbar* ist: Sie erweitern es mit Paketen und eigenen Werkzeugen und biegen es um Ihre tatsächliche Arbeitsweise. Es ist das „ohne Ballast"-Ende des Coding-Agenten-Spektrums — Sie bekommen die Schleife und die Kontrolle, kein ummauertes Produkt.
+[Pi](https://github.com/earendil-works/pi) ist ein minimaler Agenten-Harness: ein kleines Programm, das die Agenten-Schleife lokal fährt: Anfrage lesen, Werkzeug aufrufen, Ergebnis zurückspeisen, wiederholen. Seine Hauptoberfläche ist ein Terminal, und der ganze Sinn ist, dass es *umformbar* ist: Sie erweitern es mit Paketen und eigenen Werkzeugen und biegen es um Ihre tatsächliche Arbeitsweise. Es ist das „ohne Ballast"-Ende des Coding-Agenten-Spektrums: Sie bekommen die Schleife und die Kontrolle, kein ummauertes Produkt.
 
 ## Was OpenClaw ist
 
-[OpenClaw](https://openclaw.ai/) ist ein selbst gehosteter persönlicher Assistent, der Sie auf den Kanälen trifft, die Sie ohnehin nutzen — schreiben Sie ihm auf WhatsApp oder Telegram, und er handelt in Ihrem Namen. Unter der Haube ist der Agent, der die Arbeit tut, Pi. OpenClaw legt das Gateway, die Kanäle und das Immer-da-Assistenz-Framing obendrauf. Es ging binnen einer Woche von null zu einem der meistgesternten Projekte auf GitHub, was zeigt, wie groß der Appetit auf einen Assistenten ist, den man selbst betreibt, statt ihn zu mieten.
+[OpenClaw](https://openclaw.ai/) ist ein selbst gehosteter persönlicher Assistent, der Sie auf den Kanälen trifft, die Sie ohnehin nutzen: schreiben Sie ihm auf WhatsApp oder Telegram, und er handelt in Ihrem Namen. Unter der Haube ist der Agent, der die Arbeit tut, Pi. OpenClaw legt das Gateway, die Kanäle und das Immer-da-Assistenz-Framing obendrauf. Es ging binnen einer Woche von null zu einem der meistgesternten Projekte auf GitHub, was zeigt, wie groß der Appetit auf einen Assistenten ist, den man selbst betreibt, statt ihn zu mieten.
 
 ## Wann man zu welchem greift
 

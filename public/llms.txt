@@ -1,4 +1,4 @@
-# Tobias Leinss — privacy-first apps
+# Tobias Leinss, privacy-first apps
 
 > Tobias Leinss is a full-stack engineer who builds privacy-first, on-device apps with optional bring-your-own-key (BYOK) AI: Android keyboards, voice-to-text, RSS readers, screen recorders and more. The apps run on your own device, work without accounts or a backend, and only reach the cloud when you supply your own AI key. No accounts, no telemetry, no data collection, no lock-in. Based in Germany; works in English and German.
 
@@ -8,11 +8,11 @@ The apps below are all local-first: data stays on your device by default, and an
 - [TobiBoard](https://leinss.xyz/projects/TobiBoard/) (Android): on-device keyboard with optional BYOK AI voice-to-text and text fixing. Open source.
 - [TobiReader](https://leinss.xyz/projects/TobiReader/) (Android): local-first RSS/Atom reader with on-device read-aloud, optional AI summaries, and self-hosted sync.
 - [TobiRecord](https://leinss.xyz/projects/TobiRecord/) (macOS · Windows · Linux): open-source screen recorder and editor with auto-zoom, cursor polish and styled frames.
-- [TobiVoice](https://leinss.xyz/projects/TobiVoice/) (macOS): native voice-to-text that transcribes locally — offline processing, data never leaves the device.
+- [TobiVoice](https://leinss.xyz/projects/TobiVoice/) (macOS): native voice-to-text that transcribes locally: offline processing, data never leaves the device.
 - [TobiBar](https://leinss.xyz/projects/TobiBar/) (macOS): menu-bar manager to hide, show and organise menu-bar items, with a growing toolbox of extras.
-- [kAIros](https://leinss.xyz/projects/kAIros/) (Android): AI-guided goal tracking — conversational goal setup, reminders and progress with local-LLM integration.
-- [finanzplanr](https://leinss.xyz/projects/finanzplanr/) (Web · Mobile): financial planning for the DACH region — household budgeting, statement parsing and AI insights.
-- [taggr](https://leinss.xyz/projects/taggr/) (Web, self-hosted): AI-powered image tagging — bulk auto-tagging with a local LLM, all data stays on your machine.
+- [kAIros](https://leinss.xyz/projects/kAIros/) (Android): AI-guided goal tracking: conversational goal setup, reminders and progress with local-LLM integration.
+- [finanzplanr](https://leinss.xyz/projects/finanzplanr/) (Web · Mobile): financial planning for the DACH region: household budgeting, statement parsing and AI insights.
+- [taggr](https://leinss.xyz/projects/taggr/) (Web, self-hosted): AI-powered image tagging: bulk auto-tagging with a local LLM, all data stays on your machine.
 
 ## Writing
 - [Blog](https://leinss.xyz/blog/): articles on building privacy-first, on-device and BYOK-AI apps, shipping Android apps outside the Play Store, and maintaining open-source forks.
@@ -23,7 +23,7 @@ The apps below are all local-first: data stays on your device by default, and an
 - [Projects](https://leinss.xyz/projects/): full app list.
 
 ## Consulting (secondary)
-- Generative-AI consulting for German Mittelstand and service companies is offered separately at https://leinss-consulting.de — building your own apps is the main focus.
+- Generative-AI consulting for German Mittelstand and service companies is offered separately at https://leinss-consulting.de, building your own apps is the main focus.
 
 ## Contact
 - Email: dev@leinss.xyz

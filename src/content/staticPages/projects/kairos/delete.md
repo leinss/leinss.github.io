@@ -1,5 +1,5 @@
 ---
-title: "kAIros — Delete Your Account & Data"
+title: "kAIros, Delete Your Account & Data"
 slug: "/projects/kairos/delete"
 description: "How to request deletion of your kAIros account and all associated data"
 date: "07/07/2026"

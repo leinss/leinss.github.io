@@ -1,6 +1,6 @@
 ---
 title: "Postiz vs Buffer: the social scheduler I self-host instead"
-description: "How Postiz, a self-hosted open-source social media scheduler, compares to Buffer and Hootsuite on per-channel pricing, data ownership, and control — from someone who runs it."
+description: "How Postiz, a self-hosted open-source social media scheduler, compares to Buffer and Hootsuite on per-channel pricing, data ownership, and control, from someone who runs it."
 date: "Jul 4 2026"
 tags: ["postiz", "buffer", "self-hosting", "social-media", "saas-alternatives", "own-your-stack"]
 lang: "en"
@@ -16,7 +16,7 @@ Scheduling social posts is the kind of small recurring job that quietly gets met
 | --- | --- | --- |
 | Source | Open (AGPL-3.0) | Closed |
 | Where accounts & drafts live | My server, in the EU | Their cloud |
-| Pricing model | Flat — the server it runs on | Per channel (Buffer) / per seat (Hootsuite) |
+| Pricing model | Flat, the server it runs on | Per channel (Buffer) / per seat (Hootsuite) |
 | Channels | Add as many as you want | Each one adds to the bill |
 | AI drafting | Built in, on your own API key | Bundled, on their terms |
 | Setup | Docker stack, you run it | Sign up, connect, done |
@@ -43,4 +43,4 @@ All three do the core job: connect your social accounts, write posts, schedule t
 
 The recurring catch across everything I self-host: the tool is the easy part; running it *well* is Docker, backups, and maintenance. That gap is the theme of [the self-hosted stack I run instead of paying for SaaS](/blog/en/self-hosted-stack/).
 
-If you want owned automation like this — social scheduling and the rest — built and handed to your team, that's the kind of thing I do at [Leinss Consulting](https://leinss-consulting.de/en/).
+If you want owned automation like this, social scheduling and the rest, built and handed to your team, that's the kind of thing I do at [Leinss Consulting](https://leinss-consulting.de/en/).

@@ -1,12 +1,12 @@
 ---
 title: "Umami vs Google Analytics: Die Analyse, die ich stattdessen selbst hoste"
-description: "Wie sich Umami, eine selbst gehostete, datenschutzfreundliche Analyse, gegen Google Analytics schlägt — bei Datenhoheit, DSGVO, Cookies und Sampling. Von jemandem, der es produktiv betreibt."
+description: "Wie sich Umami, eine selbst gehostete, datenschutzfreundliche Analyse, gegen Google Analytics schlägt: bei Datenhoheit, DSGVO, Cookies und Sampling. Von jemandem, der es produktiv betreibt."
 date: "Jul 4 2026"
 tags: ["umami", "google-analytics", "self-hosting", "privacy", "saas-alternatives", "own-your-stack"]
 lang: "de"
 ---
 
-> **Kurz gesagt:** Umami ist quelloffene Analyse, die man selbst hostet; Google Analytics ist gratis, weil Sie mit den Daten Ihrer Besucher bezahlen. Umami hält jeden Aufruf auf meinem eigenen Server in der EU, braucht kein Cookie-Banner und sampelt die Zahlen nie. GA4 kann mehr und ist aufwendiger zu lernen, und es schickt Ihren Traffic an Google. Diese Seite läuft auf Umami — hier ist die Begründung.
+> **Kurz gesagt:** Umami ist quelloffene Analyse, die man selbst hostet; Google Analytics ist gratis, weil Sie mit den Daten Ihrer Besucher bezahlen. Umami hält jeden Aufruf auf meinem eigenen Server in der EU, braucht kein Cookie-Banner und sampelt die Zahlen nie. GA4 kann mehr und ist aufwendiger zu lernen, und es schickt Ihren Traffic an Google. Diese Seite läuft auf Umami, hier ist die Begründung.
 
 Die Analyse, die gerade Ihren Besuch zählt, ist Umami, auf Infrastruktur, die mir gehört. Ich bin bewusst von Google Analytics weggegangen. Das ist der Vergleich, den ich jedem gebe, der zwischen beiden entscheidet.
 
@@ -17,7 +17,7 @@ Die Analyse, die gerade Ihren Besuch zählt, ist Umami, auf Infrastruktur, die m
 | Quelle | Offen (MIT) | Geschlossen (Google) |
 | Wo die Daten liegen | Mein Server, in der EU | Googles Cloud |
 | Cookie- / Consent-Banner | Nicht nötig | In der EU vorgeschrieben |
-| Sampling | Keins — jeder Aufruf zählt | Ab Schwellenwerten gesampelt |
+| Sampling | Keins, jeder Aufruf zählt | Ab Schwellenwerten gesampelt |
 | Preis | Der Server, auf dem es läuft | Gratis (Sie zahlen mit Daten) |
 | Einrichtung | Docker + Postgres, selbst betrieben | Tag einfügen, fertig |
 | Lernkurve | Ein Dashboard | GA4 ist ein eigenes Handwerk |

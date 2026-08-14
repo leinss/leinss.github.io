@@ -17,8 +17,8 @@ proxy and TLS, firewalling, and rolling deploys across staging and production.
 
 **observability**
 
-Hub-satellite monitoring stack — Prometheus, Loki, Grafana, Tempo and
-Alertmanager — with remote-write from the satellites, central log shipping,
+Hub-satellite monitoring stack: Prometheus, Loki, Grafana, Tempo and
+Alertmanager: with remote-write from the satellites, central log shipping,
 and alerting on node, database and endpoint health.
 
 **backend**

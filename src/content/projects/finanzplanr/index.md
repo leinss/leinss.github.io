@@ -1,6 +1,6 @@
 ---
 title: "finanzplanr"
-description: "A financial planning platform built for the DACH region — household budgeting, automatic statement parsing and AI-generated insights, on web and mobile."
+description: "A financial planning platform built for the DACH region: household budgeting, automatic statement parsing and AI-generated insights, on web and mobile."
 date: "Feb 2026"
 ---
 
@@ -8,9 +8,9 @@ date: "Feb 2026"
 
 ## What it does
 
-- **Household budgeting and planning** — track income, expenses and balances with calculations built for the German-speaking market.
-- **Statement parsing** — an AI layer reads bank statements and turns them into structured, categorized data.
-- **AI insights** — plain-language narratives that explain what's happening in your finances.
-- **Web and mobile** — a Next.js web app and an Expo mobile app over a shared, per-user-secured data layer.
+- **Household budgeting and planning**: track income, expenses and balances with calculations built for the German-speaking market.
+- **Statement parsing**: an AI layer reads bank statements and turns them into structured, categorized data.
+- **AI insights**, plain-language narratives that explain what's happening in your finances.
+- **Web and mobile**: a Next.js web app and an Expo mobile app over a shared, per-user-secured data layer.
 
 Multilingual (German, English, French, Italian) and designed around per-user data ownership.

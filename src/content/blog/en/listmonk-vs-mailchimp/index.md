@@ -1,6 +1,6 @@
 ---
 title: "Listmonk vs Mailchimp: the newsletter I self-host instead"
-description: "How Listmonk, a self-hosted open-source newsletter tool, compares to Mailchimp on list ownership, per-contact pricing, deliverability, and control — from someone who runs it."
+description: "How Listmonk, a self-hosted open-source newsletter tool, compares to Mailchimp on list ownership, per-contact pricing, deliverability, and control, from someone who runs it."
 date: "Jul 4 2026"
 tags: ["listmonk", "mailchimp", "self-hosting", "newsletter", "saas-alternatives", "own-your-stack"]
 lang: "en"
@@ -16,7 +16,7 @@ The signup form at the bottom of this page posts to Listmonk, running on infrast
 | --- | --- | --- |
 | Source | Open (AGPL-3.0) | Closed (Intuit) |
 | Who owns the list | Me, in my own database | Mailchimp's platform |
-| Pricing model | Flat — you pay for the server | Per contact, climbs with the list |
+| Pricing model | Flat: you pay for the server | Per contact, climbs with the list |
 | Sending | Your own SMTP / SES provider | Bundled, handled for you |
 | Deliverability work | Yours to set up (SPF, DKIM) | Done for you |
 | Data location | My server, in the EU | Mailchimp's cloud (US) |

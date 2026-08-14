@@ -1,12 +1,12 @@
 ---
 title: "Postiz vs Buffer: Der Social-Planer, den ich stattdessen selbst hoste"
-description: "Wie sich Postiz, ein selbst gehosteter Open-Source-Social-Media-Planer, gegen Buffer und Hootsuite schlägt — bei Preis pro Kanal, Datenhoheit und Kontrolle. Von jemandem, der es betreibt."
+description: "Wie sich Postiz, ein selbst gehosteter Open-Source-Social-Media-Planer, gegen Buffer und Hootsuite schlägt: bei Preis pro Kanal, Datenhoheit und Kontrolle. Von jemandem, der es betreibt."
 date: "Jul 4 2026"
 tags: ["postiz", "buffer", "self-hosting", "social-media", "saas-alternatives", "own-your-stack"]
 lang: "de"
 ---
 
-> **Kurz gesagt:** Postiz ist ein quelloffener Social-Media-Planer, den man selbst hostet; Buffer und Hootsuite sind gehostete Tools, die pro Kanal oder pro Platz abrechnen. Postiz plant und stellt Beiträge über dieselben Netzwerke in die Warteschlange, hält Ihre Konten und Entwürfe auf Ihrem eigenen Server und kostet nicht mehr, wenn Sie Kanäle hinzufügen. Buffer ist schneller eingerichtet und ohne Aufwand. Ich betreibe Postiz auf eigener Infrastruktur — hier ist der Vergleich.
+> **Kurz gesagt:** Postiz ist ein quelloffener Social-Media-Planer, den man selbst hostet; Buffer und Hootsuite sind gehostete Tools, die pro Kanal oder pro Platz abrechnen. Postiz plant und stellt Beiträge über dieselben Netzwerke in die Warteschlange, hält Ihre Konten und Entwürfe auf Ihrem eigenen Server und kostet nicht mehr, wenn Sie Kanäle hinzufügen. Buffer ist schneller eingerichtet und ohne Aufwand. Ich betreibe Postiz auf eigener Infrastruktur, hier ist der Vergleich.
 
 Social-Beiträge zu planen ist die Art kleiner, wiederkehrender Aufgabe, die still pro Kanal abgerechnet wird, bis die Rechnung sich summiert. Ich habe diese Aufgabe auf Postiz umgezogen, selbst gehostet. So schlägt es sich gegen die Standardwahl.
 
@@ -16,7 +16,7 @@ Social-Beiträge zu planen ist die Art kleiner, wiederkehrender Aufgabe, die sti
 | --- | --- | --- |
 | Quelle | Offen (AGPL-3.0) | Geschlossen |
 | Wo Konten & Entwürfe liegen | Mein Server, in der EU | Deren Cloud |
-| Preismodell | Pauschal — der Server, der es trägt | Pro Kanal (Buffer) / pro Platz (Hootsuite) |
+| Preismodell | Pauschal: der Server, der es trägt | Pro Kanal (Buffer) / pro Platz (Hootsuite) |
 | Kanäle | So viele wie Sie wollen | Jeder zusätzliche erhöht die Rechnung |
 | KI-Entwürfe | Eingebaut, auf eigenem API-Schlüssel | Gebündelt, zu deren Bedingungen |
 | Einrichtung | Docker-Stack, selbst betrieben | Anmelden, verbinden, fertig |
@@ -43,4 +43,4 @@ Alle drei erledigen die Kernaufgabe: Social-Konten verbinden, Beiträge schreibe
 
 Der wiederkehrende Haken bei allem, was ich selbst hoste: das Tool ist der leichte Teil; es *gut* zu betreiben ist Docker, Backups und Wartung. Diese Lücke ist das Thema von [dem selbst gehosteten Stack, den ich statt SaaS betreibe](/blog/de/self-hosted-stack/).
 
-Wenn Sie eigene Automatisierung wie diese — Social-Planung und den Rest — gebaut und an Ihr Team übergeben haben wollen, ist das genau die Art Arbeit, die ich bei [Leinss Consulting](https://leinss-consulting.de/de/) mache.
+Wenn Sie eigene Automatisierung wie diese, Social-Planung und den Rest, gebaut und an Ihr Team übergeben haben wollen, ist das genau die Art Arbeit, die ich bei [Leinss Consulting](https://leinss-consulting.de/de/) mache.

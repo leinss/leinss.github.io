@@ -23,19 +23,19 @@ Eine generische Auto-Antwort ist schlimmer als eine langsame menschliche. Die [L
 
 ## Warum erst klassifizieren, dann schreiben
 
-Man könnte einen Prompt bitten, „lies das und antworte". Es klappt, schlecht — das Modell muss Ton und Absicht raten, während es schreibt. Die Aufgabe zu teilen ist verlässlicher:
+Man könnte einen Prompt bitten, „lies das und antworte". Es klappt, schlecht: das Modell muss Ton und Absicht raten, während es schreibt. Die Aufgabe zu teilen ist verlässlicher:
 
 1. **Klassifizieren** läuft zuerst mit einem System-Prompt, der es zu einem Lead-Qualifizierungsassistenten macht. Es gibt strukturierte Felder zurück: was der Lead will, wie gut die Passung ist und in welcher Sprache er geschrieben hat.
 2. **Entwerfen** läuft danach. Es bekommt die Originalnachricht *und* die Klassifikation, mit einem Persona-System-Prompt, also schreibt es in einer konsistenten Stimme, gezielt auf diesen Lead, und antwortet in dessen Sprache.
 
-Die Klassifikation gibt mir außerdem etwas, worauf ich später routen kann — ein heißer Lead und ein Nur-Gucker können unterschiedlich behandelt werden — ohne die Nachricht erneut zu lesen.
+Die Klassifikation gibt mir außerdem etwas, worauf ich später routen kann, ein heißer Lead und ein Nur-Gucker können unterschiedlich behandelt werden, ohne die Nachricht erneut zu lesen.
 
 ## Wo n8n aufhört und Code anfängt
 
 n8n besitzt den Webhook, die zwei HTTP-Aufrufe und die Antwort. Die zwei Code-Nodes sind die Nähte:
 
 - **Validieren** prüft, dass Name, E-Mail und Nachricht da sind, bevor ein einziges Token ausgegeben wird.
-- **Klassifikation parsen** erledigt die unglamouröse, aber essenzielle Arbeit: die ```` ```json ````-Zäune des Modells entfernen, `JSON.parse`, und sicher scheitern, wenn die Form nicht stimmt — damit der Entwurfsschritt immer sauberen strukturierten Input bekommt.
+- **Klassifikation parsen** erledigt die unglamouröse, aber essenzielle Arbeit: die ```` ```json ````-Zäune des Modells entfernen, `JSON.parse`, und sicher scheitern, wenn die Form nicht stimmt, damit der Entwurfsschritt immer sauberen strukturierten Input bekommt.
 - **E-Mail zusammenbauen** liest das Sprach-Flag aus der Klassifikation und baut Betreff und Text entsprechend.
 
 Dieser Parse-zwischen-Durchläufen-Node ist reines „wo Code anfängt": Zwei Modellaufrufe lassen sich in einer Oberfläche nicht verlässlich verketten, ohne dass etwas echter Code die Übergabe säubert. Es ist die Grenze, auf die ich immer wieder stoße, beschrieben in [meinem n8n-Automatisierungs-Stack](/blog/de/n8n-automation-stack/).
