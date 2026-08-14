@@ -140,17 +140,17 @@ function toggleTheme(dark) {
 </tbody>
 </table>
 <h2 id="warum-erst-klassifizieren-dann-schreiben">Warum erst klassifizieren, dann schreiben</h2>
-<p>Man könnte einen Prompt bitten, „lies das und antworte“. Es klappt, schlecht — das Modell muss Ton und Absicht raten, während es schreibt. Die Aufgabe zu teilen ist verlässlicher:</p>
+<p>Man könnte einen Prompt bitten, „lies das und antworte“. Es klappt, schlecht: das Modell muss Ton und Absicht raten, während es schreibt. Die Aufgabe zu teilen ist verlässlicher:</p>
 <ol>
 <li><strong>Klassifizieren</strong> läuft zuerst mit einem System-Prompt, der es zu einem Lead-Qualifizierungsassistenten macht. Es gibt strukturierte Felder zurück: was der Lead will, wie gut die Passung ist und in welcher Sprache er geschrieben hat.</li>
 <li><strong>Entwerfen</strong> läuft danach. Es bekommt die Originalnachricht <em>und</em> die Klassifikation, mit einem Persona-System-Prompt, also schreibt es in einer konsistenten Stimme, gezielt auf diesen Lead, und antwortet in dessen Sprache.</li>
 </ol>
-<p>Die Klassifikation gibt mir außerdem etwas, worauf ich später routen kann — ein heißer Lead und ein Nur-Gucker können unterschiedlich behandelt werden — ohne die Nachricht erneut zu lesen.</p>
+<p>Die Klassifikation gibt mir außerdem etwas, worauf ich später routen kann, ein heißer Lead und ein Nur-Gucker können unterschiedlich behandelt werden, ohne die Nachricht erneut zu lesen.</p>
 <h2 id="wo-n8n-aufhört-und-code-anfängt">Wo n8n aufhört und Code anfängt</h2>
 <p>n8n besitzt den Webhook, die zwei HTTP-Aufrufe und die Antwort. Die zwei Code-Nodes sind die Nähte:</p>
 <ul>
 <li><strong>Validieren</strong> prüft, dass Name, E-Mail und Nachricht da sind, bevor ein einziges Token ausgegeben wird.</li>
-<li><strong>Klassifikation parsen</strong> erledigt die unglamouröse, aber essenzielle Arbeit: die <code>```json</code>-Zäune des Modells entfernen, <code>JSON.parse</code>, und sicher scheitern, wenn die Form nicht stimmt — damit der Entwurfsschritt immer sauberen strukturierten Input bekommt.</li>
+<li><strong>Klassifikation parsen</strong> erledigt die unglamouröse, aber essenzielle Arbeit: die <code>```json</code>-Zäune des Modells entfernen, <code>JSON.parse</code>, und sicher scheitern, wenn die Form nicht stimmt, damit der Entwurfsschritt immer sauberen strukturierten Input bekommt.</li>
 <li><strong>E-Mail zusammenbauen</strong> liest das Sprach-Flag aus der Klassifikation und baut Betreff und Text entsprechend.</li>
 </ul>
 <p>Dieser Parse-zwischen-Durchläufen-Node ist reines „wo Code anfängt“: Zwei Modellaufrufe lassen sich in einer Oberfläche nicht verlässlich verketten, ohne dass etwas echter Code die Übergabe säubert. Es ist die Grenze, auf die ich immer wieder stoße, beschrieben in <a href="/blog/de/n8n-automation-stack/">meinem n8n-Automatisierungs-Stack</a>.</p>

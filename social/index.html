@@ -165,7 +165,7 @@ const LIST_UUID = "56525a08-c916-4c7c-ae2c-36481da13071";
         const article = document.createElement("article")
         article.className = "group border-b border-black/5 dark:border-white/5 pb-6 last:border-0"
 
-        // Post text — build with DOM nodes to handle facets safely
+        // Post text, build with DOM nodes to handle facets safely
         const textEl = document.createElement("p")
         textEl.className = "text-sm leading-relaxed text-black/80 dark:text-white/80 whitespace-pre-wrap"
         buildRichText(textEl, record.text, record.facets)
@@ -211,7 +211,7 @@ const LIST_UUID = "56525a08-c916-4c7c-ae2c-36481da13071";
             card.appendChild(cardBody)
             article.appendChild(card)
           } catch {
-            // invalid URL — skip embed
+            // invalid URL, skip embed
           }
         }
 

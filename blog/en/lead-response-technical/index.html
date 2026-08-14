@@ -140,17 +140,17 @@ function toggleTheme(dark) {
 </tbody>
 </table>
 <h2 id="why-classify-before-writing">Why classify before writing</h2>
-<p>You could ask one prompt to “read this and reply.” It works, badly — the model has to guess tone and intent while it writes. Splitting the job is more reliable:</p>
+<p>You could ask one prompt to “read this and reply.” It works, badly, the model has to guess tone and intent while it writes. Splitting the job is more reliable:</p>
 <ol>
 <li><strong>Classify</strong> runs first with a system prompt that turns it into a lead-qualification assistant. It returns structured fields: what the lead wants, how good a fit it is, and which language they wrote in.</li>
 <li><strong>Draft</strong> runs second. It gets the original message <em>and</em> the classification, with a persona system prompt, so it writes in a consistent voice aimed at that specific lead and answers in their language.</li>
 </ol>
-<p>The classification also gives me something to route on later — a hot lead and a tyre-kicker can get different handling — without re-reading the message.</p>
+<p>The classification also gives me something to route on later, a hot lead and a tyre-kicker can get different handling, without re-reading the message.</p>
 <h2 id="where-n8n-stops-and-code-starts">Where n8n stops and code starts</h2>
 <p>n8n owns the webhook, the two HTTP calls, and the response. The two code nodes are the seams:</p>
 <ul>
 <li><strong>Validate</strong> checks name, email, and message are present before spending a single token.</li>
-<li><strong>Parse classification</strong> does the unglamorous but essential work: strip the model’s <code>```json</code> fences, <code>JSON.parse</code>, and fail safely if the shape is off — so the draft step always gets clean structured input.</li>
+<li><strong>Parse classification</strong> does the unglamorous but essential work: strip the model’s <code>```json</code> fences, <code>JSON.parse</code>, and fail safely if the shape is off, so the draft step always gets clean structured input.</li>
 <li><strong>Assemble email</strong> reads the language flag from the classification and builds the subject and body accordingly.</li>
 </ul>
 <p>That parse-between-passes node is pure “where code starts”: you can’t reliably chain two model calls in a GUI without a bit of real code cleaning the handoff. It’s the boundary I keep hitting, described in <a href="/blog/en/n8n-automation-stack/">my n8n automation stack</a>.</p>
