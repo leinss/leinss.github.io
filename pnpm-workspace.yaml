@@ -5,3 +5,9 @@
 onlyBuiltDependencies:
   - esbuild
   - sharp
+
+# Delay installing freshly published versions, so a compromised release has
+# time to be caught before it lands here. Replaces `min-release-age=7` in
+# .npmrc, which pnpm does not recognise and silently ignored: the real setting
+# is `minimumReleaseAge`, it belongs in this file, and it is in MINUTES.
+minimumReleaseAge: 10080 # 7 days
