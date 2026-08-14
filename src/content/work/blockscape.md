@@ -7,7 +7,7 @@ dateEnd: "06/30/2024"
 
 DevOps Eng. in the Ethereum & Cosmos ecosystem. Automation tools in Golang & Rust.
 
-[blockscape.network](bit.ly/blockscape_network)
+[blockscape.network](https://blockscape.network)
 
 **reporting tool**
 

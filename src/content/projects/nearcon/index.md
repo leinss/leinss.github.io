@@ -2,17 +2,17 @@
 title: "Nearcon Lisbon Hackathon"
 description: "ethereum attestation service empowering DAOs to standardize digital trust."
 date: "Nov 2023"
-demoURL: "https://bit.ly/nearcon_calimocho_attestation_service"
+demoURL: "https://devpost.com/software/calimocho-attestation-service"
 repoURL: "https://github.com/leinss/Calimocho"
 ---
 
 ## Calimocho Attestation Service
 
-[![demo image](/images/projects/nearcon/calimocho_1.png)](https://bit.ly/nearcon_calimocho_attestation_service)
-[![demo image](/images/projects/nearcon/calimocho_2.png)](https://bit.ly/nearcon_calimocho_attestation_service)
-[![demo image](/images/projects/nearcon/calimocho_3.png)](https://bit.ly/nearcon_calimocho_attestation_service)
-[![demo image](/images/projects/nearcon/calimocho_4.png)](https://bit.ly/nearcon_calimocho_attestation_service)
-[![demo image](/images/projects/nearcon/calimocho.jpg)](https://bit.ly/nearcon_calimocho_attestation_service)
+[![demo image](/images/projects/nearcon/calimocho_1.png)](https://devpost.com/software/calimocho-attestation-service)
+[![demo image](/images/projects/nearcon/calimocho_2.png)](https://devpost.com/software/calimocho-attestation-service)
+[![demo image](/images/projects/nearcon/calimocho_3.png)](https://devpost.com/software/calimocho-attestation-service)
+[![demo image](/images/projects/nearcon/calimocho_4.png)](https://devpost.com/software/calimocho-attestation-service)
+[![demo image](/images/projects/nearcon/calimocho.jpg)](https://devpost.com/software/calimocho-attestation-service)
 
 Calimocho Attestation Service free, open-source service empowering DAOs to standardize digital trust through secure, collective signature verification, optimizing governance and decision-making processes.
 

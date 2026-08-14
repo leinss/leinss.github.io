@@ -2,7 +2,7 @@
 title: "EthPrague Hackathon"
 description: "Turtleshell brings Smart Contract security data on-chain, providing transparency, composability, and programmable on-chai data."
 date: "Jun 2023"
-demoURL: "https://bit.ly/ethprague_turtleshell"
+demoURL: "https://devfolio.co/projects/turtleshell-efef"
 repoURL: ""
 ---
 

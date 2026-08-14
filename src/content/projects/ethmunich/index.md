@@ -2,17 +2,17 @@
 title: "EthMunich Hackathon"
 description: "ZKAI Ads Earn Privately! Your data, your way."
 date: "Aug 2023"
-demoURL: "https://bit.ly/ethmunich_zkai_ads"
+demoURL: "https://devfolio.co/projects/zk-ai-ads-2351"
 repoURL: "https://github.com/amritanshusikdar/zkaiads"
 ---
 
 ## ZKAI Ads
 
-[![demo image](/images/projects/ethmunich/zkaiads.webp)](https://bit.ly/ethmunich_zkai_ads)
-[![demo image](/images/projects/ethmunich/zkaiads_2.webp)](https://bit.ly/ethmunich_zkai_ads)
-[![demo image](/images/projects/ethmunich/zkaiads_3.webp)](https://bit.ly/ethmunich_zkai_ads)
-[![demo image](/images/projects/ethmunich/zkaiads_4.webp)](https://bit.ly/ethmunich_zkai_ads)
-[![demo image](/images/projects/ethmunich/zkaiads_1.webp)](https://bit.ly/ethmunich_zkai_ads)
+[![demo image](/images/projects/ethmunich/zkaiads.webp)](https://devfolio.co/projects/zk-ai-ads-2351)
+[![demo image](/images/projects/ethmunich/zkaiads_2.webp)](https://devfolio.co/projects/zk-ai-ads-2351)
+[![demo image](/images/projects/ethmunich/zkaiads_3.webp)](https://devfolio.co/projects/zk-ai-ads-2351)
+[![demo image](/images/projects/ethmunich/zkaiads_4.webp)](https://devfolio.co/projects/zk-ai-ads-2351)
+[![demo image](/images/projects/ethmunich/zkaiads_1.webp)](https://devfolio.co/projects/zk-ai-ads-2351)
 
 ZKAI Ads Earn Privately! Your data, your way.
 

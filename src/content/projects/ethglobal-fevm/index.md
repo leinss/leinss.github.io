@@ -2,7 +2,7 @@
 title: "EthGlobal FEVM Hackathon"
 description: "SPN stands for spending. Our team has created a data DAO that empowers consumers to turn their data, in particular, their credit card transaction data, into assets and have true ownership over"
 date: "Nov 2022"
-demoURL: "https://bit.ly/spn_dao"
+demoURL: "https://ethglobal.com/showcase/spn-dao-zwbar"
 repoURL: ""
 ---
 

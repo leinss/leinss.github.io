@@ -2,8 +2,8 @@
 title: "EthLisbon Hackathon"
 description: "turn your attention into a gamified earning experience"
 date: "Nov 2023"
-demoURL: "https://bit.ly/ethlisbon_tallyrally"
-repoURL: "https://bit.ly/tallyrally-repo"
+demoURL: "https://taikai.network/ethlisbon/hackathons/ethlisbon-2023/projects/clok7sn0m06qhxk01456d5j4x/idea"
+repoURL: "https://github.com/mpallares/tally-rally"
 ---
 
 ## Tally Rally

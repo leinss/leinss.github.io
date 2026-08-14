@@ -16,4 +16,4 @@ e.g. for conferences or meetups based on their public social media
 presences. Profiling participants through data & AI pipelines and
 matching similar participants with algorithms.
 
-[datalatte.com](https://bit.ly/datalatte_com)
+[datalatte.com](https://datalatte.com)

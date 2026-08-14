@@ -2,8 +2,8 @@
 title: "EthGlobal Istanbul Hackathon"
 description: "a solo staking protocol with sybil resistance and MEV smoothing"
 date: "Nov 2023"
-demoURL: "https://bit.ly/ethistanbul_grayskull_guardians"
-repoURL: "bit.ly/ethistanbul_grayskull_guardians"
+demoURL: "https://ethglobal.com/showcase/grayskull-guardians-ikgth"
+repoURL: "https://ethglobal.com/showcase/grayskull-guardians-ikgth"
 ---
 
 ## Grayskull Guardians

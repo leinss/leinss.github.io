@@ -2,7 +2,7 @@
 title: "EthGlobal Paris Hackathon"
 description: "zkPaymaster Enhancing account abstraction paymaster with zero-knowledge to enable any form of sponsorship of transaction fees in a private preserving way. Ethereum Foundation - Best ERC-4337, Sismo - Top 5, Biconomy - Best Use, MakerDAO - 2nd Best use of sDAI."
 date: "Jul 2023"
-demoURL: "https://bit.ly/ethparis_zkpaymaster"
+demoURL: "https://ethglobal.com/showcase/zkpaymaster-dbooj"
 repoURL: "https://github.com/floberlin/pmiyc"
 ---
 

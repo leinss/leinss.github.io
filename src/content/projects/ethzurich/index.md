@@ -2,7 +2,7 @@
 title: "EthZurich Hackathon"
 description: "Caffeine Consensus Infrastructure for large enterprises and government organizations to use their existing Public Key Infrastructure with Account Abstraction for gasless transactions without additional software"
 date: "Apr 2023"
-demoURL: "https://bit.ly/ethzurich_caffeine_consensus"
+demoURL: "https://devfolio.co/projects/caffeine-consensus-ee2b"
 repoURL: ""
 ---
 

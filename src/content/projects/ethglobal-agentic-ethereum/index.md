@@ -2,7 +2,7 @@
 title: "EthGlobal Agentic Ethereum Hackathon"
 description: "etherguild.xyz a community to fund ethereum based projects."
 date: "Feb 2025"
-demoURL: "https://bit.ly/ether_guild"
+demoURL: "https://ethglobal.com/showcase/ether-guild-e8nzs"
 repoURL: "https://github.com/its-everdred/etherguild  "
 ---
 

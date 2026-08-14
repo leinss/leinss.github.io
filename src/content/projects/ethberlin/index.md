@@ -2,13 +2,13 @@
 title: "EthBerlin Hackathon"
 description: "deadcaster A decentralized & secure Dead Human Switch for our secret's life insurance"
 date: "May 2024"
-demoURL: "https://bit.ly/ethberlin_deadcaster"
+demoURL: "https://projects.ethberlin.org/submissions/302"
 repoURL: "https://github.com/eth-berlin/DeadCaster"
 ---
 
 ## Deadcaster
 
-[![demo image](/images/projects/ethberlin/deadcaster.png)](https://bit.ly/ethberlin_deadcaster)
+[![demo image](/images/projects/ethberlin/deadcaster.png)](https://projects.ethberlin.org/submissions/302)
 
 ## The problem Deadcaster solves
 

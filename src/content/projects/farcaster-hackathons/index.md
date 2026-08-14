@@ -2,7 +2,7 @@
 title: "Farcaster Hackathons"
 description: "Hackathons related to building farcaster frames based on the opengraph protocol."
 date: "July 2024"
-demoURL: "https://bit.ly/backdrop_build_datalatte"
+demoURL: "https://backdropbuild.com/builds/datalatte"
 repoURL: ""
 ---
 
@@ -26,6 +26,6 @@ A Farcaster frame that, on the surface, is a game. Underneath, it's a dataDAO. T
 
 May 2024
 
-[![demo image](/images/projects/farcaster_hackathons/castlatte.png)](https://bit.ly/based_berlin_castlatte)
+[![demo image](/images/projects/farcaster_hackathons/castlatte.png)](https://github.com/leinss/basedberlin_castlatte)
 
 milk your feed

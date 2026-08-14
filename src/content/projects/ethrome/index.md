@@ -2,7 +2,7 @@
 title: "EthRome Hackathon"
 description: "a platform to take surveys anonymously via zk proofs"
 date: "Oct 2023"
-demoURL: "https://bit.ly/ethrome_sharknado"
+demoURL: "https://taikai.network/ethrome/hackathons/ethrome-23/projects/clnfyh1ya00gmye01j19ob1rz/idea"
 repoURL: ""
 ---
 
