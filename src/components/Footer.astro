@@ -24,9 +24,10 @@ const privacy = staticPages.find((page) => page.id === "privacy")
     <Newsletter />
     <div class="flex justify-between items-center mt-6">
       <div>
-        &copy; {new Date().getFullYear()}
-        {`|`}
-        {SITE.NAME}
+        {/* Kept on one line: Astro 7 strips whitespace between expressions on
+            separate lines, per JSX rules, which collapsed this to "2026|Name".
+            Whitespace within a single line is preserved. */}
+        &copy; {new Date().getFullYear()} | {SITE.NAME}
       </div>
       <div class="flex gap-4">
         {
