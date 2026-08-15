@@ -172,7 +172,7 @@ const education = await Promise.all(
           </h2>
           <Link href="/work">🏢 See all work</Link>
         </div>
-        <ul class="animate-stagger flex flex-col space-y-4">
+        <ul class="animate-stagger flex flex-col space-y-8">
           {
             work.map((entry) => (
               <li>
@@ -183,9 +183,9 @@ const education = await Promise.all(
                   {entry.data.company}
                 </div>
                 <div class="text-sm opacity-75">{entry.data.role}</div>
-                <article>
+                <div class="entry-body mt-2">
                   <entry.Content />
-                </article>
+                </div>
               </li>
             ))
           }
@@ -220,12 +220,10 @@ const education = await Promise.all(
         <h2 class="font-semibold text-xl text-black dark:text-white">
           🤝 Let's connect
         </h2>
-        <article>
-          <p>
-            Questions about an app, an invite to a beta, or a consulting
-            project? Reach out by email or find me on the networks below.
-          </p>
-        </article>
+        <p>
+          Questions about an app, an invite to a beta, or a consulting project?
+          Reach out by email or find me on the networks below.
+        </p>
         <ul class="flex flex-wrap gap-2 justify-center">
           {
             SOCIALS.map((SOCIAL) => (

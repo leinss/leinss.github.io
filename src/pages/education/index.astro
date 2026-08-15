@@ -24,7 +24,7 @@ const education = await Promise.all(
       <div class="animate font-semibold text-black dark:text-white">
         🎓 Education
       </div>
-      <ul class="flex flex-col space-y-4">
+      <ul class="flex flex-col space-y-8">
         {
           education.map((entry) => (
             <li class="animate">
@@ -35,9 +35,11 @@ const education = await Promise.all(
                 {entry.data.place}
               </div>
               <div class="text-sm opacity-75">{entry.data.role}</div>
-              <article>
-                <entry.Content />
-              </article>
+              {entry.body?.trim() && (
+                <div class="entry-body mt-2">
+                  <entry.Content />
+                </div>
+              )}
             </li>
           ))
         }

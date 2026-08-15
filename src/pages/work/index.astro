@@ -24,7 +24,7 @@ const work = await Promise.all(
       <div class="animate font-semibold text-black dark:text-white">
         🏢 Work
       </div>
-      <ul class="flex flex-col space-y-4">
+      <ul class="flex flex-col space-y-8">
         {
           work.map((entry) => (
             <li class="animate">
@@ -35,9 +35,9 @@ const work = await Promise.all(
                 {entry.data.company}
               </div>
               <div class="text-sm opacity-75">{entry.data.role}</div>
-              <article>
+              <div class="entry-body mt-2">
                 <entry.Content />
-              </article>
+              </div>
             </li>
           ))
         }

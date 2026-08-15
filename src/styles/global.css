@@ -86,24 +86,56 @@
     @apply py-5 text-xs;
   }
 
-  article {
+  /* Long-form reading: blog posts, project write-ups, standalone pages.
+     Serif body at prose-lg. Only these get it, so short markdown rendered
+     inside a list card does not switch typeface mid-card. */
+  article.longform {
     @apply max-w-full prose prose-lg prose-img:mx-auto prose-img:my-auto;
     @apply prose-headings:font-semibold prose-p:font-serif;
     @apply prose-headings:text-black;
   }
 }
 
-html.dark article {
+html.dark article.longform {
   @apply prose-invert prose-headings:text-white;
 }
 
 @layer utilities {
-  article a {
+  article.longform a {
     @apply font-sans text-current;
     @apply decoration-black/15 dark:decoration-white/30;
     @apply transition-colors duration-300 ease-in-out;
   }
-  article a:hover {
+  article.longform a:hover {
+    @apply text-black dark:text-white;
+    @apply decoration-black/25 dark:decoration-white/50;
+  }
+
+  /* Markdown rendered inside a work or education card. Matches the date,
+     company and role around it rather than the long-form serif style. */
+  .entry-body {
+    @apply text-sm;
+  }
+
+  .entry-body > * + * {
+    @apply mt-2;
+  }
+
+  .entry-body strong {
+    @apply font-semibold text-black dark:text-white;
+  }
+
+  .entry-body ul {
+    @apply list-disc pl-5;
+  }
+
+  .entry-body a {
+    @apply underline underline-offset-2 text-current;
+    @apply decoration-black/15 dark:decoration-white/30;
+    @apply transition-colors duration-300 ease-in-out;
+  }
+
+  .entry-body a:hover {
     @apply text-black dark:text-white;
     @apply decoration-black/25 dark:decoration-white/50;
   }
