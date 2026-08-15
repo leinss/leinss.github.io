@@ -53,6 +53,7 @@ const LIST_UUID = "56525a08-c916-4c7c-ae2c-36481da13071"
         throw new Error('Failed');
       }
     } catch (err) {
+      console.error('Newsletter subscription failed:', err);
       status.textContent = 'Something went wrong. Please try again.';
       status.className = 'text-sm mt-2 text-red-600 dark:text-red-400';
     }

@@ -9,6 +9,15 @@ const compat = new FlatCompat({
 export default [
   ...compat.config(baseConfig),
   {
-    ignores: [".vscode/", "dist/", "node_modules/", "public/"],
+    // `.astro/` holds type declarations the CLI generates from the content
+    // collections. They are rebuilt on every `astro sync` and are not ours
+    // to fix, so linting them only produces noise.
+    ignores: [
+      ".astro/",
+      ".vscode/",
+      "dist/",
+      "node_modules/",
+      "public/",
+    ],
   },
 ]

@@ -14,7 +14,11 @@ module.exports = {
     sourceType: "module",
   },
   rules: {
-    semi: ["warn", "never"],
+    // Off, not "never": the tree is an even split between the theme's
+    // semicolon-free style and semicolons added since, so the rule reported
+    // 221 warnings and enforced nothing. Semicolon placement is a formatter's
+    // job; pick one with prettier and run it over the tree if it matters.
+    semi: "off",
     quotes: "off",
     "no-unused-expressions": "off",
     "@typescript-eslint/no-unused-expressions": "off",
