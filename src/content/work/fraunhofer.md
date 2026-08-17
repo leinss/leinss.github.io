@@ -1,10 +1,21 @@
 ---
-company: "Fraunhofer Research Institute"
-role: "Research Scientist autonomous production-optimization"
+company: "Fraunhofer Institute"
+role: "Research Scientist - Autonomous Production"
 dateStart: "12/01/2020"
 dateEnd: "06/30/2022"
 ---
 
-Development of an event-driven data architecture to enable AI-supported analysis.
+Set the technical direction and led the implementation of an event-driven data
+architecture for AI-supported analysis of manufacturing lines.
 
-Development of a data concept for manufacturing, starting with PLC, via MQTT, Kafka, and time-series databases. Technology: MQTT, Kafka, Python, Faust (Python), MongoDB, React, Redux
+**architecture**
+
+From the PLC on the line through MQTT and Kafka into time-series storage, with
+Faust for stream processing in Python, MongoDB for documents, and React with
+Redux for the operator view.
+
+**what it was**
+
+Delivered as a working prototype, not a deployed production system.
+
+Fixed-term research contract.

@@ -5,6 +5,14 @@ dateStart: "08/01/2018"
 dateEnd: "02/28/2019"
 ---
 
-Creating Sandbox Play social media mobile app in React-Native, mentoring 3 juniors.
+Sandbox Play, a social media app for competitive gamers, built in React Native.
 
-Social media app targeted for professional gamers with profiles, posts, comments, private chat, following, rankings. Technology: React-Native, React Navigation, MobX / Redux
+**product**
+
+Profiles, posts, comments, private chat, following and rankings.
+
+**stack**
+
+React Native with React Navigation, and MobX alongside Redux for state.
+
+Mentored three junior developers.
