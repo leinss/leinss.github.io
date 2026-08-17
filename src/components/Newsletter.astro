@@ -24,7 +24,10 @@ const LIST_UUID = "56525a08-c916-4c7c-ae2c-36481da13071"
     </button>
   </form>
   <p id="newsletter-status" class="text-sm mt-2 hidden" role="alert" aria-live="polite"></p>
-  <p class="text-xs mt-2 opacity-50">No spam. Unsubscribe anytime. Your email is stored by <a href="https://listmonk.app" target="_blank" rel="noopener" class="underline">Listmonk</a> (self-hosted) and used solely for this newsletter. See our <a href="/privacy" class="underline">Privacy Policy</a>.</p>
+  <!-- opacity-80, not 50: at 50 this small print sat at 2.4:1 against the
+       card background, well under the 4.5:1 WCAG AA needs, and it carries the
+       privacy notice. 75 was still short at 4.45:1. -->
+  <p class="text-xs mt-2 opacity-80">No spam. Unsubscribe anytime. Your email is stored by <a href="https://listmonk.app" target="_blank" rel="noopener" class="underline">Listmonk</a> (self-hosted) and used solely for this newsletter. See our <a href="/privacy" class="underline">Privacy Policy</a>.</p>
 </div>
 
 <script is:inline define:vars={{ LISTMONK_URL, LIST_UUID }}>

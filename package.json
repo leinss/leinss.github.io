@@ -9,13 +9,14 @@
   "scripts": {
     "dev": "astro dev",
     "dev:network": "astro dev --host",
-    "build": "astro check && astro build",
+    "build": "astro check && astro build && node scripts/check-internal-links.mjs",
     "preview": "astro preview",
     "preview:network": "astro preview --host",
     "astro": "astro",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "check:spacing": "node scripts/check-inline-spacing.mjs"
+    "check:spacing": "node scripts/check-inline-spacing.mjs",
+    "check:links": "node scripts/check-internal-links.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",

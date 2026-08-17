@@ -6,6 +6,10 @@ import { APPS, HACKATHON_SLUGS, HOME, SITE, SOCIALS } from "@consts"
 import PageLayout from "@layouts/PageLayout.astro"
 import { dateRange } from "@lib/utils"
 import { Image } from "astro:assets"
+// Imported rather than referenced from public/: Astro only optimises images it
+// can resolve at build time. As a public path it shipped the 4060x5904, 3 MB
+// original and let the browser scale it to 280px.
+import profile from "../assets/profile.jpg"
 import { getCollection, render } from "astro:content"
 
 const APP_SLUGS = APPS.map((app) => app.slug)
@@ -105,10 +109,12 @@ const education = await Promise.all(
         </h2>
         <Image
           class="animate rounded-md"
-          src="/images/profile.jpg"
+          src={profile}
           alt="Tobias Leinss"
           width={280}
           height={406}
+          densities={[1, 2]}
+          loading="lazy"
         />
         <p>
           I build custom-tailored software and the infrastructure behind it,

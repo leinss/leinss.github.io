@@ -11,7 +11,7 @@ repoURL: ""
 ![demo image](/images/projects/ethrome/sharknado.png)
 ![demo image](/images/projects/ethrome/sharknado_1.png)
 ![demo image](/images/projects/ethrome/sharknado_2.png)
-![demo image](/images/projects/ethrome/sharknado_3.png)
+![demo image](/images/projects/ethrome/sharknado_3.jpg)
 ![demo image](/images/projects/ethrome/sharknado_4.png)
 ![demo image](/images/projects/ethrome/sharknado_5.png)
 
