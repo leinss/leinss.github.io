@@ -38,12 +38,15 @@ PR opened → Claude analysis → human review → merge
 3. **Human focus**, reviewers spend their attention on the high-value decisions.
 4. **Faster iteration**, authors fix the obvious things before a human ever looks.
 
-## What changed after a few months
+## What it is good and bad at
 
-- Review time down noticeably, fewer rounds per PR.
-- Far fewer "nitpick" comments cluttering the thread.
-- More room for real architecture discussion.
-- More consistent standards across the team.
+From running it on my own pull requests, the split is fairly consistent.
+
+It is good at the things that are tedious to check and mechanical to spot: an unhandled error path, a value used before the null check, a loop that hits the database once per row, a name that says the opposite of what the function does. It reads the whole diff at the same level of attention, which is exactly where a human reviewer fades.
+
+It is bad at knowing what matters. It will report a real but trivial issue with the same seriousness as a real and serious one, and it will confidently describe a bug that the surrounding code already prevents. That is why the output has to be a comment on the PR and not a gate: treat it as a list of things to look at, and expect to dismiss some of them.
+
+The failure mode to watch for is a review that reads as thorough because it is long. Findings are cheap to generate. Ask it to justify each one with the input that would trigger it, and the list gets shorter and more useful.
 
 ## Getting started
 

@@ -19,7 +19,7 @@ Firebase bringt Sie am schnellsten zur laufenden App. Dieses Tempo ist echt, und
 | Wo die Daten liegen | Mein Server, in der EU | Googles Cloud |
 | Preismodell | Pauschal: der Server, der es trägt | Nach Verbrauch pro Lesen/Schreiben/Storage |
 | Portabilität | Nur Postgres, Dump und umziehen | Export ist ein Projekt für sich |
-| Lock-in | Gering (offener Stack, Standard-SQL | Hoch) proprietäre APIs |
+| Lock-in | Gering (offener Stack, Standard-SQL) | Hoch (proprietäre APIs) |
 | Einrichtung | Docker-Stack, echte Ops-Arbeit | Konsole, Minuten |
 | Am besten für | Besitz, SQL, kein Lock-in | Ein MVP schnell ausliefern |
 

@@ -1,28 +1,32 @@
 ---
-title: "How I extract invoice data with Claude Vision and n8n"
-description: "A technical teardown of the invoice-reader workflow: Claude Sonnet 4 vision, a form trigger, and one code node that turns a scanned invoice into structured JSON."
+title: "How I extract invoice data with a vision model and n8n"
+description: "A technical teardown of the invoice-reader workflow: a vision model, a form trigger, and one code node that turns a scanned invoice into structured JSON."
 date: "Jul 4 2026"
 tags: ["n8n", "claude", "ai", "automation", "teardown", "own-your-stack"]
 lang: "en"
 ---
 
-> **Short answer:** The invoice reader is three n8n nodes: a form that takes the upload, one HTTP call to Claude Sonnet 4's vision API with the invoice image, and a code node that parses the model's reply into clean JSON. Vision does the reading; the code node does the part a no-code tool can't, stripping the model's markdown fences and safely parsing the result. This is the teardown of the [live invoice demo](https://leinss-consulting.de/en/blog/automating-invoice-processing/).
+> **Short answer:** The invoice reader is three n8n nodes: a form that takes the upload, one HTTP call to a vision model with the invoice image, and a code node that parses the model's reply into clean JSON. Vision does the reading; the code node does the part a no-code tool can't, stripping the model's markdown fences and safely parsing the result. This is the teardown of the workflow behind the [invoice demo](https://leinss-consulting.de/en/blog/automating-invoice-processing/).
 
-The [invoice-processing demo on my consulting site](https://leinss-consulting.de/en/blog/automating-invoice-processing/) reads a real invoice and returns structured fields. People assume there's a mountain of OCR rules behind it. There isn't. Here's the whole thing, and you can [download the exact workflow JSON](https://leinss-consulting.de/workflows/n8n-invoice-cloud.json) and run it yourself.
+The [invoice-processing demo on my consulting site](https://leinss-consulting.de/en/blog/automating-invoice-processing/) reads a real invoice and returns structured fields. People assume there's a mountain of OCR rules behind it. There isn't. Here's the whole thing, and you can [download the workflow JSON](https://leinss-consulting.de/workflows/n8n-invoice-cloud.json) and run it yourself.
 
 ## The whole pipeline is three nodes
 
 | # | Node | What it does |
 | --- | --- | --- |
 | 1 | Form trigger | Takes the uploaded invoice (image or PDF page) |
-| 2 | HTTP → Claude Vision | Sends the image to Claude Sonnet 4, asks for structured fields |
+| 2 | HTTP → vision model | Sends the image to the model, asks for structured fields |
 | 3 | Code → Parse JSON | Cleans and parses the model's reply into an object |
 
 That's it. No OCR engine, no template per vendor, no regex zoo. A vision model reads the document the way a person would, so the workflow that used to need dozens of parsing rules collapses to one API call and a bit of glue.
 
 ## The vision call
 
-The one real step is an HTTP request to Claude's messages API with the model set to Sonnet 4 and the invoice passed inline as a base64 image. The prompt asks for the fields I care about (number, date, line items, totals, tax) as JSON. Because the model reads pixels, it doesn't care whether the layout is a clean PDF export or a phone photo of a crumpled paper invoice.
+The one real step is an HTTP request to a vision model with the invoice passed inline as a base64 image. The prompt asks for the fields I care about (number, date, line items, totals, tax) as JSON. Because the model reads pixels, it doesn't care whether the layout is a clean PDF export or a phone photo of a crumpled paper invoice.
+
+Which model is a cost decision, not an architectural one, and the two copies of this workflow differ on it. The JSON you can download calls Claude Sonnet 4's messages API. The widget on my consulting site calls Kimi's vision endpoint on my own n8n instance, because it is public and every submission spends money. There is also a [local variant](https://leinss-consulting.de/workflows/n8n-invoice-local.json) that points the same step at Ollama, so nothing leaves the machine. Same three-step shape in all three; swap the URL and the auth header.
+
+The hosted copy also has three nodes the starter does not: a validation step, an IF, and an error response, so a request with no file gets a clear rejection instead of an empty model call. That is worth adding to anything public, and it is the same "code owns the failure case" point the parse node makes.
 
 ## Where n8n stops and code starts
 
@@ -32,7 +36,7 @@ The GUI can fire the HTTP request. What it can't do cleanly is deal with what co
 2. Strips the markdown fences with a regex
 3. Extracts the outermost `{ ... }` block and runs `JSON.parse`
 
-None of that is hard, but all of it is the difference between a demo and something you can trust in production. This is the exact line where a no-code tool stops being enough and a few lines of real code take over. It's the theme of [where n8n ends and code begins](/blog/en/n8n-automation-stack/), and it shows up in every workflow I ship.
+None of that is hard, but all of it is the difference between a demo and something you can trust in production. This is the exact line where a no-code tool stops being enough and a few lines of real code take over. It's the theme of [where n8n stops and code starts](/blog/en/where-n8n-stops-and-code-starts/), and it shows up in every workflow I ship.
 
 ## Why it's built this way
 

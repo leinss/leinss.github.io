@@ -19,7 +19,7 @@ Firebase gets you to a working app fastest. That speed is real, and so is the bi
 | Where the data lives | My server, in the EU | Google's cloud |
 | Pricing model | Flat, the server it runs on | Pay-as-you-go per read/write/storage |
 | Portability | It's just Postgres, dump and move | Export is a project in itself |
-| Lock-in | Low (open stack, standard SQL | High) proprietary APIs |
+| Lock-in | Low (open stack, standard SQL) | High (proprietary APIs) |
 | Setup | Docker stack, real ops work | Console, minutes |
 | Best for | Ownership, SQL, no lock-in | Shipping an MVP fast |
 

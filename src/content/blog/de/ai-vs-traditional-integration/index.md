@@ -1,117 +1,40 @@
 ---
-title: "Warum KI-Automatisierung klassische Integration übertrifft"
-description: "Vergleich moderner KI-gestützter Automatisierung mit konventionellen Integrationsansätzen"
+title: "Wo ein Modell einen Parser schlägt, und wo nicht"
+description: "Unordentliche Dokumente zu lesen hieß früher: ein Template pro Format. Ein Vision- oder Sprachmodell nimmt diese Arbeit weg, kostet aber Geld, Latenz und eine Ausgabe, die Sie prüfen müssen. Wo welcher Ansatz hingehört."
 date: "Dec 20 2024"
 tags: ["ai", "automatisierung", "integration", "vergleich"]
 lang: "de"
 ---
 
-Traditionelle Integrationsprojekte sind berüchtigt schmerzhaft. KI-gestützte Automatisierung bietet einen fundamental anderen Ansatz.
+> **Kurz gesagt:** Setzen Sie ein Modell dort ein, wo die Eingabe unordentlich und von Menschen gemacht ist (Rechnungen, E-Mails, historisch gewachsene Tabellen), denn dort kostet ein Parser mit Template pro Format am meisten und bricht am häufigsten. Behalten Sie gewöhnlichen Code, wo die Eingabe die Ausgabe eines Systems mit Schema ist. Jeder Modellaufruf bringt Latenz, einen Preis pro Aufruf und eine Antwort, die Sie prüfen müssen, bevor Sie ihr trauen. Er muss sich also lohnen.
 
-## Der alte Weg: Traditionelle Integration
+Klassische Integrationsarbeit heißt, Felder zwischen Systemen abzubilden: diese Spalte wird jenes Feld, in diesem Format, mit diesen Regeln. Wenn beide Enden Systeme mit Schema sind, ist das der richtige Ansatz, und nichts hier spricht dagegen. Er ist deterministisch, er ist billig, und wenn er bricht, bricht er laut.
 
-Klassische Integration bedeutet typischerweise:
+Teuer wird es bei der Eingabe, die nie ein Schema hatte.
 
-- **Point-to-Point Konnektoren** zwischen Systemen
-- **Schema-Mapping** mit starren Transformationen
-- **API-Versionierungs-Kopfschmerzen**
-- **Monate der Entwicklung** für komplexe Flows
+## Die Falle „ein Template pro Format"
 
-### Warum es schmerzhaft ist
+Nehmen Sie Rechnungen. Jeder Lieferant legt sie anders an, also heißt klassische Dokumentenverarbeitung: OCR plus ein Template pro Lieferant, mit Koordinaten, Ankertexten und Regeln dafür, wo die Summe steht. Jeder neue Lieferant ist ein neues Template, jedes Redesign bricht ein bestehendes, und die Arbeit hört nie auf, weil Ihre Lieferanten ihre Layouts nicht mit Ihnen abstimmen.
 
-1. **Brüchigkeit**: Jede Schema-Änderung bricht die Pipeline
-2. **Wartungslast**: N Systeme = N*(N-1)/2 Verbindungen
-3. **Begrenzte Flexibilität**: Fest codierte Logik kann keine Edge Cases
-4. **Langsame Iteration**: Änderungen erfordern volle Dev-Zyklen
+Ein Vision-Modell liest die Seite, statt Positionen auf ihr abzugleichen. In [dem Rechnungsleser, den ich betreibe](/blog/de/invoice-extractor-technical/), schrumpft diese ganze Schicht auf einen API-Aufruf und einen Parse-Schritt: keine Templates, und ein neuer Lieferant ist kein Ereignis mehr. Dieselbe Verschiebung gilt für eingehende E-Mails, Supportnachrichten und [Tabellen, die niemand entworfen hat](/blog/de/spreadsheet-cleaning-technical/).
 
-## Der neue Weg: KI-gestützte Automatisierung
+## Was es Sie kostet
 
-Moderne KI-Automatisierung dreht den Spieß um:
+Der Tausch ist real und schnell erzählt:
 
-### Intelligentes Daten-Mapping
+- **Geld pro Durchlauf.** Ein Parser kostet CPU. Ein Modell kostet pro Aufruf, dauerhaft. Bei hohem Volumen ändert das die Rechnung.
+- **Latenz.** Hunderte Millisekunden bis Sekunden pro Aufruf statt Mikrosekunden.
+- **Nichtdeterminismus.** Dieselbe Eingabe kann eine anders geformte Antwort erzeugen. Deshalb hat jeder meiner Workflows einen Code-Node, der die Antwort prüft und parst, statt ihr zu trauen.
+- **Kein Prüfpfad von allein.** „Das Modell hat entschieden" ist keine Erklärung. Wenn Sie zeigen müssen, warum ein Wert extrahiert wurde, müssen Sie das selbst bauen.
 
-Statt explizitem Feld-Mapping:
-- KI versteht Daten semantisch
-- Handhabt Format-Variationen automatisch
-- Passt sich Schema-Änderungen elegant an
+Was Sie damit *nicht* bekommen: ein System, das sich selbst repariert. Ein Modell lernt zwischen Aufrufen nicht aus Ihren Korrekturen, und es bemerkt nicht, dass eine vorgelagerte API sich geändert hat. Das bleibt bei Ihnen.
 
-### Natural Language Interfaces
+## Wo was hingehört
 
-Statt starrer APIs:
-- Beschreibe was du willst in normalem Deutsch
-- KI übersetzt Intent in Aktionen
-- Nicht-technische Nutzer können Workflows erstellen
+- **Gewöhnlicher Code** für Daten von System zu System mit Schema, für alles, was prüfbar oder exakt reproduzierbar sein muss, und für Pfade mit hohem Volumen, wo der Preis pro Aufruf zählt.
+- **Ein Modell** für das Lesen menschengemachter Dokumente und freien Textes, für Klassifikation, die Bedeutung verstehen statt Stichwörter treffen muss, und für den langen Schwanz an Formaten, für die Sie sonst ein Template schreiben würden.
+- **Beides**, meistens: ein Modell am Rand, um Unordnung in Struktur zu wandeln, gewöhnlicher Code in der Mitte, um zu entscheiden und festzuhalten, was als Nächstes passiert. Das ist dieselbe Naht, die ich in [wo n8n aufhört und Code anfängt](/blog/de/where-n8n-stops-and-code-starts/) beschreibe.
 
-### Self-Healing Workflows
+## Wenn Sie es an einem Ablauf ausprobieren wollen
 
-Statt bei Fehlern zu brechen:
-- KI erkennt Anomalien
-- Schlägt Fixes vor oder wendet sie an
-- Lernt aus Korrekturen
-
-## Konkreter Vergleich
-
-### Rechnungsverarbeitung
-
-**Traditionell:**
-- Monate um OCR-Pipeline zu bauen
-- Starres Template-Matching
-- Bricht bei neuen Rechnungsformaten
-
-**KI-gestützt:**
-- Tage zum Deployment
-- Versteht jedes Rechnungs-Layout
-- Verbessert sich durch Feedback
-
-### Kundenservice-Routing
-
-**Traditionell:**
-- Keyword-basierte Regeln
-- Manuelle Kategorie-Pflege
-- Binäre Routing-Entscheidungen
-
-**KI-gestützt:**
-- Semantisches Verständnis
-- Selbstverbessernde Klassifizierung
-- Nuancierte Prioritätsbewertung
-
-### Daten-Synchronisation
-
-**Traditionell:**
-- Explizites Feld-Mapping
-- Fehler bei unbekannten Feldern
-- Manuelle Konfliktlösung
-
-**KI-gestützt:**
-- Intelligentes Matching
-- Handhabt neue Felder elegant
-- Automatisierte Konfliktlösung
-
-## Wann Traditionell noch gewinnt
-
-KI-Automatisierung ist nicht immer die Antwort:
-
-- **Hochfrequenzhandel**: Latenz wichtiger als Flexibilität
-- **Compliance-kritische Pfade**: Auditierbarkeits-Anforderungen
-- **Einfache, stabile Integrationen**: Over-Engineering mit KI kostet
-
-## Der hybride Ansatz
-
-Beste Ergebnisse kommen aus der Kombination:
-
-1. **KI für Eingang**: Variable, unstrukturierte Inputs handlen
-2. **Traditionell für Kern**: Zuverlässige, auditierbare Verarbeitung
-3. **KI für Ausgang**: Intelligente Formatierung und Zustellung
-
-## Migrationspfad
-
-Wenn du mit traditionellen Integrationen feststeckst:
-
-1. **Pain Points identifizieren**: Welche Integrationen brechen am häufigsten?
-2. **KI-Layer pilotieren**: KI-Vorverarbeitung zu einem Flow hinzufügen
-3. **Verbesserung messen**: Fehlerraten und Wartungszeit tracken
-4. **Schrittweise erweitern**: Brüchige Komponenten ersetzen
-
----
-
-*Kämpfst du mit Integrations-Komplexität? Lass uns besprechen, wo KI deinen Stack vereinfachen könnte.*
+Nehmen Sie die Integration, die am häufigsten bricht, und prüfen Sie, ob sie bricht, weil die Eingabe menschengemacht ist. Wenn ja, setzen Sie ein Modell davor, das strukturierte Ausgaben liefert, behalten Sie Ihre bestehende Logik dahinter und vergleichen Sie die Fehlerraten einen Monat lang. Wenn sie aus einem anderen Grund bricht, hilft ein Modell nicht, und Sie haben sich die Rechnung gespart.

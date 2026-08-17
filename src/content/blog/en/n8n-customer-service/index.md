@@ -8,7 +8,7 @@ lang: "en"
 
 > **Short answer:** Build a support bot in n8n by chaining five steps: a webhook receives the message, an LLM node classifies intent, a switch routes it, a database lookup adds customer context, and an LLM generates a sourced reply, escalating to a human on low confidence or negative sentiment. Visual workflow, no dedicated engineering team, running on infrastructure you own.
 
-Customer-service automation doesn't have to mean frustrating chatbots. Here's how I build support systems with n8n that actually help: and, because it runs on a [self-hosted n8n stack](/blog/en/self-hosted-stack/), your customer conversations never leave infrastructure you control.
+Customer-service automation doesn't have to mean frustrating chatbots. Here's the architecture I build support triage on with n8n, node by node: and, because it runs on a [self-hosted n8n stack](/blog/en/self-hosted-stack/), your customer conversations never leave infrastructure you control.
 
 ## Why n8n for customer service?
 
@@ -55,15 +55,18 @@ Know when to hand off to a human: sentiment triggers, complexity thresholds, and
 5. **AI response**, generates a helpful reply.
 6. **Integration**, updates the CRM and sends notifications.
 
-## What this kind of setup can achieve
+## What to measure
 
-A triage layer like this typically:
+I am not going to quote you a resolution rate. Any number I could put here would be from a build that is not yours, on a question mix that is not yours, and it would tell you nothing about what this does for your inbox.
 
-- resolves around 60% of inquiries automatically,
-- keeps average response time under 30 seconds, and
-- holds customer satisfaction above 4.5/5.
+These are the four numbers worth watching once it runs, and you can only get them from your own queue:
 
-> **Case study:** For a full walk-through of this architecture on an e-commerce retailer processing 50k monthly orders (with the metrics, costs, and implementation timeline) see the **[AI Support Triage case study](https://leinss-consulting.de/en/blog/case-study-support-triage/)**.
+- **Auto-resolution rate**: the share of messages closed without a human, counted honestly, so a reply the customer answers again with the same question does not count as resolved.
+- **Escalation precision**: of the messages it sent to a human, how many needed one. Too low and it is dumping work back on you; too high and it is answering things it should not.
+- **Time to first response**, before and after, split by category. The average hides the case that matters.
+- **Rate of wrong confident answers.** The one to watch. A bot that says "I don't know" too often is annoying; a bot that is confidently wrong costs you a customer.
+
+> **Reference build:** For the full architecture with every node explained and the n8n workflow to download, see the **[AI Support Triage reference build](https://leinss-consulting.de/en/blog/case-study-support-triage/)**. It is a build you can inspect, not a client report, and it carries no client figures.
 
 ## Getting started
 
@@ -76,4 +79,4 @@ Start small:
 
 ---
 
-Want the real thing rather than a description? The [support-triage case study](https://leinss-consulting.de/en/blog/case-study-support-triage/) ships the actual n8n workflow as a downloadable JSON, import it and read every node. If you'd rather have it built and handed over, that's what I do at [Leinss Consulting](https://leinss-consulting.de/en/).
+Want the real thing rather than a description? The [support-triage reference build](https://leinss-consulting.de/en/blog/case-study-support-triage/) ships the n8n workflow as a downloadable JSON, import it and read every node. If you'd rather have it built and handed over, that's what I do at [Leinss Consulting](https://leinss-consulting.de/en/).

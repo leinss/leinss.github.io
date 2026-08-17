@@ -1,114 +1,61 @@
 ---
 title: "Mein n8n-Automatisierungs-Stack"
-description: "Die Tools, Patterns und Integrationen, mit denen ich Produktions-Automatisierung auf Infrastruktur betreibe, die mir gehört."
+description: "Was die Automatisierung auf meiner eigenen Infrastruktur wirklich betreibt: ein n8n-Container, ein Rate-Limit-Sidecar vor den öffentlichen Webhooks, Workflows in Git und die sechs Node-Typen, aus denen jeder Workflow besteht."
 date: "Jul 4 2026"
 tags: ["n8n", "self-hosting", "own-your-stack", "automatisierung"]
 lang: "de"
 ---
 
-> **Kurz gesagt:** Ich betreibe Produktions-Automatisierung auf einer selbst gehosteten n8n-Instanz mit PostgreSQL und Redis, hinter einem Reverse Proxy mit automatischem HTTPS. Ein Frontier-Cloud-Modell (Claude) übernimmt die schwere Analyse; ein lokaler Modell-Server (LM Studio) alles Sensible. Workflows werden als JSON nach Git exportiert. Das Ganze ist versioniert und portabel, nichts ist bei einem Anbieter eingeschlossen.
+> **Kurz gesagt:** Ein selbst gehosteter n8n-Container hinter einem Reverse Proxy, mit einem OpenResty-Sidecar vor den öffentlichen Webhooks, damit ein kostenpflichtiger Modellaufruf nicht unbegrenzt ausgelöst werden kann. Workflows werden als JSON nach Git exportiert. Als Modelle laufen ein gehostetes für die Demos und ein lokales für alles Sensible. Der Stack ist bewusst klein, und ich sage klar, was nicht drin ist.
 
-Nach dem Bau dutzender Automatisierungs-Workflows habe ich mich auf einen Stack festgelegt, dem ich vertraue. Der rote Faden: Mir gehören die Teile, auf die es ankommt. Hier steht, was ihn betreibt, und warum. (Zum größeren Argument „besitzen statt mieten" siehe [der selbst gehostete Stack, den ich statt SaaS betreibe](/blog/de/self-hosted-stack/).)
+Beschreibungen selbst gehosteter Stacks zählen gern alles auf, womit sich das Werkzeug verbinden *könnte*. Das hier ist das Gegenteil: was wirklich läuft, und was ich weggelassen habe.
 
-## Kern-Stack
+## Was läuft
 
-### n8n (selbst gehostet)
-Das Herzstück von allem. Selbst gehostet, mit Absicht:
-- Daten bleiben auf Infrastruktur, die ich kontrolliere
-- Keine Ausführungslimits, keine Abrechnung pro Aufgabe
-- Custom Nodes, wenn ich sie brauche
-- Volle Kontrolle über Versionen und Updates
+**n8n, ein Container.** Selbst gehostet, auf eine Version festgenagelt, per Ansible ausgerollt statt von Hand. Die Daten bleiben auf Infrastruktur, die ich kontrolliere, es gibt keine Abrechnung pro Ausführung, und Code-Nodes können, was die Oberfläche nicht kann.
 
-### PostgreSQL
-n8ns interne Datenbank und Workflow-Datenspeicherung. Zuverlässig und gut verstanden.
+**SQLite, nicht Postgres.** n8ns eigener Zustand liegt in einer Datei im Datenvolume des Containers. Das ist n8ns Standard und bei meinem Volumen die richtige Wahl: Die Demos nehmen eine Anfrage nach der anderen, dafür bringt ein Datenbankserver nichts. Der Queue-Modus, mit Postgres und Redis dahinter, ist das, wohin man wechselt, wenn eine Instanz nicht mehr reicht. Ich habe ihn nicht gebraucht, und zu behaupten, ich betriebe ihn, wäre eine erfundene Größenordnung.
 
-### Redis
-Queue-Management und Caching für Workflows mit hohem Volumen.
+**Ein Reverse Proxy**, der TLS terminiert, mit Zertifikaten, die sich selbst erneuern.
 
-### Reverse Proxy (automatisches HTTPS)
-Terminiert TLS vor n8n. Zertifikate erneuern sich selbst; die Config ist klein und langweilig. Genau das, was man auf dieser Ebene will.
+**Ein OpenResty-Sidecar** zwischen Proxy und n8n. Die öffentlichen Demo-Webhooks lösen je einen kostenpflichtigen Modellaufruf aus, also trägt das Sidecar ein Burst-Limit pro IP, eine Tagesobergrenze pro Webhook und eine Origin-Freigabeliste, während Editor und API unangetastet durchgehen. Der Schreib-Endpunkt, der die FAQ-Wissensbasis füttert, verlangt ein gemeinsames Geheimnis. Diese Schicht macht aus „ein Webhook im Internet" etwas, das ich laufen lassen will.
 
-## Integrationen, zu denen ich greife
+**Postgres** kommt vor, aber nicht für n8n. Dort liegt die FAQ-Wissensbasis, die der [Assistent](/blog/de/faq-assistant-technical/) durchsucht, erreichbar über einen kleinen HTTP-Endpunkt.
 
-### Kommunikation
-- **Slack**: Team-Benachrichtigungen, Freigaben
-- **E-Mail (SMTP)**, Kundenkommunikation
-- **Telegram**, persönliche Alerts
+**Modelle.** Ein gehostetes Modell für die Demo-Workflows, gewählt, weil es pro Aufruf günstig ist, und ein lokaler Modell-Server für alles Sensible, sodass der Text die Maschine nicht verlässt. Welches Modell ein Workflow aufruft, sind eine URL und ein Auth-Header, und genau so soll es sein.
 
-### Datenquellen
-- **Airtable**, schnelle Datenbanken und Formulare
-- **Google Sheets**, kollaborative Dateneingabe
-- **PostgreSQL**, Produktionsdaten
+## Die sechs Node-Typen
 
-### KI
-- **Anthropic (Claude)**: Analyse und Generierung, wo sich ein Frontier-Modell lohnt
-- **LM Studio (lokale Modelle)**: alles Sensible bleibt auf meiner eigenen Hardware, keine Daten verlassen die Maschine
+Jeder Workflow, den ich betreibe, besteht aus sechs: **Webhook**, **IF**, **Code**, **HTTP-Request**, **Respond-to-Webhook** und **E-Mail senden**.
 
-### Business-Tools
-- **Notion**, Dokumentations-Trigger
-- **Linear**, Issue-Management
-- **Stripe**, Payment-Webhooks
+Das ist kein Minimalismus um seiner selbst willen. n8n liefert hunderte dienstspezifische Nodes, und ich greife fast immer stattdessen zum HTTP-Request-Node, weil ein HTTP-Aufruf vom Dienst selbst dokumentiert ist, nicht veraltet, wenn ein Node einer API-Version hinterherhinkt, und in jedem Workflow gleich liest. Die Dienst-Nodes sind bei OAuth-lastigen Integrationen wirklich nützlich und sparen dort echte Arbeit; nur hatte das, was ich baue, bisher nicht diese Form.
 
-## Workflow-Patterns, die ich nutze
+Der **Code**-Node trägt das Gewicht, und er sitzt immer an derselben Naht: Eingaben prüfen, bevor ein kostenpflichtiger Aufruf feuert, parsen, was ein Modell zurückschickt, und das Ergebnis für den nächsten Schritt formen. Das ist [wo n8n aufhört und Code anfängt](/blog/de/where-n8n-stops-and-code-starts/).
 
-### 1. Event-Driven Processing
-```
-Webhook → Validieren → Verarbeiten → Benachrichtigen → Loggen
-```
+## Praktiken, auf die es ankommt
 
-### 2. Geplante Batch-Jobs
-```
-Cron → Daten holen → Transformieren → Synchronisieren → Berichten
-```
+**Workflows liegen in Git.** Jeder Workflow wird als JSON exportiert und neben dem Deployment-Code abgelegt, der ihn auf die Maschine bringt. Das ist die ganze Portabilität: Wäre n8n morgen weg, läge die Logik in Dateien, die mir gehören, nicht in einem Anbieter-Konto.
 
-### 3. Human-in-the-Loop
-```
-Trigger → AI-Entwurf → Menschliche Prüfung → Ausführen
-```
+**Zugangsdaten stehen nie im Export.** Sie kommen zum Deploy-Zeitpunkt aus einem verschlüsselten Speicher, der Schlüssel liegt außerhalb des Repositories.
 
-### 4. Fehlerbehandlung
-```
-Hauptfluss → Try/Catch → Retry-Logik → Alert bei Fehler
-```
+**Der Rate-Limiter wird überwacht.** Er exportiert Zähler, die werden abgeholt, und auf den Tagesobergrenzen liegen Alarmregeln. Eine unüberwachte Obergrenze sagt Ihnen nichts, bis ein Widget bereits tot ist.
 
-## Praktiken für den Produktivbetrieb
-
-### Versionskontrolle
-- Workflows als JSON exportieren
-- In einem Git-Repository speichern
-- Releases taggen
-
-### Monitoring
-- Ausführungs-Logging
-- Fehler-Alerting
-- Performance-Metriken
-
-### Sicherheit
-- Credential-Verschlüsselung
-- Webhook-Authentifizierung
-- Netzwerk-Isolation
-
-## Illustrative Architektur
+**Wie das Ganze exponiert ist, steht bewusst nicht öffentlich.** Die Architektur unten ist die ehrliche Form davon; die Einzelheiten der Erreichbarkeit gehören nicht auf eine öffentliche Seite.
 
 ```
 Internet
     ↓
 Reverse Proxy (HTTPS)
     ↓
-n8n (Docker)
+Rate-Limit-Sidecar
     ↓
-PostgreSQL + Redis
+n8n (Docker)
 ```
 
-Wie ich das tatsächlich exponiere und härte, steht bewusst nicht auf einer öffentlichen Seite, aber die Form ist so einfach.
+## Was ich als Erstes ändern würde
 
-## Gelernte Lektionen
+Käme das Volumen, das es rechtfertigt: Queue-Modus mit Postgres und Redis, damit Ausführungen einen Neustart überleben und über mehr als einen Worker laufen können. Das ist der Weg nach oben, und es lohnt sich, ihn zu kennen, bevor man ihn braucht, nicht während eines Vorfalls.
 
-1. **Einfach starten**: Komplexität nur dann, wenn sie sich verdient
-2. **Alles loggen**, Sie werden es sich später danken
-3. **In Staging testen**, Produktions-Bugs sind teuer
-4. **Workflows dokumentieren**, Ihr zukünftiges Ich braucht den Kontext
+## Wollen Sie das, aber besessen?
 
-## Sie wollen das, aber besessen?
-
-Einen solchen Stack aufzusetzen: selbst gehostet, dokumentiert und übergeben, damit er nicht im Kopf einer Person eingeschlossen ist: ist die Arbeit, die ich bei [Leinss Consulting](https://leinss-consulting.de/de/) mache. Wenn Sie ein ähnliches Setup betreiben, tausche ich mich gerne aus.
+So einen Stack aufzusetzen (selbst gehostet, dokumentiert und so übergeben, dass er nicht im Kopf einer einzelnen Person eingeschlossen ist) ist die Arbeit, die ich bei [Leinss Consulting](https://leinss-consulting.de/de/) mache. Wenn Sie ein ähnliches Setup betreiben, vergleiche ich gern Notizen.

@@ -28,7 +28,7 @@ People ask whether to use Pi *or* OpenClaw as if it's a choice between rivals. I
 
 ## What OpenClaw is
 
-[OpenClaw](https://openclaw.ai/) is a self-hosted personal assistant that meets you on the channels you already use, message it on WhatsApp or Telegram and it acts on your behalf. Under the hood, the agent doing the work is Pi. OpenClaw adds the gateway, the channels, and the always-on assistant framing on top. It went from nothing to one of the most-starred projects on GitHub in a week, which tells you how much appetite there is for an assistant you run yourself instead of renting.
+[OpenClaw](https://openclaw.ai/) is a self-hosted personal assistant that meets you on the channels you already use, message it on WhatsApp or Telegram and it acts on your behalf. Under the hood, the agent doing the work is Pi. OpenClaw adds the gateway, the channels, and the always-on assistant framing on top. The repository went public in November 2025 and is now one of the most-starred on GitHub, which tells you how much appetite there is for an assistant you run yourself instead of renting.
 
 ## When to reach for which
 

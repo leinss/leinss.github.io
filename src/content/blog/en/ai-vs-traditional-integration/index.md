@@ -1,117 +1,40 @@
 ---
-title: "Why AI Automation Beats Traditional Integration"
-description: "Comparing modern AI-powered automation with conventional integration approaches"
+title: "Where a model beats a parser, and where it doesn't"
+description: "Reading messy documents used to mean a template per format. A vision or language model removes that work, but it adds cost, latency, and output you have to validate. Where each approach belongs."
 date: "Dec 20 2024"
 tags: ["ai", "automation", "integration", "comparison"]
 lang: "en"
 ---
 
-Traditional integration projects are notoriously painful. AI-powered automation offers a fundamentally different approach.
+> **Short answer:** Put a model where the input is messy and made by humans (invoices, emails, spreadsheets that grew organically) because that is where a template-per-format parser costs the most to build and breaks the most often. Keep ordinary code where the input is a system's output with a schema. Every model call adds latency, a per-call price, and a reply you have to validate before you trust it, so it should earn its place.
 
-## The Old Way: Traditional Integration
+Classic integration work means mapping fields between systems: this column becomes that field, in this format, with these rules. When both ends are systems with schemas, that is the right approach and nothing here argues against it. It is deterministic, it is cheap, and when it breaks it breaks loudly.
 
-Classic integration typically means:
+The place it gets expensive is the input that never had a schema.
 
-- **Point-to-point connectors** between systems
-- **Schema mapping** with rigid transformations
-- **API versioning** headaches
-- **Months of development** for complex flows
+## The template-per-format trap
 
-### Why It's Painful
+Take invoices. Every supplier lays them out differently, so classic document processing means OCR plus a template per supplier: coordinates, anchor text, rules for where the total sits. Each new supplier is a new template, each redesign breaks an existing one, and the work never ends because your suppliers do not coordinate their layouts with you.
 
-1. **Brittleness**: Any schema change breaks the pipeline
-2. **Maintenance burden**: N systems = N*(N-1)/2 connections
-3. **Limited flexibility**: Hard-coded logic can't handle edge cases
-4. **Slow iteration**: Changes require full dev cycles
+A vision model reads the page instead of matching positions on it. In [the invoice reader I run](/blog/en/invoice-extractor-technical/), that whole layer collapses into one API call and a parse step: no templates, and a new supplier is not an event. The same shift applies to inbound email, support messages, and [spreadsheets nobody designed](/blog/en/spreadsheet-cleaning-technical/).
 
-## The New Way: AI-Powered Automation
+## What it costs you
 
-Modern AI automation flips the script:
+The trade is real, and short:
 
-### Intelligent Data Mapping
+- **Money per run.** A parser costs CPU. A model costs per call, forever. At high volume that changes the arithmetic.
+- **Latency.** Hundreds of milliseconds to seconds per call, versus microseconds.
+- **Nondeterminism.** The same input can produce a differently shaped answer. This is why every one of my workflows has a code node that validates and parses the reply rather than trusting it.
+- **No audit trail by default.** "The model decided" is not an explanation. If you need to show why a value was extracted, you have to build that.
 
-Instead of explicit field mapping:
-- AI understands data semantically
-- Handles format variations automatically
-- Adapts to schema changes gracefully
+What it does *not* buy you: a system that fixes itself. A model does not learn from your corrections between calls, and it does not notice that an upstream API changed. Those still land on you.
 
-### Natural Language Interfaces
+## Where each one belongs
 
-Instead of rigid APIs:
-- Describe what you want in plain English
-- AI translates intent to actions
-- Non-technical users can create workflows
+- **Ordinary code** for system-to-system data with a schema, for anything that must be auditable or exactly reproducible, and for high-volume paths where per-call cost matters.
+- **A model** for reading human-made documents and free text, for classification that needs to understand meaning rather than match keywords, and for the long tail of formats you would otherwise write a template for.
+- **Both**, most of the time: a model at the edge to turn mess into structure, ordinary code in the middle to decide and record what happens next. That is the same seam I describe in [where n8n stops and code starts](/blog/en/where-n8n-stops-and-code-starts/).
 
-### Self-Healing Workflows
+## If you want to try it on one flow
 
-Instead of breaking on errors:
-- AI detects anomalies
-- Suggests or applies fixes
-- Learns from corrections
-
-## Concrete Comparison
-
-### Invoice Processing
-
-**Traditional:**
-- Months to build OCR pipeline
-- Rigid template matching
-- Breaks on new invoice formats
-
-**AI-Powered:**
-- Days to deploy
-- Understands any invoice layout
-- Improves with feedback
-
-### Customer Support Routing
-
-**Traditional:**
-- Keyword-based rules
-- Manual category maintenance
-- Binary routing decisions
-
-**AI-Powered:**
-- Semantic understanding
-- Self-improving classification
-- Nuanced priority assessment
-
-### Data Synchronization
-
-**Traditional:**
-- Explicit field mapping
-- Error on unknown fields
-- Manual conflict resolution
-
-**AI-Powered:**
-- Intelligent matching
-- Handles new fields gracefully
-- Automated conflict resolution
-
-## When Traditional Still Wins
-
-AI automation isn't always the answer:
-
-- **High-frequency trading**: Latency matters more than flexibility
-- **Compliance-critical paths**: Auditability requirements
-- **Simple, stable integrations**: Over-engineering with AI adds cost
-
-## The Hybrid Approach
-
-Best results come from combining both:
-
-1. **AI for ingestion**: Handle messy, variable inputs
-2. **Traditional for core**: Reliable, auditable processing
-3. **AI for output**: Intelligent formatting and delivery
-
-## Migration Path
-
-If you're stuck with traditional integrations:
-
-1. **Identify pain points**: Which integrations break most often?
-2. **Pilot AI layer**: Add AI pre-processing to one flow
-3. **Measure improvement**: Track error rates and maintenance time
-4. **Expand gradually**: Replace brittle components
-
----
-
-*Struggling with integration complexity? Let's discuss where AI could simplify your stack.*
+Pick the integration that breaks most often, and check whether it breaks because the input is human-made. If it does, put a model in front of it to produce structured output, keep your existing logic behind that, and compare error rates for a month. If it breaks for any other reason, a model will not help and you have saved yourself the bill.
