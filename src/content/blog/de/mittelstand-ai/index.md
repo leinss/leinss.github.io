@@ -6,7 +6,7 @@ tags: ["ai", "mittelstand", "own-your-stack", "self-hosting"]
 lang: "de"
 ---
 
-> **Kurz gesagt:** Die Stärke des deutschen Mittelstands sind Jahrzehnte an eigenem Domänenwissen. Generische KI ist Massenware; KI, die mit *Ihrem* Wissen verdrahtet ist, ist ein Burggraben: aber nur, wenn Ihnen das System gehört, das dieses Wissen hält. Mieten Sie es als Pro-Kopf-SaaS, geben Sie Ihre Daten und Ihren Vorsprung an einen Anbieter ab. Mein Rat: mit gemieteten Tools schnell lernen, dann die Teile, auf die es ankommt, auf Infrastruktur holen, die Sie kontrollieren.
+> **Kurz gesagt:** Die Stärke des deutschen Mittelstands sind Jahrzehnte an eigenem Domänenwissen. Generische KI ist Massenware; KI, die mit *Ihrem* Wissen verdrahtet ist, ist ein Burggraben, aber nur, wenn Ihnen das System gehört, das dieses Wissen hält. Mieten Sie es als Pro-Kopf-SaaS, geben Sie Ihre Daten und Ihren Vorsprung an einen Anbieter ab. Mein Rat: mit gemieteten Tools schnell lernen, dann die Teile, auf die es ankommt, auf Infrastruktur holen, die Sie kontrollieren.
 
 Ich baue Automatisierung beruflich, und das meiste davon läuft auf Hardware und Software, die mir gehören. Wenn mich also jemand fragt, wie ein mittelständisches Unternehmen an KI herangehen soll, lautet meine Antwort nicht „Kaufen Sie dieses Tool". Sondern: „Entscheiden Sie früh, was Sie mieten wollen und was Ihnen gehören muss".
 

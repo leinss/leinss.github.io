@@ -24,7 +24,7 @@ Email: inquiry@leinss.xyz
 ## The short version
 
 - kAIros is **self-hosted**. Your account and goal data live on a private server operated by
-  the controller in **Germany (EU)**: not on a third-party cloud, and never sold to anyone.
+  the controller in **Germany (EU)**, not on a third-party cloud, and never sold to anyone.
 - The **AI coach can run three ways, your choice**: fully **on-device** (nothing leaves your
   phone), on your **own LAN server**, or in the **cloud**. You pick this in Settings → AI Model.
 - Analytics are **anonymous** and self-hosted; there are **no advertising trackers** and we do

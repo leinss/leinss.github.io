@@ -8,7 +8,7 @@ date: "07/22/2026"
 _Last updated: 22 July 2026_
 
 lAIngTutor is a Thai immersion tutor for Android and the web. You give it Thai text, from the
-built-in library, by pasting it, or from a web link: and it returns a sentence-by-sentence,
+built-in library, by pasting it, or from a web link, and it returns a sentence-by-sentence,
 word-for-word breakdown with a natural translation, paced to your level. This policy explains
 exactly what data lAIngTutor processes, where it goes, and the choices you have. It applies to
 the lAIngTutor mobile app and web app.

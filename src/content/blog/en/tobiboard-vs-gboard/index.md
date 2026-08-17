@@ -38,7 +38,7 @@ TobiBoard inherits this from [HeliBoard](https://github.com/Helium314/HeliBoard)
 - **Voice-to-Text**: long-press Return, tap the mic, speak; your words come back as polished text.
 - **Text Fix**: select rough text, hit Fix, get a clean version in the same language.
 
-Both run only when you add your own [OpenRouter](https://openrouter.ai/) or [PayPerQ](https://ppq.ai/) key, and OpenRouter routes default to zero data retention. Nothing reaches the cloud until you opt in, and even then it goes to a provider *you* chose: not to me, and not to Google.
+Both run only when you add your own [OpenRouter](https://openrouter.ai/) or [PayPerQ](https://ppq.ai/) key, and OpenRouter routes default to zero data retention. Nothing reaches the cloud until you opt in, and even then it goes to a provider *you* chose, not to me and not to Google.
 
 **How you install it.** Gboard comes from the Play Store or pre-installed. TobiBoard ships outside the store: grab the [APK from GitHub Releases](https://github.com/leinss/TobiBoard/releases/latest), point [Obtainium](https://github.com/ImranR98/Obtainium) at the repo for automatic updates, or add the self-hosted F-Droid repo at [leinss.xyz/TobiBoard/repo](https://leinss.xyz/TobiBoard/repo).
 
