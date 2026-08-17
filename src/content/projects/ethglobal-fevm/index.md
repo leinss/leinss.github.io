@@ -21,7 +21,7 @@ repoURL: ""
 
 ## Project Description
 
-Our credit card transaction data reveal a lot about our behaviors. Aggregated together, they tell even more powerful stories about the economy. Is there a spike in Netflix subscriptions? Is there a dip in spending at hardware stores? Credit card transaction data is the highest-grossing data source in the “alternative data” market. The global alternative data market is anticipated to reach 143.31 billion USD by 2030 and is expected to grow at a 54.4% CAGR. North America alone accounted for a revenue share of more than 67.0% in 2021.
+Our credit card transaction data reveal a lot about our behaviors. Aggregated together, they tell even more powerful stories about the economy. Is there a spike in Netflix subscriptions? Is there a dip in spending at hardware stores? Credit card transaction data is the highest-grossing data source in the “alternative data” market. The market size we pitched against came from [Grand View Research](https://www.grandviewresearch.com/industry-analysis/alternative-data-market) in 2022: 143.31 billion USD by 2030, growing at 54.4% a year, with North America holding more than 67% of 2021 revenue. Treat that as the 2022 view, because the same firm has since revised the forecast.
 
 However, consumers have little control over how and when their personal data, including credit card transaction data, is used. Consumers’ personal data fuels a multi-billion dollar industry while they receive almost no financial rewards. In practice, data from a single person is of little value. And there is no marketplace where consumers could coordinate and pool their data together.
 
