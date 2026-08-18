@@ -23,7 +23,7 @@ The apps below are all local-first: data stays on your device by default, and an
 - [Projects](https://leinss.xyz/projects/): full app list.
 
 ## Consulting (secondary)
-- Generative-AI consulting for German Mittelstand and service companies is offered separately at https://leinss-consulting.de, building your own apps is the main focus.
+- Generative-AI consulting for German Mittelstand and service companies is offered separately at https://consulting.leinss.xyz, building your own apps is the main focus.
 
 ## Contact
 - Email: dev@leinss.xyz
