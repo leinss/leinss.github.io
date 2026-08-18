@@ -13,10 +13,11 @@
     "preview": "astro preview",
     "preview:network": "astro preview --host",
     "astro": "astro",
-    "lint": "eslint .",
+    "lint": "pnpm run lint:eslint && pnpm run lint:spacing",
+    "lint:eslint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "check:spacing": "node scripts/check-inline-spacing.mjs",
-    "check:links": "node scripts/check-internal-links.mjs"
+    "lint:spacing": "node scripts/check-inline-spacing.mjs",
+    "lint:links": "node scripts/check-internal-links.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
