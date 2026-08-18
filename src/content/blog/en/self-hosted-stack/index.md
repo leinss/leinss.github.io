@@ -51,4 +51,4 @@ For the load-bearing tools I've written up the head-to-head against the SaaS the
 
 ## Want a setup like this for your business?
 
-Owned automation (built on your infrastructure, documented, handed to your team) is what I do for companies at [Leinss Consulting](https://leinss-consulting.de/en/). Start fast on proven tools; own the parts that matter. No lock-in, no rented black boxes.
+Owned automation (built on your infrastructure, documented, handed to your team) is what I do for companies at [Leinss Consulting](https://consulting.leinss.xyz/en/). Start fast on proven tools; own the parts that matter. No lock-in, no rented black boxes.

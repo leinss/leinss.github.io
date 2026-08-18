@@ -6,9 +6,9 @@ tags: ["n8n", "claude", "ai", "automation", "teardown", "own-your-stack"]
 lang: "en"
 ---
 
-> **Short answer:** The invoice reader is three n8n nodes: a form that takes the upload, one HTTP call to a vision model with the invoice image, and a code node that parses the model's reply into clean JSON. Vision does the reading; the code node does the part a no-code tool can't, stripping the model's markdown fences and safely parsing the result. This is the teardown of the workflow behind the [invoice demo](https://leinss-consulting.de/en/blog/automating-invoice-processing/).
+> **Short answer:** The invoice reader is three n8n nodes: a form that takes the upload, one HTTP call to a vision model with the invoice image, and a code node that parses the model's reply into clean JSON. Vision does the reading; the code node does the part a no-code tool can't, stripping the model's markdown fences and safely parsing the result. This is the teardown of the workflow behind the [invoice demo](https://consulting.leinss.xyz/en/blog/automating-invoice-processing/).
 
-The [invoice-processing demo on my consulting site](https://leinss-consulting.de/en/blog/automating-invoice-processing/) reads a real invoice and returns structured fields. People assume there's a mountain of OCR rules behind it. There isn't. Here's the whole thing, and you can [download the workflow JSON](https://leinss-consulting.de/workflows/n8n-invoice-cloud.json) and run it yourself.
+The [invoice-processing demo on my consulting site](https://consulting.leinss.xyz/en/blog/automating-invoice-processing/) reads a real invoice and returns structured fields. People assume there's a mountain of OCR rules behind it. There isn't. Here's the whole thing, and you can [download the workflow JSON](https://consulting.leinss.xyz/workflows/n8n-invoice-cloud.json) and run it yourself.
 
 ## The whole pipeline is three nodes
 
@@ -24,7 +24,7 @@ That's it. No OCR engine, no template per vendor, no regex zoo. A vision model r
 
 The one real step is an HTTP request to a vision model with the invoice passed inline as a base64 image. The prompt asks for the fields I care about (number, date, line items, totals, tax) as JSON. Because the model reads pixels, it doesn't care whether the layout is a clean PDF export or a phone photo of a crumpled paper invoice.
 
-Which model is a cost decision, not an architectural one, and the two copies of this workflow differ on it. The JSON you can download calls Claude Sonnet 4's messages API. The widget on my consulting site calls Kimi's vision endpoint on my own n8n instance, because it is public and every submission spends money. There is also a [local variant](https://leinss-consulting.de/workflows/n8n-invoice-local.json) that points the same step at Ollama, so nothing leaves the machine. Same three-step shape in all three; swap the URL and the auth header.
+Which model is a cost decision, not an architectural one, and the two copies of this workflow differ on it. The JSON you can download calls Claude Sonnet 4's messages API. The widget on my consulting site calls Kimi's vision endpoint on my own n8n instance, because it is public and every submission spends money. There is also a [local variant](https://consulting.leinss.xyz/workflows/n8n-invoice-local.json) that points the same step at Ollama, so nothing leaves the machine. Same three-step shape in all three; swap the URL and the auth header.
 
 The hosted copy also has three nodes the starter does not: a validation step, an IF, and an error response, so a request with no file gets a clear rejection instead of an empty model call. That is worth adding to anything public, and it is the same "code owns the failure case" point the parse node makes.
 
@@ -42,4 +42,4 @@ None of that is hard, but all of it is the difference between a demo and somethi
 
 Three nodes means almost nothing to maintain. When a new invoice layout shows up, there's no template to add, the vision model already handles it. The only code is the parse step, and it's stable because the model's output shape is stable. Simple, in this case, is also hard to break.
 
-This runs on my own n8n, part of [the self-hosted stack I run instead of paying for SaaS](/blog/en/self-hosted-stack/). If you want a reader like this built for your document types and handed to your team, that's what I do at [Leinss Consulting](https://leinss-consulting.de/en/).
+This runs on my own n8n, part of [the self-hosted stack I run instead of paying for SaaS](/blog/en/self-hosted-stack/). If you want a reader like this built for your document types and handed to your team, that's what I do at [Leinss Consulting](https://consulting.leinss.xyz/en/).

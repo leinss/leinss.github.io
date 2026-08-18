@@ -44,4 +44,4 @@ Both send campaigns and transactional email, manage subscribers and segments, tr
 
 The honest catch: owning delivery is the part that takes engineering. Listmonk itself is a single binary; making it send reliably is DNS, a sending provider, and monitoring. That gap is the theme of [the self-hosted stack I run instead of paying for SaaS](/blog/en/self-hosted-stack/).
 
-If you want an owned newsletter set up properly, deliverability and all, and handed to your team, that's the kind of thing I do at [Leinss Consulting](https://leinss-consulting.de/en/).
+If you want an owned newsletter set up properly, deliverability and all, and handed to your team, that's the kind of thing I do at [Leinss Consulting](https://consulting.leinss.xyz/en/).

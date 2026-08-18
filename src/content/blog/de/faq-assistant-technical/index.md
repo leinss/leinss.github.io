@@ -6,9 +6,9 @@ tags: ["n8n", "rag", "kimi", "ai", "teardown", "own-your-stack"]
 lang: "de"
 ---
 
-> **Kurz gesagt:** Der FAQ-Assistent ist Retrieval-Augmented Generation in zehn n8n-Nodes: in einer Postgres-Wissensbasis die am besten passenden Passagen zur Frage suchen, diese Kimi K2 als Kontext geben und eine belegte Antwort zurückgeben. Der Retrieval-Schritt hält das Modell davon ab, etwas zu erfinden. Es kann nur aus dem antworten, was die Suche liefert. Das ist der Teardown der [Live-FAQ-Demo](https://leinss-consulting.de/de/blog/faq-assistent-ki-support/).
+> **Kurz gesagt:** Der FAQ-Assistent ist Retrieval-Augmented Generation in zehn n8n-Nodes: in einer Postgres-Wissensbasis die am besten passenden Passagen zur Frage suchen, diese Kimi K2 als Kontext geben und eine belegte Antwort zurückgeben. Der Retrieval-Schritt hält das Modell davon ab, etwas zu erfinden. Es kann nur aus dem antworten, was die Suche liefert. Das ist der Teardown der [Live-FAQ-Demo](https://consulting.leinss.xyz/de/blog/faq-assistent-ki-support/).
 
-Ein Chatbot, der Antworten erfindet, ist schlimmer als kein Chatbot. Der [FAQ-Assistent auf meiner Beratungsseite](https://leinss-consulting.de/de/blog/faq-assistent-ki-support/) antwortet nur aus einer Wissensbasis, die ich kontrolliere, und verweigert, wenn die Antwort nicht drinsteht. Dieses Verhalten ist Retrieval-Augmented Generation (RAG), und so ist es verdrahtet. Sie können [das Workflow-JSON herunterladen](https://leinss-consulting.de/workflows/faq-assistent.json) und jeden Node prüfen.
+Ein Chatbot, der Antworten erfindet, ist schlimmer als kein Chatbot. Der [FAQ-Assistent auf meiner Beratungsseite](https://consulting.leinss.xyz/de/blog/faq-assistent-ki-support/) antwortet nur aus einer Wissensbasis, die ich kontrolliere, und verweigert, wenn die Antwort nicht drinsteht. Dieses Verhalten ist Retrieval-Augmented Generation (RAG), und so ist es verdrahtet. Sie können [das Workflow-JSON herunterladen](https://consulting.leinss.xyz/workflows/faq-assistent.json) und jeden Node prüfen.
 
 ## Die RAG-Pipeline
 
@@ -48,4 +48,4 @@ Dieser mittlere Node ist der Ort, an dem Retrieval zur *Antwort* wird. „Setze 
 
 ## Warum Selbst-Hosting hier zählt
 
-Die Wissensbasis sind Unternehmensdaten, und die Fragen der Nutzer sind oft sensibel. Speicher und Workflow auf Infrastruktur zu betreiben, die ich kontrolliere, heißt, keins von beiden verlässt meinen Server außer für den Modellaufruf selbst. Das ist der Sinn [des selbst gehosteten Stacks, den ich statt SaaS betreibe](/blog/de/self-hosted-stack/). Wenn Sie einen belegten Assistenten über Ihren eigenen Dokumenten wollen, gebaut und übergeben, mache ich das bei [Leinss Consulting](https://leinss-consulting.de/de/).
+Die Wissensbasis sind Unternehmensdaten, und die Fragen der Nutzer sind oft sensibel. Speicher und Workflow auf Infrastruktur zu betreiben, die ich kontrolliere, heißt, keins von beiden verlässt meinen Server außer für den Modellaufruf selbst. Das ist der Sinn [des selbst gehosteten Stacks, den ich statt SaaS betreibe](/blog/de/self-hosted-stack/). Wenn Sie einen belegten Assistenten über Ihren eigenen Dokumenten wollen, gebaut und übergeben, mache ich das bei [Leinss Consulting](https://consulting.leinss.xyz/de/).

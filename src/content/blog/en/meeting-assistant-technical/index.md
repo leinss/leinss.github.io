@@ -6,9 +6,9 @@ tags: ["n8n", "claude", "whisper", "ai", "teardown", "own-your-stack"]
 lang: "en"
 ---
 
-> **Short answer:** The meeting bot takes an audio file, transcribes it with Whisper, then has a model extract structured minutes (decisions, action items, owners) against a fixed schema rather than as free text. A code node formats that into markdown and n8n emails it. Forcing the schema is what makes the summary reliable instead of a wall of prose. This is the teardown of the [meeting-minutes workflow](https://leinss-consulting.de/en/blog/meeting-minutes-automation/).
+> **Short answer:** The meeting bot takes an audio file, transcribes it with Whisper, then has a model extract structured minutes (decisions, action items, owners) against a fixed schema rather than as free text. A code node formats that into markdown and n8n emails it. Forcing the schema is what makes the summary reliable instead of a wall of prose. This is the teardown of the [meeting-minutes workflow](https://consulting.leinss.xyz/en/blog/meeting-minutes-automation/).
 
-"Summarise this meeting" gives you a paragraph nobody reads. What people actually want is a list of decisions and who owns which action. The [meeting-minutes workflow on my consulting site](https://leinss-consulting.de/en/blog/meeting-minutes-automation/) produces exactly that, and here's how. The [workflow JSON is downloadable](https://leinss-consulting.de/workflows/meeting-protokoll.json).
+"Summarise this meeting" gives you a paragraph nobody reads. What people actually want is a list of decisions and who owns which action. The [meeting-minutes workflow on my consulting site](https://consulting.leinss.xyz/en/blog/meeting-minutes-automation/) produces exactly that, and here's how. The [workflow JSON is downloadable](https://consulting.leinss.xyz/workflows/meeting-protokoll.json).
 
 **One thing to say up front, because you can check it:** the widget on the demo page is not currently transcribing. It needs a Whisper service, that service is not deployed on the box the demos run on, and rather than error the widget returns a sample summary. Standing one up is infrastructure I have not spent on a demo. So read this as a teardown of the workflow, which is real and downloadable, not as proof that the button works end to end.
 
@@ -45,4 +45,4 @@ That last node is the "where code starts" moment: turning a structured API resul
 
 ## Why I run it myself
 
-Meeting audio is about as sensitive as company data gets. Running transcription and summarisation through a workflow on infrastructure I control keeps the recording off third-party SaaS except for the model calls I choose. That's the case behind [the self-hosted stack I run instead of paying for SaaS](/blog/en/self-hosted-stack/). Want this for your team's meetings, built and handed over? That's what I do at [Leinss Consulting](https://leinss-consulting.de/en/).
+Meeting audio is about as sensitive as company data gets. Running transcription and summarisation through a workflow on infrastructure I control keeps the recording off third-party SaaS except for the model calls I choose. That's the case behind [the self-hosted stack I run instead of paying for SaaS](/blog/en/self-hosted-stack/). Want this for your team's meetings, built and handed over? That's what I do at [Leinss Consulting](https://consulting.leinss.xyz/en/).

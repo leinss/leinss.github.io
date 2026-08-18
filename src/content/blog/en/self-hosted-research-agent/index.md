@@ -41,4 +41,4 @@ Two reasons, both practical:
 
 This is a habit, not a magic button. It's worth setting up if you do enough research or drafting that an always-there, owned agent pays back the effort of running it. If you ask a chatbot something twice a month, don't bother, a rented tab is fine.
 
-If you want the fuller picture, [Pi vs OpenClaw](/blog/en/pi-vs-openclaw/) covers the terminal agent versus the chat-channel assistant. And if you'd like an owned agent or automation built for your business and handed over, that's what I do at [Leinss Consulting](https://leinss-consulting.de/en/).
+If you want the fuller picture, [Pi vs OpenClaw](/blog/en/pi-vs-openclaw/) covers the terminal agent versus the chat-channel assistant. And if you'd like an owned agent or automation built for your business and handed over, that's what I do at [Leinss Consulting](https://consulting.leinss.xyz/en/).

@@ -38,4 +38,4 @@ But an agent that does real work (reads your files, touches your systems, acts o
 - [Pi vs OpenClaw](/blog/en/pi-vs-openclaw/): the minimal agent core and the assistant gateway around it, and when to reach for each.
 - [How I run a self-hosted research agent in my daily work](/blog/en/self-hosted-research-agent/), the practical setup.
 
-Owned automation and owned agents are the same idea one layer apart. If you want either built for your business and handed over, that's what I do at [Leinss Consulting](https://leinss-consulting.de/en/).
+Owned automation and owned agents are the same idea one layer apart. If you want either built for your business and handed over, that's what I do at [Leinss Consulting](https://consulting.leinss.xyz/en/).

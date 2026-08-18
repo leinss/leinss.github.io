@@ -1,5 +1,5 @@
 ---
-company: "leinss-consulting.de"
+company: "Leinss Consulting"
 role: "Founder & Independent Consultant"
 dateStart: "02/01/2025"
 dateEnd: "Present"
@@ -8,7 +8,7 @@ dateEnd: "Present"
 Consultancy delivering web products and process automation, run end to end from
 the productized offering through to delivery.
 
-[leinss-consulting.de](https://leinss-consulting.de)
+[consulting.leinss.xyz](https://consulting.leinss.xyz)
 
 **product delivery**
 

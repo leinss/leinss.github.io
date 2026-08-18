@@ -41,4 +41,4 @@ Zwei Gründe, beide praktisch:
 
 Das ist eine Gewohnheit, kein Zauberknopf. Es lohnt sich einzurichten, wenn Sie genug recherchieren oder entwerfen, dass ein immer-da, eigener Agent den Aufwand seines Betriebs zurückzahlt. Wenn Sie zweimal im Monat einen Chatbot etwas fragen, lassen Sie es, ein gemieteter Tab reicht.
 
-Wollen Sie das ganze Bild, deckt [Pi vs OpenClaw](/blog/de/pi-vs-openclaw/) den Terminal-Agenten gegenüber dem Chat-Kanal-Assistenten ab. Und wenn Sie einen eigenen Agenten oder eigene Automatisierung für Ihr Unternehmen gebaut und übergeben haben wollen, mache ich das bei [Leinss Consulting](https://leinss-consulting.de/de/).
+Wollen Sie das ganze Bild, deckt [Pi vs OpenClaw](/blog/de/pi-vs-openclaw/) den Terminal-Agenten gegenüber dem Chat-Kanal-Assistenten ab. Und wenn Sie einen eigenen Agenten oder eigene Automatisierung für Ihr Unternehmen gebaut und übergeben haben wollen, mache ich das bei [Leinss Consulting](https://consulting.leinss.xyz/de/).

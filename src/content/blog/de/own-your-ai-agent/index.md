@@ -38,4 +38,4 @@ Aber ein Agent, der echte Arbeit tut (Ihre Dateien liest, Ihre Systeme anfasst, 
 - [Pi vs OpenClaw](/blog/de/pi-vs-openclaw/): der minimale Agenten-Kern und das Assistenz-Gateway drumherum, und wann man zu welchem greift.
 - [Wie ich einen selbst gehosteten Recherche-Agenten im Alltag nutze](/blog/de/self-hosted-research-agent/), der praktische Aufbau.
 
-Eigene Automatisierung und eigene Agenten sind dieselbe Idee eine Schicht weiter. Wenn Sie eines von beidem für Ihr Unternehmen gebaut und übergeben haben wollen, mache ich das bei [Leinss Consulting](https://leinss-consulting.de/de/).
+Eigene Automatisierung und eigene Agenten sind dieselbe Idee eine Schicht weiter. Wenn Sie eines von beidem für Ihr Unternehmen gebaut und übergeben haben wollen, mache ich das bei [Leinss Consulting](https://consulting.leinss.xyz/de/).

@@ -6,9 +6,9 @@ tags: ["n8n", "kimi", "ai", "automation", "teardown", "own-your-stack"]
 lang: "en"
 ---
 
-> **Short answer:** The lead-response bot runs two LLM passes over a contact-form submission: first Kimi K2 classifies the lead (intent, fit, language) into JSON, then a second Kimi call uses that classification to draft a personalized reply in the sender's language. n8n handles the form, the branching, and the send; code nodes validate the input and parse the classification between the two passes. Splitting classify-then-write is what makes the reply feel targeted. This is the teardown of the [live lead-response demo](https://leinss-consulting.de/en/blog/automating-communication/).
+> **Short answer:** The lead-response bot runs two LLM passes over a contact-form submission: first Kimi K2 classifies the lead (intent, fit, language) into JSON, then a second Kimi call uses that classification to draft a personalized reply in the sender's language. n8n handles the form, the branching, and the send; code nodes validate the input and parse the classification between the two passes. Splitting classify-then-write is what makes the reply feel targeted. This is the teardown of the [live lead-response demo](https://consulting.leinss.xyz/en/blog/automating-communication/).
 
-A generic auto-reply is worse than a slow human one. The [lead-response demo on my consulting site](https://leinss-consulting.de/en/blog/automating-communication/) reads an inbound message and drafts a reply that actually responds to it. The trick is doing it in two passes, not one. The [workflow JSON is downloadable](https://leinss-consulting.de/workflows/blitz-antwort.json).
+A generic auto-reply is worse than a slow human one. The [lead-response demo on my consulting site](https://consulting.leinss.xyz/en/blog/automating-communication/) reads an inbound message and drafts a reply that actually responds to it. The trick is doing it in two passes, not one. The [workflow JSON is downloadable](https://consulting.leinss.xyz/workflows/blitz-antwort.json).
 
 ## Two passes, not one
 
@@ -42,4 +42,4 @@ That parse-between-passes node is pure "where code starts": you can't reliably c
 
 ## Why it runs on my own stack
 
-Inbound leads are business data, and the reply goes out under my name. Running the pipeline on infrastructure I control means the message and the classification stay with me, apart from the model calls I choose to make. That's the logic of [the self-hosted stack I run instead of paying for SaaS](/blog/en/self-hosted-stack/). Want fast, personalized lead handling built for your pipeline and handed over? That's what I do at [Leinss Consulting](https://leinss-consulting.de/en/).
+Inbound leads are business data, and the reply goes out under my name. Running the pipeline on infrastructure I control means the message and the classification stay with me, apart from the model calls I choose to make. That's the logic of [the self-hosted stack I run instead of paying for SaaS](/blog/en/self-hosted-stack/). Want fast, personalized lead handling built for your pipeline and handed over? That's what I do at [Leinss Consulting](https://consulting.leinss.xyz/en/).

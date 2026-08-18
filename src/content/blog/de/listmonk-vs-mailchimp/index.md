@@ -44,4 +44,4 @@ Beide versenden Kampagnen und transaktionale E-Mails, verwalten Abonnenten und S
 
 Der ehrliche Haken: den Versand zu besitzen ist der Teil, der Engineering braucht. Listmonk selbst ist ein einzelnes Binary; es zuverlässig senden zu lassen ist DNS, ein Versandanbieter und Monitoring. Diese Lücke ist das Thema von [dem selbst gehosteten Stack, den ich statt SaaS betreibe](/blog/de/self-hosted-stack/).
 
-Wenn Sie einen eigenen Newsletter sauber eingerichtet haben wollen, samt Zustellbarkeit, und an Ihr Team übergeben, ist das genau die Art Arbeit, die ich bei [Leinss Consulting](https://leinss-consulting.de/de/) mache.
+Wenn Sie einen eigenen Newsletter sauber eingerichtet haben wollen, samt Zustellbarkeit, und an Ihr Team übergeben, ist das genau die Art Arbeit, die ich bei [Leinss Consulting](https://consulting.leinss.xyz/de/) mache.

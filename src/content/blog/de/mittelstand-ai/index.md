@@ -50,4 +50,4 @@ Das wäre Dogma, und Dogma ist teuer. Gemietete Cloud-Tools sind der richtige Ei
 
 ## Wenn Sie beim Ziehen dieser Linie Hilfe wollen
 
-Zu entscheiden, was gehören und was gemietet sein soll, und dann die besessene Hälfte so zu bauen, dass sie dokumentiert und ans Team übergeben ist statt im Kopf einer Person eingeschlossen. Das ist die Arbeit, die ich bei [Leinss Consulting](https://leinss-consulting.de/de/) mache. Wenn Sie an diesem Punkt stehen, steht die Tür offen.
+Zu entscheiden, was gehören und was gemietet sein soll, und dann die besessene Hälfte so zu bauen, dass sie dokumentiert und ans Team übergeben ist statt im Kopf einer Person eingeschlossen. Das ist die Arbeit, die ich bei [Leinss Consulting](https://consulting.leinss.xyz/de/) mache. Wenn Sie an diesem Punkt stehen, steht die Tür offen.

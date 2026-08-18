@@ -58,4 +58,4 @@ If the volume arrived to justify it: queue mode with Postgres and Redis, so exec
 
 ## Want this, but owned?
 
-Standing up a stack like this (self-hosted, documented, and handed over so it isn't locked in one person's head) is the work I do at [Leinss Consulting](https://leinss-consulting.de/en/). If you run a similar setup, I'm always happy to compare notes.
+Standing up a stack like this (self-hosted, documented, and handed over so it isn't locked in one person's head) is the work I do at [Leinss Consulting](https://consulting.leinss.xyz/en/). If you run a similar setup, I'm always happy to compare notes.

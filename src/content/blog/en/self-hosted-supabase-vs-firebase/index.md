@@ -46,4 +46,4 @@ Both give an app the same core services out of the box: a database, authenticati
 
 A middle path I'd actually recommend: start on Supabase's hosted tier (same open stack, no ops) and move to self-hosted when owning it pays off. Either way you're on Postgres, so the move is a database migration, not a rewrite. That "own the load-bearing pieces as they matter" sequence is the whole idea behind [the self-hosted stack I run instead of paying for SaaS](/blog/en/self-hosted-stack/).
 
-If you want an owned backend built, run, and handed to your team, that's the kind of thing I do at [Leinss Consulting](https://leinss-consulting.de/en/).
+If you want an owned backend built, run, and handed to your team, that's the kind of thing I do at [Leinss Consulting](https://consulting.leinss.xyz/en/).

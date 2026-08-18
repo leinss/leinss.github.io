@@ -43,4 +43,4 @@ All three do the core job: connect your social accounts, write posts, schedule t
 
 The recurring catch across everything I self-host: the tool is the easy part; running it *well* is Docker, backups, and maintenance. That gap is the theme of [the self-hosted stack I run instead of paying for SaaS](/blog/en/self-hosted-stack/).
 
-If you want owned automation like this, social scheduling and the rest, built and handed to your team, that's the kind of thing I do at [Leinss Consulting](https://leinss-consulting.de/en/).
+If you want owned automation like this, social scheduling and the rest, built and handed to your team, that's the kind of thing I do at [Leinss Consulting](https://consulting.leinss.xyz/en/).

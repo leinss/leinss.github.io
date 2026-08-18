@@ -11,6 +11,6 @@ Most of my time right now goes into [TobiBoard](/projects/TobiBoard), an on-devi
 
 The thread through all of it: see how far useful, AI-flavoured software can go while keeping user data on the user's own hardware. In practice that's two patterns: run models locally where it's feasible (on-device speech and text-to-speech, local LLMs via Ollama on the desktop), and bring-your-own-key for the rest, so anything cloud-bound uses *your* API key and endpoint, never mine.
 
-I also do some consulting through [Leinss Consulting](https://leinss-consulting.de), helping service companies put generative AI to work, but building my own apps is the main focus these days.
+I also do some consulting through [Leinss Consulting](https://consulting.leinss.xyz), helping service companies put generative AI to work, but building my own apps is the main focus these days.
 
 Based in Germany. This is a [now page](https://nownownow.com/about); last updated June 2026.

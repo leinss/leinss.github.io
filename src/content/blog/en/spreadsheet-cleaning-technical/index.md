@@ -6,9 +6,9 @@ tags: ["n8n", "ai", "data-cleaning", "automation", "teardown", "own-your-stack"]
 lang: "en"
 ---
 
-> **Short answer:** The spreadsheet cleaner takes raw CSV plus plain-language instructions ("dedupe, fix capitalisation, split names"), builds a system prompt that tells an LLM to normalise the data and always return valid JSON, and formats the result back out. n8n handles intake and response; code nodes validate the CSV, assemble the prompt, and parse the reply. It works because messy-data rules are easier to describe in a sentence than to code. This is the teardown of the [spreadsheet-rescue demo](https://leinss-consulting.de/en/blog/from-spreadsheets-to-systems/).
+> **Short answer:** The spreadsheet cleaner takes raw CSV plus plain-language instructions ("dedupe, fix capitalisation, split names"), builds a system prompt that tells an LLM to normalise the data and always return valid JSON, and formats the result back out. n8n handles intake and response; code nodes validate the CSV, assemble the prompt, and parse the reply. It works because messy-data rules are easier to describe in a sentence than to code. This is the teardown of the [spreadsheet-rescue demo](https://consulting.leinss.xyz/en/blog/from-spreadsheets-to-systems/).
 
-Cleaning a contact list (deduping, fixing "SMITH, john" into "John Smith", splitting a full-name column) is the kind of task that takes a pile of brittle rules to code and one sentence to describe. So I let an LLM do the describing-to-doing. The [spreadsheet workflow on my consulting site](https://leinss-consulting.de/en/blog/from-spreadsheets-to-systems/) is the result, and the [JSON is downloadable](https://leinss-consulting.de/workflows/excel-retter.json).
+Cleaning a contact list (deduping, fixing "SMITH, john" into "John Smith", splitting a full-name column) is the kind of task that takes a pile of brittle rules to code and one sentence to describe. So I let an LLM do the describing-to-doing. The [spreadsheet workflow on my consulting site](https://consulting.leinss.xyz/en/blog/from-spreadsheets-to-systems/) is the result, and the [JSON is downloadable](https://consulting.leinss.xyz/workflows/excel-retter.json).
 
 ## The pipeline
 
@@ -38,4 +38,4 @@ The prompt-building node is exactly "where code starts", the reliability of the 
 
 ## Why I keep the data on my own box
 
-The whole point of cleaning a spreadsheet is that it's *your* data: customers, contacts, orders. Running the workflow on infrastructure I control means the file stays with me apart from the single model call, instead of being uploaded to someone else's cleaning SaaS. That's the argument in [the self-hosted stack I run instead of paying for SaaS](/blog/en/self-hosted-stack/). Want a data-cleaning pipeline built for your formats and handed over? That's what I do at [Leinss Consulting](https://leinss-consulting.de/en/).
+The whole point of cleaning a spreadsheet is that it's *your* data: customers, contacts, orders. Running the workflow on infrastructure I control means the file stays with me apart from the single model call, instead of being uploaded to someone else's cleaning SaaS. That's the argument in [the self-hosted stack I run instead of paying for SaaS](/blog/en/self-hosted-stack/). Want a data-cleaning pipeline built for your formats and handed over? That's what I do at [Leinss Consulting](https://consulting.leinss.xyz/en/).

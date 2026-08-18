@@ -43,4 +43,4 @@ Alle drei erledigen die Kernaufgabe: Social-Konten verbinden, Beiträge schreibe
 
 Der wiederkehrende Haken bei allem, was ich selbst hoste: das Tool ist der leichte Teil; es *gut* zu betreiben ist Docker, Backups und Wartung. Diese Lücke ist das Thema von [dem selbst gehosteten Stack, den ich statt SaaS betreibe](/blog/de/self-hosted-stack/).
 
-Wenn Sie eigene Automatisierung wie diese, Social-Planung und den Rest, gebaut und an Ihr Team übergeben haben wollen, ist das genau die Art Arbeit, die ich bei [Leinss Consulting](https://leinss-consulting.de/de/) mache.
+Wenn Sie eigene Automatisierung wie diese, Social-Planung und den Rest, gebaut und an Ihr Team übergeben haben wollen, ist das genau die Art Arbeit, die ich bei [Leinss Consulting](https://consulting.leinss.xyz/de/) mache.

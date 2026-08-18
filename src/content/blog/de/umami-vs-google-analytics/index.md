@@ -44,4 +44,4 @@ Beide beantworten die Alltagsfragen: Wie viele Leute kamen, woher, auf welche Se
 
 Der Haken, den man benennen sollte: Umami *gut* selbst zu hosten heißt Docker, eine Datenbank, ein Reverse Proxy, Backups und Updates. Richtig gemacht ist es privat und läuft einfach. Diese Lücke ist Engineering, und das ist das Thema von [dem selbst gehosteten Stack, den ich statt SaaS betreibe](/blog/de/self-hosted-stack/).
 
-Wenn Sie eigene, private Analyse lieber eingerichtet und an Ihr Team übergeben bekommen, statt sie selbst zu betreiben, ist das genau die Art Arbeit, die ich bei [Leinss Consulting](https://leinss-consulting.de/de/) mache.
+Wenn Sie eigene, private Analyse lieber eingerichtet und an Ihr Team übergeben bekommen, statt sie selbst zu betreiben, ist das genau die Art Arbeit, die ich bei [Leinss Consulting](https://consulting.leinss.xyz/de/) mache.

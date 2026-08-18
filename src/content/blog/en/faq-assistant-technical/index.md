@@ -6,9 +6,9 @@ tags: ["n8n", "rag", "kimi", "ai", "teardown", "own-your-stack"]
 lang: "en"
 ---
 
-> **Short answer:** The FAQ assistant is retrieval-augmented generation in ten n8n nodes: search a Postgres knowledge base for the passages closest to the question, hand those to Kimi K2 as context, and return a grounded answer. The retrieval step is what stops the model inventing things. It can only answer from what the search returns. This is the teardown of the [live FAQ demo](https://leinss-consulting.de/en/blog/faq-automation-ai-support/).
+> **Short answer:** The FAQ assistant is retrieval-augmented generation in ten n8n nodes: search a Postgres knowledge base for the passages closest to the question, hand those to Kimi K2 as context, and return a grounded answer. The retrieval step is what stops the model inventing things. It can only answer from what the search returns. This is the teardown of the [live FAQ demo](https://consulting.leinss.xyz/en/blog/faq-automation-ai-support/).
 
-A chatbot that makes up answers is worse than no chatbot. The [FAQ assistant on my consulting site](https://leinss-consulting.de/en/blog/faq-automation-ai-support/) only answers from a knowledge base I control, and refuses when the answer isn't in there. That behaviour is retrieval-augmented generation (RAG), and here's how it's wired. You can [download the workflow JSON](https://leinss-consulting.de/workflows/faq-assistent.json) and inspect every node.
+A chatbot that makes up answers is worse than no chatbot. The [FAQ assistant on my consulting site](https://consulting.leinss.xyz/en/blog/faq-automation-ai-support/) only answers from a knowledge base I control, and refuses when the answer isn't in there. That behaviour is retrieval-augmented generation (RAG), and here's how it's wired. You can [download the workflow JSON](https://consulting.leinss.xyz/workflows/faq-assistent.json) and inspect every node.
 
 ## The RAG pipeline
 
@@ -48,4 +48,4 @@ That middle node is where retrieval becomes an *answer*. You can't express "asse
 
 ## Why self-hosted matters here
 
-The knowledge base is company data, and the questions users ask are often sensitive. Running the store and the workflow on infrastructure I control means neither leaves my box except for the model call itself. That's the point of [the self-hosted stack I run instead of paying for SaaS](/blog/en/self-hosted-stack/). If you want a grounded assistant over your own docs, built and handed over, that's what I do at [Leinss Consulting](https://leinss-consulting.de/en/).
+The knowledge base is company data, and the questions users ask are often sensitive. Running the store and the workflow on infrastructure I control means neither leaves my box except for the model call itself. That's the point of [the self-hosted stack I run instead of paying for SaaS](/blog/en/self-hosted-stack/). If you want a grounded assistant over your own docs, built and handed over, that's what I do at [Leinss Consulting](https://consulting.leinss.xyz/en/).

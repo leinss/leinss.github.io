@@ -66,7 +66,7 @@ These are the four numbers worth watching once it runs, and you can only get the
 - **Time to first response**, before and after, split by category. The average hides the case that matters.
 - **Rate of wrong confident answers.** The one to watch. A bot that says "I don't know" too often is annoying; a bot that is confidently wrong costs you a customer.
 
-> **Reference build:** For the full architecture with every node explained and the n8n workflow to download, see the **[AI Support Triage reference build](https://leinss-consulting.de/en/blog/case-study-support-triage/)**. It is a build you can inspect, not a client report, and it carries no client figures.
+> **Reference build:** For the full architecture with every node explained and the n8n workflow to download, see the **[AI Support Triage reference build](https://consulting.leinss.xyz/en/blog/case-study-support-triage/)**. It is a build you can inspect, not a client report, and it carries no client figures.
 
 ## Getting started
 
@@ -79,4 +79,4 @@ Start small:
 
 ---
 
-Want the real thing rather than a description? The [support-triage reference build](https://leinss-consulting.de/en/blog/case-study-support-triage/) ships the n8n workflow as a downloadable JSON, import it and read every node. If you'd rather have it built and handed over, that's what I do at [Leinss Consulting](https://leinss-consulting.de/en/).
+Want the real thing rather than a description? The [support-triage reference build](https://consulting.leinss.xyz/en/blog/case-study-support-triage/) ships the n8n workflow as a downloadable JSON, import it and read every node. If you'd rather have it built and handed over, that's what I do at [Leinss Consulting](https://consulting.leinss.xyz/en/).

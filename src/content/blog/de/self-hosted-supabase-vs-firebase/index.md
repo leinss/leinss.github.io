@@ -46,4 +46,4 @@ Beide geben einer App dieselben Kern-Dienste ab Werk: eine Datenbank, Authentifi
 
 Ein Mittelweg, den ich tatsächlich empfehle: auf Supabases gehostetem Tarif starten (derselbe offene Stack, kein Ops) und auf selbst gehostet umziehen, wenn sich der Besitz lohnt. So oder so sind Sie auf Postgres, der Umzug ist also eine Datenbank-Migration, kein Neuschrieb. Diese Reihenfolge („die tragenden Teile besitzen, sobald sie wichtig werden") ist die ganze Idee hinter [dem selbst gehosteten Stack, den ich statt SaaS betreibe](/blog/de/self-hosted-stack/).
 
-Wenn Sie ein eigenes Backend gebaut, betrieben und an Ihr Team übergeben haben wollen, ist das genau die Art Arbeit, die ich bei [Leinss Consulting](https://leinss-consulting.de/de/) mache.
+Wenn Sie ein eigenes Backend gebaut, betrieben und an Ihr Team übergeben haben wollen, ist das genau die Art Arbeit, die ich bei [Leinss Consulting](https://consulting.leinss.xyz/de/) mache.

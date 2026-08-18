@@ -58,4 +58,4 @@ Käme das Volumen, das es rechtfertigt: Queue-Modus mit Postgres und Redis, dami
 
 ## Wollen Sie das, aber besessen?
 
-So einen Stack aufzusetzen (selbst gehostet, dokumentiert und so übergeben, dass er nicht im Kopf einer einzelnen Person eingeschlossen ist) ist die Arbeit, die ich bei [Leinss Consulting](https://leinss-consulting.de/de/) mache. Wenn Sie ein ähnliches Setup betreiben, vergleiche ich gern Notizen.
+So einen Stack aufzusetzen (selbst gehostet, dokumentiert und so übergeben, dass er nicht im Kopf einer einzelnen Person eingeschlossen ist) ist die Arbeit, die ich bei [Leinss Consulting](https://consulting.leinss.xyz/de/) mache. Wenn Sie ein ähnliches Setup betreiben, vergleiche ich gern Notizen.

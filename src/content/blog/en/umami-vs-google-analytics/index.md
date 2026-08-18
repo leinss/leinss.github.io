@@ -44,4 +44,4 @@ Both answer the everyday questions: how many people came, from where, to which p
 
 The catch worth naming: self-hosting Umami *well* is Docker, a database, a reverse proxy, backups, and updates. Done right it's private and it just runs. That gap is engineering, and it's the theme of [the self-hosted stack I run instead of paying for SaaS](/blog/en/self-hosted-stack/).
 
-If you'd rather have owned, private analytics set up and handed to your team rather than run it yourself, that's the kind of thing I do at [Leinss Consulting](https://leinss-consulting.de/en/).
+If you'd rather have owned, private analytics set up and handed to your team rather than run it yourself, that's the kind of thing I do at [Leinss Consulting](https://consulting.leinss.xyz/en/).

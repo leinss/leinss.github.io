@@ -66,7 +66,7 @@ Diese vier Zahlen lohnen die Beobachtung, sobald es läuft, und Sie bekommen sie
 - **Zeit bis zur ersten Antwort**, vorher und nachher, nach Kategorie getrennt. Der Durchschnitt versteckt genau den Fall, auf den es ankommt.
 - **Rate der falschen, selbstsicheren Antworten.** Die wichtigste. Ein Bot, der zu oft „weiß ich nicht" sagt, nervt; ein Bot, der selbstsicher falsch liegt, kostet Sie einen Kunden.
 
-> **Referenz-Build:** Die vollständige Architektur mit jedem erklärten Node und dem n8n-Workflow zum Herunterladen finden Sie im **[Referenz-Build KI-Support-Triage](https://leinss-consulting.de/de/blog/fallstudie-support-triage/)**. Das ist ein Aufbau zum Nachprüfen, kein Kundenbericht, und er enthält keine Kundenzahlen.
+> **Referenz-Build:** Die vollständige Architektur mit jedem erklärten Node und dem n8n-Workflow zum Herunterladen finden Sie im **[Referenz-Build KI-Support-Triage](https://consulting.leinss.xyz/de/blog/fallstudie-support-triage/)**. Das ist ein Aufbau zum Nachprüfen, kein Kundenbericht, und er enthält keine Kundenzahlen.
 
 ## Erste Schritte
 
@@ -79,4 +79,4 @@ Klein anfangen:
 
 ---
 
-Wollen Sie das Echte statt einer Beschreibung? Der [Referenz-Build Support-Triage](https://leinss-consulting.de/de/blog/fallstudie-support-triage/) liefert den n8n-Workflow als herunterladbare JSON, importieren Sie ihn und lesen Sie jeden Node. Wenn Sie ihn lieber gebaut und übergeben bekommen, ist das die Arbeit, die ich bei [Leinss Consulting](https://leinss-consulting.de/de/) mache.
+Wollen Sie das Echte statt einer Beschreibung? Der [Referenz-Build Support-Triage](https://consulting.leinss.xyz/de/blog/fallstudie-support-triage/) liefert den n8n-Workflow als herunterladbare JSON, importieren Sie ihn und lesen Sie jeden Node. Wenn Sie ihn lieber gebaut und übergeben bekommen, ist das die Arbeit, die ich bei [Leinss Consulting](https://consulting.leinss.xyz/de/) mache.

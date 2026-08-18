@@ -50,4 +50,4 @@ That would be dogma, and dogma is expensive. Rented cloud tools are the right on
 
 ## If you want help drawing that line
 
-Deciding what to own and what to rent, then building the owned half so it's documented and handed to your team rather than locked in one person's head, is the work I do at [Leinss Consulting](https://leinss-consulting.de/en/). If that's the stage you're at, the door is open.
+Deciding what to own and what to rent, then building the owned half so it's documented and handed to your team rather than locked in one person's head, is the work I do at [Leinss Consulting](https://consulting.leinss.xyz/en/). If that's the stage you're at, the door is open.

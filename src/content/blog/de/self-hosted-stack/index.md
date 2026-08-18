@@ -51,4 +51,4 @@ Für die tragenden Tools habe ich das direkte Duell gegen die SaaS aufgeschriebe
 
 ## So einen Aufbau für Ihr Unternehmen?
 
-Automatisierung, die Ihnen gehört (auf Ihrer Infrastruktur gebaut, dokumentiert, an Ihr Team übergeben) mache ich für Unternehmen bei [Leinss Consulting](https://leinss-consulting.de/de/). Schnell mit bewährten Tools starten; die Teile besitzen, die zählen. Kein Lock-in, keine gemieteten Blackboxes.
+Automatisierung, die Ihnen gehört (auf Ihrer Infrastruktur gebaut, dokumentiert, an Ihr Team übergeben) mache ich für Unternehmen bei [Leinss Consulting](https://consulting.leinss.xyz/de/). Schnell mit bewährten Tools starten; die Teile besitzen, die zählen. Kein Lock-in, keine gemieteten Blackboxes.
