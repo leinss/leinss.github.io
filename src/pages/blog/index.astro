@@ -93,6 +93,28 @@ const sections = langsWithPosts.map((lang) => ({
 </PageLayout>
 
 <script>
+  // The chosen language survives the visit, the way the theme does. Reading and
+  // writing are wrapped because localStorage throws rather than returning null
+  // when a browser blocks storage, and a language toggle that stops working is
+  // a worse outcome than one that forgets.
+  const STORAGE_KEY = "blogLang";
+
+  function readStoredLang(): string | null {
+    try {
+      return localStorage.getItem(STORAGE_KEY);
+    } catch {
+      return null;
+    }
+  }
+
+  function storeLang(lang: string) {
+    try {
+      localStorage.setItem(STORAGE_KEY, lang);
+    } catch {
+      // Storage unavailable; the toggle still works for this page view.
+    }
+  }
+
   function initBlogLang() {
     const toggles = Array.from(
       document.querySelectorAll<HTMLButtonElement>("[data-lang-toggle]")
@@ -116,8 +138,20 @@ const sections = langsWithPosts.map((lang) => ({
     };
 
     toggles.forEach((btn) => {
-      btn.addEventListener("click", () => show(btn.dataset.langToggle!));
+      btn.addEventListener("click", () => {
+        const lang = btn.dataset.langToggle!;
+        storeLang(lang);
+        show(lang);
+      });
     });
+
+    // Only restore a language that still has a panel. A stored value can
+    // outlive the posts it pointed at, and restoring it blindly would hide
+    // every panel and leave an empty page.
+    const stored = readStoredLang();
+    if (stored && toggles.some((btn) => btn.dataset.langToggle === stored)) {
+      show(stored);
+    }
   }
 
   initBlogLang();
