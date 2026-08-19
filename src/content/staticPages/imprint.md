@@ -19,7 +19,6 @@ Phone: +49 15679 63 41 99
 Email: inquiry@leinss.xyz
 
 **Tax Information**
-Steuernummer: [redacted]
 Kleinunternehmer gem. § 19 UStG (Small business exemption, no VAT charged)
 
 ## Responsible for Content
