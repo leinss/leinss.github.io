@@ -241,14 +241,16 @@ const education = await Promise.all(
                 <Link
                   href={SOCIAL.HREF}
                   external
-                  aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}
+                  aria-label={`${SITE.NAME} on ${SOCIAL.LABEL ?? SOCIAL.NAME}`}
                   underline={false}
                 >
                   <i
                     data-feather={SOCIAL.NAME}
                     class="w-5 h-5 mr-1.5 inline-block"
                   />
-                  <span class="underline text-sm">{SOCIAL.NAME}</span>
+                  <span class="underline text-sm">
+                    {SOCIAL.LABEL ?? SOCIAL.NAME}
+                  </span>
                 </Link>
                 {"/"}
               </li>

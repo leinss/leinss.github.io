@@ -126,10 +126,15 @@ export const EDUCATION: Metadata = {
   DESCRIPTION: "Where I have studied.",
 }
 
+// Bluesky is deliberately absent. The account exists but has no posts, and
+// `NAME` is also the Feather icon name, which has no `bluesky` glyph, so the
+// entry rendered a bare word with an empty box beside it. The Bluesky feed at
+// /social is gone with it.
 export const SOCIALS: Socials = [
   {
-    NAME: "bluesky",
-    HREF: "https://bsky.app/profile/leinss.bsky.social",
+    NAME: "twitter",
+    HREF: "https://x.com/t_leinss",
+    LABEL: "x",
   },
   {
     NAME: "github",

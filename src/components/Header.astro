@@ -44,10 +44,6 @@ const staticPages = (await getCollection("staticPages"))
           {`/`}
         </span>
         <Link href="/projects" underline={false}> projects </Link>
-        {/* The social link is out of the navigation while the Bluesky feed it
-            renders is empty, so visitors are not sent to a blank page. The
-            page itself stays at /social; restore the link once there are
-            posts. */}
         <button
           data-theme-toggle
           aria-label="Toggle theme"
