@@ -8,7 +8,7 @@ The apps below are all local-first: data stays on your device by default, and an
 - [TobiBoard](https://leinss.xyz/projects/TobiBoard/) (Android): on-device keyboard with optional BYOK AI voice-to-text and text fixing. Open source.
 - [TobiReader](https://leinss.xyz/projects/TobiReader/) (Android): local-first RSS/Atom reader with on-device read-aloud, optional AI summaries, and self-hosted sync.
 - [TobiRecord](https://leinss.xyz/projects/TobiRecord/) (macOS · Windows · Linux): open-source screen recorder and editor with auto-zoom, cursor polish and styled frames.
-- [TobiVoice](https://leinss.xyz/projects/TobiVoice/) (macOS): native voice-to-text that transcribes locally: offline processing, data never leaves the device.
+- [TobiVoice](https://leinss.xyz/projects/TobiVoice/) (macOS): native voice-to-text that transcribes on-device: local models by default, with meeting summaries, read-aloud and optional cloud providers.
 - [TobiBar](https://leinss.xyz/projects/TobiBar/) (macOS): menu-bar manager to hide, show and organise menu-bar items, with a growing toolbox of extras.
 - [kAIros](https://leinss.xyz/projects/kAIros/) (Android): AI-guided goal tracking: conversational goal setup, reminders and progress with local-LLM integration.
 - [finanzplanr](https://leinss.xyz/projects/finanzplanr/) (Web · Mobile): financial planning for the DACH region: household budgeting, statement parsing and AI insights.

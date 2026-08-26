@@ -49,7 +49,7 @@ export const APPS: App[] = [
   {
     name: "TobiVoice",
     tagline:
-      "Native macOS voice-to-text that transcribes locally: offline processing, your data never leaves the device.",
+      "Native macOS voice-to-text that transcribes on-device: local models by default, optional cloud providers.",
     platform: "macOS",
     slug: "TobiVoice",
   },
