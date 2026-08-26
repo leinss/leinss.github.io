@@ -51,6 +51,11 @@ const education = defineCollection({
     role: z.string(),
     dateStart: z.coerce.date(),
     dateEnd: z.union([z.coerce.date(), z.string()]),
+    // A formal degree, as opposed to a certificate or a course. The homepage
+    // shows only the three most recent entries, and the degree is the oldest
+    // one, so without this flag it fell off the end and the section listed
+    // three certificates and no degree.
+    degree: z.boolean().optional().default(false),
   }),
 })
 

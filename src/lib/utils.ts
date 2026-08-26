@@ -39,5 +39,10 @@ export function dateRange(startDate: Date, endDate?: Date | string): string {
   const start = `${startMonth} ${startYear}`;
   const end = endMonth ? `${endMonth} ${endYear}` : endYear;
 
-  return end ? `${start} - ${end}` : start;
+  if (!end) return start;
+  // An entry that starts and ends inside one month rendered as
+  // "May 2022 - May 2022", which reads as a broken template even where the
+  // dates are right. Print the month once instead.
+  if (start === end) return start;
+  return `${start} - ${end}`;
 }
