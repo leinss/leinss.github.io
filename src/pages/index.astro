@@ -36,13 +36,17 @@ const work = await Promise.all(
   })
 )
 
-const alleducation = (await getCollection("education"))
-  .sort(
-    (a, b) =>
-      new Date(b.data.dateStart).valueOf() -
-      new Date(a.data.dateStart).valueOf()
-  )
-  .slice(0, SITE.NUM_EDUCATION_ON_HOMEPAGE)
+const newestFirst = (a: { data: { dateStart: Date } }, b: { data: { dateStart: Date } }) =>
+  new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf()
+
+// Newest first would be the obvious order, but the degree is the oldest entry
+// by six years, so the slice dropped it and the homepage listed three
+// certificates and no degree. Degrees go first, then the rest by date.
+const educationEntries = await getCollection("education")
+const alleducation = [
+  ...educationEntries.filter((entry) => entry.data.degree).sort(newestFirst),
+  ...educationEntries.filter((entry) => !entry.data.degree).sort(newestFirst),
+].slice(0, SITE.NUM_EDUCATION_ON_HOMEPAGE)
 
 const education = await Promise.all(
   alleducation.map(async (item) => {
@@ -70,13 +74,13 @@ const education = await Promise.all(
         </p>
       </section>
 
+      {/* No "See all projects" here. The grid below renders every entry in
+          APPS, so the link led nowhere new, and the same link appears again on
+          the Recent projects section further down. */}
       <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h2 class="font-semibold text-xl text-black dark:text-white">
-            Apps I've built
-          </h2>
-          <Link href="/projects">See all projects →</Link>
-        </div>
+        <h2 class="font-semibold text-xl text-black dark:text-white">
+          Apps I've built
+        </h2>
         <ul class="animate-stagger grid grid-cols-1 sm:grid-cols-2 gap-4">
           {
             APPS.map((app) => (
