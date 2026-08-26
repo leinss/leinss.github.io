@@ -7,6 +7,8 @@ date: "2026-08-26"
 
 A snapshot of what I build with. Inspired by [uses.tech](https://uses.tech). The bias throughout is toward things that work offline, keep data local, and can be rebuilt from a file in a repository rather than a click in a dashboard.
 
+The list is deliberately broad. I would rather know four languages and the infrastructure under them than one language very well, and the same goes for tools: I keep several in rotation instead of settling on one, because a stack you cannot leave is a stack that eventually picks your problems for you.
+
 ## Hardware
 
 - **Apple Silicon Mac**: main development machine, and where I run local LLMs.
@@ -22,7 +24,7 @@ I live in the terminal, and most of the tooling is a replacement for something o
 - **direnv** for per-project environment, with secrets resolved from the macOS Keychain rather than sitting in a `.envrc`.
 - **chezmoi** for dotfiles, with **age** encrypting the parts that need it.
 - **fnm** for Node versions, a single `.node-version` keeping local and CI in sync.
-- **Claude Code** for day-to-day development.
+- **AI coding harnesses**, more than one on purpose: **Claude Code** day to day, alongside **OpenCode**, **Codex** and whatever else is worth a look. They have genuinely different strengths, the field moves fast enough that committing to one is a bad bet, and running several is the only way to tell which is actually better at a given job rather than which one you are used to.
 
 ## Web stack
 
