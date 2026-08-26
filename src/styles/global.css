@@ -115,14 +115,50 @@ html.dark article.longform {
      company and role around it rather than the long-form serif style. */
   .entry-body {
     @apply text-sm;
+    /* A measure, not the full container. At the 840px container width these
+       paragraphs ran to roughly 95 characters, well past the 60-75 the eye
+       tracks comfortably, which is half of why the section read as a wall. */
+    @apply max-w-[68ch];
   }
 
   .entry-body > * + * {
-    @apply mt-2;
+    @apply mt-3;
+  }
+
+  .entry-body p {
+    @apply leading-relaxed;
   }
 
   .entry-body strong {
     @apply font-semibold text-black dark:text-white;
+  }
+
+  /* The section labels. In these entries a subheading is written as `**label**`
+     alone on a line, because a real heading here would collide with the page's
+     h1/h2 order. Markdown renders that as a paragraph containing nothing but a
+     bold run, which is exactly what this matches.
+
+     Before this, every block in the entry carried the same 8px gap and the same
+     weight, so the labels did not separate anything: four paragraphs of prose
+     with four bold words between them read as one undifferentiated wall. The
+     fix is asymmetric spacing, a lot above and very little below, so each label
+     binds to the paragraph it introduces instead of floating between two. */
+  .entry-body p:has(> strong:only-child) {
+    @apply mt-7 mb-1 text-xs uppercase tracking-[0.14em];
+    @apply text-black/55 dark:text-white/45;
+  }
+
+  /* Overrides the general `strong` rule above, which would otherwise make the
+     label the highest-contrast thing in the entry and pull the eye to the
+     signpost rather than the content. */
+  .entry-body p:has(> strong:only-child) strong {
+    @apply font-medium text-black/55 dark:text-white/45;
+  }
+
+  /* The first label in an entry follows the intro paragraph and link, so it
+     does not need the full separation that the ones between prose blocks do. */
+  .entry-body > p:has(> strong:only-child):first-child {
+    @apply mt-0;
   }
 
   .entry-body ul {
