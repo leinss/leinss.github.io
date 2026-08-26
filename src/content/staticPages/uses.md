@@ -44,8 +44,9 @@ This site, and most of my web work:
 ## On-device and AI tooling
 
 - **Ollama** for local models on the desktop, including the auto-tagging in [taggr](/projects/taggr).
-- **On-device speech**: transcription and text-to-speech that run on the phone, so audio never leaves it.
-- **Bring-your-own-key** cloud models for the optional AI features in my apps. The key stays on the user's device and calls go to the provider *you* choose.
+- **On-device speech**: transcription and text-to-speech that run on the phone, so audio never leaves it. TobiBoard dictates with Parakeet TDT 0.6B through sherpa-onnx.
+- **On-device LLMs**: Qwen 2.5 through MediaPipe drives TobiBoard's text fix, so the default path needs neither a key nor a network.
+- **Bring-your-own-key** cloud models as the opt-in alternative in my apps. The key stays on the user's device and calls go to the provider *you* choose.
 
 ## Infrastructure and self-hosting
 
