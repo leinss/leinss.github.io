@@ -28,7 +28,7 @@ export const APPS: App[] = [
   {
     name: "TobiBoard",
     tagline:
-      "On-device Android keyboard with optional bring-your-own-key AI voice-to-text and text fix.",
+      "Android keyboard whose AI voice-to-text and text fix run on the device, no account or API key.",
     platform: "Android",
     slug: "TobiBoard",
   },

@@ -17,11 +17,11 @@ I care about the observability more than is probably normal. Two-tier health che
 
 ## The apps
 
-Alongside that I build **privacy-first apps**: tools that run on your own device, work without accounts or a backend, and only reach the cloud when *you* bring your own AI key. No telemetry, no data collection, no lock-in.
+Alongside that I build **privacy-first apps**: tools that run on your own device, work without accounts or a backend, and reach the cloud only if *you* choose to bring your own AI key. No telemetry, no data collection, no lock-in.
 
-Most of that time goes into [TobiBoard](/projects/TobiBoard), an on-device Android keyboard with optional bring-your-own-key AI voice-to-text and text fixing, and [TobiReader](/projects/TobiReader), a local-first RSS reader with on-device read-aloud and optional AI summaries. TobiBoard ships from my own [F-Droid repository](https://leinss.xyz/TobiBoard/repo). Around those sits a small portfolio: a cross-platform screen recorder, macOS voice-to-text and menu-bar utilities, and a few AI-assisted side projects. The full list is on the [projects page](/projects).
+Most of that time goes into [TobiBoard](/projects/TobiBoard), an Android keyboard whose AI voice-to-text and text fixing run on the phone itself, with no account and no API key, and [TobiReader](/projects/TobiReader), a local-first RSS reader with on-device read-aloud and optional AI summaries. TobiBoard ships from my own [F-Droid repository](https://leinss.xyz/TobiBoard/repo). Around those sits a small portfolio: a cross-platform screen recorder, macOS voice-to-text and menu-bar utilities, and a few AI-assisted side projects. The full list is on the [projects page](/projects).
 
-The thread through all of it is seeing how far useful, AI-flavoured software can go while keeping user data on the user's own hardware. In practice that's two patterns: run models locally where it's feasible, and bring-your-own-key for the rest, so anything cloud-bound uses *your* API key and endpoint, never mine.
+The thread through all of it is seeing how far useful, AI-flavoured software can go while keeping user data on the user's own hardware. In practice that's two patterns: run models locally wherever it's feasible, which on TobiBoard now covers both the speech recognition and the text-fix LLM, and bring-your-own-key for the rest, so anything cloud-bound uses *your* API key and endpoint, never mine.
 
 ## And some consulting
 

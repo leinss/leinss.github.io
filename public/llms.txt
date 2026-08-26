@@ -5,7 +5,7 @@
 The apps below are all local-first: data stays on your device by default, and any AI feature is optional and uses a key you bring yourself. App URLs point to on-site project pages (source repositories are private except where noted).
 
 ## Apps
-- [TobiBoard](https://leinss.xyz/projects/TobiBoard/) (Android): on-device keyboard with optional BYOK AI voice-to-text and text fixing. Open source.
+- [TobiBoard](https://leinss.xyz/projects/TobiBoard/) (Android): keyboard whose AI voice-to-text and text fixing run on-device by default, with no account or API key; cloud providers are opt-in via your own key. Open source.
 - [TobiReader](https://leinss.xyz/projects/TobiReader/) (Android): local-first RSS/Atom reader with on-device read-aloud, optional AI summaries, and self-hosted sync.
 - [TobiRecord](https://leinss.xyz/projects/TobiRecord/) (macOS · Windows · Linux): open-source screen recorder and editor with auto-zoom, cursor polish and styled frames.
 - [TobiVoice](https://leinss.xyz/projects/TobiVoice/) (macOS): native voice-to-text that transcribes on-device: local models by default, with meeting summaries, read-aloud and optional cloud providers.
