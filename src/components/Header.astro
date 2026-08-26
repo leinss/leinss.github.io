@@ -22,10 +22,18 @@ const staticPages = (await getCollection("staticPages"))
       </Link>
       <nav class="flex gap-1 text-base">
         {
-          staticPages.map((page) => (
-            <Link href={`/${page.id}`} underline={false}>
-              {page.data.title.toLocaleLowerCase()}
-            </Link>
+          /* The separator belongs between the mapped links too. The hardcoded
+             spans below only ever separated the fixed entries, so with two
+             static pages the nav read "now uses / work / projects" and the
+             first two ran together. Emitting it before every entry except the
+             first keeps it correct for one page or five. */
+          staticPages.map((page, i) => (
+            <>
+              {i > 0 && <span>{`/`}</span>}
+              <Link href={`/${page.id}`} underline={false}>
+                {page.data.title.toLocaleLowerCase()}
+              </Link>
+            </>
           ))
         }
         <span>

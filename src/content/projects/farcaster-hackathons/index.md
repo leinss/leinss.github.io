@@ -11,7 +11,7 @@ repoURL: ""
 July 2024
 
 <a href="https://www.youtube.com/watch?v=Brm5Pr7Jkc4">
-  <img src="/images/projects/farcaster_hackathons/backdrop_datalatte.png" style="height: 40%; width: 40%; object-fit: contain;">
+  <img src="/images/projects/farcaster_hackathons/backdrop_datalatte.png" alt="Datalatte project backdrop — watch the demo video" style="height: 40%; width: 40%; object-fit: contain;">
 </a>
 
 Datalatte is a DataDAO managing a community knowledge graph that integrates public and private personal knowledge graphs as its core asset.
