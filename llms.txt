@@ -27,4 +27,6 @@ The apps below are all local-first: data stays on your device by default, and an
 
 ## Contact
 - Email: dev@leinss.xyz
-- Social profiles: https://leinss.xyz/social/
+- X: https://x.com/t_leinss
+- GitHub: https://github.com/leinss
+- LinkedIn: https://www.linkedin.com/in/tobias-leinss
