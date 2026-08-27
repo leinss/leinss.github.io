@@ -54,7 +54,11 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     needs: build
-    if: github.event_name == 'push'
+    # Everything except a pull request deploys. Written as a negation rather
+    # than a list of allowed events, so a trigger added above cannot silently
+    # build without deploying: `== 'push'` skipped this job on every manual
+    # run, which is the one case the manual trigger exists for.
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
