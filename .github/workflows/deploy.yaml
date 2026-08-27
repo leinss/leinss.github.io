@@ -7,6 +7,11 @@ on:
   pull_request:
     branches:
       - release
+  # Manual trigger. A run can be created with zero jobs attached, in which case
+  # it sits in `queued` forever and `gh run rerun` cannot recover it: rerun
+  # replays the same empty run object. Only a new run object recovers, and
+  # without this a throwaway commit is the only way to make one.
+  workflow_dispatch:
 
 permissions:
   contents: write
