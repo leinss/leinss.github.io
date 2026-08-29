@@ -29,9 +29,9 @@ With TurtleShell, Smart Contracts can immediately block any kind of malicious ha
 
 ## Challenges we ran into
 
-The main challenge we faced was how to structure the system for verifiable on-chain security data. We came up with a solution, which utilizes SBT's for minting NFT's for Audits / Security data directly on-top of Smart Contracts. That way, the security data is easily accessible and queryable from other smart contracts on-chain.
+The main challenge we faced was how to structure the system for verifiable on-chain security data. We came up with a solution, which uses SBT's for minting NFT's for Audits / Security data directly on-top of Smart Contracts. That way, the security data is easily accessible and queryable from other smart contracts on-chain.
 
-The other main issue we faced was how to structure a permissionless, decentralized security data publishing protocol. It is crucial to keep centralization at a minimum. On the other hand, allowing anyone to publish data creates the problem of consensus, when it comes to the "right" security data of a given smart contract. We solved this issue by leveraging an on-chain reputation score, which gets automatically updated on mints. The audit / security data with the highest score will be the source of "truth" for a given contract when being queryied. The "right" audit data can change dynamically, if somebody discovers security vulnerabilites at a smart contract in the future, that was unknown beforehand.
+The other main issue we faced was how to structure a permissionless, decentralized security data publishing protocol. Centralization has to stay at a minimum. On the other hand, allowing anyone to publish data creates the problem of consensus, when it comes to the "right" security data of a given smart contract. We solved this issue by using an on-chain reputation score, which gets automatically updated on mints. The audit / security data with the highest score will be the source of "truth" for a given contract when being queryied. The "right" audit data can change dynamically, if somebody discovers security vulnerabilites at a smart contract in the future, that was unknown beforehand.
 
 all deployment addresses for bounties:
 

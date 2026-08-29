@@ -1,6 +1,6 @@
 ---
 title: "EthGlobal FEVM Hackathon"
-description: "SPN stands for spending. Our team has created a data DAO that empowers consumers to turn their data, in particular, their credit card transaction data, into assets and have true ownership over"
+description: "SPN stands for spending. Our team has created a data DAO that lets consumers turn their data, in particular, their credit card transaction data, into assets and have true ownership over"
 date: "Nov 2022"
 demoURL: "https://ethglobal.com/showcase/spn-dao-zwbar"
 repoURL: ""
@@ -25,7 +25,7 @@ Our credit card transaction data reveal a lot about our behaviors. Aggregated to
 
 However, consumers have little control over how and when their personal data, including credit card transaction data, is used. Consumers’ personal data fuels a multi-billion dollar industry while they receive almost no financial rewards. In practice, data from a single person is of little value. And there is no marketplace where consumers could coordinate and pool their data together.
 
-Leveraging web3.0 technologies, SPN DAO makes it possible! Our first product release is a dApp on the FEVM chain that facilitates the creation and operation of a data DAO.
+Using web3.0 technologies, SPN DAO makes it possible! Our first product release is a dApp on the FEVM chain that facilitates the creation and operation of a data DAO.
 
 These are the core functionalities of the POC.
 
@@ -44,7 +44,7 @@ For the admin of the DAO:
 
 ## How it's Made
 
-The dApp utilizes two contracts on Wallaby. The first is an SBT generated from the data that DAO members provide. The second is an admin NFT which allows the decryption of DAO members' SBTs.
+The dApp uses two contracts on Wallaby. The first is an SBT generated from the data that DAO members provide. The second is an admin NFT which allows the decryption of DAO members' SBTs.
 
 When a user uploads anonymized credit card transactions, the information will be encrypted using Lit Protocol (currently support unavailable on Wallaby) and stored on IPFS. As a workaround, we have currently set up a Pinata Submarine gateway that provides the user access to upload files into a private IPFS link using the API keys that are configured inside the dApp. Only the DAO admin has access to decrypting the info uploaded by the user. The user can generate SBTs with the response information from IPFS using the SpendSBT.sol contract deployed on Filecoin Wallaby.
 

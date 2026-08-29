@@ -42,7 +42,7 @@ App: https://sharknado.vercel.app/
 
 PSE/Semaphore:
 
-Utilized Semaphore from PSE to authenticate NFT ownership through ZK proofs and signaling in groups to participate in the survey.
+Used Semaphore from PSE to authenticate NFT ownership through ZK proofs and signaling in groups to participate in the survey.
 
 We also take on the challenge to deploy semaphore on Gnosis mainnet: 0xee5cF4Cc94bb97E2bA0d0a115b69c6075Ce42DD1 and deployed subgraphs on gnosis mainnet: https://thegraph.com/studio/subgraph/sharknadosemaphoregraph
 
@@ -76,7 +76,7 @@ We deployed subgraphs for two contracts:
 
 BUIDLGUIDL:
 
-We used Scaffold-ETH2 it as a boiler plate to leverage the prebuilt components integrating with smart contracts via Hot Reload & integration with wallet providers.
+We used Scaffold-ETH2 it as a boiler plate to use the prebuilt components integrating with smart contracts via Hot Reload & integration with wallet providers.
 
 Thanks for making our life easier: https://sharknado.vercel.app/
 
@@ -88,7 +88,7 @@ Brand Concept:
 In our brand vision, we have strived to infuse a contemporary energy with vibrant electric colors: "Navy Blue" and "Aquagreen". "Otto Attack Wide" was the perfect matching font, because it is contrasting serif typeface featuring sharp angles reminiscent of shark teeth to create a visually captivating effect. This balanced design exudes an assertive and dynamic vibe, ideal for a such web3 projects.
 
 UX Mechanics:
-We have implemented an onboarding process to facilitate educational purposes, ensuring users can easily get acquainted with our product. Our gamification strategy on the success page aims to boost users' engagement and involvement metrics, making the product experience a rewarding one. To enhance user Retention, we provide recommendations after users complete their flow. Progress bars are judiciously utilized whenever necessary to keep users informed and prevent any undue stress. We streamline and bundle transactions into cohesive steps to ensure users navigate the process without feeling overwhelmed or fatigued.
+We have implemented an onboarding process to facilitate educational purposes, ensuring users can easily get acquainted with our product. Our gamification strategy on the success page aims to boost users' engagement and involvement metrics, making the product experience a rewarding one. To enhance user Retention, we provide recommendations after users complete their flow. Progress bars are used whenever necessary to keep users informed and prevent any undue stress. We bundle transactions into steps to ensure users navigate the process without feeling overwhelmed or fatigued.
 
 We are not able to complete pixelperfect design with out Frontend part, so you can check the design flow in our team Figma
 You can check the clickable prototype Figma here

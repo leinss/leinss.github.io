@@ -22,11 +22,11 @@ Imagine a world where digital trust is as commonplace and reliable as a handshak
 
 ## What it does
 
-Calimocho Attestation Service streamlines the process for DAOs to collectively sign documents. It fosters coordination and consensus by allowing multiple members to sign off on documents. A quorum threshold ensures that decisions are made with sufficient agreement, thereby reinforcing the integrity of the DAO's operations.
+Calimocho Attestation Service lets a DAO sign a document collectively in one pass. It fosters coordination and consensus by allowing multiple members to sign off on documents. A quorum threshold ensures that decisions are made with sufficient agreement, thereby reinforcing the integrity of the DAO's operations.
 
 ## How we built it
 
-The service was crafted through the development of a smart contract in conjunction with Ethereum's attestation service, leveraging components on BOS for a seamless and secure user experience. The architecture is designed to support a proposer and document signers, creating an efficient system for attesting documents.
+The service was crafted through the development of a smart contract in conjunction with Ethereum's attestation service, using components on BOS for a secure user experience. The architecture is designed to support a proposer and document signers, creating an efficient system for attesting documents.
 
 ## Challenges we ran into
 
@@ -38,7 +38,7 @@ We are proud of our architectural framework, which has been meticulously develop
 
 ## What we learned
 
-Throughout this journey, we've learned valuable lessons on deploying a frontend on BOS, intricacies of smart contract development, and the critical importance of DAO coordination. Each step has brought new insights into creating a robust platform for decentralized governance.
+Throughout this journey, we've learned valuable lessons on deploying a frontend on BOS, intricacies of smart contract development, and the critical importance of DAO coordination. Each step has brought new insights into creating a platform for decentralized governance.
 
 ## What's next for Calimocho Attestation Service
 

@@ -4,7 +4,7 @@ description: "A powerful menu-bar manager for macOS: hide, show and organise men
 date: "Mar 2026"
 ---
 
-**TobiBar** is a menu-bar management tool for macOS. Its core job is hiding and showing menu-bar items so you can keep a clean, uncluttered bar, but it's built to grow into one of the most versatile menu-bar utilities available, layering extra tools on top of that foundation.
+**TobiBar** is a menu-bar management tool for macOS. Its core job is hiding and showing menu-bar items. More menu-bar tools are planned on top of that.
 
 ## What it does
 

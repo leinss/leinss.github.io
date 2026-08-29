@@ -18,7 +18,7 @@ only ever talks to the servers you configure.
 - **Multi-backend, one library**: connect Subsonic/Navidrome, Jellyfin, and
   local device files; browse a single merged catalog while playback always
   routes back to the server that owns each track.
-- **Gapless playback**, seamless transitions for live albums and DJ mixes.
+- **Gapless playback**, no silence between tracks on live albums and DJ mixes.
 - **Offline downloads**, keep albums and playlists on-device for listening
   without a connection.
 - **Chromecast**, stream to Cast devices on your local network.
