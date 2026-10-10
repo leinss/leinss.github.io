@@ -2,10 +2,10 @@
 title: "kAIros, Privacy Policy"
 slug: "/projects/kairos/privacy"
 description: "Privacy Policy for the kAIros goal-coaching app (Android & Web)"
-date: "07/07/2026"
+date: "10/10/2026"
 ---
 
-_Last updated: 7 July 2026_
+_Last updated: 10 October 2026_
 
 kAIros is an AI goal-coaching app for Android and the web. It helps you set goals, break them
 into steps, and stay on track with reminders and an AI coach. This policy explains exactly
@@ -88,7 +88,8 @@ aggregate.
 
 - **Choose your AI backend** (including fully offline on-device) in **Settings → AI Model**.
 - **Clear local data** in Settings.
-- **Delete your account and associated data** by contacting **inquiry@leinss.xyz**.
+- **Download a copy of your data** in **Settings → Download My Data**: one JSON file with everything your account holds, and a CSV of your goals and steps.
+- **Delete your account and its data** in **Settings → Delete Account** (also linked from your profile). This permanently deletes your account and the data it holds on our servers, and signs you out. It does not cancel a paid subscription: cancel that in the billing portal first. If you can no longer sign in, email **inquiry@leinss.xyz** from the address on the account.
 
 ## Children
 
@@ -98,7 +99,8 @@ required by your local law.
 ## Your rights (GDPR)
 
 You have the right to access, rectify, erase, restrict and port your personal data, and to object
-to processing (Arts. 15-21 GDPR). To exercise these rights, or to delete your account, contact
+to processing (Arts. 15-21 GDPR). You can download your data (Art. 15 and 20) and delete your
+account (Art. 17) yourself in the app, under Settings. For anything else, contact
 **inquiry@leinss.xyz**. The general [leinss.xyz privacy policy](/privacy) additionally describes
 your GDPR rights and the supervisory authority you may contact.
 
