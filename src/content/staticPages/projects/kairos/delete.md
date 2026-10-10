@@ -44,6 +44,10 @@ When your account is deleted, we permanently remove the following from our self-
 - community challenges you created, and your place in other people's challenges;
 - your subscription record in kAIros.
 
+A newsletter or waitlist sign-up made on the website with the same address is separate from the
+account and is not deleted with it. Every newsletter has an unsubscribe link, and
+**inquiry@leinss.xyz** removes a waitlist entry.
+
 Anonymous, aggregate analytics contain no personal content and are not linked to your identity,
 so they cannot be tied back to you; they are retained only in aggregate.
 
