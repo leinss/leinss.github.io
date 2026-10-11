@@ -26,7 +26,7 @@ Email: inquiry@leinss.xyz
 account and its data are deleted from our servers straight away, and you are signed out. Want a
 copy first? **Settings → Download My Data** saves one.
 
-**On Android:** the test build available now (version 1.0.0, build 23) has no delete button yet.
+**On Android:** the test builds available now (builds 21 and 23) have no delete button yet.
 Sign in to the web app with the same account and delete it there. The next Android build has the
 same button under Settings.
 
@@ -54,8 +54,8 @@ account and is not deleted with it. Every newsletter has an unsubscribe link, an
 **inquiry@leinss.xyz** removes a waitlist entry.
 
 The days your app was opened, and the dates you signed up and added your first step, are
-deleted with the account. Usage statistics and crash reports, if you turned them on, carry no
-account id and no email address, so they cannot be matched to your account and are not deleted
+deleted with the account. Usage statistics and crash reports, whether you turned them on or an
+Android test build sent the counts without asking, carry no account id and no email address, so they cannot be matched to your account and are not deleted
 with it.
 
 ## Your subscription
