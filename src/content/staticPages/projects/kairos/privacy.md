@@ -27,8 +27,10 @@ Email: inquiry@leinss.xyz
   the controller in **Germany (EU)**, not on a third-party cloud, and never sold to anyone.
 - The **AI coach can run three ways, your choice**: fully **on-device** (nothing leaves your
   phone), on your **own LAN server**, or in the **cloud**. You pick this in Settings → AI Model.
-- Usage statistics and crash reports are **off until you turn them on**, and go only to our own
-  server in Germany. There are **no advertising trackers** and we do **not** sell your data.
+- In the web app, usage statistics and crash reports are **off until you turn them on**, and go
+  only to our own server in Germany. The Android test build available now still sends anonymous
+  usage counts without asking (see below). There are **no advertising trackers** and we do
+  **not** sell your data.
 
 ## What data we process
 
@@ -48,9 +50,10 @@ selected**:
   entirely on the device and **is not transmitted anywhere**.
 - **LAN server**. Your text is sent to a server **you** run on your own network (e.g. LM Studio
   or Ollama). It stays within your own infrastructure.
-- **Cloud**. Your text is sent to the cloud model provider you configured (by default
-  [Anthropic](https://www.anthropic.com/legal/privacy)) to produce the response. Once your text
-  reaches that provider, **their** privacy policy applies.
+- **Cloud**. Your text is sent through our own server to
+  [OpenRouter](https://openrouter.ai/privacy), which passes it to the model that produces the
+  response (by default Google's Gemini 2.5 Flash). Once your text reaches OpenRouter and the
+  model's provider, **their** privacy policies apply.
 
 **Voice input (optional).** If you use voice features, the audio you record is transcribed by the
 speech provider you selected. This can be **on-device/offline** or a cloud transcription service.
@@ -60,33 +63,36 @@ after transcription.
 **Usage statistics (off unless you turn them on).** The app asks on its last welcome screen, and
 you can change the answer any time in **Settings → Privacy**. With a yes, the app sends counts of
 what you use, such as "goal created" or "step ticked off", each with a few fixed values (for
-example whether the goal was your first). The Android app sends them to a **self-hosted
-[Aptabase](https://aptabase.com/)** (`mobile.funnel.leinss.xyz`), the web app to a **self-hosted
-[Umami](https://umami.is/)** (`umami.funnel.leinss.xyz`), together with the type of page you open
-(for example "a goal page", never which goal). Both run on our own server in Germany. They never
-receive your goals, steps or reminders, your email address or your account id, and set no
-cookies. Earlier Android versions sent anonymous counts without asking; the version with this
-switch asks first.
+example whether the goal was your first).
+
+The Android app sends them to a **self-hosted [Aptabase](https://aptabase.com/)**
+(`mobile.funnel.leinss.xyz`), the web app to a **self-hosted [Umami](https://umami.is/)**
+(`umami.funnel.leinss.xyz`), together with the type of page you open (for example "a goal page",
+never which goal). Both run on our own server in Germany. They never receive your goals, steps or
+reminders, your email address or your account id, and set no cookies.
+
+The Android test build available now (version 1.0.0, build 23) has no switch yet and sends
+anonymous counts to Aptabase without asking. The next Android build asks first.
 
 **Crash reports (off unless you turn them on).** With a yes, when the app hits an error it sends
 the error, where in the app it happened and the app version to a **self-hosted
 [GlitchTip](https://glitchtip.com/)** (`errors.funnel.leinss.xyz`) on our own server in Germany.
+
 The app uses the Sentry software library to send them, but nothing goes to Sentry the company.
 Crash reports carry no email address and no account id, and the page addresses in them have
 every id removed.
 
 **Counts kept on our server.** To know how many people use kAIros and come back, our database
 records the days on which your signed-in app was opened (kept for 90 days), and when you signed
-up and added your first step to a goal. These never leave our server, only totals are reported
-to our monitoring, and they are deleted with your account. This does not depend on the switches
+up and added your first step to a goal. These never leave our server, only totals are ever
+reported to our monitoring, and they are deleted with your account. This does not depend on the switches
 above.
 
 **The kAIros landing page** counts visits with the same self-hosted Umami, without cookies.
 
-**Purchases (if you subscribe).** Premium subscriptions are processed by the app store and by our
-payment processors [RevenueCat](https://www.revenuecat.com/privacy/) and
-[Stripe](https://stripe.com/privacy). They handle your purchase/receipt data; kAIros receives only
-your subscription status, never your card details.
+**Purchases (if you subscribe).** Premium is sold only in the web app, and the payment is
+processed by [Stripe](https://stripe.com/privacy). Stripe handles your purchase/receipt data;
+kAIros receives only your subscription status, never your card details.
 
 ## What we do **not** do
 
@@ -111,6 +117,11 @@ back to your account.
 - **Download a copy of your data** in **Settings → Download My Data**: one JSON file with everything your account holds, and a CSV of your goals and steps.
 - **Delete your account and its data** in **Settings → Delete Account** (also linked from your profile). This permanently deletes your account and the data it holds on our servers, and signs you out. It does not cancel a paid subscription: cancel that in the billing portal first. If you can no longer sign in, email **inquiry@leinss.xyz** from the address on the account.
 
+The Privacy switches, Download My Data and Delete Account are in the web app at
+[kairos.funnel.leinss.xyz](https://kairos.funnel.leinss.xyz). The Android test build available now
+has none of them; sign in to the web app with the same account to use them. The next Android
+build has all three.
+
 ## Children
 
 kAIros is not directed at children and does not knowingly collect data from anyone under the age
@@ -120,7 +131,7 @@ required by your local law.
 
 You have the right to access, rectify, erase, restrict and port your personal data, and to object
 to processing (Arts. 15-21 GDPR). You can download your data (Art. 15 and 20) and delete your
-account (Art. 17) yourself in the app, under Settings. For anything else, contact
+account (Art. 17) yourself in the web app, under Settings. For anything else, contact
 **inquiry@leinss.xyz**. The general [leinss.xyz privacy policy](/privacy) additionally describes
 your GDPR rights and the supervisory authority you may contact.
 

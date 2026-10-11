@@ -2,10 +2,10 @@
 title: "kAIros, Delete Your Account & Data"
 slug: "/projects/kairos/delete"
 description: "How to delete your kAIros account and all associated data"
-date: "10/10/2026"
+date: "10/11/2026"
 ---
 
-_Last updated: 10 October 2026_
+_Last updated: 11 October 2026_
 
 This page explains how to delete your **kAIros** account and the data associated with it.
 kAIros is an AI goal-coaching app for Android and the web, operated by the controller below.
@@ -21,9 +21,14 @@ Email: inquiry@leinss.xyz
 
 ## How to delete your account
 
-**In the app:** open **Settings → Delete Account** (or **Profile → Delete account**), type
-**DELETE** and confirm. Your account and its data are deleted from our servers straight away,
-and you are signed out. Want a copy first? **Settings → Download My Data** saves one.
+**In the web app** at [kairos.funnel.leinss.xyz](https://kairos.funnel.leinss.xyz): open
+**Settings → Delete Account** (or **Profile → Delete account**), type **DELETE** and confirm. Your
+account and its data are deleted from our servers straight away, and you are signed out. Want a
+copy first? **Settings → Download My Data** saves one.
+
+**On Android:** the test build available now (version 1.0.0, build 23) has no delete button yet.
+Sign in to the web app with the same account and delete it there. The next Android build has the
+same button under Settings.
 
 **If you can no longer sign in:** email **[inquiry@leinss.xyz](mailto:inquiry@leinss.xyz?subject=Delete%20my%20kAIros%20account)**
 from the email address associated with your kAIros account, with the subject
@@ -48,8 +53,10 @@ A newsletter or waitlist sign-up made on the website with the same address is se
 account and is not deleted with it. Every newsletter has an unsubscribe link, and
 **inquiry@leinss.xyz** removes a waitlist entry.
 
-Anonymous, aggregate analytics contain no personal content and are not linked to your identity,
-so they cannot be tied back to you; they are retained only in aggregate.
+The days your app was opened, and the dates you signed up and added your first step, are
+deleted with the account. Usage statistics and crash reports, if you turned them on, carry no
+account id and no email address, so they cannot be matched to your account and are not deleted
+with it.
 
 ## Your subscription
 
