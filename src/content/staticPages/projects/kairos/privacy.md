@@ -2,10 +2,10 @@
 title: "kAIros, Privacy Policy"
 slug: "/projects/kairos/privacy"
 description: "Privacy Policy for the kAIros goal-coaching app (Android & Web)"
-date: "07/07/2026"
+date: "10/11/2026"
 ---
 
-_Last updated: 7 July 2026_
+_Last updated: 11 October 2026_
 
 kAIros is an AI goal-coaching app for Android and the web. It helps you set goals, break them
 into steps, and stay on track with reminders and an AI coach. This policy explains exactly
@@ -27,18 +27,24 @@ Email: inquiry@leinss.xyz
   the controller in **Germany (EU)**, not on a third-party cloud, and never sold to anyone.
 - The **AI coach can run three ways, your choice**: fully **on-device** (nothing leaves your
   phone), on your **own LAN server**, or in the **cloud**. You pick this in Settings → AI Model.
-- Analytics are **anonymous** and self-hosted; there are **no advertising trackers** and we do
+- In the web app, usage statistics and crash reports are **off until you turn them on**, and go
+  only to our own server in Germany. The Android test builds available now still send anonymous
+  usage counts without asking (see below). There are **no advertising trackers** and we do
   **not** sell your data.
 
 ## What data we process
 
-**Account & authentication.** When you sign up we store your email address and an encrypted
-authentication token so you can log in and sync across devices. Authentication runs on our
+**Account & authentication.** When you sign up we store your email address, a hash of your
+password and an encrypted authentication token so you can log in and sync across devices. Authentication runs on our
 self-hosted [Supabase](https://supabase.com/) instance in Germany.
 
-**Your goals and app content.** The goals, steps, reminders, categories, habits, check-ins and
-notes you create are stored in that same self-hosted database so they sync between your devices.
-A copy is cached **locally on your device** so the app works offline.
+**Your goals and app content.** The goals, steps, reminders, categories, templates, habits,
+check-ins, notes and mindset notes you create are stored in that same self-hosted database so they
+sync between your devices. A copy is cached **locally on your device** so the app works offline.
+
+The same database also holds your AI chats and saved messages, a record of each cloud AI request
+(the model, token counts and cost), and a push-notification registration for each device (its push
+token, platform and device name).
 
 **AI coaching content.** To generate suggestions, step breakdowns and motivational messages, the
 relevant text (e.g. a goal title and your progress) is sent to the AI backend **you have
@@ -48,28 +54,54 @@ selected**:
   entirely on the device and **is not transmitted anywhere**.
 - **LAN server**. Your text is sent to a server **you** run on your own network (e.g. LM Studio
   or Ollama). It stays within your own infrastructure.
-- **Cloud**. Your text is sent to the cloud model provider you configured (by default
-  [Anthropic](https://www.anthropic.com/legal/privacy)) to produce the response. Once your text
-  reaches that provider, **their** privacy policy applies.
+- **Cloud**. Your text is sent through our own server to
+  [OpenRouter](https://openrouter.ai/privacy), which passes it to the model that produces the
+  response (by default Google's Gemini 2.5 Flash). Once your text reaches OpenRouter and the
+  model's provider, **their** privacy policies apply.
 
 **Voice input (optional).** If you use voice features, the audio you record is transcribed by the
 speech provider you selected. This can be **on-device/offline** or a cloud transcription service.
 Cloud transcription sends that specific audio clip to the provider; the local recording is removed
 after transcription.
 
-**Usage analytics (anonymous).** kAIros uses a **self-hosted [Aptabase](https://aptabase.com/)**
-instance to count anonymous, aggregate events (for example "app opened", "goal created"). These
-events contain **no personal content** and are not linked to your identity or used to track you
-across apps.
+**Usage statistics (off unless you turn them on, except in the Android test builds).** The app asks on its last welcome screen, and
+you can change the answer any time in **Settings → Privacy**. With a yes, the app sends counts of
+what you use, such as "goal created" or "step ticked off", each with a few fixed values (for
+example whether the goal was your first).
 
-**Crash & error diagnostics.** To fix bugs, technical error reports (stack traces, device model,
-OS version) may be sent via [Sentry](https://sentry.io/privacy/). These are used solely to
-diagnose crashes and are not used for advertising.
+The Android app sends them to a **self-hosted [Aptabase](https://aptabase.com/)**
+(`mobile.funnel.leinss.xyz`), the web app to a **self-hosted [Umami](https://umami.is/)**
+(`umami.funnel.leinss.xyz`), together with the type of page you open (for example "a goal page",
+never which goal). Both run on our own server in Germany. They never receive your goals, steps or
+reminders, your email address or your account id, and set no cookies.
 
-**Purchases (if you subscribe).** Premium subscriptions are processed by the app store and by our
-payment processors [RevenueCat](https://www.revenuecat.com/privacy/) and
-[Stripe](https://stripe.com/privacy). They handle your purchase/receipt data; kAIros receives only
-your subscription status, never your card details.
+The Android test builds available now (builds 21 and 23) have no switch yet and send
+anonymous counts to Aptabase without asking. The next Android build asks first.
+
+**Crash reports (off unless you turn them on).** With a yes, when the app hits an error it sends
+the error and its stack, where in the app it happened, the screens you visited just before it, the
+app version, and your OS and its version (on the web, your browser) to a **self-hosted
+[GlitchTip](https://glitchtip.com/)** (`errors.funnel.leinss.xyz`) on our own server in Germany.
+
+The app uses the Sentry software library to send them, but nothing goes to Sentry the company.
+Crash reports carry no email address and no account id, and the page addresses in them have
+every id removed.
+
+**Counts kept on our server.** To know how many people use kAIros and come back, our database
+records the days on which your signed-in app was opened (kept for 90 days), and when you signed
+up and added your first step to a goal. These records never leave our server, only totals are ever
+reported to our monitoring, and they are deleted with your account. This does not depend on the switches
+above.
+
+With usage statistics on, the app also sends your sign-up and your first step (with your account's
+age in weeks) once each as a usage event, with no account id or email address.
+
+**The kAIros landing page** counts visits with the same self-hosted Umami, without cookies.
+
+**Purchases (if you subscribe).** Premium is sold only in the web app, and the payment is
+processed by [Stripe](https://stripe.com/privacy). Stripe handles your purchase/receipt data;
+kAIros stores your plan, its status, the date the paid period ends and Stripe's ids for you and
+your subscription, never your card details.
 
 ## What we do **not** do
 
@@ -81,14 +113,23 @@ your subscription status, never your card details.
 
 Account and goal data are stored on a private EU (Germany) server for as long as your account
 exists. Locally cached data lives on your device until you clear it or uninstall. You can clear
-local data any time from **Settings → Clear App Data**. Anonymous analytics are retained only in
-aggregate.
+local data any time from **Settings → Clear App Data**. The days your app was opened are deleted
+after 90 days. Usage statistics and crash reports hold no account id, so they cannot be traced
+back to your account.
 
 ## Your choices
 
 - **Choose your AI backend** (including fully offline on-device) in **Settings → AI Model**.
+- **Turn usage statistics and crash reports on or off** in **Settings → Privacy**. In the web
+  app, both are off until you turn them on.
 - **Clear local data** in Settings.
-- **Delete your account and associated data** by contacting **inquiry@leinss.xyz**.
+- **Download a copy of your data** in **Settings → Download My Data**: one JSON file with everything your account holds, and a CSV of your goals and steps.
+- **Delete your account and its data** in **Settings → Delete Account** (also linked from your profile). This permanently deletes your account and the data it holds on our servers, and signs you out. It does not cancel a paid subscription: cancel that in the billing portal first. If you can no longer sign in, email **inquiry@leinss.xyz** from the address on the account.
+
+The Privacy switches, Download My Data and Delete Account are in the web app at
+[kairos.funnel.leinss.xyz](https://kairos.funnel.leinss.xyz). The Android test builds available now
+have none of them; sign in to the web app with the same account to use them. The next Android
+build has all three.
 
 ## Children
 
@@ -98,7 +139,8 @@ required by your local law.
 ## Your rights (GDPR)
 
 You have the right to access, rectify, erase, restrict and port your personal data, and to object
-to processing (Arts. 15-21 GDPR). To exercise these rights, or to delete your account, contact
+to processing (Arts. 15-21 GDPR). You can download your data (Art. 15 and 20) and delete your
+account (Art. 17) yourself in the web app, under Settings. For anything else, contact
 **inquiry@leinss.xyz**. The general [leinss.xyz privacy policy](/privacy) additionally describes
 your GDPR rights and the supervisory authority you may contact.
 
