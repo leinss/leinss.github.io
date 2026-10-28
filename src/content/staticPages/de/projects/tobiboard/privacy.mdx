@@ -1,0 +1,73 @@
+---
+title: "TobiBoard, Datenschutzerklärung"
+description: "Datenschutzerklärung für die Android-Tastatur TobiBoard"
+date: "06/10/2026"
+---
+
+import LegalAddress from "@components/LegalAddress.astro"
+
+_Zuletzt aktualisiert: 10. Juni 2026_
+
+TobiBoard ist eine Android-Tastatur, bei der Datenschutz an erster Stelle steht. Sie ist ein Fork von [HeliBoard](https://github.com/Helium314/HeliBoard) (aus der Linie AOSP / OpenBoard). Diese Erklärung beschreibt genau, was die Tastatur mit Ihren Daten tut und was nicht, und gilt für die Android-App TobiBoard.
+
+## Verantwortlicher
+
+<LegalAddress lang="de" />
+
+E-Mail: inquiry@leinss.xyz
+
+## Kurzfassung
+
+- **Was Sie tippen, verlässt nie Ihr Gerät.** TobiBoard erhebt, protokolliert, überträgt oder verkauft **nicht**, was Sie tippen. Es gibt kein Konto, keine Telemetrie und kein Backend.
+- Die Kernfunktionen beim Tippen (Vorschläge, Gesteneingabe, Autokorrektur, Rechtschreibprüfung, Wörterbücher) laufen **vollständig auf dem Gerät und offline**, genau wie bei HeliBoard.
+- Zwei **optionale** KI-Funktionen (Voice-to-Text, Text Fix) greifen **nur dann auf das Internet zu, wenn Sie sie einschalten und Ihren eigenen API-Schlüssel angeben**, und nur für das konkrete Audio bzw. den konkreten Text, den Sie übermitteln.
+
+## Was auf Ihrem Gerät bleibt
+
+- Alles, was Sie tippen, Ihre gelernten Wörter, Ihr persönliches Wörterbuch, Ihr Zwischenablageverlauf und Ihre Einstellungen. Nichts davon wird an uns gesendet. Wir haben keinen Server, an den es gesendet werden könnte.
+- Ihr API-Schlüssel für einen KI-Anbieter, falls Sie einen hinzufügen, wird **mit dem Android Keystore verschlüsselt**, von Cloud-Backups ausgeschlossen und nie in Logs geschrieben.
+
+## Optionale KI-Funktionen (Opt-in, Ihr eigener Schlüssel)
+
+TobiBoard hat **kein Spracherkennungsmodell und kein Sprachmodell auf dem Gerät**. Die beiden KI-Helfer sind cloudbasiert und laufen nur bei einer ausdrücklichen Aktion mit einem Schlüssel, den **Sie** bereitstellen (z. B. [OpenRouter](https://openrouter.ai/) oder [PayPerQ](https://ppq.ai/)):
+
+- **Voice-to-Text**: Wenn Sie auf das Mikrofon tippen, wird das aufgenommene Audio zur Transkription an den Anbieter gesendet, den Sie gewählt haben. Die lokale Aufnahme wird in dem Moment gelöscht, in dem sie gesendet ist.
+- **Text Fix**: Wenn Sie die Funktion aufrufen, wird der ausgewählte Text zur Umformulierung an den von Ihnen gewählten Anbieter gesendet, und das Ergebnis wird Ihnen zur Prüfung zurückgegeben.
+
+Standardmäßig fordert TobiBoard Endpunkte mit **Zero Data Retention** (keine Datenspeicherung) an. Wenn das Modell eine ZDR-Route anbietet, werden Ihr Audio und Ihr Text daher nicht protokolliert, gespeichert oder zum Training verwendet.
+
+Sobald Ihre Daten OpenRouter, PayPerQ oder den zugrunde liegenden Modellanbieter erreichen, gilt **deren** Datenschutzerklärung. Lesen Sie [die Datenschutzerklärung von OpenRouter](https://openrouter.ai/privacy) und [die Nutzungsbedingungen von PayPerQ](https://ppq.ai/terms), bevor Sie diese Funktionen mit sensiblen Inhalten nutzen.
+
+## Berechtigungen
+
+- **Mikrofon (RECORD_AUDIO)**: nur verwendet, während Sie AI Voice-to-Text aktiv nutzen. Die Tastatur nimmt nie im Hintergrund auf.
+- **Internet / Netzwerkstatus**: nur von den optionalen KI-Funktionen verwendet, um den Anbieter zu erreichen, den Sie eingerichtet haben.
+- **Kontakte (READ_CONTACTS)**: optional. Wenn Sie es erlauben, werden Kontaktnamen als Tippvorschläge angeboten. Das wird **nur auf dem Gerät** verarbeitet und nie übertragen.
+- **Persönliches Wörterbuch (READ/WRITE_USER_DICTIONARY)**: um die Wörter, die Sie hinzufügen, für Vorschläge zu speichern und zu nutzen. Bleibt auf dem Gerät.
+- **Benachrichtigungen, Vibration, Vordergrunddienst, Boot-completed (Start nach dem Hochfahren)**: verwendet für haptisches Feedback, Statusbenachrichtigungen in der App und damit optionale Funktionen zuverlässig funktionieren. Keine davon ist mit der Erhebung Ihrer Daten verbunden.
+
+## Weitergabe und Verkauf von Daten
+
+Wir erheben weder Ihre Eingaben noch Ihre personenbezogenen Daten, daher gibt es nichts, was wir weitergeben oder verkaufen könnten. Die einzige Datenübertragung, die überhaupt stattfindet, ist das Audio oder der Text, den **Sie** ausdrücklich an den KI-Anbieter übermitteln, den **Sie** eingerichtet haben.
+
+## Kinder
+
+TobiBoard richtet sich nicht an Kinder und erhebt nicht wissentlich Daten von irgendjemandem.
+
+## Ihre Rechte (DSGVO)
+
+TobiBoard speichert Ihre Daten nur auf Ihrem eigenen Gerät, und wir halten keine davon vor. Sie behalten daher die volle Kontrolle: Wenn Sie die App deinstallieren oder ihren Speicher löschen, werden die Daten entfernt. Bei Fragen zu dieser Erklärung wenden Sie sich an inquiry@leinss.xyz.
+
+Die allgemeine [Datenschutzerklärung von leinss.xyz](/de/datenschutz) beschreibt zusätzlich Ihre Betroffenenrechte nach der DSGVO und die Aufsichtsbehörde, an die Sie sich wenden können.
+
+## Quellcode
+
+TobiBoard ist Open Source (GPL-3.0): [github.com/leinss/TobiBoard](https://github.com/leinss/TobiBoard).
+
+## Änderungen
+
+Wenn sich diese Erklärung ändert, wird die aktualisierte Fassung unter dieser URL mit neuem Datum veröffentlicht.
+
+## Kontakt
+
+Fragen: **inquiry@leinss.xyz**

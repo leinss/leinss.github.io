@@ -1,0 +1,10 @@
+---
+import ProjectPage from "@components/pages/ProjectPage.astro"
+import { projectPaths, type ProjectPageProps } from "@lib/projects"
+
+export const getStaticPaths = () => projectPaths("de")
+
+type Props = ProjectPageProps
+---
+
+<ProjectPage {...Astro.props} />

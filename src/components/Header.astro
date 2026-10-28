@@ -3,7 +3,7 @@ import Container from "@components/Container.astro"
 import Link from "@components/Link.astro"
 import { SITE } from "@consts"
 import { getCollection } from "astro:content"
-import { type Lang, t } from "@lib/i18n"
+import { entryLang, LEGAL_PAGES, type Lang, localePath, otherLang, stripLang, t } from "@lib/i18n"
 
 type Props = {
   lang: Lang
@@ -12,13 +12,21 @@ type Props = {
 
 const { lang, alternates } = Astro.props
 
-// The link to the same page in the other language, shown only where one exists.
-const translation = alternates?.find((alt) => alt.hreflang !== lang)
+// The same page in the other language, or that language's home page where the
+// page has no translation (an English-only blog post).
+const switchLang = otherLang(lang)
+const switchHref = (() => {
+  const translation = alternates?.find((alt) => alt.hreflang === switchLang)
+  return translation ? new URL(translation.href).pathname : localePath(switchLang, "/")
+})()
+const legalIds = Object.values(LEGAL_PAGES).flatMap((pages) => Object.values(pages))
 
 const staticPages = (await getCollection("staticPages"))
-  // Nav shows only top-level curated pages. Nested pages (e.g. tobireader/privacy)
-  // are app docs linked from their project pages, not site navigation.
-  .filter((page) => !page.data.draft && !page.id.includes("/") && page.id !== "imprint" && page.id !== "privacy")
+  // Nav shows only top-level curated pages of this language. Nested pages (e.g.
+  // projects/tobireader/privacy) are app docs linked from their project pages,
+  // not site navigation.
+  .filter((page) => !page.data.draft && entryLang(page.id) === lang)
+  .filter((page) => !stripLang(page.id).includes("/") && !legalIds.includes(page.id))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE)
 ---
@@ -26,12 +34,14 @@ const staticPages = (await getCollection("staticPages"))
 <header>
   <Container>
     <div class="flex flex-wrap gap-y-2 justify-between text-base">
-      <Link href="/" underline={false}>
+      <Link href={localePath(lang, "/")} underline={false}>
         <div class="font-semibold">
           &lt;{SITE.NAME} /&gt;
         </div>
       </Link>
-      <nav class="flex gap-1 text-base">
+      {/* Wraps between entries, never inside one: the German label "was ich
+          nutze" broke across three lines at phone width. */}
+      <nav class="flex flex-wrap gap-x-1 text-base">
         {
           /* The separator belongs between the mapped links too. The hardcoded
              spans below only ever separated the fixed entries, so with two
@@ -42,7 +52,7 @@ const staticPages = (await getCollection("staticPages"))
             <>
               {i > 0 && <span>{`/`}</span>}
               <Link href={`/${page.id}`} underline={false}>
-                {page.data.title.toLocaleLowerCase()}
+                <span class="whitespace-nowrap">{page.data.title.toLocaleLowerCase()}</span>
               </Link>
             </>
           ))
@@ -50,31 +60,25 @@ const staticPages = (await getCollection("staticPages"))
         <span>
           {`/`}
         </span>
-        <Link href="/work" underline={false}> work </Link>
+        <Link href={localePath(lang, "/work")} underline={false}> {t(lang, "navWork")} </Link>
         <span>
           {`/`}
         </span>
-        <Link href="/projects" underline={false}> projects </Link>
-        {
-          translation && (
-            <>
-              <span>{`/`}</span>
-              <Link
-                href={new URL(translation.href).pathname}
-                underline={false}
-                hreflang={translation.hreflang}
-                lang={translation.hreflang}
-                aria-label={t(lang, "switchLabel")}
-                title={t(lang, "switchLabel")}
-              >
-                {translation.hreflang}
-              </Link>
-            </>
-          )
-        }
+        <Link href={localePath(lang, "/projects")} underline={false}> {t(lang, "navProjects")} </Link>
+        <span>{`/`}</span>
+        <Link
+          href={switchHref}
+          underline={false}
+          hreflang={switchLang}
+          lang={switchLang}
+          aria-label={t(lang, "switchLabel")}
+          title={t(lang, "switchLabel")}
+        >
+          {switchLang}
+        </Link>
         <button
           data-theme-toggle
-          aria-label="Toggle theme"
+          aria-label={t(lang, "toggleTheme")}
           class="group flex items-center justify-center ml-3 hover:text-black dark:hover:text-white transition-colors duration-300"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block">

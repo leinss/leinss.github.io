@@ -1,0 +1,99 @@
+---
+title: "kAIros, Datenschutzerklärung"
+description: "Datenschutzerklärung für die Ziel-Coaching-App kAIros (Android und Web)"
+date: "10/11/2026"
+---
+
+import LegalAddress from "@components/LegalAddress.astro"
+
+_Zuletzt aktualisiert: 11. Oktober 2026_
+
+kAIros ist eine KI-App für Ziel-Coaching für Android und das Web. Sie hilft Ihnen, Ziele zu setzen, sie in Schritte aufzuteilen und mit Erinnerungen und einem KI-Coach dranzubleiben. Diese Erklärung beschreibt genau, welche Daten kAIros verarbeitet, wohin sie gehen und welche Wahlmöglichkeiten Sie haben. Sie gilt für die mobile App und die Web-App von kAIros.
+
+## Verantwortlicher
+
+<LegalAddress lang="de" />
+
+E-Mail: inquiry@leinss.xyz
+
+## Kurzfassung
+
+- kAIros ist **selbst gehostet**. Ihre Konto- und Zieldaten liegen auf einem privaten Server, den der Verantwortliche in **Deutschland (EU)** betreibt, nicht in der Cloud eines Drittanbieters, und werden nie an jemanden verkauft.
+- Der **KI-Coach kann auf drei Arten laufen, nach Ihrer Wahl**: vollständig **auf dem Gerät** (nichts verlässt Ihr Telefon), auf Ihrem **eigenen LAN-Server** oder in der **Cloud**. Sie wählen das unter Settings → AI Model.
+- In der Web-App sind Nutzungsstatistiken und Absturzberichte **ausgeschaltet, bis Sie sie einschalten**, und gehen nur an unseren eigenen Server in Deutschland. Die derzeit verfügbaren Android-Test-Builds senden noch ohne Nachfrage anonyme Nutzungszahlen (siehe unten). Es gibt **keine Werbetracker**, und wir verkaufen Ihre Daten **nicht**.
+
+## Welche Daten wir verarbeiten
+
+**Konto und Authentifizierung.** Wenn Sie sich registrieren, speichern wir Ihre E-Mail-Adresse, einen Hash Ihres Passworts und ein verschlüsseltes Authentifizierungstoken, damit Sie sich anmelden und zwischen Geräten synchronisieren können. Die Authentifizierung läuft auf unserer selbst gehosteten [Supabase](https://supabase.com/)-Instanz in Deutschland.
+
+**Ihre Ziele und App-Inhalte.** Die Ziele, Schritte, Erinnerungen, Kategorien, Vorlagen, Gewohnheiten, Check-ins, Notizen und Mindset-Notizen, die Sie anlegen, werden in derselben selbst gehosteten Datenbank gespeichert, damit sie zwischen Ihren Geräten synchronisiert werden. Eine Kopie wird **lokal auf Ihrem Gerät** zwischengespeichert, damit die App offline funktioniert.
+
+Dieselbe Datenbank enthält außerdem Ihre KI-Chats und gespeicherten Nachrichten, einen Datensatz zu jeder Cloud-KI-Anfrage (das Modell, die Anzahl der Tokens und die Kosten) sowie für jedes Gerät eine Registrierung für Push-Benachrichtigungen (sein Push-Token, seine Plattform und seinen Gerätenamen).
+
+**Inhalte des KI-Coachings.** Um Vorschläge, Aufteilungen in Schritte und motivierende Nachrichten zu erzeugen, wird der relevante Text (z. B. ein Zieltitel und Ihr Fortschritt) an das KI-Backend gesendet, **das Sie ausgewählt haben**:
+
+- **Auf dem Gerät**: Das Modell läuft lokal auf Ihrem Telefon über `llama.rn`. Ihr Text wird vollständig auf dem Gerät verarbeitet und **nirgendwohin übertragen**.
+- **LAN-Server**: Ihr Text wird an einen Server gesendet, den **Sie** in Ihrem eigenen Netzwerk betreiben (z. B. LM Studio oder Ollama). Er bleibt in Ihrer eigenen Infrastruktur.
+- **Cloud**: Ihr Text wird über unseren eigenen Server an [OpenRouter](https://openrouter.ai/privacy) gesendet. OpenRouter gibt ihn an das Modell weiter, das die Antwort erzeugt (standardmäßig Gemini 2.5 Flash von Google). Sobald Ihr Text OpenRouter und den Anbieter des Modells erreicht, gelten **deren** Datenschutzerklärungen.
+
+**Spracheingabe (optional).** Wenn Sie Sprachfunktionen nutzen, wird das aufgenommene Audio von dem Sprachanbieter transkribiert, den Sie ausgewählt haben. Das kann **auf dem Gerät/offline** geschehen oder über einen Cloud-Transkriptionsdienst. Bei der Cloud-Transkription wird genau dieser Audioclip an den Anbieter gesendet. Die lokale Aufnahme wird nach der Transkription entfernt.
+
+**Nutzungsstatistiken (ausgeschaltet, sofern Sie sie nicht einschalten, außer in den Android-Test-Builds).** Die App fragt auf ihrem letzten Willkommensbildschirm danach, und Sie können die Antwort jederzeit unter **Settings → Privacy** ändern. Wenn Sie zustimmen, sendet die App Zahlen dazu, was Sie nutzen, etwa „Ziel angelegt“ oder „Schritt abgehakt“, jeweils mit einigen festen Werten (zum Beispiel, ob das Ziel Ihr erstes war).
+
+Die Android-App sendet sie an ein **selbst gehostetes [Aptabase](https://aptabase.com/)** (`mobile.funnel.leinss.xyz`), die Web-App an ein **selbst gehostetes [Umami](https://umami.is/)** (`umami.funnel.leinss.xyz`), zusammen mit der Art der Seite, die Sie öffnen (zum Beispiel „eine Zielseite“, nie welches Ziel). Beide laufen auf unserem eigenen Server in Deutschland. Sie erhalten nie Ihre Ziele, Schritte oder Erinnerungen, Ihre E-Mail-Adresse oder Ihre Konto-ID und setzen keine Cookies.
+
+Die derzeit verfügbaren Android-Test-Builds (Builds 21 und 23) haben noch keinen Schalter und senden ohne Nachfrage anonyme Zahlen an Aptabase. Der nächste Android-Build fragt vorher.
+
+**Absturzberichte (ausgeschaltet, sofern Sie sie nicht einschalten).** Wenn Sie zustimmen und die App auf einen Fehler stößt, sendet sie Folgendes an ein **selbst gehostetes [GlitchTip](https://glitchtip.com/)** (`errors.funnel.leinss.xyz`) auf unserem eigenen Server in Deutschland: den Fehler und seinen Stacktrace, die Stelle in der App, an der er auftrat, die Bildschirme, die Sie kurz davor besucht haben, die App-Version sowie Ihr Betriebssystem und dessen Version (im Web Ihren Browser).
+
+Die App nutzt zum Senden die Softwarebibliothek von Sentry, aber nichts geht an das Unternehmen Sentry. Absturzberichte enthalten keine E-Mail-Adresse und keine Konto-ID, und aus den darin enthaltenen Seitenadressen ist jede ID entfernt.
+
+**Auf unserem Server gespeicherte Zahlen.** Um zu wissen, wie viele Menschen kAIros nutzen und wiederkommen, erfasst unsere Datenbank die Tage, an denen Ihre angemeldete App geöffnet wurde (90 Tage lang aufbewahrt), sowie wann Sie sich registriert und wann Sie Ihren ersten Schritt zu einem Ziel hinzugefügt haben.
+
+Diese Datensätze verlassen unseren Server nie. An unser Monitoring werden immer nur Gesamtzahlen gemeldet, und die Datensätze werden mit Ihrem Konto gelöscht. Das hängt nicht von den oben genannten Schaltern ab.
+
+Wenn Nutzungsstatistiken eingeschaltet sind, sendet die App außerdem Ihre Registrierung und Ihren ersten Schritt (mit dem Alter Ihres Kontos in Wochen) jeweils einmal als Nutzungsereignis, ohne Konto-ID oder E-Mail-Adresse.
+
+**Die Landingpage von kAIros** zählt Besuche mit demselben selbst gehosteten Umami, ohne Cookies.
+
+**Käufe (falls Sie ein Abonnement abschließen).** Premium wird nur in der Web-App verkauft, und die Zahlung wird von [Stripe](https://stripe.com/privacy) abgewickelt. Stripe verarbeitet Ihre Kauf- und Belegdaten. kAIros speichert Ihren Tarif, seinen Status, das Datum, an dem der bezahlte Zeitraum endet, und die IDs, die Stripe für Sie und Ihr Abonnement vergibt, niemals Ihre Kartendaten.
+
+## Was wir **nicht** tun
+
+- Wir verkaufen oder vermieten Ihre personenbezogenen Daten **nicht**.
+- Wir schalten **keine** Werbung und nutzen **keine** Werbe- oder Tracking-SDKs von Drittanbietern.
+- Wir erstellen **kein** Profil über Sie über andere Apps oder Websites hinweg.
+
+## Speicherort und Speicherdauer
+
+Konto- und Zieldaten werden auf einem privaten Server in der EU (Deutschland) gespeichert, solange Ihr Konto besteht. Lokal zwischengespeicherte Daten bleiben auf Ihrem Gerät, bis Sie sie löschen oder die App deinstallieren. Sie können lokale Daten jederzeit unter **Settings → Clear App Data** löschen.
+
+Die Tage, an denen Ihre App geöffnet wurde, werden nach 90 Tagen gelöscht. Nutzungsstatistiken und Absturzberichte enthalten keine Konto-ID und lassen sich daher nicht auf Ihr Konto zurückführen.
+
+## Ihre Wahlmöglichkeiten
+
+- **Wählen Sie Ihr KI-Backend** (auch vollständig offline auf dem Gerät) unter **Settings → AI Model**.
+- **Schalten Sie Nutzungsstatistiken und Absturzberichte ein oder aus** unter **Settings → Privacy**. In der Web-App sind beide ausgeschaltet, bis Sie sie einschalten.
+- **Löschen Sie lokale Daten** unter Settings.
+- **Laden Sie eine Kopie Ihrer Daten herunter** unter **Settings → Download My Data**: eine JSON-Datei mit allem, was Ihr Konto enthält, und eine CSV-Datei mit Ihren Zielen und Schritten.
+- **Löschen Sie Ihr Konto und seine Daten** unter **Settings → Delete Account** (auch über Ihr Profil verlinkt). Damit werden Ihr Konto und die Daten, die es auf unseren Servern enthält, dauerhaft gelöscht, und Sie werden abgemeldet. Ein bezahltes Abonnement wird dadurch nicht gekündigt: Kündigen Sie es zuerst im Abrechnungsportal. Wenn Sie sich nicht mehr anmelden können, schreiben Sie von der Adresse des Kontos eine E-Mail an **inquiry@leinss.xyz**.
+
+Die Privacy-Schalter, Download My Data und Delete Account finden Sie in der Web-App unter [kairos.funnel.leinss.xyz](https://kairos.funnel.leinss.xyz). Die derzeit verfügbaren Android-Test-Builds haben keine dieser Funktionen. Melden Sie sich mit demselben Konto in der Web-App an, um sie zu nutzen. Der nächste Android-Build hat alle drei.
+
+## Kinder
+
+kAIros richtet sich nicht an Kinder und erhebt nicht wissentlich Daten von Personen, die jünger sind als das nach Ihrem örtlichen Recht erforderliche Alter.
+
+## Ihre Rechte (DSGVO)
+
+Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Übertragbarkeit Ihrer personenbezogenen Daten sowie das Recht, der Verarbeitung zu widersprechen (Art. 15 bis 21 DSGVO). Ihre Daten herunterladen (Art. 15 und 20) und Ihr Konto löschen (Art. 17) können Sie selbst in der Web-App unter Settings. Für alles Weitere wenden Sie sich an **inquiry@leinss.xyz**.
+
+Die allgemeine [Datenschutzerklärung von leinss.xyz](/de/datenschutz) beschreibt zusätzlich Ihre Betroffenenrechte nach der DSGVO und die Aufsichtsbehörde, an die Sie sich wenden können.
+
+## Änderungen
+
+Wenn sich diese Erklärung ändert, wird die aktualisierte Fassung unter dieser URL mit neuem Datum veröffentlicht.
+
+## Kontakt
+
+Fragen: **inquiry@leinss.xyz**

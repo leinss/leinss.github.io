@@ -1,0 +1,63 @@
+---
+import ArrowCard from "@components/ArrowCard.astro"
+import Container from "@components/Container.astro"
+import { HACKATHONS, PROJECTS, HACKATHON_SLUGS } from "@consts"
+import PageLayout from "@layouts/PageLayout.astro"
+import { getCollection } from "astro:content"
+import { inLang, type Lang, pageAlternates, stripLang } from "@lib/i18n"
+
+type Props = {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+
+const all = inLang(await getCollection("projects"), lang)
+  .filter((project) => !project.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+
+const isHackathon = (project: (typeof all)[number]) => HACKATHON_SLUGS.includes(stripLang(project.id))
+const projects = all.filter((project) => !isHackathon(project))
+const hackathons = all.filter(isHackathon)
+---
+
+<PageLayout
+  title={PROJECTS[lang].TITLE}
+  description={PROJECTS[lang].DESCRIPTION}
+  lang={lang}
+  alternates={pageAlternates("/projects", Astro.site)}
+>
+  <Container>
+    <div class="space-y-10">
+      <section class="space-y-4">
+        <h1 class="animate font-semibold text-black dark:text-white">
+          {PROJECTS[lang].TITLE}
+        </h1>
+        <ul class="animate flex flex-col gap-4">
+          {
+            projects.map((project) => (
+              <li>
+                <ArrowCard entry={project} />
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="animate font-semibold text-black dark:text-white">
+          🛠️ {HACKATHONS[lang].TITLE}
+        </h2>
+        <ul class="animate flex flex-col gap-4">
+          {
+            hackathons.map((project) => (
+              <li>
+                <ArrowCard entry={project} />
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </div>
+  </Container>
+</PageLayout>
