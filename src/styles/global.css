@@ -78,8 +78,11 @@
     @apply text-base;
   }
 
+  /* The header is fixed, so main clears it with padding. Below sm the nav
+     wraps under the name: 113px tall in English and 145px in German at 390px
+     wide, and English already reached 129px at 320px, past the old 128. */
   main {
-    @apply flex-1 py-32;
+    @apply flex-1 pt-40 pb-32 sm:pt-32;
   }
 
   footer {

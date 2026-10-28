@@ -1,0 +1,64 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import ArrowCard from "@components/ArrowCard.astro";
+import { BLOG } from "@consts";
+import { postsForLang } from "@lib/blog";
+import { type Lang, pageAlternates } from "@lib/i18n";
+
+type Props = {
+  lang: Lang;
+};
+
+const { lang } = Astro.props;
+
+// One language per page: /blog lists the English posts, /de/blog the German
+// ones. This replaced a toggle on /blog that kept its choice in localStorage.
+const posts = postsForLang(
+  (await getCollection("blog")).filter((post) => !post.data.draft),
+  lang
+);
+
+type Acc = {
+  [year: string]: CollectionEntry<"blog">[];
+};
+
+const grouped = posts.reduce((acc: Acc, post) => {
+  const year = post.data.date.getFullYear().toString();
+  (acc[year] ??= []).push(post);
+  return acc;
+}, {});
+const years = Object.keys(grouped).sort((a, b) => parseInt(b) - parseInt(a));
+---
+
+<PageLayout
+  title={BLOG[lang].TITLE}
+  description={BLOG[lang].DESCRIPTION}
+  lang={lang}
+  alternates={pageAlternates("/blog", Astro.site)}
+>
+  <Container>
+    <div class="space-y-10">
+      <h1 class="animate font-semibold text-black dark:text-white">{BLOG[lang].TITLE}</h1>
+      <div class="space-y-4">
+        {years.map((year) => (
+          <section class="animate space-y-4">
+            <div class="font-semibold text-black dark:text-white">
+              {year}
+            </div>
+            <div>
+              <ul class="flex flex-col gap-4">
+                {grouped[year].map((post) => (
+                  <li>
+                    <ArrowCard entry={post} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        ))}
+      </div>
+    </div>
+  </Container>
+</PageLayout>

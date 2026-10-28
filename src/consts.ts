@@ -1,4 +1,5 @@
 import type { Site, Metadata, Socials } from "@types"
+import type { Lang } from "@lib/i18n"
 
 export const SITE: Site = {
   NAME: "Tobias Leinss",
@@ -21,17 +22,24 @@ export const LEGAL = {
   PHONE: "+49 15679 63 41 99",
 } as const
 
-export const HOME: Metadata = {
-  TITLE: "Privacy-first apps you can install today",
-  DESCRIPTION:
-    "I build privacy-first, on-device apps with optional bring-your-own-key AI: keyboards, voice-to-text, RSS readers and more. No accounts, no telemetry, no backend.",
+export const HOME: Record<Lang, Metadata> = {
+  en: {
+    TITLE: "Privacy-first apps you can install today",
+    DESCRIPTION:
+      "I build privacy-first, on-device apps with optional bring-your-own-key AI: keyboards, voice-to-text, RSS readers and more. No accounts, no telemetry, no backend.",
+  },
+  de: {
+    TITLE: "Datenschutzfreundliche Apps, die Sie heute installieren können",
+    DESCRIPTION:
+      "Ich baue datenschutzfreundliche Apps, die auf dem Gerät laufen, mit optionaler KI über Ihren eigenen API-Schlüssel: Tastaturen, Spracheingabe, RSS-Reader und mehr. Kein Konto, keine Telemetrie, kein Server.",
+  },
 }
 
 // Shipped apps shown in the homepage portfolio grid. `slug` must match the
 // corresponding entry under content/projects/ (used for the card link).
 export type App = {
   name: string
-  tagline: string
+  tagline: Record<Lang, string>
   platform: string
   slug: string
 }
@@ -39,81 +47,96 @@ export type App = {
 export const APPS: App[] = [
   {
     name: "TobiBoard",
-    tagline:
-      "Android keyboard whose AI voice-to-text and text fix run on the device, no account or API key.",
+    tagline: {
+      en: "Android keyboard whose AI voice-to-text and text fix run on the device, no account or API key.",
+      de: "Android-Tastatur, deren KI-Spracheingabe und Textkorrektur auf dem Gerät laufen, ohne Konto und ohne API-Schlüssel.",
+    },
     platform: "Android",
     slug: "TobiBoard",
   },
   {
     name: "TobiReader",
-    tagline:
-      "Local-first RSS/Atom reader with on-device read-aloud, optional AI summaries and self-hosted sync.",
+    tagline: {
+      en: "Local-first RSS/Atom reader with on-device read-aloud, optional AI summaries and self-hosted sync.",
+      de: "RSS/Atom-Reader, der lokal arbeitet: Vorlesen auf dem Gerät, optionale KI-Zusammenfassungen und Sync über den eigenen Server.",
+    },
     platform: "Android",
     slug: "TobiReader",
   },
   {
     name: "TobiRecord",
-    tagline:
-      "Open-source screen recorder and editor with auto-zoom, cursor polish and styled frames.",
+    tagline: {
+      en: "Open-source screen recorder and editor with auto-zoom, cursor polish and styled frames.",
+      de: "Quelloffener Bildschirmrekorder mit Editor: automatischer Zoom, aufgeräumter Mauszeiger und gestaltete Rahmen.",
+    },
     platform: "macOS · Windows · Linux",
     slug: "TobiRecord",
   },
   {
     name: "TobiVoice",
-    tagline:
-      "Native macOS voice-to-text that transcribes on-device: local models by default, optional cloud providers.",
+    tagline: {
+      en: "Native macOS voice-to-text that transcribes on-device: local models by default, optional cloud providers.",
+      de: "Native Spracheingabe für macOS, die auf dem Gerät transkribiert: standardmäßig lokale Modelle, Cloud-Anbieter optional.",
+    },
     platform: "macOS",
     slug: "TobiVoice",
   },
   {
     name: "TobiBar",
-    tagline:
-      "macOS menu-bar manager: hide, show and organise menu-bar items, with a growing toolbox of extras.",
+    tagline: {
+      en: "macOS menu-bar manager: hide, show and organise menu-bar items, with a growing toolbox of extras.",
+      de: "Menüleisten-Manager für macOS: Symbole der Menüleiste ausblenden, einblenden und ordnen, dazu eine wachsende Sammlung von Extras.",
+    },
     platform: "macOS",
     slug: "TobiBar",
   },
   {
     name: "kAIros",
-    tagline:
-      "AI-guided goal tracking: conversational goal setup, reminders and progress with local-LLM integration.",
+    tagline: {
+      en: "AI-guided goal tracking: conversational goal setup, reminders and progress with local-LLM integration.",
+      de: "Zielverfolgung mit KI: Ziele im Gespräch festlegen, Erinnerungen und Fortschritt, mit Anbindung an lokale LLMs.",
+    },
     platform: "Android",
     slug: "kAIros",
   },
   {
     name: "finanzplanr",
-    tagline:
-      "Financial planning platform for the DACH region: household budgeting, statement parsing and AI insights.",
+    tagline: {
+      en: "Financial planning platform for the DACH region: household budgeting, statement parsing and AI insights.",
+      de: "Finanzplanung für den DACH-Raum: Haushaltsbudget, Einlesen von Kontoauszügen und KI-Auswertungen.",
+    },
     platform: "Web · Mobile",
     slug: "finanzplanr",
   },
   {
     name: "taggr",
-    tagline:
-      "Self-hosted, AI-powered image tagging: bulk auto-tagging with a local LLM, all data stays on your machine.",
+    tagline: {
+      en: "Self-hosted, AI-powered image tagging: bulk auto-tagging with a local LLM, all data stays on your machine.",
+      de: "Selbst gehostetes Verschlagworten von Bildern mit KI: Bilder in großer Zahl automatisch taggen mit einem lokalen LLM, alle Daten bleiben auf Ihrem Rechner.",
+    },
     platform: "Web (self-hosted)",
     slug: "taggr",
   },
 ]
 
-export const BLOG: Metadata = {
-  TITLE: "Blog",
-  DESCRIPTION: "A collection of articles on topics I am passionate about.",
+export const BLOG: Record<Lang, Metadata> = {
+  en: { TITLE: "Blog", DESCRIPTION: "A collection of articles on topics I am passionate about." },
+  de: { TITLE: "Blog", DESCRIPTION: "Artikel zu Themen, die mich beschäftigen." },
 }
 
-export const WORK: Metadata = {
-  TITLE: "Work",
-  DESCRIPTION: "Where I have worked and what I have done.",
+export const WORK: Record<Lang, Metadata> = {
+  en: { TITLE: "Work", DESCRIPTION: "Where I have worked and what I have done." },
+  de: { TITLE: "Werdegang", DESCRIPTION: "Wo ich gearbeitet habe und was ich dort gemacht habe." },
 }
 
-export const PROJECTS: Metadata = {
-  TITLE: "Projects",
-  DESCRIPTION:
-    "A collection of my projects, with links to repositories and demos.",
+export const PROJECTS: Record<Lang, Metadata> = {
+  en: { TITLE: "Projects", DESCRIPTION: "A collection of my projects, with links to repositories and demos." },
+  de: { TITLE: "Projekte", DESCRIPTION: "Meine Projekte, mit Links zu Repositories und Demos." },
 }
 
-export const HACKATHONS: Metadata = {
-  TITLE: "Hackathons",
-  DESCRIPTION: "Hackathon projects and prototypes I have built.",
+export const HACKATHONS: Record<Lang, Metadata> = {
+  en: { TITLE: "Hackathons", DESCRIPTION: "Hackathon projects and prototypes I have built." },
+  de: { TITLE: "Hackathons", DESCRIPTION: "Hackathon-Projekte und Prototypen, die ich gebaut habe." },
 }
 
 // Slugs in the `projects` collection that are hackathon entries, shown under
@@ -133,9 +156,9 @@ export const HACKATHON_SLUGS: string[] = [
   "nearcon",
 ]
 
-export const EDUCATION: Metadata = {
-  TITLE: "Education",
-  DESCRIPTION: "Where I have studied.",
+export const EDUCATION: Record<Lang, Metadata> = {
+  en: { TITLE: "Education", DESCRIPTION: "Where I have studied." },
+  de: { TITLE: "Ausbildung", DESCRIPTION: "Wo ich studiert und gelernt habe." },
 }
 
 // Bluesky is deliberately absent. The account exists but has no posts, and

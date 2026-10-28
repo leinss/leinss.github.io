@@ -1,17 +1,33 @@
 ---
+import { LEGAL_PAGES, type Lang, t } from "@lib/i18n"
+
 const LISTMONK_URL = "https://newsletter.funnel.leinss.xyz/api/public/subscription"
 const LIST_UUID = "56525a08-c916-4c7c-ae2c-36481da13071"
+
+type Props = {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+
+// Strings the submit handler shows after the page has loaded.
+const MESSAGES = {
+  submit: t(lang, "newsletterSubmit"),
+  busy: t(lang, "newsletterBusy"),
+  done: t(lang, "newsletterDone"),
+  error: t(lang, "newsletterError"),
+}
 ---
 
 <div class="rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 mt-4">
-  <h2 class="font-semibold text-black dark:text-white mb-1">Stay in the loop</h2>
-  <p class="text-sm mb-4">Get occasional updates on projects, tech insights, and new blog posts.</p>
+  <h2 class="font-semibold text-black dark:text-white mb-1">{t(lang, "newsletterHeading")}</h2>
+  <p class="text-sm mb-4">{t(lang, "newsletterIntro")}</p>
   <form id="newsletter-form" class="flex gap-2">
-    <label for="newsletter-email" class="sr-only">Email address</label>
+    <label for="newsletter-email" class="sr-only">{t(lang, "newsletterEmailLabel")}</label>
     <input
       id="newsletter-email"
       type="email"
-      placeholder="your@email.com"
+      placeholder={t(lang, "newsletterPlaceholder")}
       required
       class="flex-1 px-3 py-2 text-sm rounded-md border border-black/15 dark:border-white/15 bg-white dark:bg-slate-800 text-black dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40 focus:outline-hidden focus:ring-1 focus:ring-black/25 dark:focus:ring-white/25"
     />
@@ -20,17 +36,17 @@ const LIST_UUID = "56525a08-c916-4c7c-ae2c-36481da13071"
       type="submit"
       class="px-4 py-2 text-sm font-medium rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-black/80 dark:hover:bg-white/80 transition-colors whitespace-nowrap"
     >
-      Subscribe
+      {t(lang, "newsletterSubmit")}
     </button>
   </form>
   <p id="newsletter-status" class="text-sm mt-2 hidden" role="alert" aria-live="polite"></p>
   <!-- opacity-80, not 50: at 50 this small print sat at 2.4:1 against the
        card background, well under the 4.5:1 WCAG AA needs, and it carries the
        privacy notice. 75 was still short at 4.45:1. -->
-  <p class="text-xs mt-2 opacity-80">No spam. Unsubscribe anytime. Your email is stored by <a href="https://listmonk.app" target="_blank" rel="noopener" class="underline">Listmonk</a> (self-hosted) and used solely for this newsletter. See our <a href="/privacy" class="underline">Privacy Policy</a>.</p>
+  <p class="text-xs mt-2 opacity-80">{t(lang, "newsletterNoSpam")} <a href="https://listmonk.app" target="_blank" rel="noopener" class="underline">Listmonk</a> {t(lang, "newsletterSelfHosted")} <a href={`/${LEGAL_PAGES[lang].privacy}`} class="underline">{t(lang, "newsletterPrivacy")}</a>.</p>
 </div>
 
-<script is:inline define:vars={{ LISTMONK_URL, LIST_UUID }}>
+<script is:inline define:vars={{ LISTMONK_URL, LIST_UUID, MESSAGES }}>
   document.getElementById('newsletter-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = document.getElementById('newsletter-email').value;
@@ -38,7 +54,7 @@ const LIST_UUID = "56525a08-c916-4c7c-ae2c-36481da13071"
     const status = document.getElementById('newsletter-status');
 
     btn.disabled = true;
-    btn.textContent = 'Subscribing...';
+    btn.textContent = MESSAGES.busy;
     status.classList.add('hidden');
 
     try {
@@ -49,7 +65,7 @@ const LIST_UUID = "56525a08-c916-4c7c-ae2c-36481da13071"
       });
 
       if (res.ok || res.status === 409) {
-        status.textContent = 'Thanks! Check your email to confirm.';
+        status.textContent = MESSAGES.done;
         status.className = 'text-sm mt-2 text-green-600 dark:text-green-400';
         document.getElementById('newsletter-email').value = '';
       } else {
@@ -57,12 +73,12 @@ const LIST_UUID = "56525a08-c916-4c7c-ae2c-36481da13071"
       }
     } catch (err) {
       console.error('Newsletter subscription failed:', err);
-      status.textContent = 'Something went wrong. Please try again.';
+      status.textContent = MESSAGES.error;
       status.className = 'text-sm mt-2 text-red-600 dark:text-red-400';
     }
 
     status.classList.remove('hidden');
     btn.disabled = false;
-    btn.textContent = 'Subscribe';
+    btn.textContent = MESSAGES.submit;
   });
 </script>

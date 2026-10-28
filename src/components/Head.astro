@@ -12,6 +12,7 @@ import lora400 from "@fontsource/lora/files/lora-latin-400-normal.woff2";
 import lora600 from "@fontsource/lora/files/lora-latin-600-normal.woff2";
 import { ClientRouter } from "astro:transitions";
 import { SITE, SOCIALS } from "@consts";
+import { type Lang, localePath } from "@lib/i18n";
 
 interface Alternate {
   hreflang: string;
@@ -23,11 +24,12 @@ interface Props {
   description: string;
   image?: string;
   alternates?: Alternate[];
+  lang: Lang;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/og.png", alternates } = Astro.props;
+const { title, description, image = "/og.png", alternates, lang } = Astro.props;
 
 // Find social links for schema
 const twitterSocial = SOCIALS.find(s => s.NAME === "twitter");
@@ -60,7 +62,7 @@ const websiteSchema = {
   },
 };
 
-const isHomepage = Astro.url.pathname === "/" || Astro.url.pathname === "";
+const isHomepage = Astro.url.pathname === "/" || Astro.url.pathname === "" || Astro.url.pathname === "/de/";
 ---
 
 <!-- Global Metadata -->
@@ -111,7 +113,7 @@ const isHomepage = Astro.url.pathname === "/" || Astro.url.pathname === "";
 <ClientRouter  />
 
 <!-- RSS Link -->
-<link rel="alternate" type="application/rss+xml" title={SITE.NAME} href={new URL("rss.xml", Astro.site)} />
+<link rel="alternate" type="application/rss+xml" title={SITE.NAME} href={new URL(localePath(lang, "/rss.xml"), Astro.site)} />
 
 <!-- JSON-LD Structured Data -->
 {isHomepage && (

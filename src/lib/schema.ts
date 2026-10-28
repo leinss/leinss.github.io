@@ -1,4 +1,5 @@
 import { APPS, SITE } from "@consts"
+import { entryLang, localePath, stripLang } from "@lib/i18n"
 
 // schema.org applicationCategory per app, keyed by project slug.
 // Kept here (not in consts) so the schema concern stays out of the config.
@@ -28,7 +29,8 @@ export function softwareApplicationSchema(
   project: ProjectLike,
   site: URL | undefined,
 ) {
-  const app = APPS.find((a) => a.slug === project.id)
+  const slug = stripLang(project.id)
+  const app = APPS.find((a) => a.slug === slug)
   if (!app) return null
 
   const base = site?.toString() ?? "https://leinss.xyz/"
@@ -37,7 +39,7 @@ export function softwareApplicationSchema(
     "@type": "SoftwareApplication",
     name: project.data.title,
     description: project.data.description,
-    url: new URL(`projects/${project.id}/`, base).toString(),
+    url: new URL(localePath(entryLang(project.id), `/projects/${slug}/`), base).toString(),
     operatingSystem: app.platform,
     applicationCategory: APP_CATEGORY[app.slug] ?? "UtilitiesApplication",
     author: {

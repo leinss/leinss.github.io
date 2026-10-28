@@ -1,0 +1,74 @@
+---
+title: "TobiSound, Datenschutzerklärung"
+description: "Datenschutzerklärung für den Android-Musikplayer TobiSound"
+date: "07/16/2026"
+---
+
+import LegalAddress from "@components/LegalAddress.astro"
+
+_Zuletzt aktualisiert: 16. Juli 2026_
+
+TobiSound ist ein nativer Android-Musikplayer für die Medienserver und lokalen Dateien, die **Ihnen** gehören. Diese Erklärung beschreibt genau, was die App mit Ihren Daten tut und was nicht, und gilt für die Android-App TobiSound.
+
+## Verantwortlicher
+
+<LegalAddress lang="de" />
+
+E-Mail: inquiry@leinss.xyz
+
+## Kurzfassung
+
+- **Wir erheben nichts.** TobiSound hat **kein Konto, keine Nutzungsanalyse, keine Telemetrie, keine Werbung und kein Backend von uns**. Wir betreiben keine Server und erhalten keine Daten über Sie oder darüber, was Sie hören.
+- **Alles liegt auf Ihrem Gerät.** Ihre Serververbindungen, Zugangsdaten, der Bibliotheks-Cache, Coverbilder, Downloads und Einstellungen werden lokal auf Ihrem Telefon gespeichert.
+- **Jede Netzwerkverbindung richten Sie selbst ein.** TobiSound kommuniziert immer nur mit den Servern, die Sie selbst einrichten, sowie mit den optionalen Diensten, die Sie ausdrücklich einschalten.
+
+## Was auf Ihrem Gerät bleibt
+
+- **Zugangsdaten für Medienserver.** Benutzername, Passwort oder Token für jeden Subsonic/Navidrome- oder Jellyfin-Server, den Sie hinzufügen, werden **verschlüsselt auf Ihrem Gerät** gespeichert (Android Keystore / Tink). Sie werden nie an uns übertragen und **nur** an den Server gesendet, zu dem sie gehören, um Ihre eigenen Anfragen zu authentifizieren.
+- **Ihre Bibliothek und Wiedergabedaten.** Browsing-Cache, Playlists, Wiedergabestatus, heruntergeladene Titel, zwischengespeicherte Coverbilder und App-Einstellungen werden alle lokal aufbewahrt. Nichts davon wird an uns gesendet. Wir haben keinen Server, an den es gesendet werden könnte.
+
+## Netzwerkverbindungen (alle unter Ihrer Kontrolle)
+
+TobiSound verbindet sich **nur** für Dinge, die Sie einrichten, mit dem Internet oder Ihrem lokalen Netzwerk:
+
+- **Ihre Medienserver.** Die Subsonic/Navidrome- und Jellyfin-Server, die Sie hinzufügen, zum Durchsuchen und Streamen **Ihrer** Musik. TobiSound kommuniziert nur mit den Adressen, die Sie eingeben.
+- **Lokale Dateien.** Musik, die auf Ihrem Gerät gespeichert ist, wird direkt gelesen und erfordert überhaupt keine Netzwerkverbindung.
+- **Scrobbling (optional, Opt-in).** Wenn Sie es einschalten und Ihre eigenen Tokens angeben, meldet TobiSound an **ListenBrainz** und/oder **Last.fm**, was Sie abspielen. Das ist ausgeschaltet, sofern Sie es nicht einschalten. Ohne Ihre Tokens verlassen keine Hördaten die App.
+- **Synchronisierte Songtexte (optional).** Wenn eingeschaltet, ruft TobiSound zeitlich synchronisierte Songtexte für den Titel, den Sie gerade abspielen, von **[LRCLIB](https://lrclib.net/)** ab. In Ihre Dateien eingebettete Songtexte werden lokal gelesen, ohne Netzwerkanfrage.
+- **Chromecast (lokales Netzwerk).** Wenn Sie casten, läuft für die Dauer der Cast-Sitzung ein **temporärer, tokengeschützter HTTP-Server auf Ihrem eigenen Gerät**, damit das Cast-Gerät in Ihrem lokalen Netzwerk das Audio abrufen kann. Er ist nur in Ihrem Netzwerk erreichbar und nur, solange Sie aktiv casten, und er wird beendet, wenn die Sitzung endet.
+
+Sobald Ihre Daten einen Dienst erreichen, den **Sie** gewählt haben (Ihren eigenen Server, ListenBrainz, Last.fm, LRCLIB oder die Cast-Plattform von Google), gilt für das, was dieser Dienst damit tut, **dessen** Datenschutzerklärung.
+
+## Berechtigungen
+
+- **Internet / Netzwerkstatus**: um die Server und optionalen Dienste zu erreichen, die Sie eingerichtet haben, und um in Ihrem lokalen Netzwerk zu casten.
+- **Vordergrunddienst und Benachrichtigungen**: damit die Musik im Hintergrund weiterspielt und die Wiedergabesteuerung angezeigt wird, die Sie bedienen. Damit ist keine Erhebung Ihrer Daten verbunden.
+- **Zugriff auf Medien / Audio**: nur, um die Musikdateien auf Ihrem eigenen Gerät zu finden und abzuspielen, wenn Sie die lokale Wiedergabe wählen.
+
+TobiSound fordert keine Berechtigungen an, die über das hinausgehen, was die von Ihnen genutzten Funktionen erfordern, und nutzt keine davon, um Informationen über Sie zu erheben.
+
+## Weitergabe und Verkauf von Daten
+
+Wir erheben Ihre Daten nicht, daher gibt es nichts, was wir weitergeben oder verkaufen könnten. Die einzigen Daten, die Ihr Gerät überhaupt verlassen, gehen an die Server und optionalen Dienste, die **Sie** eingerichtet haben, ausschließlich zum Abspielen Ihrer Musik und nur, wenn Sie diese Funktionen nutzen.
+
+## Kinder
+
+TobiSound richtet sich nicht an Kinder und erhebt nicht wissentlich Daten von irgendjemandem.
+
+## Ihre Daten löschen
+
+Alle TobiSound-Daten sind auf Ihrem eigenen Gerät gespeichert, daher behalten Sie die volle Kontrolle:
+
+- **Entfernen Sie einen Server** in der App, um seine gespeicherte Verbindung und die Zugangsdaten zu löschen.
+- **Löschen Sie den Speicher der App** (Android-Einstellungen → Apps → TobiSound → Speicher), um den Bibliotheks-Cache, Downloads und Einstellungen zu entfernen.
+- **Deinstallieren Sie** die App, um alles auf einmal zu entfernen.
+
+Da wir keine Ihrer Daten vorhalten, gibt es auf unserer Seite nichts zu löschen. Die allgemeine [Datenschutzerklärung von leinss.xyz](/de/datenschutz) beschreibt zusätzlich Ihre Betroffenenrechte nach der DSGVO und die Aufsichtsbehörde, an die Sie sich wenden können.
+
+## Änderungen
+
+Wenn sich diese Erklärung ändert, wird die aktualisierte Fassung unter dieser URL mit neuem Datum veröffentlicht.
+
+## Kontakt
+
+Fragen: **inquiry@leinss.xyz**

@@ -1,0 +1,77 @@
+---
+import { render } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import FormattedDate from "@components/FormattedDate.astro";
+import { readingTime } from "@lib/utils";
+import BackToPrev from "@components/BackToPrev.astro";
+import Link from "@components/Link.astro";
+import { softwareApplicationSchema } from "@lib/schema";
+import { entryLang, localePath, stripLang, t } from "@lib/i18n";
+import type { ProjectPageProps } from "@lib/projects";
+
+type Props = ProjectPageProps;
+
+const { project, translations } = Astro.props;
+const { Content } = await render(project);
+const lang = entryLang(project.id);
+const slug = stripLang(project.id);
+
+const alternates = translations.length > 1
+  ? translations.map((other) => ({
+      hreflang: other,
+      href: new URL(localePath(other, `/projects/${slug}/`), Astro.site).toString(),
+    }))
+  : undefined;
+
+// Apps (listed in APPS) get SoftwareApplication schema; other projects (e.g.
+// hackathon prototypes) return null and emit nothing.
+const appSchema = softwareApplicationSchema(project, Astro.site);
+---
+
+<PageLayout title={project.data.title} description={project.data.description} lang={lang} alternates={alternates}>
+  <Container>
+    <div class="animate">
+      <BackToPrev href={localePath(lang, "/projects")}>
+        {t(lang, "backToProjects")}
+      </BackToPrev>
+    </div>
+    <div class="space-y-1 my-10">
+      <div class="animate flex items-center gap-1.5">
+        <div class="font-base text-sm">
+          <FormattedDate date={project.data.date} lang={lang} />
+        </div>
+        &bull;
+        <div class="font-base text-sm">
+          {readingTime(project.body ?? "", lang)}
+        </div>
+      </div>
+      <h1 class="animate text-2xl font-semibold text-black dark:text-white">
+        {project.data.title}
+      </h1>
+      {(project.data.demoURL || project.data.repoURL) && (
+        <nav class="animate flex gap-1">
+          {project.data.demoURL && (
+            <Link href={project.data.demoURL} external>
+              demo
+            </Link>
+          )}
+          {project.data.demoURL && project.data.repoURL && (
+            <span>/</span>
+          )}
+          {project.data.repoURL && (
+            <Link href={project.data.repoURL} external>
+              repo
+            </Link>
+          )}
+        </nav>
+      )}
+    </div>
+    <article class="longform animate">
+      <Content />
+    </article>
+  </Container>
+  {appSchema && (
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(appSchema)} />
+  )}
+</PageLayout>
