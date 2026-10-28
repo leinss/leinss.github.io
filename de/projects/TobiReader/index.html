@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="de"><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: dark)"><link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: light)"><link rel="icon" type="image/x-icon" href="/favicon.ico"><meta name="generator" content="Astro v7.2.0"><!-- Sitemap --><link rel="sitemap" href="/sitemap-index.xml"><!-- Font preloads --><link rel="preload" href="/_astro/ibm-plex-sans-latin-400-normal.CDDApCn2.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/ibm-plex-sans-latin-500-normal.6ng42L7E.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/ibm-plex-sans-latin-600-normal.CuJfVYMP.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-400-normal.DnxXpLNu.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-600-normal.B-3RcLOQ.woff2" as="font" type="font/woff2" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://leinss.xyz/de/projects/TobiReader/"><!-- hreflang alternates (translated content) --><link rel="alternate" hreflang="en" href="https://leinss.xyz/projects/TobiReader/"><link rel="alternate" hreflang="de" href="https://leinss.xyz/de/projects/TobiReader/"><!-- Primary Meta Tags --><title>TobiReader | Tobias Leinss</title><meta name="title" content="TobiReader | Tobias Leinss"><meta name="description" content="Ein privater RSS/Atom-Reader, der lokal arbeitet: Vorlesen auf dem Gerät, optionale KI-Zusammenfassungen mit eigenem Schlüssel und Sync über ein selbst gehostetes FreshRSS."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://leinss.xyz/de/projects/TobiReader/"><meta property="og:title" content="TobiReader | Tobias Leinss"><meta property="og:description" content="Ein privater RSS/Atom-Reader, der lokal arbeitet: Vorlesen auf dem Gerät, optionale KI-Zusammenfassungen mit eigenem Schlüssel und Sync über ein selbst gehostetes FreshRSS."><meta property="og:image" content="https://leinss.xyz/og.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://leinss.xyz/de/projects/TobiReader/"><meta property="twitter:title" content="TobiReader | Tobias Leinss"><meta property="twitter:description" content="Ein privater RSS/Atom-Reader, der lokal arbeitet: Vorlesen auf dem Gerät, optionale KI-Zusammenfassungen mit eigenem Schlüssel und Sync über ein selbst gehostetes FreshRSS."><meta property="twitter:image" content="https://leinss.xyz/og.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DW-LBy1z.js"></script><!-- RSS Link --><link rel="alternate" type="application/rss+xml" title="Tobias Leinss" href="https://leinss.xyz/de/rss.xml"><!-- JSON-LD Structured Data --><script defer src="https://umami.funnel.leinss.xyz/script.js" data-website-id="bd21affd-05bc-4aeb-b312-c913f438ca90"></script><script type="module" src="/_astro/Head.astro_astro_type_script_index_0_lang.B7wsORg7.js"></script><script type="module">window.addEventListener(`load`,()=>{typeof feather<`u`&&feather.replace()}),document.addEventListener(`astro:before-swap`,e=>[...e.newDocument.head.querySelectorAll(`link[as="font"]`)].forEach(e=>e.remove()));</script><script>
+  function init() {
+    preloadTheme();
+    onScroll();
+    animate();
+
+    // Initialize feather icons
+    if (typeof feather !== 'undefined') {
+      feather.replace();
+    }
+
+    const backToTop = document.getElementById("back-to-top");
+    backToTop?.addEventListener("click", (event) => scrollToTop(event));
+
+    const backToPrev = document.getElementById("back-to-prev");
+    backToPrev?.addEventListener("click", () => window.history.back());
+
+    document.querySelectorAll("[data-theme-toggle]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.contains("dark");
+        localStorage.setItem("theme", isDark ? "light" : "dark");
+        toggleTheme(!isDark);
+      });
+    });
+
+    document.addEventListener("scroll", onScroll);
+  }
+
+  function animate() {
+    const animateElements = document.querySelectorAll(".animate");
+
+    animateElements.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add("show");
+      }, index * 150);
+    });
+  }
+
+  function onScroll() {
+    if (window.scrollY > 0) {
+      document.documentElement.classList.add("scrolled");
+    } else {
+      document.documentElement.classList.remove("scrolled");
+    }
+  }
+
+  function scrollToTop(event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+function toggleTheme(dark) {
+    const css = document.createElement("style");
+
+    css.appendChild(
+      document.createTextNode(
+        `* {
+             -webkit-transition: none !important;
+             -moz-transition: none !important;
+             -o-transition: none !important;
+             -ms-transition: none !important;
+             transition: none !important;
+          }
+        `,
+      )
+    );
+
+    document.head.appendChild(css);
+
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+  window.getComputedStyle(css).opacity;
+    document.head.removeChild(css);
+  }
+
+  function preloadTheme() {
+    const userTheme = localStorage.theme;
+
+    if (userTheme === "light" || userTheme === "dark") {
+      toggleTheme(userTheme === "dark");
+    } else {
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => init());
+  document.addEventListener("astro:after-swap", () => init());
+  preloadTheme();
+</script><link rel="stylesheet" href="/_astro/PageLayout.RLnsdVR9.css"></head><body><header><div class="mx-auto max-w-[840px] px-5"><div class="flex flex-wrap gap-y-2 justify-between text-base"><a href="/de/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><div class="font-semibold">&lt;Tobias Leinss /&gt;</div></a><nav class="flex flex-wrap gap-x-1 text-base"><a href="/de/now" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><span class="whitespace-nowrap">jetzt</span></a><span>/</span><a href="/de/uses" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><span class="whitespace-nowrap">was ich nutze</span></a><span>/</span><a href="/de/work" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">werdegang</a><span>/</span><a href="/de/projects" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">projekte</a><span>/</span><a href="/projects/TobiReader/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out" hreflang="en" lang="en" aria-label="English" title="English">en</a><button data-theme-toggle aria-label="Farbschema wechseln" class="group flex items-center justify-center ml-3 hover:text-black dark:hover:text-white transition-colors duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block dark:hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></nav></div></div></header><main><div class="mx-auto max-w-[840px] px-5"><div class="animate"><a href="/de/projects" class="relative group w-fit flex pl-7 pr-3 py-1.5 flex-nowrap rounded-sm border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current"><line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line><polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline></svg><div class="text-sm">Zurück zu den Projekten</div></a></div><div class="space-y-1 my-10"><div class="animate flex items-center gap-1.5"><div class="font-base text-sm"><time datetime="2026-06-01T00:00:00.000Z">1. Juni 2026</time></div>&bull;<div class="font-base text-sm">2 Min. Lesezeit</div></div><h1 class="animate text-2xl font-semibold text-black dark:text-white">TobiReader</h1></div><article class="longform animate"><img src="/images/projects/TobiReader/icon.png" alt="App-Symbol von TobiReader" width="160" height="160" style="border-radius: 32px; display: block; margin: 0.5rem auto 1.5rem;" />
+<p><strong>TobiReader</strong> ist ein schneller, privater Feed-Reader, bei dem Ihr Lesen <strong>auf Ihrem Gerät</strong> bleibt. Feeds, Artikel, Lesestatus, Markierungen und Einstellungen liegen lokal: Es gibt kein Konto, keinen TobiReader-Server, kein Tracking und keine Werbung. Er ist für Leute gebaut, die einen ruhigen, modernen RSS/Atom-Reader wollen, der nicht nach Hause telefoniert.</p>
+<h2 id="funktionen">Funktionen</h2>
+<ul>
+<li><strong>RSS- und Atom-Feeds lesen</strong>, mit Volltext der Artikel, Kategorien und einer aufgeräumten Leseansicht ohne Ablenkung.</li>
+<li><strong>Virtuelle Feeds</strong> (Heute, Gespeichert, Markiert, Kürzlich gelesen), dazu einklappbare Kategorien und eine schnelle Feed-Suche.</li>
+<li><strong>Vorlesen (Text-to-Speech)</strong>, das <strong>auf dem Gerät</strong> läuft, mit mehrsprachigen Stimmen, die Artikel in ihrer eigenen Sprache vorlesen.</li>
+<li><strong>Optionale KI-Zusammenfassungen und Übersetzung</strong>: Sie bringen Ihren eigenen API-Schlüssel mit (z. B. für OpenRouter). Artikeltext geht nur an den Anbieter, den <em>Sie</em> wählen, und nur, wenn Sie darum bitten. Ohne Schlüssel gibt es keine Aufrufe.</li>
+<li><strong>Selbst gehosteter Sync</strong>: Richten Sie die App auf Ihren eigenen FreshRSS-Server, dann synchronisieren sich Lesestatus und Markierungen mit <strong>Ihrem</strong> Server. Ich bekomme davon nie etwas zu sehen.</li>
+<li><strong>Offline-tauglich</strong>: Artikel, die Sie öffnen, werden zwischengespeichert und lassen sich ohne Verbindung lesen.</li>
+</ul>
+<h2 id="privat-von-grund-auf">Privat von Grund auf</h2>
+<p>Alles, was zählt, passiert lokal. Daten verlassen Ihr Handy nur über Funktionen, die <strong>Sie</strong> einschalten und auf Endpunkte richten, die <strong>Sie</strong> kontrollieren: beim Abrufen der Feeds, die Sie abonniert haben, beim Sync mit Ihrem eigenen FreshRSS-Server und beim Zusammenfassen oder Übersetzen mit Ihrem eigenen KI-Schlüssel. Es gibt kein Backend, keine Telemetrie und keine Profilbildung.</p>
+<p>→ <a href="/de/projects/tobireader/privacy">Datenschutzerklärung</a></p>
+<h2 id="installieren">Installieren</h2>
+<p>Derzeit in der <strong>privaten Beta</strong> für Android, über den internen Test von Google Play. Eine öffentliche Version ist geplant. Schauen Sie hier wieder vorbei, oder melden Sie sich für eine Einladung.</p>
+</article></div><script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"TobiReader","description":"Ein privater RSS/Atom-Reader, der lokal arbeitet: Vorlesen auf dem Gerät, optionale KI-Zusammenfassungen mit eigenem Schlüssel und Sync über ein selbst gehostetes FreshRSS.","url":"https://leinss.xyz/de/projects/TobiReader/","operatingSystem":"Android","applicationCategory":"NewsApplication","author":{"@type":"Person","name":"Tobias Leinss","url":"https://leinss.xyz/"}}</script></main><footer class="animate"><div class="mx-auto max-w-[840px] px-5"><div class="relative"><div class="absolute right-0 -top-20"><button id="back-to-top" class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded-sm border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current rotate-90"><line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line><polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline></svg><div class="text-sm">Nach oben</div></button></div></div><div class="rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 mt-4"><h2 class="font-semibold text-black dark:text-white mb-1">Auf dem Laufenden bleiben</h2><p class="text-sm mb-4">Ab und zu Neuigkeiten zu meinen Projekten, Technik und neuen Blogartikeln.</p><form id="newsletter-form" class="flex gap-2"><label for="newsletter-email" class="sr-only">E-Mail-Adresse</label><input id="newsletter-email" type="email" placeholder="ihre@email.de" required class="flex-1 px-3 py-2 text-sm rounded-md border border-black/15 dark:border-white/15 bg-white dark:bg-slate-800 text-black dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40 focus:outline-hidden focus:ring-1 focus:ring-black/25 dark:focus:ring-white/25"><button id="newsletter-btn" type="submit" class="px-4 py-2 text-sm font-medium rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-black/80 dark:hover:bg-white/80 transition-colors whitespace-nowrap">Abonnieren</button></form><p id="newsletter-status" class="text-sm mt-2 hidden" role="alert" aria-live="polite"></p><!-- opacity-80, not 50: at 50 this small print sat at 2.4:1 against the
+       card background, well under the 4.5:1 WCAG AA needs, and it carries the
+       privacy notice. 75 was still short at 4.45:1. --><p class="text-xs mt-2 opacity-80">Kein Spam, jederzeit abbestellbar. Ihre E-Mail-Adresse liegt bei <a href="https://listmonk.app" target="_blank" rel="noopener" class="underline">Listmonk</a> (selbst gehostet) und wird nur für diesen Newsletter genutzt. Mehr in der <a href="/de/datenschutz" class="underline">Datenschutzerklärung</a>.</p></div><script>(function(){const LISTMONK_URL = "https://newsletter.funnel.leinss.xyz/api/public/subscription";
+const LIST_UUID = "56525a08-c916-4c7c-ae2c-36481da13071";
+const MESSAGES = {"submit":"Abonnieren","busy":"Wird angemeldet...","done":"Danke! Bitte bestätigen Sie die Anmeldung in Ihrem Postfach.","error":"Das hat nicht geklappt. Bitte versuchen Sie es noch einmal."};
+
+  document.getElementById('newsletter-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('newsletter-email').value;
+    const btn = document.getElementById('newsletter-btn');
+    const status = document.getElementById('newsletter-status');
+
+    btn.disabled = true;
+    btn.textContent = MESSAGES.busy;
+    status.classList.add('hidden');
+
+    try {
+      const res = await fetch(LISTMONK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, list_uuids: [LIST_UUID] })
+      });
+
+      if (res.ok || res.status === 409) {
+        status.textContent = MESSAGES.done;
+        status.className = 'text-sm mt-2 text-green-600 dark:text-green-400';
+        document.getElementById('newsletter-email').value = '';
+      } else {
+        throw new Error('Failed');
+      }
+    } catch (err) {
+      console.error('Newsletter subscription failed:', err);
+      status.textContent = MESSAGES.error;
+      status.className = 'text-sm mt-2 text-red-600 dark:text-red-400';
+    }
+
+    status.classList.remove('hidden');
+    btn.disabled = false;
+    btn.textContent = MESSAGES.submit;
+  });
+})();</script><div class="flex justify-between items-center mt-6"><div>&copy; 2026 | Tobias Leinss</div><div class="flex gap-4"><a href="/de/datenschutz" class="underline">Datenschutzerklärung</a><a href="/de/impressum" class="underline">Impressum</a></div><button id="theme-toggle" data-theme-toggle aria-label="Farbschema wechseln" class="group size-9 flex items-center justify-center rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors"><!-- Sun icon (shown in dark mode) --><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg><!-- Moon icon (shown in light mode) --><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block dark:hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></div></footer></body></html>

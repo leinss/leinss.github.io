@@ -1,0 +1,209 @@
+<!DOCTYPE html><html lang="de"><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: dark)"><link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: light)"><link rel="icon" type="image/x-icon" href="/favicon.ico"><meta name="generator" content="Astro v7.2.0"><!-- Sitemap --><link rel="sitemap" href="/sitemap-index.xml"><!-- Font preloads --><link rel="preload" href="/_astro/ibm-plex-sans-latin-400-normal.CDDApCn2.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/ibm-plex-sans-latin-500-normal.6ng42L7E.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/ibm-plex-sans-latin-600-normal.CuJfVYMP.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-400-normal.DnxXpLNu.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-600-normal.B-3RcLOQ.woff2" as="font" type="font/woff2" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://leinss.xyz/de/projects/ethrome/"><!-- hreflang alternates (translated content) --><link rel="alternate" hreflang="en" href="https://leinss.xyz/projects/ethrome/"><link rel="alternate" hreflang="de" href="https://leinss.xyz/de/projects/ethrome/"><!-- Primary Meta Tags --><title>EthRome Hackathon | Tobias Leinss</title><meta name="title" content="EthRome Hackathon | Tobias Leinss"><meta name="description" content="eine Plattform für anonyme Umfragen per ZK-Proofs"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://leinss.xyz/de/projects/ethrome/"><meta property="og:title" content="EthRome Hackathon | Tobias Leinss"><meta property="og:description" content="eine Plattform für anonyme Umfragen per ZK-Proofs"><meta property="og:image" content="https://leinss.xyz/og.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://leinss.xyz/de/projects/ethrome/"><meta property="twitter:title" content="EthRome Hackathon | Tobias Leinss"><meta property="twitter:description" content="eine Plattform für anonyme Umfragen per ZK-Proofs"><meta property="twitter:image" content="https://leinss.xyz/og.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DW-LBy1z.js"></script><!-- RSS Link --><link rel="alternate" type="application/rss+xml" title="Tobias Leinss" href="https://leinss.xyz/de/rss.xml"><!-- JSON-LD Structured Data --><script defer src="https://umami.funnel.leinss.xyz/script.js" data-website-id="bd21affd-05bc-4aeb-b312-c913f438ca90"></script><script type="module" src="/_astro/Head.astro_astro_type_script_index_0_lang.B7wsORg7.js"></script><script type="module">window.addEventListener(`load`,()=>{typeof feather<`u`&&feather.replace()}),document.addEventListener(`astro:before-swap`,e=>[...e.newDocument.head.querySelectorAll(`link[as="font"]`)].forEach(e=>e.remove()));</script><script>
+  function init() {
+    preloadTheme();
+    onScroll();
+    animate();
+
+    // Initialize feather icons
+    if (typeof feather !== 'undefined') {
+      feather.replace();
+    }
+
+    const backToTop = document.getElementById("back-to-top");
+    backToTop?.addEventListener("click", (event) => scrollToTop(event));
+
+    const backToPrev = document.getElementById("back-to-prev");
+    backToPrev?.addEventListener("click", () => window.history.back());
+
+    document.querySelectorAll("[data-theme-toggle]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.contains("dark");
+        localStorage.setItem("theme", isDark ? "light" : "dark");
+        toggleTheme(!isDark);
+      });
+    });
+
+    document.addEventListener("scroll", onScroll);
+  }
+
+  function animate() {
+    const animateElements = document.querySelectorAll(".animate");
+
+    animateElements.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add("show");
+      }, index * 150);
+    });
+  }
+
+  function onScroll() {
+    if (window.scrollY > 0) {
+      document.documentElement.classList.add("scrolled");
+    } else {
+      document.documentElement.classList.remove("scrolled");
+    }
+  }
+
+  function scrollToTop(event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+function toggleTheme(dark) {
+    const css = document.createElement("style");
+
+    css.appendChild(
+      document.createTextNode(
+        `* {
+             -webkit-transition: none !important;
+             -moz-transition: none !important;
+             -o-transition: none !important;
+             -ms-transition: none !important;
+             transition: none !important;
+          }
+        `,
+      )
+    );
+
+    document.head.appendChild(css);
+
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+  window.getComputedStyle(css).opacity;
+    document.head.removeChild(css);
+  }
+
+  function preloadTheme() {
+    const userTheme = localStorage.theme;
+
+    if (userTheme === "light" || userTheme === "dark") {
+      toggleTheme(userTheme === "dark");
+    } else {
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => init());
+  document.addEventListener("astro:after-swap", () => init());
+  preloadTheme();
+</script><link rel="stylesheet" href="/_astro/PageLayout.RLnsdVR9.css"></head><body><header><div class="mx-auto max-w-[840px] px-5"><div class="flex flex-wrap gap-y-2 justify-between text-base"><a href="/de/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><div class="font-semibold">&lt;Tobias Leinss /&gt;</div></a><nav class="flex flex-wrap gap-x-1 text-base"><a href="/de/now" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><span class="whitespace-nowrap">jetzt</span></a><span>/</span><a href="/de/uses" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><span class="whitespace-nowrap">was ich nutze</span></a><span>/</span><a href="/de/work" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">werdegang</a><span>/</span><a href="/de/projects" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">projekte</a><span>/</span><a href="/projects/ethrome/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out" hreflang="en" lang="en" aria-label="English" title="English">en</a><button data-theme-toggle aria-label="Farbschema wechseln" class="group flex items-center justify-center ml-3 hover:text-black dark:hover:text-white transition-colors duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block dark:hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></nav></div></div></header><main><div class="mx-auto max-w-[840px] px-5"><div class="animate"><a href="/de/projects" class="relative group w-fit flex pl-7 pr-3 py-1.5 flex-nowrap rounded-sm border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current"><line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line><polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline></svg><div class="text-sm">Zurück zu den Projekten</div></a></div><div class="space-y-1 my-10"><div class="animate flex items-center gap-1.5"><div class="font-base text-sm"><time datetime="2023-10-01T00:00:00.000Z">1. Okt. 2023</time></div>&bull;<div class="font-base text-sm">5 Min. Lesezeit</div></div><h1 class="animate text-2xl font-semibold text-black dark:text-white">EthRome Hackathon</h1><nav class="animate flex gap-1"><a href="https://taikai.network/ethrome/hackathons/ethrome-23/projects/clnfyh1ya00gmye01j19ob1rz/idea" target="_blank" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out underline underline-offset-2">demo</a></nav></div><article class="longform animate"><h2 id="sharknado">Sharknado</h2>
+<p><img src="/images/projects/ethrome/sharknado.png" alt="demo image">
+<img src="/images/projects/ethrome/sharknado_1.png" alt="demo image">
+<img src="/images/projects/ethrome/sharknado_2.png" alt="demo image">
+<img src="/images/projects/ethrome/sharknado_3.jpg" alt="demo image">
+<img src="/images/projects/ethrome/sharknado_4.png" alt="demo image">
+<img src="/images/projects/ethrome/sharknado_5.png" alt="demo image"></p>
+<p>Sharknado: eine Plattform, auf der Sie anonym an Umfragen teilnehmen, Ihren NFT-Besitz per ZK-Proofs nachweisen und in einem pseudonymisierten, zufallsbasierten Bounty-System Geldpreise gewinnen.</p>
+<h2 id="repository-mit-dem-code-des-projekts-sollte-offen-und-öffentlich-sein">REPOSITORY MIT DEM CODE DES PROJEKTS (sollte offen und öffentlich sein)</h2>
+<p>GitHub-Organisation: <a href="https://github.com/Squalome">https://github.com/Squalome</a>
+Haupt-Repo: <a href="https://github.com/Squalome/sharknado">https://github.com/Squalome/sharknado</a>
+Semaphore-Repo: <a href="https://github.com/Squalome/Sharknado_Semaphore">https://github.com/Squalome/Sharknado_Semaphore</a>
+Figma-Prototyp: <a href="https://www.figma.com/proto/Sharknado">https://www.figma.com/proto/Sharknado</a></p>
+<p>Gegen Ende hatten wir ein Problem beim Mergen unserer Repos, zu denen unsere auf dem Gnosis Mainnet deployten Semaphore-SCs gehören. Deshalb reichen wir alle Repos ein. Sorry.</p>
+<h2 id="video-demo-max-3-min---keine-folien-nur-demo-des-projekts">VIDEO-DEMO (max. 3 Min.) - KEINE FOLIEN, NUR DEMO DES PROJEKTS</h2>
+<p><a href="https://www.loom.com/share/0899f73bf30c4db38de115dd9dd457f8">https://www.loom.com/share/0899f73bf30c4db38de115dd9dd457f8</a></p>
+<h2 id="contract-adressen-oder-website-urls-ihrer-deployten-anwendung-entweder-auf-einem-testnet-ihrer-wahl-oder-im-mainnet-einer-plattform-ihrer-wahl-keine-pflicht">Contract-Adresse(n) oder Website-URLs Ihrer deployten Anwendung, entweder auf einem Testnet Ihrer Wahl oder im Mainnet einer Plattform Ihrer Wahl. (KEINE Pflicht)</h2>
+<p>Contract Sharknado.sol auf dem Gnosis Mainnet: 0xeFB23e1a4573eBA1385D2730A4ddB9aeeb6ea20F
+Contract Semaphore.sol auf dem Gnosis Mainnet: 0xee5cF4Cc94bb97E2bA0d0a115b69c6075Ce42DD1
+Contract Sharktoken.sol (Beispiel-Contract für NFT Gating) auf dem Gnosis Mainnet: 0xF649Cb1884dcf8bAc5ccFA669083c489288685bb</p>
+<p>App: <a href="https://sharknado.vercel.app/">https://sharknado.vercel.app/</a></p>
+<h2 id="bounties-beschreibung-oder-erklärung-wie-sie-die-technologie-der-bounty-sponsoren-eingebunden-haben">Bounties (Beschreibung oder Erklärung, wie Sie die Technologie der Bounty-Sponsoren eingebunden haben)</h2>
+<p>PSE/Semaphore:</p>
+<p>Wir haben Semaphore von PSE genutzt, um den NFT-Besitz per ZK-Proofs nachzuweisen und in Gruppen Signale zu senden, mit denen man an der Umfrage teilnimmt.</p>
+<p>Außerdem haben wir die Challenge angenommen, Semaphore auf dem Gnosis Mainnet zu deployen: 0xee5cF4Cc94bb97E2bA0d0a115b69c6075Ce42DD1, und Subgraphs auf dem Gnosis Mainnet deployt: <a href="https://thegraph.com/studio/subgraph/sharknadosemaphoregraph">https://thegraph.com/studio/subgraph/sharknadosemaphoregraph</a></p>
+<p>Probleme mit Informationslecks und mögliche Lösungen für die Zukunft:</p>
+<ul>
+<li>
+<p>Das Abstimmungssignal enthält einen Boolean (die Stimme) und eine pseudonyme, frische Wallet-Adresse des Nutzers, an die die Bounty geht, wenn er in der Lotterie gewinnt. Bewegt ein Gewinner seine Mittel und hinterlässt on-chain Spuren, die seine Identität verraten (RIP, Freiheit von TornadoCash), wird seine Stimme öffentlich mit seiner Identität verknüpft.</p>
+<p>LÖSUNG: Ein in Reihe geschalteter Circuit (2. Gruppe). Beitreten kann nur, wer den Proof hat, um in der ersten Gruppe ein Signal zu senden, und dort sendet man seine frische Adresse als Signal getrennt von der Stimme. Einen solchen Circuit in Reihe zum ersten Template-Circuit von Semaphore hätten wir von Grund auf bauen müssen, und dafür reichte die Zeit im Hackathon nicht.</p>
+</li>
+<li>
+<p>Wer einer Gruppe beitritt, erzeugt eine On-Chain-Transaktion, die den Beitritt offenlegt. Man kann also sehen, wer in der Gruppe ist, aber nicht, wie jeder Einzelne abgestimmt hat.</p>
+</li>
+</ul>
+<p>Gnosis:</p>
+<p>Wir wollten die Umfrage mit der Plattform Swansky umsetzen. Wir hatten aber keine Erfahrung mit Swansky, und es fehlte die Interoperabilität mit den anderen Bounties und Technologie-Stacks, die wir für diesen Hackathon gewählt hatten. Deshalb sind wir einen anderen Weg gegangen.</p>
+<p>Wir haben es im Testnet versucht, dort ließen sich aber weder Subgraphs noch andere Tools deployen. Deshalb haben wir im Mainnet deployt. Subgraphs brauchten wir, weil das Semaphore-Paket im Client auf Subgraphs angewiesen ist.</p>
+<p>Das Gute daran: Wir sind im Mainnet live :) Viel Spaß beim Spielen, oder bauen Sie einen Client, um Umfragen zu veröffentlichen.</p>
+<p>The Graph:</p>
+<p>Wir haben Subgraphs für zwei Contracts deployt:</p>
+<ol>
+<li>
+<p>Contract Semaphore.sol auf dem Gnosis Mainnet: <a href="https://thegraph.com/studio/subgraph/sharknadosemaphoregraph">https://thegraph.com/studio/subgraph/sharknadosemaphoregraph</a>
+Build abgeschlossen: QmcxFkVPtMBtiH6a8yWFQk9nt8h5cr4Um4eGcWG46ds8QB
+Queries (HTTP): <a href="https://api.studio.thegraph.com/query/54895/sharknadosemaphoregraph/v0.0.1">https://api.studio.thegraph.com/query/54895/sharknadosemaphoregraph/v0.0.1</a></p>
+</li>
+<li>
+<p>Contract Sharknado.sol auf dem Gnosis Mainnet:
+<a href="https://api.studio.thegraph.com/query/54895/sharknadograph3/v0.0.5">https://api.studio.thegraph.com/query/54895/sharknadograph3/v0.0.5</a></p>
+</li>
+<li>
+<p>Contract SharkToken.sol auf dem Gnosis Mainnet:
+<a href="https://api.studio.thegraph.com/query/54895/sharktokengraph/v0.0.1">https://api.studio.thegraph.com/query/54895/sharktokengraph/v0.0.1</a></p>
+</li>
+</ol>
+<p>BUIDLGUIDL:</p>
+<p>Wir haben Scaffold-ETH2 als Boilerplate genutzt, um die fertigen Komponenten zu verwenden: Anbindung an Smart Contracts mit Hot Reload und Integration der Wallet-Anbieter.</p>
+<p>Danke, das hat uns das Leben leichter gemacht: <a href="https://sharknado.vercel.app/">https://sharknado.vercel.app/</a></p>
+<p>Interface:</p>
+<p>Das gesamte Designkonzept von Sharknado ist von der Welt der Haie und Meereswellen inspiriert.</p>
+<p>Markenkonzept:
+In unserer Markenvision wollten wir mit lebendigen, elektrischen Farben eine zeitgemäße Energie vermitteln: „Navy Blue“ und „Aquagreen“. „Otto Attack Wide“ war die perfekte Schrift dazu. Die kontrastreiche Serifenschrift hat scharfe Winkel, die an Haizähne erinnern, und erzeugt so einen visuell fesselnden Effekt. Das ausgewogene Design wirkt selbstbewusst und dynamisch, ideal für solche Web3-Projekte.</p>
+<p>UX-Mechanik:
+Ein Onboarding dient der Erklärung, damit sich Nutzer leicht mit unserem Produkt vertraut machen. Die Gamification auf der Erfolgsseite soll die Metriken für Engagement und Beteiligung steigern und das Produkterlebnis lohnend machen. Für bessere Retention zeigen wir Empfehlungen, sobald Nutzer ihren Flow abgeschlossen haben.</p>
+<p>Fortschrittsbalken setzen wir überall dort ein, wo sie nötig sind, damit Nutzer informiert bleiben und kein unnötiger Stress entsteht. Transaktionen bündeln wir in Schritte, damit Nutzer den Prozess durchlaufen, ohne sich überfordert oder erschöpft zu fühlen.</p>
+<p>Pixelgenau konnten wir das Design im Frontend nicht fertigstellen, deshalb finden Sie den Design-Flow in der Figma unseres Teams.
+Den klickbaren Prototyp in Figma finden Sie hier
+Und das Design selbst in Figma hier</p>
+<p>Geschäftlicher Nutzen von Interface für Sharknado:
+Interface liefert einen On-Chain-Feed der Ereignisse, Sharknado liefert Off-Chain-Meinungen. Für uns ist das eine im Ozean geschlossene Ehe, denn KOMBINIERT sind solche Daten für die Web3-Marktforschung um ein Vielfaches wertvoller.</p>
+<h2 id="falls-ihr-projekt-vor-dem-ethrome-hackathon-begonnen-wurde-verlinken-sie-hier-ein-öffentliches-google-doc-das-alle-früheren-iterationen-im-detail-beschreibt-beachten-sie-die-hackathon-regeln-zu-bereits-bestehenden-projekten">Falls Ihr Projekt vor dem ETHRome-Hackathon begonnen wurde, verlinken Sie hier ein ÖFFENTLICHES Google Doc, das alle früheren Iterationen im Detail beschreibt (beachten Sie die Hackathon-Regeln zu bereits bestehenden Projekten)</h2>
+<p><a href="https://docs.google.com/document/d/1P82PdIE8cJaCSv3T3fJlwNCxeJ-FBTuPOeYXBvmK1UU/edit?usp=sharing">https://docs.google.com/document/d/1P82PdIE8cJaCSv3T3fJlwNCxeJ-FBTuPOeYXBvmK1UU/edit?usp=sharing</a></p>
+</article></div></main><footer class="animate"><div class="mx-auto max-w-[840px] px-5"><div class="relative"><div class="absolute right-0 -top-20"><button id="back-to-top" class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded-sm border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current rotate-90"><line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line><polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline></svg><div class="text-sm">Nach oben</div></button></div></div><div class="rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 mt-4"><h2 class="font-semibold text-black dark:text-white mb-1">Auf dem Laufenden bleiben</h2><p class="text-sm mb-4">Ab und zu Neuigkeiten zu meinen Projekten, Technik und neuen Blogartikeln.</p><form id="newsletter-form" class="flex gap-2"><label for="newsletter-email" class="sr-only">E-Mail-Adresse</label><input id="newsletter-email" type="email" placeholder="ihre@email.de" required class="flex-1 px-3 py-2 text-sm rounded-md border border-black/15 dark:border-white/15 bg-white dark:bg-slate-800 text-black dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40 focus:outline-hidden focus:ring-1 focus:ring-black/25 dark:focus:ring-white/25"><button id="newsletter-btn" type="submit" class="px-4 py-2 text-sm font-medium rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-black/80 dark:hover:bg-white/80 transition-colors whitespace-nowrap">Abonnieren</button></form><p id="newsletter-status" class="text-sm mt-2 hidden" role="alert" aria-live="polite"></p><!-- opacity-80, not 50: at 50 this small print sat at 2.4:1 against the
+       card background, well under the 4.5:1 WCAG AA needs, and it carries the
+       privacy notice. 75 was still short at 4.45:1. --><p class="text-xs mt-2 opacity-80">Kein Spam, jederzeit abbestellbar. Ihre E-Mail-Adresse liegt bei <a href="https://listmonk.app" target="_blank" rel="noopener" class="underline">Listmonk</a> (selbst gehostet) und wird nur für diesen Newsletter genutzt. Mehr in der <a href="/de/datenschutz" class="underline">Datenschutzerklärung</a>.</p></div><script>(function(){const LISTMONK_URL = "https://newsletter.funnel.leinss.xyz/api/public/subscription";
+const LIST_UUID = "56525a08-c916-4c7c-ae2c-36481da13071";
+const MESSAGES = {"submit":"Abonnieren","busy":"Wird angemeldet...","done":"Danke! Bitte bestätigen Sie die Anmeldung in Ihrem Postfach.","error":"Das hat nicht geklappt. Bitte versuchen Sie es noch einmal."};
+
+  document.getElementById('newsletter-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('newsletter-email').value;
+    const btn = document.getElementById('newsletter-btn');
+    const status = document.getElementById('newsletter-status');
+
+    btn.disabled = true;
+    btn.textContent = MESSAGES.busy;
+    status.classList.add('hidden');
+
+    try {
+      const res = await fetch(LISTMONK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, list_uuids: [LIST_UUID] })
+      });
+
+      if (res.ok || res.status === 409) {
+        status.textContent = MESSAGES.done;
+        status.className = 'text-sm mt-2 text-green-600 dark:text-green-400';
+        document.getElementById('newsletter-email').value = '';
+      } else {
+        throw new Error('Failed');
+      }
+    } catch (err) {
+      console.error('Newsletter subscription failed:', err);
+      status.textContent = MESSAGES.error;
+      status.className = 'text-sm mt-2 text-red-600 dark:text-red-400';
+    }
+
+    status.classList.remove('hidden');
+    btn.disabled = false;
+    btn.textContent = MESSAGES.submit;
+  });
+})();</script><div class="flex justify-between items-center mt-6"><div>&copy; 2026 | Tobias Leinss</div><div class="flex gap-4"><a href="/de/datenschutz" class="underline">Datenschutzerklärung</a><a href="/de/impressum" class="underline">Impressum</a></div><button id="theme-toggle" data-theme-toggle aria-label="Farbschema wechseln" class="group size-9 flex items-center justify-center rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors"><!-- Sun icon (shown in dark mode) --><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg><!-- Moon icon (shown in light mode) --><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block dark:hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></div></footer></body></html>

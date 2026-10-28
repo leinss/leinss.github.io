@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="de"><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: dark)"><link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: light)"><link rel="icon" type="image/x-icon" href="/favicon.ico"><meta name="generator" content="Astro v7.2.0"><!-- Sitemap --><link rel="sitemap" href="/sitemap-index.xml"><!-- Font preloads --><link rel="preload" href="/_astro/ibm-plex-sans-latin-400-normal.CDDApCn2.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/ibm-plex-sans-latin-500-normal.6ng42L7E.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/ibm-plex-sans-latin-600-normal.CuJfVYMP.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-400-normal.DnxXpLNu.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-600-normal.B-3RcLOQ.woff2" as="font" type="font/woff2" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://leinss.xyz/de/work/"><!-- hreflang alternates (translated content) --><link rel="alternate" hreflang="en" href="https://leinss.xyz/work"><link rel="alternate" hreflang="de" href="https://leinss.xyz/de/work"><!-- Primary Meta Tags --><title>Werdegang | Tobias Leinss</title><meta name="title" content="Werdegang | Tobias Leinss"><meta name="description" content="Wo ich gearbeitet habe und was ich dort gemacht habe."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://leinss.xyz/de/work/"><meta property="og:title" content="Werdegang | Tobias Leinss"><meta property="og:description" content="Wo ich gearbeitet habe und was ich dort gemacht habe."><meta property="og:image" content="https://leinss.xyz/og.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://leinss.xyz/de/work/"><meta property="twitter:title" content="Werdegang | Tobias Leinss"><meta property="twitter:description" content="Wo ich gearbeitet habe und was ich dort gemacht habe."><meta property="twitter:image" content="https://leinss.xyz/og.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DW-LBy1z.js"></script><!-- RSS Link --><link rel="alternate" type="application/rss+xml" title="Tobias Leinss" href="https://leinss.xyz/de/rss.xml"><!-- JSON-LD Structured Data --><script defer src="https://umami.funnel.leinss.xyz/script.js" data-website-id="bd21affd-05bc-4aeb-b312-c913f438ca90"></script><script type="module" src="/_astro/Head.astro_astro_type_script_index_0_lang.B7wsORg7.js"></script><script type="module">window.addEventListener(`load`,()=>{typeof feather<`u`&&feather.replace()}),document.addEventListener(`astro:before-swap`,e=>[...e.newDocument.head.querySelectorAll(`link[as="font"]`)].forEach(e=>e.remove()));</script><script>
+  function init() {
+    preloadTheme();
+    onScroll();
+    animate();
+
+    // Initialize feather icons
+    if (typeof feather !== 'undefined') {
+      feather.replace();
+    }
+
+    const backToTop = document.getElementById("back-to-top");
+    backToTop?.addEventListener("click", (event) => scrollToTop(event));
+
+    const backToPrev = document.getElementById("back-to-prev");
+    backToPrev?.addEventListener("click", () => window.history.back());
+
+    document.querySelectorAll("[data-theme-toggle]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.contains("dark");
+        localStorage.setItem("theme", isDark ? "light" : "dark");
+        toggleTheme(!isDark);
+      });
+    });
+
+    document.addEventListener("scroll", onScroll);
+  }
+
+  function animate() {
+    const animateElements = document.querySelectorAll(".animate");
+
+    animateElements.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add("show");
+      }, index * 150);
+    });
+  }
+
+  function onScroll() {
+    if (window.scrollY > 0) {
+      document.documentElement.classList.add("scrolled");
+    } else {
+      document.documentElement.classList.remove("scrolled");
+    }
+  }
+
+  function scrollToTop(event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+function toggleTheme(dark) {
+    const css = document.createElement("style");
+
+    css.appendChild(
+      document.createTextNode(
+        `* {
+             -webkit-transition: none !important;
+             -moz-transition: none !important;
+             -o-transition: none !important;
+             -ms-transition: none !important;
+             transition: none !important;
+          }
+        `,
+      )
+    );
+
+    document.head.appendChild(css);
+
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+  window.getComputedStyle(css).opacity;
+    document.head.removeChild(css);
+  }
+
+  function preloadTheme() {
+    const userTheme = localStorage.theme;
+
+    if (userTheme === "light" || userTheme === "dark") {
+      toggleTheme(userTheme === "dark");
+    } else {
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => init());
+  document.addEventListener("astro:after-swap", () => init());
+  preloadTheme();
+</script><link rel="stylesheet" href="/_astro/PageLayout.RLnsdVR9.css"></head><body><header><div class="mx-auto max-w-[840px] px-5"><div class="flex flex-wrap gap-y-2 justify-between text-base"><a href="/de/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><div class="font-semibold">&lt;Tobias Leinss /&gt;</div></a><nav class="flex flex-wrap gap-x-1 text-base"><a href="/de/now" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><span class="whitespace-nowrap">jetzt</span></a><span>/</span><a href="/de/uses" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><span class="whitespace-nowrap">was ich nutze</span></a><span>/</span><a href="/de/work" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">werdegang</a><span>/</span><a href="/de/projects" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">projekte</a><span>/</span><a href="/work" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out" hreflang="en" lang="en" aria-label="English" title="English">en</a><button data-theme-toggle aria-label="Farbschema wechseln" class="group flex items-center justify-center ml-3 hover:text-black dark:hover:text-white transition-colors duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block dark:hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></nav></div></div></header><main><div class="mx-auto max-w-[840px] px-5"><div class="space-y-10"><h1 class="animate font-semibold text-black dark:text-white">Werdegang</h1><ul class="flex flex-col divide-y divide-black/10 dark:divide-white/10"><li class="animate py-9 first:pt-0 last:pb-0"><div class="text-xs uppercase tracking-wider opacity-60">Okt 2025 - heute</div><h2 class="mt-1.5 font-semibold text-black dark:text-white">Gnosis</h2><div class="text-sm opacity-75">Senior Backend Engineer</div><div class="entry-body mt-5"><p>Backend-Dienste und die gesamte Infrastruktur des Circles-Protokolls.</p>
+<p><a href="https://www.gnosis.io">gnosis.io</a></p>
+<p><strong>dienste</strong></p>
+<p>Vier Backend-Dienste vom ersten Commit an entwickelt, in TypeScript auf
+PostgreSQL: die Authentifizierung für das ganze Ökosystem, mit Sign-In with
+Ethereum und Signaturen von Smart Wallets; ein Empfehlungsdienst; ein
+Profildienst, der Onchain-Profile indiziert und ihre Inhalte auf IPFS pinnt;
+und ein Scoring-Dienst, der je Gruppe einen Sparse-Merkle-Baum führt und die
+Beweise liefert, die das SDK beim Minten vorlegt. Onchain veröffentlicht wird
+nur die Wurzel.</p>
+<p><strong>indizierung</strong></p>
+<p>Der größte Anteil am Nethermind-Plugin des Protokolls, das Circles-Events im
+Execution-Client indiziert und als abfragbare API bereitstellt. C# und .NET,
+daneben eine Marktplatz-API und ereignisgesteuerte Worker für das
+Trust-Management.</p>
+<p><strong>infrastruktur</strong></p>
+<p>Multi-Host-Plattform, gesteuert über Ansible: Blockchain-Nodes, PostgreSQL mit
+automatischem Failover und Streaming-Replikation, Connection-Pooling,
+Reverse-Proxy und TLS, Firewall und Rolling Deployments auf Staging- und
+Produktivumgebung.</p>
+<p><strong>überwachung</strong></p>
+<p>Monitoring-Stack nach dem Hub-Satellite-Prinzip aus Prometheus, Loki, Grafana,
+Tempo und Alertmanager, mit Remote-Write von den Satelliten, zentralem
+Log-Versand und Alarmen zum Zustand von Nodes, Datenbanken und Endpunkten.</p>
+</div></li><li class="animate py-9 first:pt-0 last:pb-0"><div class="text-xs uppercase tracking-wider opacity-60">Feb 2025 - heute</div><h2 class="mt-1.5 font-semibold text-black dark:text-white">Leinss Consulting</h2><div class="text-sm opacity-75">Gründer &amp; selbstständiger Berater</div><div class="entry-body mt-5"><p>Beratung für Web-Produkte und Prozessautomatisierung, durchgehend in eigener
+Hand: vom Angebot als festes Leistungspaket bis zur Auslieferung.</p>
+<p><a href="https://consulting.leinss.xyz">consulting.leinss.xyz</a></p>
+<p><strong>umsetzung</strong></p>
+<p>Ein Online-Shop im Produktivbetrieb, eine Backoffice-Anwendung zur
+Produktverwaltung und eine Veranstaltungsseite, auf PostgreSQL mit
+Row-Level-Security, Objektspeicher und kontinuierlichem Deployment.</p>
+<p><strong>anbindung</strong></p>
+<p>Anbindung an ein fremdbetriebenes Lieferkettensystem, sodass Daten ohne
+erneutes Abtippen zwischen beiden Systemen übertragen werden.</p>
+</div></li><li class="animate py-9 first:pt-0 last:pb-0"><div class="text-xs uppercase tracking-wider opacity-60">Jul 2024 - Jan 2025</div><h2 class="mt-1.5 font-semibold text-black dark:text-white">datalatte.com</h2><div class="text-sm opacity-75">Mitgründer &amp; Software-Architekt</div><div class="entry-body mt-5"><p>Leitung von Architektur und Entwicklung einer KI-gestützten
+Matchmaking-Plattform. Sie ging an den Start und wurde über mehrere
+Neuausrichtungen umgebaut, bevor das Unternehmen abgewickelt wurde.</p>
+<p><a href="https://datalatte.com">datalatte.com</a></p>
+<p><strong>matchmaking</strong></p>
+<p>Brachte Teilnehmende von Konferenzen und Meetups anhand ihrer öffentlichen
+Social-Media-Präsenz zusammen. Daten- und KI-Pipelines erstellten die Profile,
+ein Algorithmus ordnete ähnliche Personen einander zu.</p>
+<p><strong>pipelines und schnittstellen</strong></p>
+<p>Datenpipelines, die Nutzerprofile aus öffentlichen Daten extrahieren,
+zusammenfassen und erzeugen, ein Telegram-Bot, der Nutzerinteraktion und
+Datenerfassung automatisiert, und eine Oberfläche auf Farcaster Frames im
+Frontend.</p>
+</div></li><li class="animate py-9 first:pt-0 last:pb-0"><div class="text-xs uppercase tracking-wider opacity-60">Dez 2022 - Jun 2024</div><h2 class="mt-1.5 font-semibold text-black dark:text-white">Blockscape.network</h2><div class="text-sm opacity-75">Software-Entwickler - Blockchain</div><div class="entry-body mt-5"><p>Automatisierungswerkzeuge für die Ökosysteme von Ethereum und Cosmos, in Golang
+und Rust.</p>
+<p><a href="https://blockscape.network">blockscape.network</a></p>
+<p><strong>automatisierung</strong></p>
+<p>Restaking, Governance und Alarmierung auf Stake-Änderungen, damit Validatoren
+die Zusagen einhalten, die sie eingegangen sind. Geschrieben in Golang.</p>
+<p><strong>berichtswesen</strong></p>
+<p>Ein Werkzeug, das zurückliegende Transaktionen für die Finanzberichterstattung
+abglich. Geschrieben in Rust.</p>
+</div></li><li class="animate py-9 first:pt-0 last:pb-0"><div class="text-xs uppercase tracking-wider opacity-60">Jun 2022 - Dez 2022</div><h2 class="mt-1.5 font-semibold text-black dark:text-white">Encode.club</h2><div class="text-sm opacity-75">Blockchain-Entwicklung in Eigenregie</div><div class="entry-body mt-5"><p>Vollzeitiger Wechsel in die Blockchain-Entwicklung.</p>
+<p><a href="https://www.encode.club">encode.club</a></p>
+<p><strong>programm</strong></p>
+<p>Abschluss des Encode.club-Programms für Solidity- und Ethereum-Entwicklung.</p>
+<p><strong>öffentlich entwickelt</strong></p>
+<p>Projekte bei EthGlobal-Hackathons, mit Finaleinzug bei
+<a href="/projects/ethglobal-fevm">FEVM</a>.</p>
+</div></li><li class="animate py-9 first:pt-0 last:pb-0"><div class="text-xs uppercase tracking-wider opacity-60">Dez 2020 - Jun 2022</div><h2 class="mt-1.5 font-semibold text-black dark:text-white">Fraunhofer Institute</h2><div class="text-sm opacity-75">Wissenschaftlicher Mitarbeiter - Autonome Produktion</div><div class="entry-body mt-5"><p>Gab die technische Richtung vor und leitete die Umsetzung einer
+ereignisgesteuerten Datenarchitektur für KI-gestützte Analysen von
+Fertigungslinien.</p>
+<p><strong>architektur</strong></p>
+<p>Von der SPS an der Linie über MQTT und Kafka bis in die Zeitreihen-Speicherung,
+mit Faust für Stream-Processing in Python, MongoDB für Dokumente und React mit
+Redux für die Bedienoberfläche.</p>
+<p><strong>was es war</strong></p>
+<p>Geliefert als lauffähiger Prototyp, nicht als produktiv betriebenes System.</p>
+<p>Befristeter Forschungsvertrag.</p>
+</div></li><li class="animate py-9 first:pt-0 last:pb-0"><div class="text-xs uppercase tracking-wider opacity-60">Dez 2019 - Nov 2020</div><h2 class="mt-1.5 font-semibold text-black dark:text-white">Crea Ltd.</h2><div class="text-sm opacity-75">Senior Fullstack-Entwickler</div><div class="entry-body mt-5"><p>Eine Multi-Channel-SaaS-Anwendung für Marken- und Content-Management, samt der
+Infrastruktur dahinter.</p>
+<p><strong>produkt</strong></p>
+<p>Content-Assets über mehrere Vertriebskanäle, Kampagnen, Lagerumbuchung und
+Reporting, mit zehntausenden parallelen Prozessen.</p>
+<p><strong>stack</strong></p>
+<p>React mit Redux im Frontend, dahinter Django auf PostgreSQL, ausgerollt über
+Convox mit AWS Lambda und S3, dazu Sentry für die Fehlerverfolgung.</p>
+<p>Befristeter Vertrag.</p>
+</div></li><li class="animate py-9 first:pt-0 last:pb-0"><div class="text-xs uppercase tracking-wider opacity-60">Mär 2019 - Nov 2019</div><h2 class="mt-1.5 font-semibold text-black dark:text-white">Appy</h2><div class="text-sm opacity-75">Frontend- &amp; Mobile-Entwickler</div><div class="entry-body mt-5"><p>Ein SaaS-Dashboard und die zugehörige mobile App für Immobilienbetreiber.</p>
+<p><strong>produkt</strong></p>
+<p>Verwaltung von Objekten und Büros, Buchung von Räumen und Geräten, Chat und
+Benachrichtigungen über Lieferungen. Dashboard und App teilen sich ein Backend.</p>
+<p><strong>stack</strong></p>
+<p>React mit Redux und React Router im Web, React Native auf Mobilgeräten,
+Firebase hinter beiden.</p>
+<p>Betreuung eines Junior-Entwicklers.</p>
+</div></li><li class="animate py-9 first:pt-0 last:pb-0"><div class="text-xs uppercase tracking-wider opacity-60">Aug 2018 - Feb 2019</div><h2 class="mt-1.5 font-semibold text-black dark:text-white">Sandbox</h2><div class="text-sm opacity-75">Mobile-App-Entwickler</div><div class="entry-body mt-5"><p>Sandbox Play, eine Social-Media-App für kompetitive Gamer, entwickelt mit React
+Native.</p>
+<p><strong>produkt</strong></p>
+<p>Profile, Beiträge, Kommentare, privater Chat, Folgen und Ranglisten.</p>
+<p><strong>stack</strong></p>
+<p>React Native mit React Navigation, dazu MobX neben Redux für die
+Zustandsverwaltung.</p>
+<p>Betreuung von drei Junior-Entwicklern.</p>
+</div></li></ul></div></div></main><footer class="animate"><div class="mx-auto max-w-[840px] px-5"><div class="relative"><div class="absolute right-0 -top-20"><button id="back-to-top" class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded-sm border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current rotate-90"><line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line><polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline></svg><div class="text-sm">Nach oben</div></button></div></div><div class="rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 mt-4"><h2 class="font-semibold text-black dark:text-white mb-1">Auf dem Laufenden bleiben</h2><p class="text-sm mb-4">Ab und zu Neuigkeiten zu meinen Projekten, Technik und neuen Blogartikeln.</p><form id="newsletter-form" class="flex gap-2"><label for="newsletter-email" class="sr-only">E-Mail-Adresse</label><input id="newsletter-email" type="email" placeholder="ihre@email.de" required class="flex-1 px-3 py-2 text-sm rounded-md border border-black/15 dark:border-white/15 bg-white dark:bg-slate-800 text-black dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40 focus:outline-hidden focus:ring-1 focus:ring-black/25 dark:focus:ring-white/25"><button id="newsletter-btn" type="submit" class="px-4 py-2 text-sm font-medium rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-black/80 dark:hover:bg-white/80 transition-colors whitespace-nowrap">Abonnieren</button></form><p id="newsletter-status" class="text-sm mt-2 hidden" role="alert" aria-live="polite"></p><!-- opacity-80, not 50: at 50 this small print sat at 2.4:1 against the
+       card background, well under the 4.5:1 WCAG AA needs, and it carries the
+       privacy notice. 75 was still short at 4.45:1. --><p class="text-xs mt-2 opacity-80">Kein Spam, jederzeit abbestellbar. Ihre E-Mail-Adresse liegt bei <a href="https://listmonk.app" target="_blank" rel="noopener" class="underline">Listmonk</a> (selbst gehostet) und wird nur für diesen Newsletter genutzt. Mehr in der <a href="/de/datenschutz" class="underline">Datenschutzerklärung</a>.</p></div><script>(function(){const LISTMONK_URL = "https://newsletter.funnel.leinss.xyz/api/public/subscription";
+const LIST_UUID = "56525a08-c916-4c7c-ae2c-36481da13071";
+const MESSAGES = {"submit":"Abonnieren","busy":"Wird angemeldet...","done":"Danke! Bitte bestätigen Sie die Anmeldung in Ihrem Postfach.","error":"Das hat nicht geklappt. Bitte versuchen Sie es noch einmal."};
+
+  document.getElementById('newsletter-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('newsletter-email').value;
+    const btn = document.getElementById('newsletter-btn');
+    const status = document.getElementById('newsletter-status');
+
+    btn.disabled = true;
+    btn.textContent = MESSAGES.busy;
+    status.classList.add('hidden');
+
+    try {
+      const res = await fetch(LISTMONK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, list_uuids: [LIST_UUID] })
+      });
+
+      if (res.ok || res.status === 409) {
+        status.textContent = MESSAGES.done;
+        status.className = 'text-sm mt-2 text-green-600 dark:text-green-400';
+        document.getElementById('newsletter-email').value = '';
+      } else {
+        throw new Error('Failed');
+      }
+    } catch (err) {
+      console.error('Newsletter subscription failed:', err);
+      status.textContent = MESSAGES.error;
+      status.className = 'text-sm mt-2 text-red-600 dark:text-red-400';
+    }
+
+    status.classList.remove('hidden');
+    btn.disabled = false;
+    btn.textContent = MESSAGES.submit;
+  });
+})();</script><div class="flex justify-between items-center mt-6"><div>&copy; 2026 | Tobias Leinss</div><div class="flex gap-4"><a href="/de/datenschutz" class="underline">Datenschutzerklärung</a><a href="/de/impressum" class="underline">Impressum</a></div><button id="theme-toggle" data-theme-toggle aria-label="Farbschema wechseln" class="group size-9 flex items-center justify-center rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors"><!-- Sun icon (shown in dark mode) --><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg><!-- Moon icon (shown in light mode) --><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block dark:hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></div></footer></body></html>

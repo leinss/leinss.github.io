@@ -1,0 +1,150 @@
+<!DOCTYPE html><html lang="de"><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: dark)"><link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: light)"><link rel="icon" type="image/x-icon" href="/favicon.ico"><meta name="generator" content="Astro v7.2.0"><!-- Sitemap --><link rel="sitemap" href="/sitemap-index.xml"><!-- Font preloads --><link rel="preload" href="/_astro/ibm-plex-sans-latin-400-normal.CDDApCn2.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/ibm-plex-sans-latin-500-normal.6ng42L7E.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/ibm-plex-sans-latin-600-normal.CuJfVYMP.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-400-normal.DnxXpLNu.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-600-normal.B-3RcLOQ.woff2" as="font" type="font/woff2" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://leinss.xyz/de/now/"><!-- hreflang alternates (translated content) --><link rel="alternate" hreflang="de" href="https://leinss.xyz/de/now/"><link rel="alternate" hreflang="en" href="https://leinss.xyz/now/"><!-- Primary Meta Tags --><title>Jetzt | Tobias Leinss</title><meta name="title" content="Jetzt | Tobias Leinss"><meta name="description" content="Woran ich gerade arbeite."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://leinss.xyz/de/now/"><meta property="og:title" content="Jetzt | Tobias Leinss"><meta property="og:description" content="Woran ich gerade arbeite."><meta property="og:image" content="https://leinss.xyz/og.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://leinss.xyz/de/now/"><meta property="twitter:title" content="Jetzt | Tobias Leinss"><meta property="twitter:description" content="Woran ich gerade arbeite."><meta property="twitter:image" content="https://leinss.xyz/og.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DW-LBy1z.js"></script><!-- RSS Link --><link rel="alternate" type="application/rss+xml" title="Tobias Leinss" href="https://leinss.xyz/de/rss.xml"><!-- JSON-LD Structured Data --><script defer src="https://umami.funnel.leinss.xyz/script.js" data-website-id="bd21affd-05bc-4aeb-b312-c913f438ca90"></script><script type="module" src="/_astro/Head.astro_astro_type_script_index_0_lang.B7wsORg7.js"></script><script type="module">window.addEventListener(`load`,()=>{typeof feather<`u`&&feather.replace()}),document.addEventListener(`astro:before-swap`,e=>[...e.newDocument.head.querySelectorAll(`link[as="font"]`)].forEach(e=>e.remove()));</script><script>
+  function init() {
+    preloadTheme();
+    onScroll();
+    animate();
+
+    // Initialize feather icons
+    if (typeof feather !== 'undefined') {
+      feather.replace();
+    }
+
+    const backToTop = document.getElementById("back-to-top");
+    backToTop?.addEventListener("click", (event) => scrollToTop(event));
+
+    const backToPrev = document.getElementById("back-to-prev");
+    backToPrev?.addEventListener("click", () => window.history.back());
+
+    document.querySelectorAll("[data-theme-toggle]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.contains("dark");
+        localStorage.setItem("theme", isDark ? "light" : "dark");
+        toggleTheme(!isDark);
+      });
+    });
+
+    document.addEventListener("scroll", onScroll);
+  }
+
+  function animate() {
+    const animateElements = document.querySelectorAll(".animate");
+
+    animateElements.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add("show");
+      }, index * 150);
+    });
+  }
+
+  function onScroll() {
+    if (window.scrollY > 0) {
+      document.documentElement.classList.add("scrolled");
+    } else {
+      document.documentElement.classList.remove("scrolled");
+    }
+  }
+
+  function scrollToTop(event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+function toggleTheme(dark) {
+    const css = document.createElement("style");
+
+    css.appendChild(
+      document.createTextNode(
+        `* {
+             -webkit-transition: none !important;
+             -moz-transition: none !important;
+             -o-transition: none !important;
+             -ms-transition: none !important;
+             transition: none !important;
+          }
+        `,
+      )
+    );
+
+    document.head.appendChild(css);
+
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+  window.getComputedStyle(css).opacity;
+    document.head.removeChild(css);
+  }
+
+  function preloadTheme() {
+    const userTheme = localStorage.theme;
+
+    if (userTheme === "light" || userTheme === "dark") {
+      toggleTheme(userTheme === "dark");
+    } else {
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => init());
+  document.addEventListener("astro:after-swap", () => init());
+  preloadTheme();
+</script><link rel="stylesheet" href="/_astro/PageLayout.RLnsdVR9.css"></head><body><header><div class="mx-auto max-w-[840px] px-5"><div class="flex flex-wrap gap-y-2 justify-between text-base"><a href="/de/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><div class="font-semibold">&lt;Tobias Leinss /&gt;</div></a><nav class="flex flex-wrap gap-x-1 text-base"><a href="/de/now" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><span class="whitespace-nowrap">jetzt</span></a><span>/</span><a href="/de/uses" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><span class="whitespace-nowrap">was ich nutze</span></a><span>/</span><a href="/de/work" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">werdegang</a><span>/</span><a href="/de/projects" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">projekte</a><span>/</span><a href="/now/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out" hreflang="en" lang="en" aria-label="English" title="English">en</a><button data-theme-toggle aria-label="Farbschema wechseln" class="group flex items-center justify-center ml-3 hover:text-black dark:hover:text-white transition-colors duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block dark:hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></nav></div></div></header><main><div class="mx-auto max-w-[840px] px-5"><div class="space-y-1 my-10"><div class="animate flex items-center gap-1.5"><div class="font-base text-sm"><time datetime="2026-08-26T00:00:00.000Z">26. Aug. 2026</time></div>&bull;<div class="font-base text-sm">3 Min. Lesezeit</div></div><h1 class="animate text-2xl font-semibold text-black dark:text-white">Jetzt</h1></div><article class="longform animate"><p>Zwei Dinge haben gerade meine Aufmerksamkeit: die Infrastruktur unter einem Blockchain-Protokoll und eine Reihe datenschutzfreundlicher Apps, die auf Ihrem eigenen Gerät laufen.</p>
+<h2 id="der-hauptberuf">Der Hauptberuf</h2>
+<p>Ich bin Senior Backend Engineer bei <a href="https://www.gnosis.io">Gnosis</a> und arbeite an <a href="https://aboutcircles.com">Circles</a>. Ich verantworte die Backend-Dienste und die gesamte Plattform darunter, vom Code der Dienste über das Deployment bis zur Überwachung: sechs Hosts mit über 1,5 Millionen Anfragen pro Tag, sieben öffentliche Dienste bei 99,99 % Verfügbarkeit.</p>
+<p>Das meiste, was ich dort gebaut habe, fällt in drei Bereiche. Vier Backend-Dienste, geschrieben ab dem ersten Commit, in TypeScript auf PostgreSQL. Der größte Teil des Protokoll-Indexers, eines C#-Plugins im Execution Client, dessen Abfrageschicht ich neu gebaut habe: Die p95-Antwortzeiten sanken je nach Aufruf um das 5- bis 141-Fache.</p>
+<p>Und die Plattform selbst. Sie ist von einer verwalteten Cloud auf Bare Metal umgezogen, und achtunddreißig Ansible-Rollen haben Terraform und Kubernetes ersetzt. Diese Rollen deployen Blockchain-Nodes und PostgreSQL mit automatischem Failover, Replikation und Pooling, Host für Host und ohne Ausfallzeit. Die monatlichen Kosten sind um zwei Drittel gefallen, und eine gemergte Änderung ist jetzt in 10 bis 20 Minuten in Produktion.</p>
+<p>Observability ist mir wohl wichtiger, als es normal ist. Zweistufige Health Checks nehmen einen fehlerhaften Node innerhalb von 90 Sekunden aus dem DNS, und weil ein Jahr an Metriken vorliegt, ist eine Regression eine Frage mit einer Antwort und kein Streit.</p>
+<h2 id="die-apps">Die Apps</h2>
+<p>Daneben baue ich <strong>datenschutzfreundliche Apps</strong>: Werkzeuge, die auf Ihrem eigenen Gerät laufen, ohne Konto und ohne Backend auskommen und die Cloud nur erreichen, wenn <em>Sie</em> sich entscheiden, Ihren eigenen KI-Schlüssel mitzubringen. Keine Telemetrie, keine Datensammlung, kein Lock-in.</p>
+<p>Die meiste Zeit davon geht in <a href="/de/projects/TobiBoard">TobiBoard</a> und <a href="/de/projects/TobiReader">TobiReader</a>. TobiBoard ist eine Android-Tastatur, deren KI-Spracheingabe und Textkorrektur auf dem Handy selbst laufen, ohne Konto und ohne API-Schlüssel. TobiReader ist ein RSS-Reader, der lokal arbeitet, mit Vorlesen auf dem Gerät und optionalen KI-Zusammenfassungen. TobiBoard verteile ich über mein eigenes <a href="https://leinss.xyz/TobiBoard/repo">F-Droid-Repository</a>.</p>
+<p>Darum herum gibt es ein kleines Portfolio: einen Bildschirmrekorder für mehrere Plattformen, Spracheingabe und Werkzeuge für die Menüleiste unter macOS und ein paar Nebenprojekte mit KI-Unterstützung. Die vollständige Liste steht auf der <a href="/de/projects">Projektseite</a>.</p>
+<p>Was all das verbindet: Ich will sehen, wie weit nützliche Software mit KI kommt, wenn die Daten der Nutzer auf deren eigener Hardware bleiben. In der Praxis sind das zwei Muster. Modelle laufen lokal, wo immer das machbar ist. Bei TobiBoard gilt das inzwischen für die Spracherkennung und für das LLM der Textkorrektur. Für den Rest gilt der eigene Schlüssel: Alles, was in die Cloud geht, nutzt <em>Ihren</em> API-Schlüssel und Ihren Endpunkt, nie meinen.</p>
+<h2 id="und-etwas-beratung">Und etwas Beratung</h2>
+<p>Außerdem übernehme ich Aufträge über <a href="https://consulting.leinss.xyz">Leinss Consulting</a> und helfe Dienstleistungsunternehmen, generative KI einzusetzen. Derzeit sind das ein Online-Shop mit einer Backoffice-App für die Produktverwaltung sowie Disposition und Tourenplanung für einen Brennstoffhändler.</p>
+<p>Ich lebe in Deutschland und ziehe nach Asien um. Das hier ist eine <a href="https://nownownow.com/about">Now-Seite</a>, zuletzt aktualisiert im August 2026.</p>
+</article></div></main><footer class="animate"><div class="mx-auto max-w-[840px] px-5"><div class="relative"><div class="absolute right-0 -top-20"><button id="back-to-top" class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded-sm border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current rotate-90"><line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line><polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline></svg><div class="text-sm">Nach oben</div></button></div></div><div class="rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 mt-4"><h2 class="font-semibold text-black dark:text-white mb-1">Auf dem Laufenden bleiben</h2><p class="text-sm mb-4">Ab und zu Neuigkeiten zu meinen Projekten, Technik und neuen Blogartikeln.</p><form id="newsletter-form" class="flex gap-2"><label for="newsletter-email" class="sr-only">E-Mail-Adresse</label><input id="newsletter-email" type="email" placeholder="ihre@email.de" required class="flex-1 px-3 py-2 text-sm rounded-md border border-black/15 dark:border-white/15 bg-white dark:bg-slate-800 text-black dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40 focus:outline-hidden focus:ring-1 focus:ring-black/25 dark:focus:ring-white/25"><button id="newsletter-btn" type="submit" class="px-4 py-2 text-sm font-medium rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-black/80 dark:hover:bg-white/80 transition-colors whitespace-nowrap">Abonnieren</button></form><p id="newsletter-status" class="text-sm mt-2 hidden" role="alert" aria-live="polite"></p><!-- opacity-80, not 50: at 50 this small print sat at 2.4:1 against the
+       card background, well under the 4.5:1 WCAG AA needs, and it carries the
+       privacy notice. 75 was still short at 4.45:1. --><p class="text-xs mt-2 opacity-80">Kein Spam, jederzeit abbestellbar. Ihre E-Mail-Adresse liegt bei <a href="https://listmonk.app" target="_blank" rel="noopener" class="underline">Listmonk</a> (selbst gehostet) und wird nur für diesen Newsletter genutzt. Mehr in der <a href="/de/datenschutz" class="underline">Datenschutzerklärung</a>.</p></div><script>(function(){const LISTMONK_URL = "https://newsletter.funnel.leinss.xyz/api/public/subscription";
+const LIST_UUID = "56525a08-c916-4c7c-ae2c-36481da13071";
+const MESSAGES = {"submit":"Abonnieren","busy":"Wird angemeldet...","done":"Danke! Bitte bestätigen Sie die Anmeldung in Ihrem Postfach.","error":"Das hat nicht geklappt. Bitte versuchen Sie es noch einmal."};
+
+  document.getElementById('newsletter-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('newsletter-email').value;
+    const btn = document.getElementById('newsletter-btn');
+    const status = document.getElementById('newsletter-status');
+
+    btn.disabled = true;
+    btn.textContent = MESSAGES.busy;
+    status.classList.add('hidden');
+
+    try {
+      const res = await fetch(LISTMONK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, list_uuids: [LIST_UUID] })
+      });
+
+      if (res.ok || res.status === 409) {
+        status.textContent = MESSAGES.done;
+        status.className = 'text-sm mt-2 text-green-600 dark:text-green-400';
+        document.getElementById('newsletter-email').value = '';
+      } else {
+        throw new Error('Failed');
+      }
+    } catch (err) {
+      console.error('Newsletter subscription failed:', err);
+      status.textContent = MESSAGES.error;
+      status.className = 'text-sm mt-2 text-red-600 dark:text-red-400';
+    }
+
+    status.classList.remove('hidden');
+    btn.disabled = false;
+    btn.textContent = MESSAGES.submit;
+  });
+})();</script><div class="flex justify-between items-center mt-6"><div>&copy; 2026 | Tobias Leinss</div><div class="flex gap-4"><a href="/de/datenschutz" class="underline">Datenschutzerklärung</a><a href="/de/impressum" class="underline">Impressum</a></div><button id="theme-toggle" data-theme-toggle aria-label="Farbschema wechseln" class="group size-9 flex items-center justify-center rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors"><!-- Sun icon (shown in dark mode) --><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg><!-- Moon icon (shown in light mode) --><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block dark:hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></div></footer></body></html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="de"><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: dark)"><link rel="icon" type="image/x-icon" href="/favicon.ico" media="(prefers-color-scheme: light)"><link rel="icon" type="image/x-icon" href="/favicon.ico"><meta name="generator" content="Astro v7.2.0"><!-- Sitemap --><link rel="sitemap" href="/sitemap-index.xml"><!-- Font preloads --><link rel="preload" href="/_astro/ibm-plex-sans-latin-400-normal.CDDApCn2.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/ibm-plex-sans-latin-500-normal.6ng42L7E.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/ibm-plex-sans-latin-600-normal.CuJfVYMP.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-400-normal.DnxXpLNu.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/lora-latin-600-normal.B-3RcLOQ.woff2" as="font" type="font/woff2" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://leinss.xyz/de/projects/kairos/privacy/"><!-- hreflang alternates (translated content) --><link rel="alternate" hreflang="de" href="https://leinss.xyz/de/projects/kairos/privacy/"><link rel="alternate" hreflang="en" href="https://leinss.xyz/projects/kairos/privacy/"><!-- Primary Meta Tags --><title>kAIros, Datenschutzerklärung | Tobias Leinss</title><meta name="title" content="kAIros, Datenschutzerklärung | Tobias Leinss"><meta name="description" content="Datenschutzerklärung für die Ziel-Coaching-App kAIros (Android und Web)"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://leinss.xyz/de/projects/kairos/privacy/"><meta property="og:title" content="kAIros, Datenschutzerklärung | Tobias Leinss"><meta property="og:description" content="Datenschutzerklärung für die Ziel-Coaching-App kAIros (Android und Web)"><meta property="og:image" content="https://leinss.xyz/og.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://leinss.xyz/de/projects/kairos/privacy/"><meta property="twitter:title" content="kAIros, Datenschutzerklärung | Tobias Leinss"><meta property="twitter:description" content="Datenschutzerklärung für die Ziel-Coaching-App kAIros (Android und Web)"><meta property="twitter:image" content="https://leinss.xyz/og.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.DW-LBy1z.js"></script><!-- RSS Link --><link rel="alternate" type="application/rss+xml" title="Tobias Leinss" href="https://leinss.xyz/de/rss.xml"><!-- JSON-LD Structured Data --><script defer src="https://umami.funnel.leinss.xyz/script.js" data-website-id="bd21affd-05bc-4aeb-b312-c913f438ca90"></script><script type="module" src="/_astro/Head.astro_astro_type_script_index_0_lang.B7wsORg7.js"></script><script type="module">window.addEventListener(`load`,()=>{typeof feather<`u`&&feather.replace()}),document.addEventListener(`astro:before-swap`,e=>[...e.newDocument.head.querySelectorAll(`link[as="font"]`)].forEach(e=>e.remove()));</script><script>
+  function init() {
+    preloadTheme();
+    onScroll();
+    animate();
+
+    // Initialize feather icons
+    if (typeof feather !== 'undefined') {
+      feather.replace();
+    }
+
+    const backToTop = document.getElementById("back-to-top");
+    backToTop?.addEventListener("click", (event) => scrollToTop(event));
+
+    const backToPrev = document.getElementById("back-to-prev");
+    backToPrev?.addEventListener("click", () => window.history.back());
+
+    document.querySelectorAll("[data-theme-toggle]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.contains("dark");
+        localStorage.setItem("theme", isDark ? "light" : "dark");
+        toggleTheme(!isDark);
+      });
+    });
+
+    document.addEventListener("scroll", onScroll);
+  }
+
+  function animate() {
+    const animateElements = document.querySelectorAll(".animate");
+
+    animateElements.forEach((element, index) => {
+      setTimeout(() => {
+        element.classList.add("show");
+      }, index * 150);
+    });
+  }
+
+  function onScroll() {
+    if (window.scrollY > 0) {
+      document.documentElement.classList.add("scrolled");
+    } else {
+      document.documentElement.classList.remove("scrolled");
+    }
+  }
+
+  function scrollToTop(event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+function toggleTheme(dark) {
+    const css = document.createElement("style");
+
+    css.appendChild(
+      document.createTextNode(
+        `* {
+             -webkit-transition: none !important;
+             -moz-transition: none !important;
+             -o-transition: none !important;
+             -ms-transition: none !important;
+             transition: none !important;
+          }
+        `,
+      )
+    );
+
+    document.head.appendChild(css);
+
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+  window.getComputedStyle(css).opacity;
+    document.head.removeChild(css);
+  }
+
+  function preloadTheme() {
+    const userTheme = localStorage.theme;
+
+    if (userTheme === "light" || userTheme === "dark") {
+      toggleTheme(userTheme === "dark");
+    } else {
+      toggleTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => init());
+  document.addEventListener("astro:after-swap", () => init());
+  preloadTheme();
+</script><link rel="stylesheet" href="/_astro/PageLayout.RLnsdVR9.css"></head><body><header><div class="mx-auto max-w-[840px] px-5"><div class="flex flex-wrap gap-y-2 justify-between text-base"><a href="/de/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><div class="font-semibold">&lt;Tobias Leinss /&gt;</div></a><nav class="flex flex-wrap gap-x-1 text-base"><a href="/de/now" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><span class="whitespace-nowrap">jetzt</span></a><span>/</span><a href="/de/uses" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><span class="whitespace-nowrap">was ich nutze</span></a><span>/</span><a href="/de/work" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">werdegang</a><span>/</span><a href="/de/projects" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">projekte</a><span>/</span><a href="/projects/kairos/privacy/" target="_self" class="inline-block decoration-black/15 dark:decoration-white/30 hover:decoration-black/25 dark:hover:decoration-white/50 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out" hreflang="en" lang="en" aria-label="English" title="English">en</a><button data-theme-toggle aria-label="Farbschema wechseln" class="group flex items-center justify-center ml-3 hover:text-black dark:hover:text-white transition-colors duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block dark:hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></nav></div></div></header><main><div class="mx-auto max-w-[840px] px-5"><div class="space-y-1 my-10"><div class="animate flex items-center gap-1.5"><div class="font-base text-sm"><time datetime="2026-10-11T00:00:00.000Z">11. Okt. 2026</time></div>&bull;<div class="font-base text-sm">8 Min. Lesezeit</div></div><h1 class="animate text-2xl font-semibold text-black dark:text-white">kAIros, Datenschutzerklärung</h1></div><article class="longform animate"><p><em>Zuletzt aktualisiert: 11. Oktober 2026</em></p>
+<p>kAIros ist eine KI-App für Ziel-Coaching für Android und das Web. Sie hilft Ihnen, Ziele zu setzen, sie in Schritte aufzuteilen und mit Erinnerungen und einem KI-Coach dranzubleiben. Diese Erklärung beschreibt genau, welche Daten kAIros verarbeitet, wohin sie gehen und welche Wahlmöglichkeiten Sie haben. Sie gilt für die mobile App und die Web-App von kAIros.</p>
+<h2 id="verantwortlicher">Verantwortlicher</h2>
+<p>Tobias Leinss<br>Blumenstr. 73<br>73033 Göppingen<br>Deutschland</p>
+<p>E-Mail: <a href="mailto:inquiry@leinss.xyz">inquiry@leinss.xyz</a></p>
+<h2 id="kurzfassung">Kurzfassung</h2>
+<ul>
+<li>kAIros ist <strong>selbst gehostet</strong>. Ihre Konto- und Zieldaten liegen auf einem privaten Server, den der Verantwortliche in <strong>Deutschland (EU)</strong> betreibt, nicht in der Cloud eines Drittanbieters, und werden nie an jemanden verkauft.</li>
+<li>Der <strong>KI-Coach kann auf drei Arten laufen, nach Ihrer Wahl</strong>: vollständig <strong>auf dem Gerät</strong> (nichts verlässt Ihr Telefon), auf Ihrem <strong>eigenen LAN-Server</strong> oder in der <strong>Cloud</strong>. Sie wählen das unter Settings → AI Model.</li>
+<li>In der Web-App sind Nutzungsstatistiken und Absturzberichte <strong>ausgeschaltet, bis Sie sie einschalten</strong>, und gehen nur an unseren eigenen Server in Deutschland. Die derzeit verfügbaren Android-Test-Builds senden noch ohne Nachfrage anonyme Nutzungszahlen (siehe unten). Es gibt <strong>keine Werbetracker</strong>, und wir verkaufen Ihre Daten <strong>nicht</strong>.</li>
+</ul>
+<h2 id="welche-daten-wir-verarbeiten">Welche Daten wir verarbeiten</h2>
+<p><strong>Konto und Authentifizierung.</strong> Wenn Sie sich registrieren, speichern wir Ihre E-Mail-Adresse, einen Hash Ihres Passworts und ein verschlüsseltes Authentifizierungstoken, damit Sie sich anmelden und zwischen Geräten synchronisieren können. Die Authentifizierung läuft auf unserer selbst gehosteten <a href="https://supabase.com/">Supabase</a>-Instanz in Deutschland.</p>
+<p><strong>Ihre Ziele und App-Inhalte.</strong> Die Ziele, Schritte, Erinnerungen, Kategorien, Vorlagen, Gewohnheiten, Check-ins, Notizen und Mindset-Notizen, die Sie anlegen, werden in derselben selbst gehosteten Datenbank gespeichert, damit sie zwischen Ihren Geräten synchronisiert werden. Eine Kopie wird <strong>lokal auf Ihrem Gerät</strong> zwischengespeichert, damit die App offline funktioniert.</p>
+<p>Dieselbe Datenbank enthält außerdem Ihre KI-Chats und gespeicherten Nachrichten, einen Datensatz zu jeder Cloud-KI-Anfrage (das Modell, die Anzahl der Tokens und die Kosten) sowie für jedes Gerät eine Registrierung für Push-Benachrichtigungen (sein Push-Token, seine Plattform und seinen Gerätenamen).</p>
+<p><strong>Inhalte des KI-Coachings.</strong> Um Vorschläge, Aufteilungen in Schritte und motivierende Nachrichten zu erzeugen, wird der relevante Text (z. B. ein Zieltitel und Ihr Fortschritt) an das KI-Backend gesendet, <strong>das Sie ausgewählt haben</strong>:</p>
+<ul>
+<li><strong>Auf dem Gerät</strong>: Das Modell läuft lokal auf Ihrem Telefon über <code>llama.rn</code>. Ihr Text wird vollständig auf dem Gerät verarbeitet und <strong>nirgendwohin übertragen</strong>.</li>
+<li><strong>LAN-Server</strong>: Ihr Text wird an einen Server gesendet, den <strong>Sie</strong> in Ihrem eigenen Netzwerk betreiben (z. B. LM Studio oder Ollama). Er bleibt in Ihrer eigenen Infrastruktur.</li>
+<li><strong>Cloud</strong>: Ihr Text wird über unseren eigenen Server an <a href="https://openrouter.ai/privacy">OpenRouter</a> gesendet. OpenRouter gibt ihn an das Modell weiter, das die Antwort erzeugt (standardmäßig Gemini 2.5 Flash von Google). Sobald Ihr Text OpenRouter und den Anbieter des Modells erreicht, gelten <strong>deren</strong> Datenschutzerklärungen.</li>
+</ul>
+<p><strong>Spracheingabe (optional).</strong> Wenn Sie Sprachfunktionen nutzen, wird das aufgenommene Audio von dem Sprachanbieter transkribiert, den Sie ausgewählt haben. Das kann <strong>auf dem Gerät/offline</strong> geschehen oder über einen Cloud-Transkriptionsdienst. Bei der Cloud-Transkription wird genau dieser Audioclip an den Anbieter gesendet. Die lokale Aufnahme wird nach der Transkription entfernt.</p>
+<p><strong>Nutzungsstatistiken (ausgeschaltet, sofern Sie sie nicht einschalten, außer in den Android-Test-Builds).</strong> Die App fragt auf ihrem letzten Willkommensbildschirm danach, und Sie können die Antwort jederzeit unter <strong>Settings → Privacy</strong> ändern. Wenn Sie zustimmen, sendet die App Zahlen dazu, was Sie nutzen, etwa „Ziel angelegt“ oder „Schritt abgehakt“, jeweils mit einigen festen Werten (zum Beispiel, ob das Ziel Ihr erstes war).</p>
+<p>Die Android-App sendet sie an ein <strong>selbst gehostetes <a href="https://aptabase.com/">Aptabase</a></strong> (<code>mobile.funnel.leinss.xyz</code>), die Web-App an ein <strong>selbst gehostetes <a href="https://umami.is/">Umami</a></strong> (<code>umami.funnel.leinss.xyz</code>), zusammen mit der Art der Seite, die Sie öffnen (zum Beispiel „eine Zielseite“, nie welches Ziel). Beide laufen auf unserem eigenen Server in Deutschland. Sie erhalten nie Ihre Ziele, Schritte oder Erinnerungen, Ihre E-Mail-Adresse oder Ihre Konto-ID und setzen keine Cookies.</p>
+<p>Die derzeit verfügbaren Android-Test-Builds (Builds 21 und 23) haben noch keinen Schalter und senden ohne Nachfrage anonyme Zahlen an Aptabase. Der nächste Android-Build fragt vorher.</p>
+<p><strong>Absturzberichte (ausgeschaltet, sofern Sie sie nicht einschalten).</strong> Wenn Sie zustimmen und die App auf einen Fehler stößt, sendet sie Folgendes an ein <strong>selbst gehostetes <a href="https://glitchtip.com/">GlitchTip</a></strong> (<code>errors.funnel.leinss.xyz</code>) auf unserem eigenen Server in Deutschland: den Fehler und seinen Stacktrace, die Stelle in der App, an der er auftrat, die Bildschirme, die Sie kurz davor besucht haben, die App-Version sowie Ihr Betriebssystem und dessen Version (im Web Ihren Browser).</p>
+<p>Die App nutzt zum Senden die Softwarebibliothek von Sentry, aber nichts geht an das Unternehmen Sentry. Absturzberichte enthalten keine E-Mail-Adresse und keine Konto-ID, und aus den darin enthaltenen Seitenadressen ist jede ID entfernt.</p>
+<p><strong>Auf unserem Server gespeicherte Zahlen.</strong> Um zu wissen, wie viele Menschen kAIros nutzen und wiederkommen, erfasst unsere Datenbank die Tage, an denen Ihre angemeldete App geöffnet wurde (90 Tage lang aufbewahrt), sowie wann Sie sich registriert und wann Sie Ihren ersten Schritt zu einem Ziel hinzugefügt haben.</p>
+<p>Diese Datensätze verlassen unseren Server nie. An unser Monitoring werden immer nur Gesamtzahlen gemeldet, und die Datensätze werden mit Ihrem Konto gelöscht. Das hängt nicht von den oben genannten Schaltern ab.</p>
+<p>Wenn Nutzungsstatistiken eingeschaltet sind, sendet die App außerdem Ihre Registrierung und Ihren ersten Schritt (mit dem Alter Ihres Kontos in Wochen) jeweils einmal als Nutzungsereignis, ohne Konto-ID oder E-Mail-Adresse.</p>
+<p><strong>Die Landingpage von kAIros</strong> zählt Besuche mit demselben selbst gehosteten Umami, ohne Cookies.</p>
+<p><strong>Käufe (falls Sie ein Abonnement abschließen).</strong> Premium wird nur in der Web-App verkauft, und die Zahlung wird von <a href="https://stripe.com/privacy">Stripe</a> abgewickelt. Stripe verarbeitet Ihre Kauf- und Belegdaten. kAIros speichert Ihren Tarif, seinen Status, das Datum, an dem der bezahlte Zeitraum endet, und die IDs, die Stripe für Sie und Ihr Abonnement vergibt, niemals Ihre Kartendaten.</p>
+<h2 id="was-wir-nicht-tun">Was wir <strong>nicht</strong> tun</h2>
+<ul>
+<li>Wir verkaufen oder vermieten Ihre personenbezogenen Daten <strong>nicht</strong>.</li>
+<li>Wir schalten <strong>keine</strong> Werbung und nutzen <strong>keine</strong> Werbe- oder Tracking-SDKs von Drittanbietern.</li>
+<li>Wir erstellen <strong>kein</strong> Profil über Sie über andere Apps oder Websites hinweg.</li>
+</ul>
+<h2 id="speicherort-und-speicherdauer">Speicherort und Speicherdauer</h2>
+<p>Konto- und Zieldaten werden auf einem privaten Server in der EU (Deutschland) gespeichert, solange Ihr Konto besteht. Lokal zwischengespeicherte Daten bleiben auf Ihrem Gerät, bis Sie sie löschen oder die App deinstallieren. Sie können lokale Daten jederzeit unter <strong>Settings → Clear App Data</strong> löschen.</p>
+<p>Die Tage, an denen Ihre App geöffnet wurde, werden nach 90 Tagen gelöscht. Nutzungsstatistiken und Absturzberichte enthalten keine Konto-ID und lassen sich daher nicht auf Ihr Konto zurückführen.</p>
+<h2 id="ihre-wahlmöglichkeiten">Ihre Wahlmöglichkeiten</h2>
+<ul>
+<li><strong>Wählen Sie Ihr KI-Backend</strong> (auch vollständig offline auf dem Gerät) unter <strong>Settings → AI Model</strong>.</li>
+<li><strong>Schalten Sie Nutzungsstatistiken und Absturzberichte ein oder aus</strong> unter <strong>Settings → Privacy</strong>. In der Web-App sind beide ausgeschaltet, bis Sie sie einschalten.</li>
+<li><strong>Löschen Sie lokale Daten</strong> unter Settings.</li>
+<li><strong>Laden Sie eine Kopie Ihrer Daten herunter</strong> unter <strong>Settings → Download My Data</strong>: eine JSON-Datei mit allem, was Ihr Konto enthält, und eine CSV-Datei mit Ihren Zielen und Schritten.</li>
+<li><strong>Löschen Sie Ihr Konto und seine Daten</strong> unter <strong>Settings → Delete Account</strong> (auch über Ihr Profil verlinkt). Damit werden Ihr Konto und die Daten, die es auf unseren Servern enthält, dauerhaft gelöscht, und Sie werden abgemeldet. Ein bezahltes Abonnement wird dadurch nicht gekündigt: Kündigen Sie es zuerst im Abrechnungsportal. Wenn Sie sich nicht mehr anmelden können, schreiben Sie von der Adresse des Kontos eine E-Mail an <strong><a href="mailto:inquiry@leinss.xyz">inquiry@leinss.xyz</a></strong>.</li>
+</ul>
+<p>Die Privacy-Schalter, Download My Data und Delete Account finden Sie in der Web-App unter <a href="https://kairos.funnel.leinss.xyz">kairos.funnel.leinss.xyz</a>. Die derzeit verfügbaren Android-Test-Builds haben keine dieser Funktionen. Melden Sie sich mit demselben Konto in der Web-App an, um sie zu nutzen. Der nächste Android-Build hat alle drei.</p>
+<h2 id="kinder">Kinder</h2>
+<p>kAIros richtet sich nicht an Kinder und erhebt nicht wissentlich Daten von Personen, die jünger sind als das nach Ihrem örtlichen Recht erforderliche Alter.</p>
+<h2 id="ihre-rechte-dsgvo">Ihre Rechte (DSGVO)</h2>
+<p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Übertragbarkeit Ihrer personenbezogenen Daten sowie das Recht, der Verarbeitung zu widersprechen (Art. 15 bis 21 DSGVO). Ihre Daten herunterladen (Art. 15 und 20) und Ihr Konto löschen (Art. 17) können Sie selbst in der Web-App unter Settings. Für alles Weitere wenden Sie sich an <strong><a href="mailto:inquiry@leinss.xyz">inquiry@leinss.xyz</a></strong>.</p>
+<p>Die allgemeine <a href="/de/datenschutz">Datenschutzerklärung von leinss.xyz</a> beschreibt zusätzlich Ihre Betroffenenrechte nach der DSGVO und die Aufsichtsbehörde, an die Sie sich wenden können.</p>
+<h2 id="änderungen">Änderungen</h2>
+<p>Wenn sich diese Erklärung ändert, wird die aktualisierte Fassung unter dieser URL mit neuem Datum veröffentlicht.</p>
+<h2 id="kontakt">Kontakt</h2>
+<p>Fragen: <strong><a href="mailto:inquiry@leinss.xyz">inquiry@leinss.xyz</a></strong></p></article></div></main><footer class="animate"><div class="mx-auto max-w-[840px] px-5"><div class="relative"><div class="absolute right-0 -top-20"><button id="back-to-top" class="relative group w-fit flex pl-8 pr-3 py-1.5 flex-nowrap rounded-sm border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="absolute top-1/2 left-2 -translate-y-1/2 size-4 stroke-2 fill-none stroke-current rotate-90"><line x1="5" y1="12" x2="19" y2="12" class="translate-x-2 group-hover:translate-x-0 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out"></line><polyline points="12 5 5 12 12 19" class="translate-x-1 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></polyline></svg><div class="text-sm">Nach oben</div></button></div></div><div class="rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 p-6 mt-4"><h2 class="font-semibold text-black dark:text-white mb-1">Auf dem Laufenden bleiben</h2><p class="text-sm mb-4">Ab und zu Neuigkeiten zu meinen Projekten, Technik und neuen Blogartikeln.</p><form id="newsletter-form" class="flex gap-2"><label for="newsletter-email" class="sr-only">E-Mail-Adresse</label><input id="newsletter-email" type="email" placeholder="ihre@email.de" required class="flex-1 px-3 py-2 text-sm rounded-md border border-black/15 dark:border-white/15 bg-white dark:bg-slate-800 text-black dark:text-white placeholder:text-black/40 dark:placeholder:text-white/40 focus:outline-hidden focus:ring-1 focus:ring-black/25 dark:focus:ring-white/25"><button id="newsletter-btn" type="submit" class="px-4 py-2 text-sm font-medium rounded-md bg-black dark:bg-white text-white dark:text-black hover:bg-black/80 dark:hover:bg-white/80 transition-colors whitespace-nowrap">Abonnieren</button></form><p id="newsletter-status" class="text-sm mt-2 hidden" role="alert" aria-live="polite"></p><!-- opacity-80, not 50: at 50 this small print sat at 2.4:1 against the
+       card background, well under the 4.5:1 WCAG AA needs, and it carries the
+       privacy notice. 75 was still short at 4.45:1. --><p class="text-xs mt-2 opacity-80">Kein Spam, jederzeit abbestellbar. Ihre E-Mail-Adresse liegt bei <a href="https://listmonk.app" target="_blank" rel="noopener" class="underline">Listmonk</a> (selbst gehostet) und wird nur für diesen Newsletter genutzt. Mehr in der <a href="/de/datenschutz" class="underline">Datenschutzerklärung</a>.</p></div><script>(function(){const LISTMONK_URL = "https://newsletter.funnel.leinss.xyz/api/public/subscription";
+const LIST_UUID = "56525a08-c916-4c7c-ae2c-36481da13071";
+const MESSAGES = {"submit":"Abonnieren","busy":"Wird angemeldet...","done":"Danke! Bitte bestätigen Sie die Anmeldung in Ihrem Postfach.","error":"Das hat nicht geklappt. Bitte versuchen Sie es noch einmal."};
+
+  document.getElementById('newsletter-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('newsletter-email').value;
+    const btn = document.getElementById('newsletter-btn');
+    const status = document.getElementById('newsletter-status');
+
+    btn.disabled = true;
+    btn.textContent = MESSAGES.busy;
+    status.classList.add('hidden');
+
+    try {
+      const res = await fetch(LISTMONK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, list_uuids: [LIST_UUID] })
+      });
+
+      if (res.ok || res.status === 409) {
+        status.textContent = MESSAGES.done;
+        status.className = 'text-sm mt-2 text-green-600 dark:text-green-400';
+        document.getElementById('newsletter-email').value = '';
+      } else {
+        throw new Error('Failed');
+      }
+    } catch (err) {
+      console.error('Newsletter subscription failed:', err);
+      status.textContent = MESSAGES.error;
+      status.className = 'text-sm mt-2 text-red-600 dark:text-red-400';
+    }
+
+    status.classList.remove('hidden');
+    btn.disabled = false;
+    btn.textContent = MESSAGES.submit;
+  });
+})();</script><div class="flex justify-between items-center mt-6"><div>&copy; 2026 | Tobias Leinss</div><div class="flex gap-4"><a href="/de/datenschutz" class="underline">Datenschutzerklärung</a><a href="/de/impressum" class="underline">Impressum</a></div><button id="theme-toggle" data-theme-toggle aria-label="Farbschema wechseln" class="group size-9 flex items-center justify-center rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors"><!-- Sun icon (shown in dark mode) --><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg><!-- Moon icon (shown in light mode) --><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block dark:hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button></div></div></footer></body></html>
