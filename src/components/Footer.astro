@@ -4,13 +4,22 @@ import { SITE } from "@consts"
 import BackToTop from "@components/BackToTop.astro"
 import Newsletter from "@components/Newsletter.astro"
 import { getEntry } from "astro:content"
-import { LEGAL_PAGES, type Lang, t } from "@lib/i18n"
+import { LEGAL_PAGES, type Lang, localePath, otherLang, t } from "@lib/i18n"
 
 type Props = {
   lang: Lang
+  alternates?: { hreflang: string; href: string }[]
 }
 
-const { lang } = Astro.props
+const { lang, alternates } = Astro.props
+
+// The language link sits here beside the theme toggle rather than in the
+// header nav. It goes to the same page in the other language, or to that
+// language's home page where the page has no translation (an English-only
+// blog post).
+const switchLang = otherLang(lang)
+const translation = alternates?.find((alt) => alt.hreflang === switchLang)
+const switchHref = translation ? new URL(translation.href).pathname : localePath(switchLang, "/")
 
 // Looked up by id. This used to search the three newest static pages, and once
 // newer app pages existed both links dropped off every page.
@@ -27,14 +36,16 @@ const imprint = await getEntry("staticPages", LEGAL_PAGES[lang].imprint)
       </div>
     </div>
     <Newsletter lang={lang} />
-    <div class="flex justify-between items-center mt-6">
-      <div>
+    {/* Below sm the three groups do not fit one row on a phone, so the legal
+        links move to a full-width second row. */}
+    <div class="flex flex-wrap justify-between items-center gap-y-2 mt-6">
+      <div class="whitespace-nowrap">
         {/* Kept on one line: Astro 7 strips whitespace between expressions on
             separate lines, per JSX rules, which collapsed this to "2026|Name".
             Whitespace within a single line is preserved. */}
         &copy; {new Date().getFullYear()} | {SITE.NAME}
       </div>
-      <div class="flex gap-4">
+      <div class="flex gap-4 order-last basis-full sm:order-none sm:basis-auto">
         {
           privacy && (
             <a href={`/${privacy.id}`} class="underline">
@@ -50,51 +61,67 @@ const imprint = await getEntry("staticPages", LEGAL_PAGES[lang].imprint)
           )
         }
       </div>
-      <button
-        id="theme-toggle"
-        data-theme-toggle
-        aria-label={t(lang, "toggleTheme")}
-        class="group size-9 flex items-center justify-center rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
-      >
-        <!-- Sun icon (shown in dark mode) -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="hidden dark:block"
+      <div class="flex items-center gap-1">
+        <a
+          href={switchHref}
+          hreflang={switchLang}
+          lang={switchLang}
+          aria-label={t(lang, "switchLabel")}
+          title={t(lang, "switchLabel")}
+          class="h-9 px-2 flex items-center gap-1.5 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
         >
-          <circle cx="12" cy="12" r="5"></circle>
-          <line x1="12" y1="1" x2="12" y2="3"></line>
-          <line x1="12" y1="21" x2="12" y2="23"></line>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-          <line x1="1" y1="12" x2="3" y2="12"></line>
-          <line x1="21" y1="12" x2="23" y2="12"></line>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
-        <!-- Moon icon (shown in light mode) -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="block dark:hidden"
+          {/* Ionicons "language" (MIT), the same glyph astro-sassify's switcher uses. */}
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18" height="18" fill="currentColor" aria-hidden="true">
+            <path d="m478.33 433.6-90-218a22 22 0 0 0-40.67 0l-90 218a22 22 0 1 0 40.67 16.79L316.66 406h102.67l18.33 44.39A22 22 0 0 0 458 464a22 22 0 0 0 20.32-30.4zM334.83 362 368 281.65 401.17 362zm-66.99-19.08a22 22 0 0 0-4.89-30.7c-.2-.15-15-11.13-36.49-34.73 39.65-53.68 62.11-114.75 71.27-143.49H330a22 22 0 0 0 0-44H214V70a22 22 0 0 0-44 0v20H54a22 22 0 0 0 0 44h197.25c-9.52 26.95-27.05 69.5-53.79 108.36-31.41-41.68-43.08-68.65-43.17-68.87a22 22 0 0 0-40.58 17c.58 1.38 14.55 34.23 52.86 83.93.92 1.19 1.83 2.35 2.74 3.51-39.24 44.35-77.74 71.86-93.85 80.74a22 22 0 1 0 21.07 38.63c2.16-1.18 48.6-26.89 101.63-85.59 22.52 24.08 38 35.44 38.93 36.1a22 22 0 0 0 30.75-4.9z"></path>
+          </svg>
+          <span class="uppercase">{switchLang}</span>
+        </a>
+        <button
+          id="theme-toggle"
+          data-theme-toggle
+          aria-label={t(lang, "toggleTheme")}
+          class="group size-9 flex items-center justify-center rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
         >
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-      </button>
+          <!-- Sun icon (shown in dark mode) -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="hidden dark:block"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="block dark:hidden"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
     </div>
   </Container>
 </footer>

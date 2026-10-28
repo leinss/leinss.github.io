@@ -3,22 +3,14 @@ import Container from "@components/Container.astro"
 import Link from "@components/Link.astro"
 import { SITE } from "@consts"
 import { getCollection } from "astro:content"
-import { entryLang, LEGAL_PAGES, type Lang, localePath, otherLang, stripLang, t } from "@lib/i18n"
+import { entryLang, LEGAL_PAGES, type Lang, localePath, stripLang, t } from "@lib/i18n"
 
 type Props = {
   lang: Lang
-  alternates?: { hreflang: string; href: string }[]
 }
 
-const { lang, alternates } = Astro.props
+const { lang } = Astro.props
 
-// The same page in the other language, or that language's home page where the
-// page has no translation (an English-only blog post).
-const switchLang = otherLang(lang)
-const switchHref = (() => {
-  const translation = alternates?.find((alt) => alt.hreflang === switchLang)
-  return translation ? new URL(translation.href).pathname : localePath(switchLang, "/")
-})()
 const legalIds = Object.values(LEGAL_PAGES).flatMap((pages) => Object.values(pages))
 
 const staticPages = (await getCollection("staticPages"))
@@ -65,17 +57,6 @@ const staticPages = (await getCollection("staticPages"))
           {`/`}
         </span>
         <Link href={localePath(lang, "/projects")} underline={false}> {t(lang, "navProjects")} </Link>
-        <span>{`/`}</span>
-        <Link
-          href={switchHref}
-          underline={false}
-          hreflang={switchLang}
-          lang={switchLang}
-          aria-label={t(lang, "switchLabel")}
-          title={t(lang, "switchLabel")}
-        >
-          {switchLang}
-        </Link>
         <button
           data-theme-toggle
           aria-label={t(lang, "toggleTheme")}
