@@ -33,6 +33,7 @@ const { title, description, image = "/og.png", alternates } = Astro.props;
 const twitterSocial = SOCIALS.find(s => s.NAME === "twitter");
 const linkedinSocial = SOCIALS.find(s => s.NAME === "linkedin");
 const githubSocial = SOCIALS.find(s => s.NAME === "github");
+const youtubeSocial = SOCIALS.find(s => s.NAME === "youtube");
 
 const personSchema = {
   "@context": "https://schema.org",
@@ -44,6 +45,7 @@ const personSchema = {
     twitterSocial?.HREF,
     linkedinSocial?.HREF,
     githubSocial?.HREF,
+    youtubeSocial?.HREF,
   ].filter(Boolean),
 };
 

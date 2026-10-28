@@ -5,35 +5,31 @@ description: "Legal Notice (Impressum) according to § 5 DDG"
 date: "02/25/2026"
 ---
 
+import LegalAddress from "@components/LegalAddress.astro"
+import { LEGAL } from "@consts"
+
+_Deutsche Fassung: [Impressum](/de/impressum)_
+
 ## Legal Notice according to § 5 DDG
 
-**Tobias Leinss**
+<LegalAddress lang="en" />
+
 Einzelunternehmer (Sole Proprietor)
 
-Blumenstr. 73
-73033 Göppingen
-Germany
-
-**Contact**
-Phone: +49 15679 63 41 99
+**Contact**<br />
+Phone: {LEGAL.PHONE}<br />
 Email: inquiry@leinss.xyz
 
-**Tax Information**
+**Tax Information**<br />
 Kleinunternehmer gem. § 19 UStG (Small business exemption, no VAT charged)
 
 ## Responsible for Content
 
 According to § 18 Abs. 2 MStV:
 
-**Tobias Leinss**
-Blumenstr. 73
-73033 Göppingen
-Germany
+<LegalAddress lang="en" />
 
 ## Dispute Resolution
-
-The European Commission provides a platform for online dispute resolution (ODR):
-[https://ec.europa.eu/consumers/odr/](https://ec.europa.eu/consumers/odr/)
 
 We are not obligated and not willing to participate in dispute resolution proceedings before a consumer arbitration board (§ 36 VSBG).
 

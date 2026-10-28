@@ -1,7 +1,7 @@
 import { defineCollection } from "astro:content"
 import { glob } from "astro/loaders"
 import { z } from "astro/zod"
-import { LANGS } from "@lib/blog"
+import { LANGS } from "@lib/i18n"
 
 // Strip trailing /index so directory-style entries (my-post/index.md) keep
 // the same URL-friendly id they had in legacy content collections.
@@ -66,6 +66,10 @@ const staticPages = defineCollection({
     description: z.string(),
     date: z.coerce.date(),
     draft: z.boolean().optional(),
+    // Id of the English page this one translates, for a translation whose URL
+    // is not the English path under de/ (de/impressum translates imprint).
+    // Without it, de/foo pairs with foo.
+    translationOf: z.string().optional(),
   }),
 })
 

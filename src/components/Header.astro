@@ -3,6 +3,17 @@ import Container from "@components/Container.astro"
 import Link from "@components/Link.astro"
 import { SITE } from "@consts"
 import { getCollection } from "astro:content"
+import { type Lang, t } from "@lib/i18n"
+
+type Props = {
+  lang: Lang
+  alternates?: { hreflang: string; href: string }[]
+}
+
+const { lang, alternates } = Astro.props
+
+// The link to the same page in the other language, shown only where one exists.
+const translation = alternates?.find((alt) => alt.hreflang !== lang)
 
 const staticPages = (await getCollection("staticPages"))
   // Nav shows only top-level curated pages. Nested pages (e.g. tobireader/privacy)
@@ -44,6 +55,23 @@ const staticPages = (await getCollection("staticPages"))
           {`/`}
         </span>
         <Link href="/projects" underline={false}> projects </Link>
+        {
+          translation && (
+            <>
+              <span>{`/`}</span>
+              <Link
+                href={new URL(translation.href).pathname}
+                underline={false}
+                hreflang={translation.hreflang}
+                lang={translation.hreflang}
+                aria-label={t(lang, "switchLabel")}
+                title={t(lang, "switchLabel")}
+              >
+                {translation.hreflang}
+              </Link>
+            </>
+          )
+        }
         <button
           data-theme-toggle
           aria-label="Toggle theme"

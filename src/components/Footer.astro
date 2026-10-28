@@ -3,15 +3,20 @@ import Container from "@components/Container.astro"
 import { SITE } from "@consts"
 import BackToTop from "@components/BackToTop.astro"
 import Newsletter from "@components/Newsletter.astro"
-import { getCollection } from "astro:content"
+import { getEntry } from "astro:content"
+import { LEGAL_PAGES, type Lang } from "@lib/i18n"
 
-const staticPages = (await getCollection("staticPages"))
-  .filter((page) => !page.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE)
+type Props = {
+  lang: Lang
+}
 
-const imprint = staticPages.find((page) => page.id === "imprint")
-const privacy = staticPages.find((page) => page.id === "privacy")
+const { lang } = Astro.props
+
+// Looked up by id. This used to search the three newest static pages, and once
+// newer app pages existed both links dropped off every page.
+// scripts/check-legal-links.mjs fails the build if that happens again.
+const privacy = await getEntry("staticPages", LEGAL_PAGES[lang].privacy)
+const imprint = await getEntry("staticPages", LEGAL_PAGES[lang].imprint)
 ---
 
 <footer class="animate">
