@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "astro dev",
     "dev:network": "astro dev --host",
-    "build": "astro check && astro build && node scripts/check-internal-links.mjs",
+    "build": "astro check && astro build && node scripts/check-internal-links.mjs && node scripts/check-legal-links.mjs",
     "preview": "astro preview",
     "preview:network": "astro preview --host",
     "astro": "astro",
@@ -17,7 +17,8 @@
     "lint:eslint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint:spacing": "node scripts/check-inline-spacing.mjs",
-    "lint:links": "node scripts/check-internal-links.mjs"
+    "lint:links": "node scripts/check-internal-links.mjs",
+    "lint:legal": "node scripts/check-legal-links.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",

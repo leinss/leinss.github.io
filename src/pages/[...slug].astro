@@ -4,32 +4,55 @@ import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import FormattedDate from "@components/FormattedDate.astro";
 import { readingTime } from "@lib/utils";
+import { entryLang, stripLang } from "@lib/i18n";
 
 export async function getStaticPaths() {
   const posts = (await getCollection("staticPages"))
     .filter(post => !post.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  const ids = new Set(posts.map((post) => post.id));
+  const pairOf = (post: CollectionEntry<"staticPages">) => {
+    const target = post.data.translationOf;
+    if (target !== undefined && !ids.has(target)) {
+      throw new Error(`[staticPages] "${post.id}" has translationOf "${target}", and no page has that id.`);
+    }
+    return target ?? stripLang(post.id);
+  };
   return posts.map((post) => ({
     params: { slug: post.id },
-    props: post,
+    props: {
+      ...post,
+      translations: posts.filter((other) => pairOf(other) === pairOf(post)),
+    },
   }));
 }
-type Props = CollectionEntry<"staticPages">;
+type Props = CollectionEntry<"staticPages"> & {
+  translations: CollectionEntry<"staticPages">[];
+};
 
 const post = Astro.props;
 const { Content } = await render(post);
+const lang = entryLang(post.id);
+
+// hreflang alternates, only for a page that has a translation.
+const alternates = post.translations.length > 1
+  ? post.translations.map((entry) => ({
+      hreflang: entryLang(entry.id),
+      href: new URL(`/${entry.id}/`, Astro.site).toString(),
+    }))
+  : undefined;
 ---
 
-<PageLayout title={post.data.title} description={post.data.description}>
+<PageLayout title={post.data.title} description={post.data.description} lang={lang} alternates={alternates}>
   <Container>
     <div class="space-y-1 my-10">
       <div class="animate flex items-center gap-1.5">
         <div class="font-base text-sm">
-          <FormattedDate date={post.data.date} />
+          <FormattedDate date={post.data.date} lang={lang} />
         </div>
         &bull;
         <div class="font-base text-sm">
-          {readingTime(post.body ?? "")}
+          {readingTime(post.body ?? "", lang)}
         </div>
       </div>
       <h1 class="animate text-2xl font-semibold text-black dark:text-white">

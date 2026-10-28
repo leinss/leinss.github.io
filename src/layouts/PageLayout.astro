@@ -3,7 +3,7 @@ import Head from "@components/Head.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import { SITE } from "@consts";
-import type { Lang } from "@lib/blog";
+import type { Lang } from "@lib/i18n";
 
 type Alternate = { hreflang: string; href: string };
 
@@ -24,10 +24,10 @@ const { title, description, image, lang = "en", alternates } = Astro.props;
     <Head title={`${title} | ${SITE.NAME}`} description={description} image={image} alternates={alternates} />
   </head>
   <body>
-    <Header />
+    <Header lang={lang} alternates={alternates} />
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer lang={lang} />
   </body>
 </html>

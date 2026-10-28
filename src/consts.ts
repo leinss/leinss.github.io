@@ -9,6 +9,18 @@ export const SITE: Site = {
   NUM_EDUCATION_ON_HOMEPAGE: 3,
 }
 
+// The postal address and phone number the legal pages print: imprint, privacy
+// policy, and the app privacy and deletion pages, in every language. They render
+// them through LegalAddress.astro or `{LEGAL.PHONE}` in MDX, so a change of
+// address is this one edit.
+export const LEGAL = {
+  NAME: "Tobias Leinss",
+  STREET: "Blumenstr. 73",
+  CITY: "73033 Göppingen",
+  COUNTRY: { en: "Germany", de: "Deutschland" },
+  PHONE: "+49 15679 63 41 99",
+} as const
+
 export const HOME: Metadata = {
   TITLE: "Privacy-first apps you can install today",
   DESCRIPTION:
@@ -143,5 +155,9 @@ export const SOCIALS: Socials = [
   {
     NAME: "linkedin",
     HREF: "https://www.linkedin.com/in/tobias-leinss",
+  },
+  {
+    NAME: "youtube",
+    HREF: "https://www.youtube.com/@t_leinss",
   },
 ]

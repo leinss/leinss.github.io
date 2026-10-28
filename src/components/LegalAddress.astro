@@ -1,0 +1,17 @@
+---
+import { LEGAL } from "@consts"
+import type { Lang } from "@lib/i18n"
+
+type Props = {
+  lang: Lang
+}
+
+const { lang } = Astro.props
+---
+
+<p>
+  {LEGAL.NAME}<br />
+  {LEGAL.STREET}<br />
+  {LEGAL.CITY}<br />
+  {LEGAL.COUNTRY[lang]}
+</p>

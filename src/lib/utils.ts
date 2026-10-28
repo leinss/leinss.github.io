@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { type Lang, t } from "@lib/i18n";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -13,11 +14,11 @@ export function formatDate(date: Date) {
   }).format(date);
 }
 
-export function readingTime(html: string) {
+export function readingTime(html: string, lang: Lang = "en") {
   const textOnly = html.replace(/<[^>]+>/g, "");
   const wordCount = textOnly.split(/\s+/).length;
   const readingTimeMinutes = ((wordCount / 200) + 1).toFixed();
-  return `${readingTimeMinutes} min read`;
+  return `${readingTimeMinutes} ${t(lang, "readingTime")}`;
 }
 
 export function dateRange(startDate: Date, endDate?: Date | string): string {

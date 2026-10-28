@@ -1,9 +1,9 @@
 import type { CollectionEntry } from "astro:content";
+import { LANGS, type Lang } from "@lib/i18n";
+
+export { LANGS, type Lang };
 
 export type BlogPost = CollectionEntry<"blog">;
-
-export const LANGS = ["en", "de"] as const;
-export type Lang = (typeof LANGS)[number];
 
 // Regex built from LANGS so adding a new language only requires updating LANGS.
 const LANG_PREFIX_RE = new RegExp(`^(${LANGS.join("|")})\\/`);
