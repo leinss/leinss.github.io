@@ -1,7 +1,7 @@
 ---
 title: "Was ich nutze"
 description: "Die Hardware, Werkzeuge und Dienste, mit denen ich meine Apps baue und meine Infrastruktur betreibe."
-date: "2026-08-26"
+date: "2026-10-28"
 ---
 
 Eine Momentaufnahme dessen, womit ich baue, angeregt von [uses.tech](https://uses.tech). Durchgehend bevorzuge ich Dinge, die offline funktionieren, Daten lokal halten und sich aus einer Datei in einem Repository neu aufbauen lassen statt per Klick in einem Dashboard.
@@ -12,7 +12,7 @@ Die Liste ist bewusst breit. Ich kenne lieber vier Sprachen und die Infrastruktu
 
 - **Apple-Silicon-Mac**: der Hauptrechner für die Entwicklung, und auf ihm laufen meine lokalen LLMs.
 - **Android-Geräte** zum Testen von [TobiBoard](/de/projects/TobiBoard) und [TobiReader](/de/projects/TobiReader), über `adb` gesteuert, wenn ein Test wiederholbar sein muss.
-- **Ein kleines Homelab**: ein NAS, ein Mini-PC und ein Raspberry Pi, die zusammen alles aus dem Abschnitt zum Self-Hosting weiter unten betreiben. Alles davon ist mit Ansible konfiguriert, nichts von Hand.
+- **Ein kleines Homelab**, auf dem meine eigenen Dienste laufen. Alles davon ist mit Ansible konfiguriert, nichts von Hand.
 
 ## Terminal
 
@@ -20,8 +20,8 @@ Ich lebe im Terminal, und die meisten Werkzeuge dort ersetzen etwas Älteres, da
 
 - **zsh**, mit `eza` für `ls`, `bat` für `cat`, `fd` für `find`, `ripgrep` für `grep`, `delta` für `diff`, `dust` für `du`, `duf` für `df` und `btop` für `htop`.
 - **`jq` und `yq`** für alles, was nach JSON oder YAML aussieht, **httpie** für HTTP von Hand.
-- **direnv** für die Umgebung je Projekt. Secrets kommen dabei aus dem macOS-Schlüsselbund und liegen nicht in einer `.envrc`.
-- **chezmoi** für Dotfiles, mit **age** für die Teile, die verschlüsselt sein müssen.
+- **direnv** für die Umgebung je Projekt.
+- **chezmoi** für Dotfiles.
 - **fnm** für Node-Versionen, wobei eine einzige `.node-version` lokal und CI synchron hält.
 - **KI-Coding-Harnesses**, bewusst mehr als einer: **Claude Code** im Alltag, daneben **OpenCode**, **Codex** und was sonst einen Blick wert ist. Sie haben wirklich unterschiedliche Stärken, und das Feld bewegt sich so schnell, dass die Festlegung auf eines eine schlechte Wette ist. Nur wer mehrere betreibt, kann sagen, welches für eine bestimmte Aufgabe tatsächlich besser ist, und nicht nur, an welches man gewöhnt ist.
 
@@ -54,11 +54,7 @@ Die berufliche Hälfte dieser Liste, und der Teil, den ich in einem Vorstellungs
 - **Ansible** für alles. Braucht ein Rechner eine Änderung, passiert sie in einer Rolle und wird ausgerollt, nicht in eine Shell getippt.
 - **Docker** und **Traefik** für Dienste und Routing.
 - **Prometheus, Grafana, Loki und Alertmanager** für Metriken, Logs und Alarmierung, mit **Blackbox** für Prüfungen von außen und **cAdvisor** für Details auf Container-Ebene. Ein Alarm, der nicht auslösen kann, ist schlimmer als gar keiner, deshalb haben die Regeln eigene Unit-Tests, die in der CI laufen.
-- **Tailscale**, damit nichts einen öffentlichen Port hat, das keinen braucht.
 - **Borg** für Backups, nach einem gestaffelten Zeitplan, und die Wiederherstellung wird tatsächlich geprobt.
 - **PostgreSQL** mit Replikation, Failover und Pooling.
-- **Gitea**, **FreshRSS**, **SearXNG**, **Navidrome**, **ArchiveBox** und **ntfy**, alle selbst gehostet, weil ich ein Ding lieber selbst betreibe, als ein Produkt darin zu sein.
-- **Frigate** für die Erkennung auf Kamerabildern und **ioBroker** für die Hausautomation, so verbunden, dass eine Erkennung mein Handy erreicht.
+- **Selbst gehostete Dienste** für den eigenen Bedarf, vom Code-Hosting über Feeds bis zur Musik, weil ich ein Ding lieber selbst betreibe, als ein Produkt darin zu sein.
 - **umami** für datenschutzfreundliche Statistiken ohne Cookies und **Listmonk** für den Newsletter.
-
-Bewusst nicht aufgeführt sind die Teile für Identität, DNS-Filterung und Einbruchserkennung. In diesen Teilen eines Homelabs tut der Name der Software jemandem, der Netze scannt, einen kleinen Gefallen, und einem Leser gar keinen.
