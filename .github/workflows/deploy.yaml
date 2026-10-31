@@ -22,7 +22,17 @@ jobs:
   # build`, so type errors fail here too.
   build:
     name: Build & Check
-    runs-on: ubuntu-latest
+    # The self-hosted runner while it is online, GitHub-hosted runners when it
+    # is not: CI_RUNS_ON names one or the other, and unset means GitHub-hosted.
+    # A pull request from another repository always runs on GitHub-hosted
+    # runners.
+    runs-on: >-
+      ${{ fromJSON(
+            (github.event_name == 'pull_request'
+             && github.event.pull_request.head.repo.full_name != github.repository)
+            && '["ubuntu-latest"]'
+            || vars.CI_RUNS_ON
+            || '["ubuntu-latest"]') }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v7
@@ -59,7 +69,17 @@ jobs:
     # build without deploying: `== 'push'` skipped this job on every manual
     # run, which is the one case the manual trigger exists for.
     if: github.event_name != 'pull_request'
-    runs-on: ubuntu-latest
+    # The self-hosted runner while it is online, GitHub-hosted runners when it
+    # is not: CI_RUNS_ON names one or the other, and unset means GitHub-hosted.
+    # A pull request from another repository always runs on GitHub-hosted
+    # runners.
+    runs-on: >-
+      ${{ fromJSON(
+            (github.event_name == 'pull_request'
+             && github.event.pull_request.head.repo.full_name != github.repository)
+            && '["ubuntu-latest"]'
+            || vars.CI_RUNS_ON
+            || '["ubuntu-latest"]') }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v7
